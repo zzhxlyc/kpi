@@ -1,0 +1,6 @@
+.settings/*
+.project
+.buildpath
+README.md
+webroot/upload/*
+conf/*
