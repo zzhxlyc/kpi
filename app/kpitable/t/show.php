@@ -9,6 +9,7 @@
 	<tr class="top">
 		<td>考核表项</td>
 		<td width="70">类型</td>
+		<td width="70">比重</td>
 		<td width="70">时间节点</td>
 		<td width="100">操作</td>
 	</tr>
@@ -23,6 +24,7 @@
 	<tr <?php echo $tr_class?>>
 		<td><a href="<?php echo $home.'/showitem?id='.$o->id?>"><?php echo $o->name?></a></td>
 		<td><?php echo KpiItemType::to_string($o->type)?></td>
+		<td><?php echo $o->weight?>%</td>
 		<td><?php echo $o->timeline?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/edititem?id='.$o->id?>">编辑</a>

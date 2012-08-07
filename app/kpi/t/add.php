@@ -24,7 +24,7 @@
 
 <div class="row">
 	<label for="type">时间类型</label>
-	<select name="type">
+	<select name="type" onchange="change_type(this)">
 		<option value="">选择时间类型</option>
 		<option value="1" <?php $HTML->selected(1, $kpidata->type)?>>月度</option>
 		<option value="2" <?php $HTML->selected(2, $kpidata->type)?>>季度</option>
@@ -51,9 +51,11 @@
 <div class="row">
 	<label for="month">月份</label>
 	<input size="2" type="text" name="month" value="<?php echo $kpidata->month?>" />月
-	<span class="error"><?php echo $errors['month']?></span> 至
-	<input size="2" type="text" name="month2" value="<?php echo $kpidata->month2?>" />月
-	<span class="error"><?php echo $errors['month2']?></span>
+	<span id="text_month2">
+		<span class="error"><?php echo $errors['month']?></span> 至
+		<input size="2" type="text" name="month2" value="<?php echo $kpidata->month2?>" />月
+		<span class="error"><?php echo $errors['month2']?></span>
+	</span>
 </div>
 
 <div class="row" style="margin: 20px 0">
@@ -63,4 +65,15 @@
 
 </form>
 
-
+<script type="text/javascript">
+<!--
+function change_type(select){
+	if(select.value == 1){
+		$("#text_month2").hide();
+	}
+	else{
+		$("#text_month2").show();
+	}
+}
+//-->
+</script>

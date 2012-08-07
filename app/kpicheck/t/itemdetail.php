@@ -11,6 +11,8 @@
 	<?php echo $tableitem->name?>
 </div>
 
+<hr/>
+
 <div class="row">
 	<label for="type">类型</label>
 	<?php echo KpiItemType::to_string($tableitem->type)?>
@@ -46,14 +48,16 @@
 	<?php echo $tableitem->standard?>
 </div>
 
-<div class="row">
-	<label for="modified">审核</label>
-	<?php if($tableitem->modified == 1){echo '可修改';}else{echo '不可修改';}?>
-</div>
+<hr/>
 
 <div class="row">
 	<label for="standard">数据源表</label>
 	<?php echo $datasource->name?>
+</div>
+
+<div class="row">
+	<label for="standard">评分部门</label>
+	<?php echo $depart->name?>
 </div>
 
 <div class="row">
@@ -65,7 +69,7 @@
 
 <div class="row">
 	<label for="score">评分</label>
-	<?php echo $dataitem->score?>
+	<?php echo get_score($dataitem->score)?>
 </div>
 
 <div class="row" style="margin: 20px 0">

@@ -20,15 +20,6 @@
 </div>
 
 <div class="row">
-	<label for="kind">属性</label>
-	<select name="kind">
-		<option value="1" <?php $HTML->selected('1', $tableitem->kind)?>>全厂统一</option>
-		<option value="2" <?php $HTML->selected('2', $tableitem->kind)?>>部门相关</option>
-	</select>
-	<span class="error"><?php echo $errors['kind']?></span>
-</div>
-
-<div class="row">
 	<label for="type">考核项类型</label>
 	<select name="type">
 		<option value="">选择类型</option>
@@ -96,7 +87,7 @@
 		<?php 
 			foreach($staff_list as $staff){
 		?>
-		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->name?>（<?php echo $staff->slug?>）</option>
+		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->name?>（<?php echo $staff->slug?>）<?php echo $staff->department?></option>
 		<?php }?>
 	</select>
 	<span class="error"><?php echo $errors['staff']?></span>

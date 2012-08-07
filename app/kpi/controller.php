@@ -19,11 +19,13 @@ class KpiController extends AppController {
 		$get = $this->request->get;
 		$page = $get['page'];
 		$limit = 10;
+		$Director = $this->get('User');
 		$all = $this->KpiData->count();
 		$pager = new Pager($all, $page, $limit);
 		$list = Model::get_joins(array('D.*', 'T.name as table'), 
 					array('kpi_data as D', 'kpi_table as T'), 
-					array('D.kpi_table eq'=>'`T`.`id`'), 
+					array('D.depart'=>$Director->depart, 
+							'D.kpi_table eq'=>'`T`.`id`'), 
 					array('D.time'=>'DESC'),
 					$limit);
 		$page_list = $pager->get_page_links(KPI_HOME.'/index?');
@@ -50,6 +52,9 @@ class KpiController extends AppController {
 		if($this->request->post){
 			$post = $this->request->post;
 			$Director = $this->get('User');
+			if(empty($post['month2'])){
+				unset($post['month2']);
+			}
 			$post['manager'] = $Director->id;
 			$post['depart'] = $Director->depart;
 			$post['score'] = 0;
@@ -58,7 +63,25 @@ class KpiController extends AppController {
 			$errors = $this->KpiData->check($post);
 			if(count($errors) == 0){
 				$this->KpiData->escape($post);
-				$this->KpiData->save($post);
+				$dataid = $this->KpiData->save($post);
+				
+				$cond = array('kpi_table'=>$post['kpi_table']);
+				$tableitems = $this->KpiTableItem->get_list($cond);
+				if(count($tableitems) > 0){
+					foreach($tableitems as $item){
+						$data = array();
+						$data['kpi_data'] = $dataid;
+						$data['kpi_table_item'] = $item->id;
+						$data['score_depart'] = $item->score_depart;
+						$data['score'] = -1;
+						$data['verify'] = 0;
+						$data['modified'] = 0;
+						$data['time'] = DATETIME;
+						$data['mtime'] = DATETIME;
+						$this->KpiDataItem->save($data);
+					}
+				}
+				
 				$this->response->redirect('index');
 			}
 			else{
@@ -76,7 +99,7 @@ class KpiController extends AppController {
 		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id);
+			$cond = array('id'=>$id, 'depart'=>$Director->depart);
 			$kpidata = $this->KpiData->get_row($cond);
 			if($kpidata){
 				$has_error = false;
@@ -112,7 +135,7 @@ class KpiController extends AppController {
 		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id);
+			$cond = array('id'=>$id, 'depart'=>$Director->depart);
 			$kpidata = $this->KpiData->get_row($cond);
 			if($kpidata){
 				$has_error = false;
@@ -135,7 +158,7 @@ class KpiController extends AppController {
 		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id);
+			$cond = array('id'=>$id, 'depart'=>$Director->depart);
 			$kpidata = $this->KpiData->get_row($cond);
 			if($kpidata){
 				$has_error = false;
@@ -169,8 +192,8 @@ class KpiController extends AppController {
 			if($kpidata->kpi_table == $tableitem->kpi_table){
 				$kpi_table = $this->KpiTable->get($kpidata->kpi_table);
 				if($kpi_table){
-					if($kpidata->manager == $Director->id 
-							&& $kpi_table->manager == $Director->id){
+					if($kpidata->depart == $Director->depart 
+							&& $kpi_table->depart == $Director->depart){
 						$has_error = false;
 					}
 				}
@@ -181,6 +204,7 @@ class KpiController extends AppController {
 			return;
 		}
 		
+		/*
 		if($this->request->post){
 			$post = $this->request->post;
 			$score = intval($post['score']);
@@ -227,6 +251,10 @@ class KpiController extends AppController {
 				$this->set('id', $dataitem->id);
 			}
 		}
+		*/
+		$cond = array('kpi_data'=>$kpidata->id, 'kpi_table_item'=>$tableitem->id);
+		$dataitem = $this->KpiDataItem->get_row($cond);
+		$this->set('$dataitem', $dataitem);
 		$this->set('$kpidata', $kpidata);
 		$this->set('$kpitable', $kpi_table);
 		$this->set('$tableitem', $tableitem);
@@ -243,7 +271,7 @@ class KpiController extends AppController {
 		if($tableitem){
 			$kpi_table = $this->KpiTable->get($tableitem->kpi_table);
 			if($kpi_table){
-				if($kpi_table->manager == $Director->id){
+				if($kpi_table->depart == $Director->depart){
 					$has_error = false;
 				}
 			}
@@ -264,7 +292,7 @@ class KpiController extends AppController {
 		}
 		$page = $data['page'];
 		$limit = 10;
-		$cond = array('datasource'=>$datasource->id, 'depart'=>$kpi_table->depart);
+		$cond = array('datasource'=>$datasource->id);
 		if(!empty($from)){
 			$cond['time >='] = $from.' 00:00:00';
 		}
@@ -288,9 +316,7 @@ class KpiController extends AppController {
 		}
 		if($ds_data){
 			$datasource = $this->Datasource->get($ds_data->datasource);
-			if($ds_data->depart == $Director->depart){
-				$has_error = false;
-			}
+			$has_error = false;
 		}
 		if($has_error){
 			$this->set('error', '参数有误');

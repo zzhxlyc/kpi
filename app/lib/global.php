@@ -19,3 +19,10 @@ function output_error($error, $home){
 	echo '<p>'.$error.'</p>';
 	echo '<a href="'.$home.'">返回</a>';
 }
+
+function get_score($score){
+	if($score == -1){
+		return '未评分';
+	}
+	return $score;
+}

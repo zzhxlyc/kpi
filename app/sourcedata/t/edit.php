@@ -26,9 +26,9 @@
 
 <div class="row" style="margin: 20px 0">
 	<input type="submit" value="修改" />
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/show?itemid=$table_item->id"?>'" />
-	<input type="hidden" name="id" value="<?php echo $data['id']?>" />
-	<input type="hidden" name="itemid" value="<?php echo $table_item->id?>" />
+	<input type="button" value="返回" onclick="location.href='<?php echo $home."/show?dsid=$datasource->id"?>'" />
+	<input type="hidden" name="id" value="<?php echo $ds_data->id?>" />
+	<input type="hidden" name="dsid" value="<?php echo $datasource->id?>" />
 </div>
 
 </form>

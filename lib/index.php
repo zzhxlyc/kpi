@@ -17,11 +17,6 @@ $router = new Router();
 include(APP_DIR.'/router.php');
 $dispatcher = new Dispatcher($request, $response, $router, $view);
 
-if(!DEBUG){
-	error_reporting(0);
-	set_error_handler('error_handler');
-}
-
 $controller = $dispatcher->dispatch();
 if($controller){
 	extract($controller->get_vars());

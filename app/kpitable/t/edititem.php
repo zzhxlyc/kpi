@@ -80,7 +80,7 @@
 		<?php 
 			foreach($staff_list as $staff){
 		?>
-		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->name?>（<?php echo $staff->slug?>）</option>
+		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->name?>（<?php echo $staff->slug?>）<?php echo $staff->department?></option>
 		<?php }?>
 	</select>
 	<span class="error"><?php echo $errors['staff']?></span>

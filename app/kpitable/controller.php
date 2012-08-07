@@ -41,8 +41,11 @@ class KpitableController extends AppController {
 		$this->add_data();
 		$ds_list = $this->Datasource->get_list(array('valid'=>1));
 		$this->set('$ds_list', $ds_list);
-		$staff_list = $this->User->get_list(array('type'=>UserType::STAFF, 'valid'=>1), 
-								array('name'=>'ASC'));
+		$staff_list = Model::get_joins(array('U.*', 'D.name as department'),
+										array('user as U', 'department as D'), 
+										array('U.type'=>UserType::STAFF, 'U.valid'=>1, 
+											'U.depart eq'=>'`D`.`id`'),
+										array('U.name'=>'ASC'));
 		$this->set('$staff_list', $staff_list);
 	}
 	
@@ -187,8 +190,23 @@ class KpitableController extends AppController {
 			$post['kpi_table'] = $kpitable->id;
 			unset($post['tableid']);
 			$errors = $this->set_and_check_item($post);
+			if(intval($post['type']) != KpiItemType::FOUJUE){
+				if(empty($post['datasource'])){
+					$errors['datasource'] = '不能为空';
+				}
+				if(empty($post['staff'])){
+					$errors['staff'] = '不能为空';
+				}
+				else{
+					$staff = $this->User->get($post['staff']);
+					if(!$staff){
+						$errors['staff'] = '办事员不存在';
+					}
+				}
+			}
 			if(count($errors) == 0){
 				unset($post['kind']);
+				$post['score_depart'] = $staff->depart;
 				$post['valid'] = 1;
 				$post['modified'] = 0;
 				$this->KpiTableItem->escape($post);
@@ -255,7 +273,22 @@ class KpitableController extends AppController {
 			$post = $this->request->post;
 			$tableitem = $this->set_model($post, $tableitem);
 			$errors = $this->set_and_check_item($tableitem);
+			if(intval($post['type']) != KpiItemType::FOUJUE){
+				if(empty($post['datasource'])){
+					$errors['datasource'] = '不能为空';
+				}
+				if(empty($post['staff'])){
+					$errors['staff'] = '不能为空';
+				}
+				else{
+					$staff = $this->User->get($post['staff']);
+					if(!$staff){
+						$errors['staff'] = '办事员不存在';
+					}
+				}
+			}
 			if(count($errors) == 0 && $tableitem->modified == 0){
+				$post['score_depart'] = $staff->depart;
 				$this->KpiTableItem->escape($post);
 				$this->KpiTableItem->save($post);
 				$this->response->redirect('edititem?id='.$id);

@@ -21,7 +21,10 @@ class DirectorController extends AppController {
 		$cond = array('type' => UserType::DEPART, 'valid'=>1);
 		$all = $this->User->count($cond);
 		$pager = new Pager($all, $page, $limit);
-		$list = $this->User->get_page($cond, array('id'=>'ASC'), $pager->now(), $limit);
+		$list = Model::get_joins(array('U.*', 'D.name as department'), 
+									array('user as U', 'department as D'), 
+									array('U.type'=>UserType::DEPART, 'U.valid'=>1,
+										 'U.depart eq'=>'`D`.`id`'));
 		$page_list = $pager->get_page_links(DIRECTOR_HOME.'/index?');
 		$this->set('list', $list);
 		$this->set('$page_list', $page_list);

@@ -35,7 +35,7 @@
 <div class="row" style="margin: 20px 0">
 	<input type="submit" value="保存" />
 	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
-	<input type="hidden" name="itemid" value="<?php echo $table_item->id?>" />
+	<input type="hidden" name="dsid" value="<?php echo $datasource->id?>" />
 </div>
 
 </form>

@@ -6,6 +6,11 @@
 ?>
 
 <div class="row">
+	<label for="name">部门</label>
+	<?php echo $depart->name?>
+</div>
+
+<div class="row">
 	<label for="name">考核表名称</label>
 	<?php echo $kpitable->name?>
 </div>
@@ -54,19 +59,29 @@
 
 <div class="row">
 	<label for="datasource">数据来源</label>
-	<a target="_blank" href="<?php echo KPI_HOME.'/data?itemid='.$tableitem->id?>">查看数据来源</a>
+	<a target="_blank" href="<?php echo $home.'/data?itemid='.$tableitem->id?>">查看数据来源</a>
 </div>
 
 <hr/>
 
+<form action="" method="post">
+
 <div class="row">
 	<label for="score">评分</label>
-	<?php echo get_score($dataitem->score);?>
+	<?php 
+		$score = $dataitem->score;
+		if($score == -1) $score = '';
+	?>
+	<input type="text" name="score" value="<?php echo $score?>" />
 </div>
 
 <div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/show?id=$kpidata->id"?>'" />
+	<input type="submit" value="提交" />
+	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
+	<input type="hidden" name="id" value="<?php echo $dataitem->id?>"/>
 </div>
+
+</form>
 
 <?php 
 	}

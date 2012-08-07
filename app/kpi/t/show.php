@@ -21,12 +21,7 @@
 				$i++;
 				$tr_class = '';
 				if($i % 2 == 0) $tr_class = 'class="even"';
-				if(array_key_exists($o->id, $data_item_list)){
-					$score = $data_item_list[$o->id]->score;
-				}
-				else{
-					$score = '未评分';
-				}
+				$score = get_score($data_item_list[$o->id]->score);
 	?>
 	<tr <?php echo $tr_class?>>
 		<td><a href="<?php echo KPITABLE_HOME.'/showitem?id='.$o->id?>"><?php echo $o->name?></a></td>
@@ -34,7 +29,7 @@
 		<td><?php echo $o->weight?>%</td>
 		<td><?php echo $score?></td>
 		<td class="operate">
-			<a href="<?php echo $home."/score?dataid=$kpidata->id&itemid=$o->id"?>">评分</a>
+			<a href="<?php echo $home."/score?dataid=$kpidata->id&itemid=$o->id"?>">查看具体</a>
 		</td>
 	</tr>
 	<?php 

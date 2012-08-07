@@ -1,10 +1,13 @@
-
-<form action="<?php echo $home.'/remove'?>" method="post">
+<?php 
+	if($error){
+		output_error($error, $index_page);
+	}
+	else{
+?>
 <table class="normal-table" cellspacing="0" cellpadding="0">
 	<tr class="top">
-		<td width="30">选择</td>
 		<td>姓名</td>
-		<td>部门</td>
+		<td width="100">部门</td>
 		<td width="250">操作</td>
 	</tr>
 	<?php 
@@ -16,9 +19,8 @@
 				if($i % 2 == 0) $tr_class = 'class="even"';
 	?>
 	<tr <?php echo $tr_class?>>
-		<td><input name="id[]" type="checkbox" value="<?php echo $o->id?>" /></td>
 		<td><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
-		<td><?php echo $o->department?></td>
+		<td><?php echo $depart->name?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
 			<a href="<?php echo $home.'/pswd?id='.$o->id?>">修改密码</a>
@@ -31,11 +33,16 @@
 	?>
 </table>
 
-<input type="submit" value="批量删除" />
-<a href="<?php echo $home.'/add'?>">添加部门主管</a>
-</form>
+<a href="<?php echo $home.'/add?depart='.$depart->id?>">添加办事员</a>
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>
 
+<div class="row">
+	<input type="button" value="返回" onclick="location.href='<?php echo $home."/depart"?>'" />
+</div>
+
+<?php 
+	}
+?>

@@ -6,7 +6,6 @@
 		<td width="150">考核表名</td>
 		<td width="70">类型</td>
 		<td width="50">总分</td>
-		<td width="50">进度</td>
 		<td width="170">操作</td>
 	</tr>
 	<?php 
@@ -22,7 +21,6 @@
 		<td><?php echo $o->table?></td>
 		<td><?php echo KpiDataType::to_string($o->type)?></td>
 		<td><?php echo $o->score?></td>
-		<td><?php echo KpiDataStatus::to_string($o->status)?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/show?id='.$o->id?>">查看考核项</a>
 			<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>

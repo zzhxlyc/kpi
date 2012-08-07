@@ -53,7 +53,7 @@ class DatasourceController extends AppController {
 	}
 	
 	private function add_data(&$datasource){
-		if(isset($datasource->comment) && is_string($datasource->comment)){
+		if(isset($datasource->comment) && strlen(trim($datasource->comment)) > 0){
 			$comment = $datasource->comment;
 			$array = explode(',', $comment);
 			$datasource->column = array();
@@ -82,6 +82,13 @@ class DatasourceController extends AppController {
 			$column = $post['column'];
 			$comment = $post['comment'];
 			$errors = $this->Datasource->check($post);
+			$cond = array('name'=>$post['name']);
+			if(!isset($errors['name'])){
+				$count = $this->Datasource->count($cond);
+				if($count > 0){
+					$errors['name'] = '此数据源表格已存在';
+				}
+			}
 			$this->check_slug_unique($errors);
 			if(count($errors) == 0){
 				unset($post['column']);

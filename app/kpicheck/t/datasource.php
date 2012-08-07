@@ -11,7 +11,7 @@
 	<label for="quality">时间段选择</label>
 	从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
 	到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
-	<input type="hidden" name="itemid" value="<?php echo $dataitem->id?>" />
+	<input type="hidden" name="dsid" value="<?php echo $datasource->id?>" />
 	<input type="submit" value="提交" />
 </div>
 
@@ -47,10 +47,6 @@
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>
-
-<!--<div class="row" style="margin: 20px 0">-->
-<!--	<input type="button" value="返回" onclick="location.href='<?php echo $home."/kpiitem?dataid=$dataitem->kpi_data"?>'" />-->
-<!--</div>-->
 
 <?php 
 	}

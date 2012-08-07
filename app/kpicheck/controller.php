@@ -86,7 +86,10 @@ class KpicheckController extends AppController {
 		}
 		
 		$cond = array('kpi_table'=>$kpidata->kpi_table);
-		$list = $this->KpiTableItem->get_list($cond);
+		$list = Model::get_joins(array('K.*', 'D.name as department'), 
+								array('kpi_table_item as K', 'department as D'),
+								array('K.kpi_table eq'=>$kpidata->kpi_table, 
+										'K.score_depart eq'=>'D.id'));
 		$data_list = $this->KpiDataItem->get_list(array('kpi_data'=>$kpidata->id));
 		$data_list = array_to_map($data_list, 'kpi_table_item');
 		$this->set('$kpidata', $kpidata);
@@ -120,27 +123,22 @@ class KpicheckController extends AppController {
 		$this->set('$tableitem', $tableitem);
 		$this->set('$dataitem', $dataitem);
 		$staff = $this->User->get($tableitem->staff);
+		$depart = $this->Depart->get($staff->depart);
 		$datasource = $this->Datasource->get($tableitem->datasource);
 		$this->set('$staff', $staff);
+		$this->set('$depart', $depart);
 		$this->set('$datasource', $datasource);
 	}
 	
 	public function datasource(){
 		$get = $this->request->get;
-		$itemid = $get['itemid'];	//data item
+		$dsid = $get['dsid'];	//data item
 		$Director = $this->get('User');
 		$has_error = true;
-		if($itemid > 0){
-			$dataitem = $this->KpiDataItem->get($itemid);
-			if($dataitem){
-				$tableitem = $this->KpiTableItem->get($dataitem->kpi_table_item);
-				if($tableitem){
-					$cond = array('user'=>$Director->id, 'depart'=>$tableitem->depart);
-					$yes = $this->Supervise->count($cond);
-					if($yes == 1){
-						$has_error = false;
-					}
-				}
+		if($dsid > 0){
+			$datasource = $this->Datasource->get($dsid);
+			if($datasource){
+				$has_error = false;
 			}
 		}
 		if($has_error){
@@ -148,7 +146,6 @@ class KpicheckController extends AppController {
 			return;
 		}
 		
-		$datasource = $this->Datasource->get($tableitem->datasource);
 		$this->set('$dataitem', $dataitem);
 		$this->set('$tableitem', $tableitem);
 		$this->set('$datasource', $datasource);
@@ -161,7 +158,7 @@ class KpicheckController extends AppController {
 		}
 		$page = $get['page'];
 		$limit = 10;
-		$cond = array('datasource'=>$datasource->id, 'depart'=>$tableitem->depart);
+		$cond = array('datasource'=>$datasource->id);
 		if(!empty($from)){
 			$cond['time >='] = $from.' 00:00:00';
 		}
@@ -172,22 +169,20 @@ class KpicheckController extends AppController {
 		$pager = new Pager($all, $page, $limit);
 		$list = $this->DsData->get_page($cond, array('time'=>'DESC'), 
 												$pager->now(), $limit);
-		$this->set('$list', $list);
+		$page_list = $pager->get_page_links($this->get('home')."/datasource?dsid=$dsid&");
+		$this->set('list', $list);
+		$this->set('$page_list', $page_list);
 	}
 	
 	public function detail(){
 		$data = $this->get_data();
 		$has_error = true;
-		$dsid = $data['dsid'];
+		$dsid = $data['dsid'];	//DsData id
 		$Director = $this->get('User');
 		if($dsid > 0){
 			$ds_data = $this->DsData->get($dsid);
 			if($ds_data){
-				$cond = array('user'=>$Director->id, 'depart'=>$ds_data->depart);
-				$yes = $this->Supervise->count($cond);
-				if($yes == 1){
-					$has_error = false;
-				}
+				$has_error = false;
 			}
 		}
 		if($has_error){

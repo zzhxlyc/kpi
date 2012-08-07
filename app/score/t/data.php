@@ -5,12 +5,22 @@
 	else{
 ?>
 
-<h2><?php echo $datasource->name?>历史数据</h2>
+<form action="" method="get">
+
+<div class="row">
+	<label for="quality">时间段选择</label>
+	从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
+	到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
+	<input type="hidden" name="itemid" value="<?php echo $tableitem->id?>" />
+	<input type="submit" value="提交" />
+</div>
+
+</form>
 
 <table class="normal-table" cellspacing="0" cellpadding="0">
 	<tr class="top">
 		<td>数据源表</td>
-		<td width="140">添加时间</td>
+		<td width="150">添加时间</td>
 		<td width="100">操作</td>
 	</tr>
 	<?php 
@@ -25,7 +35,7 @@
 		<td><?php echo $datasource->name?></td>
 		<td><?php echo $o->time?></td>
 		<td class="operate">
-			<a href="<?php echo $home."/edit?dsid=$datasource->id&id=$o->id"?>">编辑</a>
+			<a href="<?php echo $home."/detail?dsid=$o->id"?>">查看</a>
 		</td>
 	</tr>
 	<?php 
@@ -36,10 +46,6 @@
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
-</div>
-
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
 </div>
 
 <?php 
