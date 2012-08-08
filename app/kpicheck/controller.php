@@ -221,7 +221,7 @@ class KpicheckController extends AppController {
 		
 		$page = $get['page'];
 		$limit = 10;
-		$cond = array('depart'=>$did);
+		$cond = array('depart'=>$did, 'valid'=>1);
 		$all = $this->KpiTable->count($cond);
 		$pager = new Pager($all, $page, $limit);
 		$list = $this->KpiTable->get_page($cond, array('time'=>'DESC'), 
