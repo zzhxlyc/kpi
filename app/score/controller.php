@@ -90,12 +90,7 @@ class ScoreController extends AppController {
 							($score - $old_score) * $tableitem->weight / 100;
 				}
 				else{
-					if($score < 60){
-						$new_score = 0;
-					}
-					else{
-						$new_score = $old_score;
-					}
+					$new_score = $old_score;
 				}
 				if($old_score != $new_score){
 					$array = array('id'=>$kpidata->id, 'score'=>intval($new_score));

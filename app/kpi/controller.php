@@ -35,7 +35,7 @@ class KpiController extends AppController {
 	
 	private function add_data(&$kpidata = Null){
 		$director = get_user($this->session);
-		$list = $this->KpiTable->get_list(array('manager'=>$director));
+		$list = $this->KpiTable->get_list(array('manager'=>$director, 'valid'=>1));
 		$this->set('kpi_table_list', $list);
 	}
 	
@@ -117,7 +117,7 @@ class KpiController extends AppController {
 			if(count($errors) == 0){
 				$this->KpiData->escape($post);
 				$this->KpiData->save($post);
-				$this->response->redirect('edit?id='.$id);
+				$this->response->redirect('edit?succ=1&id='.$id);
 			}
 			else{
 				$this->set('errors', $errors);

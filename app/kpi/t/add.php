@@ -24,7 +24,7 @@
 
 <div class="row">
 	<label for="type">时间类型</label>
-	<select name="type" onchange="change_type(this)">
+	<select name="type" id="time_type" onchange="change_type()">
 		<option value="">选择时间类型</option>
 		<option value="1" <?php $HTML->selected(1, $kpidata->type)?>>月度</option>
 		<option value="2" <?php $HTML->selected(2, $kpidata->type)?>>季度</option>
@@ -67,8 +67,10 @@
 
 <script type="text/javascript">
 <!--
-function change_type(select){
-	if(select.value == 1){
+change_type();
+function change_type(){
+	var v = $('#time_type').val();
+	if(v == 1){
 		$("#text_month2").hide();
 	}
 	else{

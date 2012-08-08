@@ -35,5 +35,6 @@
 
 </form>
 <?php 
+		output_edit_success();
 	}
 ?>

@@ -199,7 +199,7 @@ class DatasourceController extends AppController {
 						}
 					}
 					
-					$this->response->redirect('edit?id='.$id);
+					$this->response->redirect('edit?succ=1&id='.$id);
 				}
 				else{
 					$this->set('errors', $errors);

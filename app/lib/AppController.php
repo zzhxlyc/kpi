@@ -56,7 +56,9 @@ class AppController extends Controller{
 		$Model = ucfirst($model);
 		$model = strtolower($model);
 		$id_array = $this->get_delete_ids();
-		$this->{$Model}->update(array('valid'=>0), array('id in'=>$id_array));
+		if(count($id_array) > 0){
+			$this->{$Model}->update(array('valid'=>0), array('id in'=>$id_array));
+		}
 		if($redirect){
 			$this->response->redirect($redirect);
 		}
@@ -100,7 +102,7 @@ class AppController extends Controller{
 			}
 			$slug = esc_text($slug);
 			if(preg_match("/^[A-Za-z0-9_]+$/", $slug)){
-				$count = $this->{$model}->count(array('slug'=>$slug));
+				$count = $this->{$model}->count(array('slug'=>$slug, 'valid'=>1));
 				if($count > 0){
 					$errors['slug'] = '已被使用';
 				}

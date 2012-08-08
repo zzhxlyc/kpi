@@ -20,6 +20,12 @@ function output_error($error, $home){
 	echo '<a href="'.$home.'">返回</a>';
 }
 
+function output_edit_success(){
+	if(isset($_GET['succ'])){
+		echo '<p><span>修改成功</span></p>';
+	}
+}
+
 function get_score($score){
 	if($score == -1){
 		return '未评分';

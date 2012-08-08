@@ -94,7 +94,7 @@ class KpitableController extends AppController {
 			if(count($errors) == 0){
 				$this->KpiTable->escape($post);
 				$this->KpiTable->save($post);
-				$this->response->redirect('edit?id='.$id);
+				$this->response->redirect('edit?succ=1&id='.$id);
 			}
 			else{
 				$this->set('errors', $errors);
@@ -291,7 +291,7 @@ class KpitableController extends AppController {
 				$post['score_depart'] = $staff->depart;
 				$this->KpiTableItem->escape($post);
 				$this->KpiTableItem->save($post);
-				$this->response->redirect('edititem?id='.$id);
+				$this->response->redirect('edititem?succ=1&id='.$id);
 			}
 			else{
 				$this->set('errors', $errors);

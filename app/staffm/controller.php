@@ -96,7 +96,7 @@ class StaffmController extends AppController {
 				$post['password'] = md5($post['password']);
 				$this->User->escape($post);
 				$this->User->save($post);
-				$this->response->redirect('list?depart='.$did);
+				$this->response->redirect('show?depart='.$did);
 			}
 			else{
 				$user = $this->set_model($post, new User());
@@ -136,7 +136,7 @@ class StaffmController extends AppController {
 			if(count($errors) == 0){
 				$this->User->escape($post);
 				$this->User->save($post);
-				$this->response->redirect('edit?id='.$id);
+				$this->response->redirect('edit?succ=1&id='.$id);
 			}
 			else{
 				$this->set('errors', $errors);

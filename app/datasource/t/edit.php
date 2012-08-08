@@ -135,5 +135,6 @@ function set_value(){
 //-->
 </script>
 <?php 
+		output_edit_success();
 	}
 ?>

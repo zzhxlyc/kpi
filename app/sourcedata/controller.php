@@ -169,7 +169,7 @@ class SourcedataController extends AppController {
 			unset($data['dsid']);
 			$data['id'] = $ds_data->data;
 			Model::_save($datasource->tablename, $data);
-			$this->response->redirect("edit?dsid=$dsid&id=$id");
+			$this->response->redirect("edit?succ=1&dsid=$dsid&id=$id");
 		}
 		$list = Model::get_joins(array('DS.*', 'D.name', 'D.tablename', 
 										'T.name as department'),

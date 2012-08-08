@@ -314,7 +314,7 @@ class KpicheckController extends AppController {
 				$data['modified'] = 1;
 				$this->KpiTableItem->escape($data);
 				$this->KpiTableItem->save($data);
-				$this->response->redirect('itemedit?itemid='.$itemid);
+				$this->response->redirect('itemedit?succ=1&itemid='.$itemid);
 			}
 			else{
 				$this->set('errors', $errors);
