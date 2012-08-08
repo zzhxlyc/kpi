@@ -279,6 +279,12 @@ class KpicheckController extends AppController {
 		}
 		
 		$this->set('$tableitem', $tableitem);
+		$datasource = $this->Datasource->get($tableitem->datasource);
+		$staff = $this->User->get($tableitem->staff);
+		$depart = $this->Depart->get($staff->depart);
+		$this->set('$datasource', $datasource);
+		$this->set('$staff', $staff);
+		$this->set('$depart', $depart);
 	}
 	
 	public function itemedit(){
@@ -321,6 +327,14 @@ class KpicheckController extends AppController {
 			}
 		}
 		$this->set('$tableitem', $tableitem);
+		$ds_list = $this->Datasource->get_list(array('valid'=>1));
+		$this->set('$ds_list', $ds_list);
+		$staff_list = Model::get_joins(array('U.*', 'D.name as department'),
+										array('user as U', 'department as D'), 
+										array('U.type'=>UserType::STAFF, 'U.valid'=>1, 
+											'U.depart eq'=>'`D`.`id`'),
+										array('U.name'=>'ASC'));
+		$this->set('$staff_list', $staff_list);
 	}
 	
 }

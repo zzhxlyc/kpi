@@ -87,17 +87,11 @@
 		<?php 
 			foreach($staff_list as $staff){
 		?>
-		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->name?>（<?php echo $staff->slug?>）<?php echo $staff->department?></option>
+		<option value="<?php echo $staff->id?>" <?php $HTML->selected($staff->id, $tableitem->staff)?>><?php echo $staff->department?>：<?php echo $staff->name?>（<?php echo $staff->slug?>）</option>
 		<?php }?>
 	</select>
 	<span class="error"><?php echo $errors['staff']?></span>
 </div>
-
-<!--<div class="row">
-	<label for="modified">审核</label>
-	<input type="checkbox" name="modified" value="1" <?php $HTML->checked(1, $tableitem->modified)?> />
-	<span class="error"><?php echo $errors['modified']?></span>
-</div>-->
 
 <div class="row" style="margin: 20px 0">
 	<input type="submit" value="保存" />

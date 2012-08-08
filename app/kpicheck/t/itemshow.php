@@ -46,10 +46,15 @@
 	<?php echo $tableitem->standard?>
 </div>
 
-<!--<div class="row">
-	<label for="modified">审核</label>
-	<?php if($tableitem->modified == 1){echo '可修改';}else{echo '不可修改';}?>
-</div>-->
+<div class="row">
+	<label for="datasource">数据来源</label>
+	<?php echo $datasource->name?>
+</div>
+
+<div class="row">
+	<label for="staff">办事员</label>
+	<?php echo $depart->name?>：<?php echo $staff->name?>（<?php echo $staff->slug?>）
+</div>
 
 <hr/>
 
