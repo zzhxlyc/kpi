@@ -34,7 +34,7 @@
 		<option value="1" <?php $HTML->selected(1, $kpidata->type)?>>月度</option>
 		<option value="2" <?php $HTML->selected(2, $kpidata->type)?>>季度</option>
 		<option value="3" <?php $HTML->selected(3, $kpidata->type)?>>半年度</option>
-		<option value="5" <?php $HTML->selected(4, $kpidata->type)?>>年度</option>
+		<option value="4" <?php $HTML->selected(4, $kpidata->type)?>>年度</option>
 	</select>
 	<span class="error"><?php echo $errors['type']?></span>
 </div>
