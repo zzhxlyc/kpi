@@ -45,6 +45,13 @@ class DirectorController extends AppController {
 			if(empty($post['depart'])){
 				$errors['depart'] = '不能为空';
 			}
+			else{
+				$cond = array('type'=>UserType::DEPART, 'depart'=>$post['depart']);
+				$count = $this->User->count($cond);
+				if($count >= 1){
+					$errors['depart'] = '此部门已有主管';
+				}
+			}
 			$this->check_slug_unique($errors, 'User');
 			if(count($errors) == 0){
 				$post['valid'] = 1;
