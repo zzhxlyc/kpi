@@ -3,7 +3,6 @@
 	<tr class="top">
 		<td>绩效考核表</td>
 		<td width="100">部门</td>
-		<td width="100">类型</td>
 		<td width="50">分数</td>
 		<td width="150">操作</td>
 	</tr>
@@ -18,7 +17,6 @@
 	<tr <?php echo $tr_class?>>
 		<td><?php echo $o->name?></td>
 		<td><?php echo $depart->name?></td>
-		<td><?php echo KpiDataStatus::to_string($o->status)?></td>
 		<td><?php echo $o->score?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/kpiitem?dataid='.$o->id?>">查看绩效考核项</a>

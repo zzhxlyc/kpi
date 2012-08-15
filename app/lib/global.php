@@ -26,11 +26,29 @@ function output_edit_success(){
 	}
 }
 
-function get_score($score){
-	if($score == -1){
-		return '未评分';
+function get_score($o, $percent = 1){
+	if(is_object($o)){
+		$score = $o->score;
+		$f = is_foujue($o);
 	}
-	return $score;
+	else{
+		$score = $o;
+		$f = false;
+	}
+	if(!$f){
+		if($score == -1){
+			return '未评分';
+		}
+		return $score;
+	}
+	else{
+		if($percent){
+			return $score.'%';
+		}
+		else{
+			return $score;
+		}
+	}
 }
 
 function get_weight($o){
@@ -40,4 +58,11 @@ function get_weight($o){
 	else{
 		return $o->weight.'%';
 	}
+}
+
+function is_foujue($o){
+	if($o->type == KpiItemType::FOUJUE){
+		return true;
+	}
+	return false;
 }

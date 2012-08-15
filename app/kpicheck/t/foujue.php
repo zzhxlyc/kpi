@@ -4,23 +4,19 @@
 	}
 	else{
 ?>
+<form action="" method="post" >
 
 <div class="row">
 	<label for="name">考核项名称</label>
 	<?php echo $tableitem->name?>
 </div>
 
+<hr/>
+
 <div class="row">
 	<label for="type">类型</label>
-	<?php echo KpiItemType::to_string($tableitem->type)?>
+	<?php echo KpiItemType::to_string(KpiItemType::FOUJUE)?>
 </div>
-
-<?php if($tableitem->type != KpiItemType::FOUJUE){?>
-<div class="row">
-	<label for="weight">权重</label>
-	<?php echo $tableitem->weight?>%
-</div>
-<?php }?>
 
 <div class="row">
 	<label for="desc">指标解释</label>
@@ -47,25 +43,21 @@
 	<?php echo $tableitem->standard?>
 </div>
 
-<?php if($tableitem->type != KpiItemType::FOUJUE){?>
-<div class="row">
-	<label for="datasource">数据来源</label>
-	<?php echo $datasource->name?>
-</div>
-
-<div class="row">
-	<label for="staff">办事员</label>
-	<?php echo $depart->name?>：<?php echo $staff->name?>（<?php echo $staff->slug?>）
-</div>
-<?php }?>
-
 <hr/>
 
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/tableitem?tableid=$tableitem->kpi_table"?>'" />
+<div class="row">
+	<label for="score">评分</label>
+	<input size="4" type="text" name="score" value="<?php echo get_score($dataitem, 0)?>"/>%
 </div>
 
+<div class="row" style="margin: 20px 0">
+	<input type="submit" value="保存" />
+	<input type="button" value="返回" onclick="location.href='<?php echo $home.'/kpiitem?dataid='.$dataitem->kpi_data?>'" />
+</div>
+
+</form>
 
 <?php 
+		output_edit_success();
 	}
 ?>

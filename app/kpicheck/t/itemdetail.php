@@ -4,7 +4,6 @@
 	}
 	else{
 ?>
-<form action="" method="post" >
 
 <div class="row">
 	<label for="name">考核项名称</label>
@@ -69,14 +68,12 @@
 
 <div class="row">
 	<label for="score">评分</label>
-	<?php echo get_score($dataitem->score)?>
+	<?php echo get_score($dataitem)?>
 </div>
 
 <div class="row" style="margin: 20px 0">
 	<input type="button" value="返回" onclick="history.back()" />
 </div>
-
-</form>
 
 <?php 
 	}

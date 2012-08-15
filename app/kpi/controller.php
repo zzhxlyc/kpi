@@ -35,7 +35,7 @@ class KpiController extends AppController {
 	
 	private function add_data(&$kpidata = Null){
 		$director = get_user($this->session);
-		$list = $this->KpiTable->get_list(array('manager'=>$director, 'valid'=>1));
+		$list = $this->KpiTable->get_list(array('valid'=>1));
 		$this->set('kpi_table_list', $list);
 	}
 	
@@ -72,12 +72,20 @@ class KpiController extends AppController {
 						$data = array();
 						$data['kpi_data'] = $dataid;
 						$data['kpi_table_item'] = $item->id;
-						$data['score_depart'] = $item->score_depart;
-						$data['score'] = -1;
+						$data['type'] = $item->type;
+						$data['weight'] = $item->weight;
 						$data['verify'] = 0;
 						$data['modified'] = 0;
 						$data['time'] = DATETIME;
 						$data['mtime'] = DATETIME;
+						if($item->type == KpiItemType::FOUJUE){
+							$data['score_depart'] = 0;
+							$data['score'] = 100;
+						}
+						else{
+							$data['score_depart'] = $item->score_depart;
+							$data['score'] = -1;
+						}
 						$this->KpiDataItem->save($data);
 					}
 				}
