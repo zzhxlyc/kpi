@@ -2,14 +2,14 @@
 
 class KpitableController extends AppController {
 	
-	public $models = array('KpiTable', 'KpiTableItem', 'User', 'Datasource');
+	public $models = array('KpiTable', 'KpiTableItem', 'User', 'Datasource', 'Depart');
 	public $no_session = array();
 	
 	public function before(){
 		$this->set('home', KPITABLE_HOME);
 		parent::before();
 		$User = $this->get('User');
-		if($User->type != UserType::DEPART){
+		if($User->type != UserType::ADMIN){
 			$this->go_login();
 		}
 	}
@@ -19,22 +19,22 @@ class KpitableController extends AppController {
 		$page = $get['page'];
 		$limit = 10;
 		$director = get_user($this->session);
-		$cond = array('valid'=>1, 'manager'=>$director);
+		$cond = array('valid'=>1);
 		$all = $this->KpiTable->count($cond);
 		$pager = new Pager($all, $page, $limit);
-		$list = $this->KpiTable->get_page($cond, array('id'=>'ASC'), 
-					$pager->now(), $limit);
+		$list = Model::get_joins(array('K.*', 'D.name as department'), 
+						array('kpi_table as K', 'department as D'), 
+						array('K.depart eq'=>'D.id'),
+						array('K.depart'=>'ASC'),
+						$pager->get_limit_str());
 		$page_list = $pager->get_page_links(KPITABLE_HOME.'/index?');
 		$this->set('list', $list);
 		$this->set('$page_list', $page_list);
 	}
 	
 	private function add_data(&$kpitable = Null){
-		$director = get_user($this->session);
-		$list = Model::get_joins(array('U.*', 'D.name as department'), 
-									array('user as U', 'department as D'), 
-									array('U.id'=>$director, 'U.depart eq'=>'`D`.`id`'));
-		$this->set('$manager', $list[0]);
+		$departs = $this->Depart->get_list(array('valid'=>1));
+		$this->set('$departs', $departs);
 	}
 	
 	private function add_item_data(&$kpiitem = Null){
@@ -52,10 +52,16 @@ class KpitableController extends AppController {
 	public function add(){
 		if($this->request->post){
 			$post = $this->request->post;
-			$post['manager'] = get_user($this->session);
-			$post['time'] = DATETIME;
 			$errors = $this->KpiTable->check($post);
 			if(count($errors) == 0){
+				$cond = array('id'=>intval($post['depart']), 'valid'=>1);
+				$depart = $this->Depart->get_row($cond);
+				if(!$depart){
+					$errors['depart'] = '部门不存在';
+				}
+			}
+			if(count($errors) == 0){
+				$post['time'] = DATETIME;
 				$post['valid'] = 1;
 				$this->KpiTable->escape($post);
 				$this->KpiTable->save($post);
@@ -73,10 +79,9 @@ class KpitableController extends AppController {
 	public function edit(){
 		$data = $this->get_data();
 		$id = get_id($data);
-		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$kpitable = $this->KpiTable->get_row($cond);
 			if($kpitable){
 				$has_error = false;
@@ -91,6 +96,13 @@ class KpitableController extends AppController {
 			$post = $this->request->post;
 			$kpitable = $this->set_model($post, $kpitable);
 			$errors = $this->KpiTable->check($kpitable);
+			if(count($errors) == 0){
+				$cond = array('id'=>intval($post['depart']), 'valid'=>1);
+				$depart = $this->Depart->get_row($cond);
+				if(!$depart){
+					$errors['depart'] = '部门不存在';
+				}
+			}
 			if(count($errors) == 0){
 				$this->KpiTable->escape($post);
 				$this->KpiTable->save($post);
@@ -107,10 +119,9 @@ class KpitableController extends AppController {
 	public function show(){
 		$get = $this->request->get;
 		$id = get_id($get);
-		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$kpitable = $this->KpiTable->get_row($cond);
 			if($kpitable){
 				$has_error = false;
@@ -154,15 +165,44 @@ class KpitableController extends AppController {
 	}
 	
 	private function set_and_check_item(&$obj){
-		if(is_array($obj)){
-			$weight = $obj['weight'];
+		if(is_object($obj)){
+			$data = (array)$obj;
 		}
-		else if(is_object($obj)){
-			$weight = $obj->weight;
+		else{
+			$data = $obj;
 		}
 		$errors = $this->KpiTableItem->check($obj);
-		if(!isset($errors['weight']) && $weight <= 0 || $weight > 100){
-			$errors['weight'] = '范围有误';
+		if(intval($data['type']) != KpiItemType::FOUJUE){
+			if(empty($data['datasource'])){
+				$errors['datasource'] = '不能为空';
+			}
+			if(empty($data['staff'])){
+				$errors['staff'] = '不能为空';
+			}
+			if(!isset($errors['weight']) && 
+				($data['weight'] <= 0 || $data['weight'] > 100)){
+				$errors['weight'] = '范围有误';
+			}
+			if(!isset($errors['weight']) && isset($data['kpi_table'])){
+				$cond = array('valid'=>1, 'kpi_table'=>$data['kpi_table'], 
+							'type !='=>KpiItemType::FOUJUE);
+				if(isset($data['id'])){
+					$cond['id !='] = $data['id'];
+				}
+				$items = $this->KpiTableItem->get_list($cond);
+				$sum = 0;
+				foreach($items as $item){
+					$sum += intval($item->weight);
+				}
+				if($sum + $data['weight'] > 100){
+					$errors['weight'] = '其他所有指标比重已达到'.$sum.'%';
+				}
+			}
+		}
+		else{
+			if(isset($errors['weight'])){
+				unset($errors['weight']);
+			}
 		}
 		return $errors;
 	}
@@ -170,10 +210,9 @@ class KpitableController extends AppController {
 	public function additem(){
 		$data = $this->get_data();
 		$id = intval($data['tableid']);
-		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$kpitable = $this->KpiTable->get_row($cond);
 			if($kpitable){
 				$has_error = false;
@@ -190,25 +229,18 @@ class KpitableController extends AppController {
 			$post['kpi_table'] = $kpitable->id;
 			unset($post['tableid']);
 			$errors = $this->set_and_check_item($post);
-			if(intval($post['type']) != KpiItemType::FOUJUE){
-				if(empty($post['datasource'])){
-					$errors['datasource'] = '不能为空';
-				}
-				if(empty($post['staff'])){
-					$errors['staff'] = '不能为空';
-				}
-				else{
-					$staff = $this->User->get($post['staff']);
-					if(!$staff){
-						$errors['staff'] = '办事员不存在';
-					}
-				}
-			}
+			$staff = $this->User->get($post['staff']);
 			if(count($errors) == 0){
 				unset($post['kind']);
 				$post['score_depart'] = $staff->depart;
 				$post['valid'] = 1;
 				$post['modified'] = 0;
+				if($post['type'] == KpiItemType::FOUJUE){
+					$post['datasource'] = 0;
+					$post['weight'] = 0;
+					$post['score_depart'] = 0;
+					$post['staff'] = 0;
+				}
 				$this->KpiTableItem->escape($post);
 				$this->KpiTableItem->save($post);
 				$this->response->redirect('show?id='.$kpitable->id);
@@ -255,10 +287,9 @@ class KpitableController extends AppController {
 	public function edititem(){
 		$data = $this->get_data();
 		$id = intval($data['id']);
-		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'depart'=>$Director->depart, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$tableitem = $this->KpiTableItem->get_row($cond);
 			if($tableitem){
 				$has_error = false;
@@ -273,22 +304,15 @@ class KpitableController extends AppController {
 			$post = $this->request->post;
 			$tableitem = $this->set_model($post, $tableitem);
 			$errors = $this->set_and_check_item($tableitem);
-			if(intval($post['type']) != KpiItemType::FOUJUE){
-				if(empty($post['datasource'])){
-					$errors['datasource'] = '不能为空';
-				}
-				if(empty($post['staff'])){
-					$errors['staff'] = '不能为空';
-				}
-				else{
-					$staff = $this->User->get($post['staff']);
-					if(!$staff){
-						$errors['staff'] = '办事员不存在';
-					}
-				}
-			}
-			if(count($errors) == 0 && $tableitem->modified == 0){
+			$staff = $this->User->get($post['staff']);
+			if(count($errors) == 0){
 				$post['score_depart'] = $staff->depart;
+				if($post['type'] == KpiItemType::FOUJUE){
+					$post['datasource'] = 0;
+					$post['weight'] = 0;
+					$post['score_depart'] = 0;
+					$post['staff'] = 0;
+				}
 				$this->KpiTableItem->escape($post);
 				$this->KpiTableItem->save($post);
 				$this->response->redirect('edititem?succ=1&id='.$id);
@@ -304,10 +328,9 @@ class KpitableController extends AppController {
 	public function delitem(){
 		$data = $this->get_data();
 		$id = intval($data['id']);
-		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'depart'=>$Director->depart, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$tableitem = $this->KpiTableItem->get_row($cond);
 			if($tableitem){
 				$has_error = false;

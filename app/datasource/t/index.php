@@ -4,7 +4,7 @@
 	<tr class="top">
 		<td width="30">选择</td>
 		<td>表格名称</td>
-		<td width="150">操作</td>
+		<td width="200">操作</td>
 	</tr>
 	<?php 
 		$i = 0;
@@ -18,6 +18,7 @@
 		<td><input name="id[]" type="checkbox" value="<?php echo $o->id?>" /></td>
 		<td><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
 		<td class="operate">
+			<a href="<?php echo $home.'/show?datasource='.$o->id?>">查看数据</a>
 			<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
 			<a href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
 		</td>

@@ -21,6 +21,7 @@
 	}
 ?>
 	<td width="150">时间</td>
+	<td width="100">操作</td>
 	</tr>
 	<tr>
 <?php 
@@ -42,7 +43,8 @@
 		}
 	}
 ?>
-	<td width="150"><?php echo $o->time?></td>
+	<td><?php echo $o->time?></td>
+	<td><a href="<?php echo $home."/editdata?datasource=$datasource->id&id=$o->id"?>">编辑</a></td>
 	</tr>
 <?php 
 		}

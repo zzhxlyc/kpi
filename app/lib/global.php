@@ -32,3 +32,12 @@ function get_score($score){
 	}
 	return $score;
 }
+
+function get_weight($o){
+	if($o->type == KpiItemType::FOUJUE){
+		return '-';
+	}
+	else{
+		return $o->weight.'%';
+	}
+}

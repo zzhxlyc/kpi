@@ -13,6 +13,7 @@ define('SOURCEDATA_HOME', ROOT_URL.'/sourcedata');
 define('STAFF_HOME', ROOT_URL.'/staff');
 define('STAFFM_HOME', ROOT_URL.'/staffm');
 define('KPITABLE_HOME', ROOT_URL.'/kpitable');
+define('DATA_HOME', ROOT_URL.'/data');
 define('KPI_HOME', ROOT_URL.'/kpi');
 define('SCORE_HOME', ROOT_URL.'/score');
 define('KPICHECK_HOME', ROOT_URL.'/kpicheck');
