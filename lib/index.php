@@ -35,6 +35,7 @@ else if($TEMPLATE_PAGE && file_exists($TEMPLATE_PAGE)){
 }
 
 if(DEBUG && $view->layout != 'ajax'){
+	echo '<div style="clear:both">';
 	$sql_list = &$DB->sql_dump();
 	foreach($sql_list as $sql){
 		echo "<p>$sql</p>";
@@ -47,4 +48,5 @@ if(DEBUG && $view->layout != 'ajax'){
 		$e = $warning['warning'];
 		echo "<p>$e</p>";
 	}
+	echo '</div>';
 }

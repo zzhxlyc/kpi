@@ -41,7 +41,7 @@
 
 <div class="row" style="margin: 20px 0">
 	<input type="submit" value="保存" />
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/show?datasource=$datasource->id"?>'" />
+	<input type="button" value="返回" onclick="location.href='<?php echo DATA_HOME."/index?datasource=$datasource->id"?>'" />
 	<input type="hidden" name="datasource" value="<?php echo $datasource->id?>" />
 	<input type="hidden" name="id" value="<?php echo $data->id?>" />
 </div>

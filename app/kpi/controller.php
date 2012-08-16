@@ -179,7 +179,7 @@ class KpiController extends AppController {
 		
 		$this->set('$kpidata', $kpidata);
 		$item_list = $this->KpiTableItem->get_list(
-								array('kpi_table'=>$kpidata->kpi_table));
+								array('kpi_table'=>$kpidata->kpi_table), array('type'=>'ASC'));
 		$tlist = $this->KpiDataItem->get_list(array('kpi_data'=>$kpidata->id));
 		$data_item_list = array_to_map($tlist, 'kpi_table_item');
 		$this->set('$data_item_list', $data_item_list);
@@ -266,6 +266,14 @@ class KpiController extends AppController {
 		$this->set('$kpidata', $kpidata);
 		$this->set('$kpitable', $kpi_table);
 		$this->set('$tableitem', $tableitem);
+		$cond = array('U.type'=>UserType::DEPART, 'D.id'=>$tableitem->score_depart,
+						'U.depart eq'=>'D.id');
+		if(!is_foujue($tableitem)){
+			$Manager = Model::get_joins(array('U.*', 'D.name as department'), 
+							array('user as U', 'department as D'),
+							$cond);
+			$this->set('$Manager', $Manager[0]);
+		}
 	}
 	
 	public function data(){

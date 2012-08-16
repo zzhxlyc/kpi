@@ -7,6 +7,16 @@
 
 <h2><?php echo $datasource->name?>历史数据</h2>
 
+<form action="" method="get">
+<div class="row">
+	从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
+	到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
+	<input type="hidden" name="datasource" value="<?php echo $_GET['datasource']?>" />
+	<input type="hidden" name="page" value="<?php echo $_GET['page']?>" />
+	<input type="submit" value="提交" />
+</div>
+</form>
+
 <table id="data_table" class="normal-table" cellspacing="0" cellpadding="0">
 	<tr id="column_row" class="top">
 <?php 
@@ -21,7 +31,9 @@
 	}
 ?>
 	<td width="150">时间</td>
+	<?php if($User->type == UserType::ADMIN){?>
 	<td width="100">操作</td>
+	<?php }?>
 	</tr>
 <?php 
 	if(is_array($data) && count($data) > 0){
@@ -46,7 +58,11 @@
 	}
 ?>
 	<td><?php echo $o->time?></td>
-	<td><a href="<?php echo $home."/editdata?datasource=$datasource->id&id=$o->id"?>">编辑</a></td>
+	<?php if($User->type == UserType::ADMIN){?>
+	<td>
+		<a href="<?php echo DATASOURCE_HOME."/editdata?datasource=$datasource->id&id=$o->id"?>">编辑</a>
+	</td>
+	<?php }?>
 <?php 
 		}
 ?>
@@ -59,10 +75,6 @@
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
-</div>
-
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
 </div>
 
 <script type="text/javascript">

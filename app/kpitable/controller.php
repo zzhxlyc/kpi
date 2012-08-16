@@ -2,7 +2,7 @@
 
 class KpitableController extends AppController {
 	
-	public $models = array('KpiTable', 'KpiTableItem', 'User', 'Datasource', 'Depart');
+	public $models = array('KpiTable', 'KpiTableItem', 'User', 'Datasource', 'Depart', 'KpiDataItem');
 	public $no_session = array();
 	
 	public function before(){
@@ -135,7 +135,7 @@ class KpitableController extends AppController {
 		$this->add_data($kpitable);
 		$this->set('$kpitable', $kpitable);
 		$cond = array('kpi_table'=>$kpitable->id, 'valid'=>1);
-		$item_list = $this->KpiTableItem->get_list($cond);
+		$item_list = $this->KpiTableItem->get_list($cond, array('type'=>'ASC'));
 		$this->set('$list', $item_list);
 	}
 	
@@ -315,6 +315,12 @@ class KpitableController extends AppController {
 				}
 				$this->KpiTableItem->escape($post);
 				$this->KpiTableItem->save($post);
+				
+//				$array = array();
+//				$array['weight'] = $post['weight'];
+//				$array['type'] = $post['type'];
+//				$this->KpiDataItem->update(array('kpi_table_item'=>$post['id']), $array);
+				
 				$this->response->redirect('edititem?succ=1&id='.$id);
 			}
 			else{

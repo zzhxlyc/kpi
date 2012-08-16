@@ -35,7 +35,7 @@
 			<?php if($item_id){?>
 			<a href="<?php echo $home.'/itemdetail?itemid='.$item_id?>">查看具体</a>
 			<?php }?>
-			<a target="_blank" href="<?php echo $home.'/datasource?dsid='.$o->datasource?>">数据来源</a>
+			<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$o->datasource?>">数据来源</a>
 		</td>
 	</tr>
 	<?php 

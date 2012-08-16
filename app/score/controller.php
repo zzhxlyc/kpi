@@ -102,6 +102,7 @@ class ScoreController extends AppController {
 					if($score == -1){
 						$score = 0;
 					}
+//					echo $score.' * '.$item->weight.'%<br/>';
 					$new_score += $score * $item->weight / 100;
 				}
 				foreach($f_list as $item){

@@ -24,7 +24,7 @@ function sourcedata_add_row(){
 	var num = $("#columns").val();
 	var html = '<tr>';
 	for(var i = 0;i < num;i++){
-		html += '<td><input style="width:150px" type="text"/></td>';
+		html += '<td><input style="width:80px" type="text"/></td>';
 	}
 	html += '</tr>';
 	$("#data_table").append(html);

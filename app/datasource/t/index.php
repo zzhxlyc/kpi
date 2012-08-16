@@ -18,7 +18,7 @@
 		<td><input name="id[]" type="checkbox" value="<?php echo $o->id?>" /></td>
 		<td><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
 		<td class="operate">
-			<a href="<?php echo $home.'/show?datasource='.$o->id?>">查看数据</a>
+			<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$o->id?>">查看数据</a>
 			<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
 			<a href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
 		</td>

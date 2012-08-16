@@ -57,7 +57,12 @@
 <?php if(!is_foujue($tableitem)){?>
 <div class="row">
 	<label for="datasource">数据来源</label>
-	<a target="_blank" href="<?php echo KPI_HOME.'/data?itemid='.$tableitem->id?>">查看数据来源</a>
+	<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a>
+</div>
+
+<div class="row">
+	<label for="datasource">评分部门</label>
+	<?php echo $Manager->department?>（主管：<?php echo $Manager->name?>）
 </div>
 <?php }?>
 
