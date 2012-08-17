@@ -6,7 +6,7 @@ class KpiTable extends AppModel{
 	
 	public function check(&$data, array $ignore = array()){
 		$check_arrays = array(
-			'need' => array('name', 'depart', 'manager'),
+			'need' => array('name', 'depart'),
 			'length' => array('name'=>250),
 			'int' => array('depart', 'manager'),
 			'number' => array(),

@@ -80,6 +80,17 @@ class DirectorController extends AppController {
 				$user = $this->set_model($post, $user);
 				$errors = $this->User->check($user);
 				$this->check_slug_unique($errors, 'User');
+				if(empty($post['depart'])){
+					$errors['depart'] = '不能为空';
+				}
+				else{
+					$cond = array('type'=>UserType::DEPART, 
+								'depart'=>$post['depart'], 'id !='=>$user->id);
+					$count = $this->User->count($cond);
+					if($count >= 1){
+						$errors['depart'] = '此部门已有主管';
+					}
+				}
 				if(count($errors) == 0){
 					$this->User->escape($post);
 					$this->User->save($post);

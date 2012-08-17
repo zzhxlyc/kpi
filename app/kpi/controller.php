@@ -35,7 +35,7 @@ class KpiController extends AppController {
 	
 	private function add_data(&$kpidata = Null){
 		$director = get_user($this->session);
-		$list = $this->KpiTable->get_list(array('manager'=>$director, 'valid'=>1));
+		$list = $this->KpiTable->get_list(array('valid'=>1));
 		$this->set('kpi_table_list', $list);
 	}
 	
@@ -72,12 +72,20 @@ class KpiController extends AppController {
 						$data = array();
 						$data['kpi_data'] = $dataid;
 						$data['kpi_table_item'] = $item->id;
-						$data['score_depart'] = $item->score_depart;
-						$data['score'] = -1;
+						$data['type'] = $item->type;
+						$data['weight'] = $item->weight;
 						$data['verify'] = 0;
 						$data['modified'] = 0;
 						$data['time'] = DATETIME;
 						$data['mtime'] = DATETIME;
+						if($item->type == KpiItemType::FOUJUE){
+							$data['score_depart'] = 0;
+							$data['score'] = 100;
+						}
+						else{
+							$data['score_depart'] = $item->score_depart;
+							$data['score'] = -1;
+						}
 						$this->KpiDataItem->save($data);
 					}
 				}
@@ -171,7 +179,7 @@ class KpiController extends AppController {
 		
 		$this->set('$kpidata', $kpidata);
 		$item_list = $this->KpiTableItem->get_list(
-								array('kpi_table'=>$kpidata->kpi_table));
+								array('kpi_table'=>$kpidata->kpi_table), array('type'=>'ASC'));
 		$tlist = $this->KpiDataItem->get_list(array('kpi_data'=>$kpidata->id));
 		$data_item_list = array_to_map($tlist, 'kpi_table_item');
 		$this->set('$data_item_list', $data_item_list);
@@ -258,6 +266,14 @@ class KpiController extends AppController {
 		$this->set('$kpidata', $kpidata);
 		$this->set('$kpitable', $kpi_table);
 		$this->set('$tableitem', $tableitem);
+		$cond = array('U.type'=>UserType::DEPART, 'D.id'=>$tableitem->score_depart,
+						'U.depart eq'=>'D.id');
+		if(!is_foujue($tableitem)){
+			$Manager = Model::get_joins(array('U.*', 'D.name as department'), 
+							array('user as U', 'department as D'),
+							$cond);
+			$this->set('$Manager', $Manager[0]);
+		}
 	}
 	
 	public function data(){

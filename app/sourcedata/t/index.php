@@ -16,7 +16,8 @@
 		<td><?php echo $o->name?></td>
 		<td class="operate">
 			<a href="<?php echo $home."/add?dsid=$o->id"?>">填写新数据</a>
-			<a href="<?php echo $home."/show?dsid=$o->id"?>">历史数据</a>
+			<!-- <a href="<?php echo $home."/show?dsid=$o->id"?>">历史数据</a> -->
+			<a target="_blank" href="<?php echo DATA_HOME."/index?datasource=$o->id"?>">历史数据</a>
 		</td>
 	</tr>
 	<?php 

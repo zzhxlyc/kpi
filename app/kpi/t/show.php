@@ -9,6 +9,7 @@
 <table class="normal-table" cellspacing="0" cellpadding="0">
 	<tr class="top">
 		<td>考核表项</td>
+		<td width="70">类型</td>
 		<td width="70">时间节点</td>
 		<td width="70">比重</td>
 		<td width="70">分数</td>
@@ -21,12 +22,18 @@
 				$i++;
 				$tr_class = '';
 				if($i % 2 == 0) $tr_class = 'class="even"';
-				$score = get_score($data_item_list[$o->id]->score);
+				if($o->type != KpiItemType::FOUJUE){
+					$score = get_score($data_item_list[$o->id]->score);
+				}
+				else{
+					$score = $data_item_list[$o->id]->score.'%';
+				}
 	?>
 	<tr <?php echo $tr_class?>>
 		<td><a href="<?php echo KPITABLE_HOME.'/showitem?id='.$o->id?>"><?php echo $o->name?></a></td>
+		<td><?php echo KpiItemType::to_string($o->type)?></td>
 		<td><?php echo $o->timeline?></td>
-		<td><?php echo $o->weight?>%</td>
+		<td><?php echo get_weight($o)?></td>
 		<td><?php echo $score?></td>
 		<td class="operate">
 			<a href="<?php echo $home."/score?dataid=$kpidata->id&itemid=$o->id"?>">查看具体</a>

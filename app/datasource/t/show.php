@@ -21,11 +21,14 @@
 	}
 ?>
 	<td width="150">时间</td>
+	<td width="100">操作</td>
 	</tr>
+<?php 
+	if(is_array($data) && count($data) > 0){
+		$i = 0;
+?>
 	<tr>
 <?php 
-	if(is_array($data)){
-		$i = 0;
 		foreach($data as $o){
 			$tr_class = '';
 			$i++;
@@ -42,10 +45,13 @@
 		}
 	}
 ?>
-	<td width="150"><?php echo $o->time?></td>
-	</tr>
+	<td><?php echo $o->time?></td>
+	<td><a href="<?php echo $home."/editdata?datasource=$datasource->id&id=$o->id"?>">编辑</a></td>
 <?php 
 		}
+?>
+	</tr>
+<?php 
 	}
 ?>
 	</tr>

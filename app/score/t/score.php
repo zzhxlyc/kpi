@@ -59,7 +59,7 @@
 
 <div class="row">
 	<label for="datasource">数据来源</label>
-	<a target="_blank" href="<?php echo $home.'/data?itemid='.$tableitem->id?>">查看数据来源</a>
+	<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a>
 </div>
 
 <hr/>

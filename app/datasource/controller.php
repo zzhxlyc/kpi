@@ -2,7 +2,7 @@
 
 class DatasourceController extends AppController {
 	
-	public $models = array('User', 'Datasource');
+	public $models = array('User', 'Datasource', 'DSData');
 	public $no_session = array();
 	
 	public function before(){
@@ -232,6 +232,90 @@ class DatasourceController extends AppController {
 		if(count($id_array) > 0){
 		}
 		parent::remove();
+	}
+	
+	private function add_table_data($obj){
+		if(is_object($obj)){
+			$tablename = $obj->tablename;
+		}
+		else{
+			$tablename = $obj;
+		}
+		$list = Model::describe_table($tablename, 
+						array('COLUMN_NAME', 'COLUMN_COMMENT'));
+		for($i = 0;$i < count($list);$i++){
+			if($list[$i]->COLUMN_NAME == 'id'){
+				unset($list[$i]);
+				break;
+			}
+		}
+		$this->set('$list', $list);
+	}
+	
+	public function show(){
+		$data = $this->get_data();
+		$id = intval($data['datasource']);
+		$has_error = true;
+		if($id > 0){
+			$cond = array('id'=>$id, 'valid'=>1);
+			$datasource = $this->Datasource->get_row($cond);
+			if($datasource){
+				$has_error = false;
+			}
+		}
+		if($has_error){
+			$this->set('error', '参数有误');
+			return;
+		}
+		
+		$this->set('$datasource', $datasource);
+		$cond = array('datasource'=>$id);
+		$all = $this->DSData->count($cond);
+		$page = $data['page'];
+		$limit = 10;
+		$pager = new Pager($all, $page, $limit);
+		$tablename = $datasource->tablename;
+		$list = Model::get_joins(array('T.*', 'D.time as time'),
+								array('ds_data as D', "$tablename as T"), 
+								array('D.datasource'=>$id, 'D.data eq'=>'T.id'), 
+								array('D.time'=>'DESC'), 
+								$pager->get_limit_str());
+		$this->set('data', $list);
+		$home = $this->get('home');
+		$page_list = $pager->get_page_links($home."/show?dsid=$id&");
+		$this->set('$page_list', $page_list);
+		$this->add_table_data($datasource);
+	}
+	
+	public function editdata(){
+		$data = $this->get_data();
+		$dsid = intval($data['datasource']);
+		$id = intval($data['id']);
+		$has_error = true;
+		if($dsid > 0 && $id > 0){
+			$cond = array('id'=>$dsid, 'valid'=>1);
+			$datasource = $this->Datasource->get_row($cond);
+			if($datasource){
+				$tablename = $datasource->tablename;
+				$d = Model::_get($tablename, $id);
+				if($d){
+					$has_error = false;
+				}
+			}
+		}
+		if($has_error){
+			$this->set('error', '参数有误');
+			return;
+		}
+		
+		if($this->request->post){
+			unset($data['datasource']);
+			Model::_save($datasource->tablename, $data);
+			$this->response->redirect("editdata?succ=1&datasource=$dsid&id=$id");
+		}
+		$this->set('$data', $d);
+		$this->add_table_data($datasource);
+		$this->set('datasource', $datasource);
 	}
 	
 }

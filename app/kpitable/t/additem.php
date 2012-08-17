@@ -21,7 +21,7 @@
 
 <div class="row">
 	<label for="type">考核项类型</label>
-	<select name="type">
+	<select class="table_item_type_select" name="type">
 		<option value="">选择类型</option>
 		<option value="1" <?php $HTML->selected('1', $tableitem->type)?>>经济</option>
 		<option value="2" <?php $HTML->selected('2', $tableitem->type)?>>管理</option>
@@ -31,7 +31,7 @@
 	<span class="error"><?php echo $errors['type']?></span>
 </div>
 
-<div class="row">
+<div class="row item_type_normal">
 	<label for="weight">权重</label>
 	<input size="5" type="text" name="weight" value="<?php echo $tableitem->weight?>" /> %
 	<span class="error"><?php echo $errors['weight']?></span>
@@ -67,7 +67,7 @@
 	<span class="error"><?php echo $errors['standard']?></span>
 </div>
 
-<div class="row">
+<div class="row item_type_normal">
 	<label for="datasource">数据来源</label>
 	<select name="datasource">
 		<option value="">选择数据来源表</option>
@@ -80,7 +80,7 @@
 	<span class="error"><?php echo $errors['datasource']?></span>
 </div>
 
-<div class="row">
+<div class="row item_type_normal">
 	<label for="staff">办事员</label>
 	<select name="staff">
 		<option value="">选择办事员</option>
@@ -100,5 +100,11 @@
 </div>
 
 </form>
+
+<script type="text/javascript">
+<!--
+table_item_init();
+//-->
+</script>
 
 <?php }?>

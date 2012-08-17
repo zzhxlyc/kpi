@@ -24,7 +24,7 @@
 	<tr <?php echo $tr_class?>>
 		<td><a href="<?php echo $home.'/showitem?id='.$o->id?>"><?php echo $o->name?></a></td>
 		<td><?php echo KpiItemType::to_string($o->type)?></td>
-		<td><?php echo $o->weight?>%</td>
+		<td><?php echo get_weight($o)?></td>
 		<td><?php echo $o->timeline?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/edititem?id='.$o->id?>">编辑</a>

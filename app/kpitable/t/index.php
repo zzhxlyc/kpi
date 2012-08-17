@@ -2,6 +2,7 @@
 <table class="normal-table" cellspacing="0" cellpadding="0">
 	<tr class="top">
 		<td>考核表名称</td>
+		<td width="100">部门</td>
 		<td width="250">操作</td>
 	</tr>
 	<?php 
@@ -14,6 +15,7 @@
 	?>
 	<tr <?php echo $tr_class?>>
 		<td><a href="<?php echo $home.'/show?id='.$o->id?>"><?php echo $o->name?></a></td>
+		<td><?php echo $o->department?></td>
 		<td class="operate">
 			<a href="<?php echo $home.'/show?id='.$o->id?>">查看考核项</a>
 			<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>

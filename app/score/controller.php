@@ -84,16 +84,33 @@ class ScoreController extends AppController {
 				$this->KpiDataItem->escape($data);
 				$this->KpiDataItem->save($data);
 				
-				$kpidata = $this->KpiData->get($dataitem->kpi_data);
-				if($tableitem->type != KpiItemType::FOUJUE){
-					$new_score = $kpidata->score + 
-							($score - $old_score) * $tableitem->weight / 100;
+				$cond = array('kpi_data'=>$data_item->kpi_data);
+				$item_list = $this->KpiDataItem->get_list($cond);
+				$f_list = array();
+				$nf_list = array();
+				foreach($item_list as $item){
+					if(is_foujue($item)){
+						$f_list[] = $item;
+					}
+					else{
+						$nf_list[] = $item;
+					}
 				}
-				else{
-					$new_score = $old_score;
+				$new_score = 0;
+				foreach($nf_list as $item){
+					$score = $item->score;
+					if($score == -1){
+						$score = 0;
+					}
+//					echo $score.' * '.$item->weight.'%<br/>';
+					$new_score += $score * $item->weight / 100;
 				}
+				foreach($f_list as $item){
+					$new_score = $new_score * $item->score / 100;
+				}
+				$new_score = intval($new_score);
 				if($old_score != $new_score){
-					$array = array('id'=>$kpidata->id, 'score'=>intval($new_score));
+					$array = array('id'=>$data_item->kpi_data, 'score'=>$new_score);
 					$this->KpiData->save($array);
 				}
 				

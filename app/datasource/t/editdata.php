@@ -9,11 +9,8 @@
 	<label for="datasource">数据源表</label>
 	<?php echo $datasource->name?>
 </div>
-<div class="row">
-	<label for="datasource">部门</label>
-	<?php echo $department?>
-</div>
 
+<form action="" method="post">
 <table id="data_table" class="normal-table" cellspacing="0" cellpadding="0">
 	<tr id="column_row" class="top">
 <?php 
@@ -31,9 +28,10 @@
 	<tr>
 <?php 
 	if(is_array($list)){
-		foreach($list as $o){
+		foreach($list as $column){
+			$name = $column->COLUMN_NAME;
 ?>
-	<td><input style="width:80px" type="text"/></td>
+	<td width="100"><input type="text" name="<?php echo $name?>" value="<?php echo $data->$name?>"/></td>
 <?php 
 		}
 	}
@@ -42,20 +40,14 @@
 </table>
 
 <div class="row" style="margin: 20px 0">
-	<input type="hidden" value="<?php echo count($list)?>" id="columns" />
-	<input type="button" value="保存" onclick="sourcedata_save_row()" />
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
-	<input type="hidden" id="dsid" name="dsid" value="<?php echo $datasource->id?>" />
+	<input type="submit" value="保存" />
+	<input type="button" value="返回" onclick="location.href='<?php echo DATA_HOME."/index?datasource=$datasource->id"?>'" />
+	<input type="hidden" name="datasource" value="<?php echo $datasource->id?>" />
+	<input type="hidden" name="id" value="<?php echo $data->id?>" />
 </div>
-
-<script type="text/javascript">
-<!--
-big_table_init();
-//-->
-</script>
-
-
+</form>
 <?php 
+		output_edit_success();
 	}
 ?>
 

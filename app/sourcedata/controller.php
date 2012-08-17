@@ -52,6 +52,12 @@ class SourcedataController extends AppController {
 		}
 		$list = Model::describe_table($tablename, 
 						array('COLUMN_NAME', 'COLUMN_COMMENT'));
+		for($i = 0;$i < count($list);$i++){
+			if($list[$i]->COLUMN_NAME == 'id'){
+				unset($list[$i]);
+				break;
+			}
+		}
 		$this->set('$list', $list);
 	}
 	
@@ -78,8 +84,31 @@ class SourcedataController extends AppController {
 			$department = $this->Depart->get($table_item->depart);
 			$this->set('$department', $department->name);
 		}
+		$this->set('$table_item', $table_item);
+		$this->set('$datasource', $datasource);
+		$this->add_data($datasource);
+	}
+	
+	public function addrow(){
 		if($this->request->post){
 			$post = $this->request->post;
+			$data = $post;
+			$id = intval($data['dsid']);	//datasource id
+			$Staff = $this->get('User');
+			$has_error = true;
+			if($id > 0){
+				$cond = array('id'=>$id, 'valid'=>1);
+				$datasource = $this->Datasource->get_row($cond);
+				$cond = array('datasource'=>$id, 'staff'=>$Staff->id, 'valid'=>1);
+				$table_item = $this->KpiTableItem->get_row($cond);
+				if($datasource && $table_item){
+					$has_error = false;
+				}
+			}
+			if($has_error){
+				exit('0');
+			}
+			
 			$errors = $this->check_data($post);
 			if(count($errors) == 0){
 				unset($post['dsid']);
@@ -94,19 +123,13 @@ class SourcedataController extends AppController {
 					$array['time'] = DATETIME;
 					$array['mtime'] = DATETIME;
 					$this->DSData->save($array);
-					$this->response->redirect('show?dsid='.$id);
+					exit('1');
 				}
 				else{
-					print_r($post);
-					$this->set('error', 'SQL有误，记录打印的数据，请联系管理员');
+					exit('0');
 				}
 			}
-			$this->set('errors', $errors);
-			$this->set('data', $post);
 		}
-		$this->set('$table_item', $table_item);
-		$this->set('$datasource', $datasource);
-		$this->add_data($datasource);
 	}
 	
 	public function show(){
@@ -115,7 +138,8 @@ class SourcedataController extends AppController {
 		$Staff = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$datasource = $this->Datasource->get($id);
+			$cond = array('id'=>$id, 'valid'=>1);
+			$datasource = $this->Datasource->get_row($cond);
 			$cond = array('datasource'=>$id, 'staff'=>$Staff->id, 'valid'=>1);
 			$table_item = $this->KpiTableItem->get_row($cond);
 			if($datasource && $table_item){
@@ -133,58 +157,18 @@ class SourcedataController extends AppController {
 		$page = $data['page'];
 		$limit = 10;
 		$pager = new Pager($all, $page, $limit);
-		$list = $this->DSData->get_page($cond, array('time'=>'DESC'), 
-									$pager->now(), $limit);
+		$tablename = $datasource->tablename;
+		$list = Model::get_joins(array('T.*', 'D.time as time'),
+								array('ds_data as D', "$tablename as T"), 
+								array('D.datasource'=>$table_item->datasource, 
+										'D.depart'=>$Staff->depart,'D.data eq'=>'T.id'), 
+								array('D.time'=>'DESC'), 
+								$pager->get_limit_str());
+		$this->set('data', $list);
 		$home = $this->get('home');
 		$page_list = $pager->get_page_links($home."/show?dsid=$id&");
-		$this->set('item_id', $table_item->id);
-		$this->set('list', $list);
 		$this->set('$page_list', $page_list);
-	}
-	
-	public function edit(){
-		$data = $this->get_data();
-		$dsid = intval($data['dsid']);
-		$id = intval($data['id']);	//DsData id
-		$Staff = $this->get('User');
-		$has_error = true;
-		if($dsid > 0 && $id > 0){
-			$datasource = $this->Datasource->get($dsid);
-			$cond = array('datasource'=>$dsid, 'staff'=>$Staff->id, 'valid'=>1);
-			$table_item = $this->KpiTableItem->get_row($cond);
-			if($datasource && $table_item){
-				$cond = array('id'=>$id, 'depart'=>$Staff->depart);
-				$ds_data = $this->DSData->get_row($cond);
-				if($ds_data){
-					$has_error = false;
-				}
-			}
-		}
-		if($has_error){
-			$this->set('error', '参数有误');
-			return;
-		}
-		
-		if($this->request->post){
-			unset($data['dsid']);
-			$data['id'] = $ds_data->data;
-			Model::_save($datasource->tablename, $data);
-			$this->response->redirect("edit?succ=1&dsid=$dsid&id=$id");
-		}
-		$list = Model::get_joins(array('DS.*', 'D.name', 'D.tablename', 
-										'T.name as department'),
-					array('ds_data as DS', 'datasource as D', 
-						'department as T'),
-					array('DS.id'=>$id, 'DS.datasource eq'=>'`D`.`id`', 
-						'DS.depart eq'=>'`T`.`id`'));
-		$ds_data = $list[0];
-		$data = Model::_get($ds_data->tablename, $ds_data->data);
-		$this->set('ds_data', $ds_data);
-		if($ds_data && $data){
-			$this->set('data', (array)$data);
-			$this->add_data($ds_data->tablename);
-		}
-		$this->set('datasource', $datasource);
+		$this->add_data($datasource);
 	}
 	
 	public function remove(){}

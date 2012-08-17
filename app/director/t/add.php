@@ -25,7 +25,6 @@
 <div class="row">
 	<label for="depart">管理部门</label>
 	<select name="depart">
-		<option value="" ></option>
 	<?php 
 		foreach($depart_list as $o){
 			if(is_array($user->depart)){

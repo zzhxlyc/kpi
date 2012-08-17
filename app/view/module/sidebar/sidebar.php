@@ -10,6 +10,7 @@
 	<li><a href="<?php echo MANAGER_HOME.'/index'?>"><span>公司主管</span></a></li>
 	<li><a href="<?php echo DIRECTOR_HOME.'/index'?>"><span>部门主管</span></a></li>
 	<li><a href="<?php echo DATASOURCE_HOME.'/index'?>"><span>数据源表格</span></a></li>
+	<li><a href="<?php echo KPITABLE_HOME.'/index'?>"><span>KPI考核表管理</span></a></li>
 	<?php }?>
 	
 	<?php if($User->type == UserType::COMPANY){?>
@@ -19,7 +20,6 @@
 	
 	<?php if($User->type == UserType::DEPART){?>
 	<li><a href="<?php echo STAFF_HOME.'/index'?>"><span>办事员管理</span></a></li>
-	<li><a href="<?php echo KPITABLE_HOME.'/index'?>"><span>KPI考核表管理</span></a></li>
 	<li><a href="<?php echo KPI_HOME.'/index'?>"><span>KPI考核记录</span></a></li>
 	<li><a href="<?php echo SCORE_HOME.'/index'?>"><span>KPI考核打分</span></a></li>
 	<?php }?>

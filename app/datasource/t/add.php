@@ -3,7 +3,7 @@
 
 <div class="row">
 	<label for="name">表格名称</label>
-	<input size="20" type="text" name="name" value="<?php echo $datasource->name?>" />
+	<input size="50" type="text" name="name" value="<?php echo $datasource->name?>" />
 	<span class="error"><?php echo $errors['name']?></span>
 </div>
 

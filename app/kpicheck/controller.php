@@ -85,15 +85,17 @@ class KpicheckController extends AppController {
 			return;
 		}
 		
-		$cond = array('kpi_table'=>$kpidata->kpi_table);
 		$list = Model::get_joins(array('K.*', 'D.name as department'), 
 								array('kpi_table_item as K', 'department as D'),
 								array('K.kpi_table eq'=>$kpidata->kpi_table, 
 										'K.score_depart eq'=>'D.id'));
+		$cond = array('kpi_table'=>$kpidata->kpi_table, 'type'=>KpiItemType::FOUJUE);
+		$list2 = $this->KpiTableItem->get_list($cond);
 		$data_list = $this->KpiDataItem->get_list(array('kpi_data'=>$kpidata->id));
 		$data_list = array_to_map($data_list, 'kpi_table_item');
 		$this->set('$kpidata', $kpidata);
 		$this->set('$list', $list);
+		$this->set('$list2', $list2);
 		$this->set('$data_list', $data_list);
 	}
 	
@@ -128,6 +130,71 @@ class KpicheckController extends AppController {
 		$this->set('$staff', $staff);
 		$this->set('$depart', $depart);
 		$this->set('$datasource', $datasource);
+	}
+	
+	public function foujue(){
+		$get = $this->request->get;
+		$itemid = $get['itemid'];	//data item
+		$Director = $this->get('User');
+		$has_error = true;
+		if($itemid > 0){
+			$dataitem = $this->KpiDataItem->get($itemid);
+			if($dataitem && is_foujue($dataitem)){
+				$tableitem = $this->KpiTableItem->get($dataitem->kpi_table_item);
+				if($tableitem){
+					$cond = array('user'=>$Director->id, 'depart'=>$tableitem->depart);
+					$yes = $this->Supervise->count($cond);
+					if($yes == 1){
+						$has_error = false;
+					}
+				}
+			}
+		}
+		if($has_error){
+			$this->set('error', '参数有误');
+			return;
+		}
+		
+		if($this->request->post){
+			$post = $this->request->post;
+			$array = array('score'=>$post['score']);
+			$array['id'] = $itemid;
+			$this->KpiDataItem->save($array);
+			
+			$cond = array('kpi_data'=>$dataitem->kpi_data);
+			$item_list = $this->KpiDataItem->get_list($cond);
+			$f_list = array();
+			$nf_list = array();
+			foreach($item_list as $item){
+				if(is_foujue($item)){
+					$f_list[] = $item;
+				}
+				else{
+					$nf_list[] = $item;
+				}
+			}
+			$new_score = 0;
+			foreach($nf_list as $item){
+				$score = $item->score;
+				if($score == -1){
+					$score = 0;
+				}
+				$new_score += $score * $item->weight / 100;
+			}
+			foreach($f_list as $item){
+				$new_score = $new_score * $item->score / 100;
+			}
+			$new_score = intval($new_score);
+			if($old_score != $new_score){
+				$array = array('id'=>$dataitem->kpi_data, 'score'=>$new_score);
+				$this->KpiData->save($array);
+			}
+			
+			$this->response->redirect('foujue?succ=1&itemid='.$itemid);
+		}
+		
+		$this->set('$tableitem', $tableitem);
+		$this->set('$dataitem', $dataitem);
 	}
 	
 	public function datasource(){
@@ -288,6 +355,7 @@ class KpicheckController extends AppController {
 	}
 	
 	public function itemedit(){
+		return;
 		$data = $this->get_data();;
 		$itemid = $data['itemid'];	//table item
 		$Director = $this->get('User');

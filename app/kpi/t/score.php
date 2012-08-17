@@ -22,10 +22,12 @@
 	<?php echo KpiItemType::to_string($tableitem->type)?>
 </div>
 
+<?php if(!is_foujue($tableitem)){?>
 <div class="row">
 	<label for="weight">权重</label>
 	<?php echo $tableitem->weight?>%
 </div>
+<?php }?>
 
 <div class="row">
 	<label for="desc">指标解释</label>
@@ -52,16 +54,23 @@
 	<?php echo $tableitem->standard?>
 </div>
 
+<?php if(!is_foujue($tableitem)){?>
 <div class="row">
 	<label for="datasource">数据来源</label>
-	<a target="_blank" href="<?php echo KPI_HOME.'/data?itemid='.$tableitem->id?>">查看数据来源</a>
+	<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a>
 </div>
+
+<div class="row">
+	<label for="datasource">评分部门</label>
+	<?php echo $Manager->department?>（主管：<?php echo $Manager->name?>）
+</div>
+<?php }?>
 
 <hr/>
 
 <div class="row">
 	<label for="score">评分</label>
-	<?php echo get_score($dataitem->score);?>
+	<?php echo get_score($dataitem);?>
 </div>
 
 <div class="row" style="margin: 20px 0">
