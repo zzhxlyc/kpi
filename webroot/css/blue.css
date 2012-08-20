@@ -148,7 +148,7 @@
 
 #content div.box div.title
 {
-	background: #336699 url("../../../resources/images/colors/blue/title.png") repeat-x;
+	height: 32px;
 }
 
 #content div.box div.title ul.links li a

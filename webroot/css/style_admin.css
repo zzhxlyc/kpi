@@ -852,7 +852,7 @@ div.color a.greyblue
 
 #content div.box
 {
-	margin: 10px 0 0 0;
+	margin: 15px 0 0 0;
 	padding: 0 0 10px 0;
 	clear: both;
 	overflow: hidden;
@@ -2037,6 +2037,8 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 	background: #ffffff;
 	border-right: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
+	text-align: center;
+	vertical-align: middle;
 }
 
 #content div.box table td.last
@@ -3189,4 +3191,236 @@ div.form div.fields div.buttons div.highlight .ui-state-hover
 
 .clearfix {
 zoom: 1;
+}
+
+/* -----------------------------------------------------------
+	added by Lynn
+----------------------------------------------------------- */
+input[type='submit']{
+background-color: whiteSmoke;
+border: 1px solid #A3A3A3;
+}
+
+.operate a{
+	padding: 0 10px 0 10px;
+}
+
+#header_toolbar {
+	height: 40px;
+	background: #313131;
+	background: -moz-linear-gradient(top, #313131 0, #101010 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #313131),
+		color-stop(100%, #101010) );
+	background: -webkit-linear-gradient(top, #313131 0, #101010 100%);
+	background: -o-linear-gradient(top, #313131 0, #101010 100%);
+	background: -ms-linear-gradient(top, #313131 0, #101010 100%);
+	background: linear-gradient(top, #313131 0, #101010 100%);
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#313131', endColorstr = '#101010', GradientType = 0 )
+}
+#header_toolbar h1 {
+	margin: 0
+}
+#header_toolbar h1 {
+	color: #fff;
+	font-size: 17px;
+	line-height: 37px
+}
+.grid_1,.grid_2,.grid_3,.grid_4,.grid_5,.grid_6,.grid_7,.grid_8,.grid_9,.grid_10,.grid_11,.grid_12
+	{
+	display: inline;
+	float: left;
+	position: relative;
+	margin-left: 1%;
+	margin-right: 1%
+}
+.container_12 {
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%
+}
+.container_12 .grid_4 {
+	width: 31.333%
+}
+.container_12 .grid_8 {
+	width: 64.667%
+}
+.toolbar_large .toolcaption {
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
+	filter: dropshadow(color = #CC000000, offx = 0, offy = 1)
+}
+
+.toolbar_large .dropdown {
+	color: #2b2b2b
+}
+
+.toolbar_large .dropdown li:hover a,.toolbar_large .dropdown li:active a
+	{
+	color: #fff
+}
+.toolbar_small,.toolbar_large {
+	display: inline-block;
+	position: relative;
+	margin-left: 5px
+}
+.toolbar_large .toolbutton {
+	position: relative;
+	height: 25px;
+	line-height: 25px;
+	margin: 6px 0;
+	border-radius: 3px;
+	border: 1px solid #000;
+	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	-moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	background: url(../img/sprites/toolbar/bg-normal.png)
+}
+
+.toolbar_large .toolbutton img {
+	margin-top: 2px
+}
+
+.toolbar_large .toolcaption:hover {
+	background: url(../img/sprites/toolbar/bg-hover.png)
+}
+
+.toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu
+	{
+	float: left
+}
+
+.toolbar_large .toolicon {
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+	line-height: 20px;
+	text-align: center;
+	background: url(../img/sprites/toolbar/divider.png) no-repeat top right
+}
+
+.toolbar_large .toolcaption {
+	text-align: left;
+	cursor: pointer;
+	display: inline-block;
+	height: 25px;
+	padding: 0 5px 0 5px
+}
+
+.toolbar_large .toolcaption span {
+	position: relative
+}
+
+.toolbar_large .toolcaption.active {
+	background: url(../img/sprites/toolbar/bg-active.png);
+	color: #000;
+	text-shadow: none;
+	border-radius: 0 3px 0 0
+}
+
+.toolbar_large .dropdown {
+	position: absolute;
+	top: 25px;
+	right: -1px;
+	background: #fafafa;
+	border-radius: 0 0 3px 3px;
+	border: 1px solid #343434;
+	border-top: 0;
+	text-align: left;
+	padding: 0 4px;
+	z-index: 400;
+	display: none
+}
+
+.toolbar_large .dropdown ul {
+	padding-left: 0;
+	margin: 2px 0 5px 0
+}
+
+.toolbar_large .dropdown li {
+	list-style: none;
+	height: 24px;
+	border: 1px solid #fafafa
+}
+
+.toolbar_large .dropdown a {
+	font-size: 12px;
+	padding-left: 5px
+}
+
+.toolbar_large .dropdown li:hover,.toolbar_large .dropdown li:active {
+	background: #000;
+	border: 1px solid #232323;
+	border-radius: 3px;
+	background-image: url(../img/sprites/toolbar/bg-menu-hover.png);
+	-webkit-box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.24);
+	-moz-box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.24);
+	box-shadow: inset 1px 1px 1px 0 rgba(255, 255, 255, 0.24)
+}
+.ie7 .toolbar_small,.ie7 .toolbar_large {
+	zoom: 1
+}
+#header_main {
+	height: 60px;
+	border-top: 1px solid #7a9cc0;
+	border-bottom: 1px solid #04172b;
+	padding-top: 29px;
+	background: #366fac;
+	background: -moz-linear-gradient(top, rgba(54, 111, 172, 1) 0,
+		rgba(24, 75, 130, 1) 100% );
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(54,
+		111, 172, 1) ), color-stop(100%, rgba(24, 75, 130, 1) ) );
+	background: -webkit-linear-gradient(top, rgba(54, 111, 172, 1) 0,
+		rgba(24, 75, 130, 1) 100% );
+	background: -o-linear-gradient(top, rgba(54, 111, 172, 1) 0,
+		rgba(24, 75, 130, 1) 100% );
+	background: -ms-linear-gradient(top, rgba(54, 111, 172, 1) 0,
+		rgba(24, 75, 130, 1) 100% );
+	background: linear-gradient(top, rgba(54, 111, 172, 1) 0,
+		rgba(24, 75, 130, 1) 100% );
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#366fac', endColorstr = '#184b82', GradientType = 0 )
+}
+.toolbar_small .toolbutton {
+	cursor: pointer;
+	position: relative;
+	height: 25px;
+	margin: 6px 0;
+	border-radius: 3px;
+	border: 1px solid #000;
+	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	-moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+	background: url(../img/sprites/toolbar/bg-normal.png)
+}
+
+.toolbar_small .toolbutton:hover {
+	background: url(../img/sprites/toolbar/bg-hover.png)
+}
+
+.toolbar_small .toolbutton img {
+	margin: 7px 10px;
+	margin-top: 5px;
+	display: block
+}
+
+.toolbar_small>.toolbutton>span {
+	display: inline-block;
+	height: 14px;
+	width: 14px;
+	background: url(../img/sprites/toolbar/bg-counter.png);
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	text-align: center
+}
+.toolbar_small>.toolbutton>span {
+	font-size: 10px;
+	color: #fff;
+	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
+	filter: dropshadow(color = #CC000000, offx = 0, offy = 1);
+	font-family: Arial
+}
+.loginout{
+float:left;
 }

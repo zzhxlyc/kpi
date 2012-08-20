@@ -6,9 +6,10 @@
 <?php $view->fetch_meta(); ?>
 <?php $view->icon(); ?>
 <?php $view->css('style_login'); ?>
-<?php $view->css('reset'); ?>
+
 <?php $view->css('style_admin'); ?>
 <?php $view->css('blue'); ?>
+<?php //$view->css('style-old'); ?>
 <?php $view->fetch_css(); ?>
 <script>
 	window.ROOT_URL = '<?php echo ROOT_URL?>';

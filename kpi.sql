@@ -1,3 +1,18 @@
+/*
+Navicat MySQL Data Transfer
+
+Source Server         : localhost
+Source Server Version : 50141
+Source Host           : localhost:3306
+Source Database       : kpi
+
+Target Server Type    : MYSQL
+Target Server Version : 50141
+File Encoding         : 65001
+
+Date: 2012-08-16 09:52:32
+*/
+
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for `datasource`
@@ -10,7 +25,7 @@ CREATE TABLE `datasource` (
   `tablename` varchar(255) DEFAULT NULL,
   `valid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of datasource
@@ -25,8 +40,11 @@ CREATE TABLE `department` (
   `name` varchar(255) DEFAULT NULL,
   `valid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of department
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `ds_data`
@@ -42,8 +60,11 @@ CREATE TABLE `ds_data` (
   `time` datetime DEFAULT NULL,
   `mtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of ds_data
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `kpi_data`
@@ -57,14 +78,17 @@ CREATE TABLE `kpi_data` (
   `month` tinyint(4) DEFAULT NULL,
   `month2` tinyint(4) DEFAULT NULL,
   `type` tinyint(4) DEFAULT NULL COMMENT 'monthly or seasonly or yearly',
-  `kpi_table` int(11) NOT NULL DEFAULT '0',
+  `kpi_table` int(11) DEFAULT '0',
   `depart` int(11) DEFAULT NULL,
   `manager` int(11) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`,`kpi_table`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of kpi_data
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `kpi_data_item`
@@ -75,14 +99,19 @@ CREATE TABLE `kpi_data_item` (
   `kpi_data` int(11) DEFAULT NULL,
   `score_depart` int(11) DEFAULT NULL,
   `kpi_table_item` int(11) DEFAULT NULL,
+  `type` tinyint(4) DEFAULT NULL,
+  `weight` tinyint(4) DEFAULT NULL,
   `score` int(11) DEFAULT NULL,
   `verify` tinyint(4) DEFAULT NULL,
   `modified` tinyint(4) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
   `mtime` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of kpi_data_item
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `kpi_table`
@@ -92,12 +121,14 @@ CREATE TABLE `kpi_table` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
   `depart` int(11) DEFAULT NULL,
-  `manager` int(11) DEFAULT NULL,
   `time` datetime DEFAULT NULL,
   `valid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of kpi_table
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `kpi_table_item`
@@ -121,7 +152,11 @@ CREATE TABLE `kpi_table_item` (
   `modified` tinyint(4) DEFAULT NULL,
   `valid` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of kpi_table_item
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `supervise`
@@ -132,8 +167,11 @@ CREATE TABLE `supervise` (
   `user` int(11) DEFAULT NULL,
   `depart` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Records of supervise
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for `user`
@@ -155,4 +193,4 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', '管理员', '202cb962ac59075b964b07152d234b70', 'admin', null, '1', '1', '2012-08-07 14:48:35', '1');
+INSERT INTO `user` VALUES ('1', '管理员', '202cb962ac59075b964b07152d234b70', 'admin', null, '1', '1', '2012-08-15 19:03:19', '1');
