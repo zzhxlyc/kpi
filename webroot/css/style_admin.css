@@ -28,17 +28,19 @@ img
 /* -----------------------------------------------------------
 	anchors
 ----------------------------------------------------------- */ 
-
 a
 {
 	color: #0066CC;	
 	text-decoration: none;
 	cursor: pointer;
 }
-
+a.a_loginout
+{
+	color: #FFFFFF;
+}
 a:hover
 {
-	color: #000000;	
+	color: #666699;	
 	text-decoration: underline;
 }
 
@@ -3199,6 +3201,7 @@ zoom: 1;
 input[type='submit']{
 background-color: whiteSmoke;
 border: 1px solid #A3A3A3;
+margin: 10px 0
 }
 
 .operate a{
@@ -3235,12 +3238,12 @@ border: 1px solid #A3A3A3;
 	margin-right: 1%
 }
 .container_12 {
-	width: 92%;
+	width: 94%;
 	margin-left: 4%;
 	margin-right: 4%
 }
 .container_12 .grid_4 {
-	width: 31.333%
+	width: 31%
 }
 .container_12 .grid_8 {
 	width: 64.667%
@@ -3262,9 +3265,11 @@ border: 1px solid #A3A3A3;
 .toolbar_small,.toolbar_large {
 	display: inline-block;
 	position: relative;
-	margin-left: 5px
+	margin-left: 5px;
+	float: right;
+	
 }
-.toolbar_large .toolbutton {
+.toolbar_large {
 	position: relative;
 	height: 25px;
 	line-height: 25px;
@@ -3277,7 +3282,7 @@ border: 1px solid #A3A3A3;
 	background: url(../img/sprites/toolbar/bg-normal.png)
 }
 
-.toolbar_large .toolbutton img {
+.toolbar_large img {
 	margin-top: 2px
 }
 
@@ -3285,7 +3290,7 @@ border: 1px solid #A3A3A3;
 	background: url(../img/sprites/toolbar/bg-hover.png)
 }
 
-.toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu
+.toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu, .toolbar_large .toolicon_lock
 	{
 	float: left
 }
@@ -3296,8 +3301,16 @@ border: 1px solid #A3A3A3;
 	height: 25px;
 	line-height: 20px;
 	text-align: center;
-	background: url(../img/sprites/toolbar/divider.png) no-repeat top right
 }
+.toolbar_large .toolicon_lock {
+	display: inline-block;
+	width: 30px;
+	height: 25px;
+	line-height: 20px;
+	text-align: center;
+	padding: 2px 0 0 10px
+}
+
 
 .toolbar_large .toolcaption {
 	text-align: left;
@@ -3312,7 +3325,6 @@ border: 1px solid #A3A3A3;
 }
 
 .toolbar_large .toolcaption.active {
-	background: url(../img/sprites/toolbar/bg-active.png);
 	color: #000;
 	text-shadow: none;
 	border-radius: 0 3px 0 0
@@ -3408,7 +3420,6 @@ border: 1px solid #A3A3A3;
 	display: inline-block;
 	height: 14px;
 	width: 14px;
-	background: url(../img/sprites/toolbar/bg-counter.png);
 	position: absolute;
 	top: -5px;
 	right: -5px;
@@ -3422,5 +3433,7 @@ border: 1px solid #A3A3A3;
 	font-family: Arial
 }
 .loginout{
-float:left;
+	float:left;
+	margin:0;
+	padding: 0 5px;
 }

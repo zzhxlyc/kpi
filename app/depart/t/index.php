@@ -8,7 +8,6 @@
 				</h1>
 				<div class="grid_4">
 					<div class="toolbar_large">
-						<div class="toolbutton">
 							<div class="toolicon">
 								<img
 									src="<?php echo IMAGE_HOME?>/user.png"
@@ -17,29 +16,17 @@
 							<div class="toolmenu">
 							
 								<div class="toolcaption" style="min-width: 46px;">
-									<span>Administrator</span>
+									<span>管理员</span>
 								</div>
-								<div class="dropdown" style="display: none;">
-									<ul>
-										<li>
-											<a
-												href="http://envato.stammtec.de/themeforest/peach/dashboard.html#">Settings</a>
-										</li>
-										<li>
-											<a
-												href="http://envato.stammtec.de/themeforest/peach/dashboard.html#">Logout</a>
-										</li>
-									</ul>
-								</div>
+							</div>
+							<div class="toolicon_lock">
+								<img
+									src="<?php echo IMAGE_HOME?>/lock.png"
+									width="16" height="16" alt="user">
 							</div>
 							<div class="loginout">
-							<form action="<?php echo ROOT_URL.'/loginout'?>" method="post">
-							<div>
-							<input type="submit" value="注销" />
+								<a class="a_loginout" href="<?php echo ROOT_URL.'/loginout'?>"> 注销</a>
 							</div>
-						</form>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
