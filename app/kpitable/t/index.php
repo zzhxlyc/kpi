@@ -1,26 +1,37 @@
 
-<div id="header">
-	<!-- logo -->
-	<div id="logo">
-		<h1>杭州钱鸿集团KPI系统</h1>
-	</div>
-	<!-- end logo -->
-	<!-- user -->
-	<ul id="user">
-		<li class="first">
-			<span>
-				<?php echo $User->name;?>
-			</span>
-		</li>
-		<li>
-			<a href="<?php echo ROOT_URL.'/loginout'?>"><span>注销</span>
-			</a>
-		</li>
-	</ul>
-	<!-- end user -->
-	<div id="header-inner">
-	</div>
-</div>
+<header>
+		<div id="header_toolbar">
+				<h1 class="grid_1">
+					杭州钱鸿集团KPI系统
+				</h1>
+				<div class="grid_2">
+					<div class="toolbar_large">
+							<div class="toolicon">
+								<img
+									src="<?php echo IMAGE_HOME?>/user.png"
+									width="16" height="16" alt="user">
+							</div>
+							<div class="toolmenu">
+								<div class="toolcaption" style="min-width: 46px;">
+									<span>管理员</span>
+								</div>
+							</div>
+							<div class="toolicon_lock">
+								<img
+									src="<?php echo IMAGE_HOME?>/lock.png"
+									width="16" height="16" alt="user">
+							</div>
+							<div class="loginout">
+								<a class="a_loginout" href="<?php echo ROOT_URL.'/loginout'?>"> 注销</a>
+							</div>
+					</div>
+				</div>
+		</div>
+		<nav id="header_main">
+		<div class="container_12">
+		</div>
+		</nav>
+</header>		
 
 <div id="content">
 	<div id="left">
@@ -40,9 +51,9 @@
 					<table>
 						<thead>
 							<tr>
-								<th class="center">考核表名称</th>
-								<th class="center">部门</th>
-								<th class="center">操作</th>
+								<th class="column1">考核表名称</th>
+								<th class="column2">部门</th>
+								<th class="column3">操作</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -73,13 +84,11 @@
 			</div>
 		</div>
 		<!-- end table -->
-		</form>
 		<form action="<?php echo $home.'/add'?>" method="post">
-			<div>
-				<input type="submit" value="添加KPI考核表" />
-			</div>
-		</form>
-
+		<div>
+			<input type="submit" value="添加KPI考核表" />
+		</div>
+	</form>
 	</div>
 </div>
 
