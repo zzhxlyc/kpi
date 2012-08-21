@@ -27,11 +27,6 @@
 				</DIV> 
 			</DIV> 
 			<DIV class="actions"> 
-				<DIV style="margin-top: 8px;" class="actions-left"> 
-				<LABEL> 
-					<INPUT name="autologin" type="checkbox" /> 记住账号和密码
-				</LABEL> 
-				</DIV> 
 				<DIV class="actions-right"> <INPUT value="登录" type="submit" /> </DIV> 
 			</DIV> 
 		</FORM> 

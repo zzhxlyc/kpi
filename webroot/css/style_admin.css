@@ -18,7 +18,7 @@ body
 	height: 100%;
 	background: #d1d1d1 url("../images/background.png") repeat;
 	font-family: "PT Sans",sans-serif;
-	font-size: 11px;
+	font-size: 12px;
 }
 
 /* -----------------------------------------------------------
@@ -240,7 +240,7 @@ input[type='submit']{
 
 #content #left #menu
 {
-	margin: 5px 10px 0 60px;
+	margin: 0 10px 0 60px;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -321,7 +321,7 @@ input[type='submit']{
 
 #content #right
 {
-	margin: -10px 60px 0 290px;
+	margin: 0 60px 0 290px;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -333,7 +333,7 @@ input[type='submit']{
 
 #content div.box
 {
-	margin: 15px 0 0 0;
+	margin: 0;
 	padding: 0 0 10px 0;
 	clear: both;
 	overflow: hidden;
@@ -364,7 +364,7 @@ input[type='submit']{
 	padding: 0;
 	clear: both;
 	overflow: hidden;
-	background: #336699 url("../../resources/images/colors/blue/title.png") repeat-x;
+	background: #336699;
 }
 
 #content div.box div.title h1,
@@ -430,7 +430,7 @@ div.form
 
 #content div.box table th
 {
-	padding: 10px;
+	padding: 8px;
 	background: #eeeeee;
 	border-right: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
@@ -454,7 +454,7 @@ div.form
 
 #content div.box table td
 {
-	padding: 10px;
+	padding: 8px;
 	background: #ffffff;
 	border-right: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
@@ -464,6 +464,10 @@ div.form
 #content div.box table td.center
 {
 	text-align: center;
+}
+#content div.box table td.center input[type='checkbox']
+{
+	margin: 0;
 }
 #content div.box table td.operate a{
 	padding: 0 10px 0 10px;
@@ -480,7 +484,7 @@ div.form
 }
 #content div.edit_panel div.title
 {
-	margin: 0 0 20px 0;
+	margin: 0 0 10px 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
@@ -489,19 +493,22 @@ div.form
 }
 #content div.edit_panel div.data
 {
-	padding-left: 10px;
-	margin: 15px 0;
+	padding: 8px 20px;
 	height: 27px;
 }
 #content div.edit_panel div.data input[type='text']
 {
-	width: 300px;
+	width: 40%;
+	display: inline-block;
+	margin:0 10px 0 0;
+	padding-left: 5px;
 }
 
 #content div.edit_panel div.data label
 {
 	float: left;
 	padding: 7px 20px 0 0;
+	font-weight: normal;
 }
 #content div.edit_panel div.data input[type='submit'], #content div.edit_panel div.data input[type='button'] 
 {
@@ -511,16 +518,18 @@ div.form
 	line-height: 25px;
 	text-align: center;
 	padding: 0px 10px;
-	margin: 0;
+	margin: 0 25px 0 0;
 	float: left;
-}
-#content div.edit_panel div.data input[type='button']
-{
-	margin-left: 25px;
 }
 #content div.edit_panel div.data p
 {
 	color: #547EAB;
+	font-weight: bold;
+	margin: 0;
+}
+#content div.edit_panel div.data span.error
+{
+	color: #B0171F;
 	font-weight: bold;
 }
 
