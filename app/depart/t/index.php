@@ -2,11 +2,10 @@
 
 <header>
 		<div id="header_toolbar">
-			<div class="container_12">
-				<h1 class="grid_8">
+				<h1 class="grid_1">
 					杭州钱鸿集团KPI系统
 				</h1>
-				<div class="grid_4">
+				<div class="grid_2">
 					<div class="toolbar_large">
 							<div class="toolicon">
 								<img
@@ -14,7 +13,6 @@
 									width="16" height="16" alt="user">
 							</div>
 							<div class="toolmenu">
-							
 								<div class="toolcaption" style="min-width: 46px;">
 									<span>管理员</span>
 								</div>
@@ -29,7 +27,6 @@
 							</div>
 					</div>
 				</div>
-			</div>
 		</div>
 		<nav id="header_main">
 		<div class="container_12">
@@ -43,7 +40,6 @@
 	</div>
 	<div id="right">
 		<form action="<?php echo $home.'/remove'?>" method="post">
-		<!-- table -->
 		<div class="box">
 			<!-- box / title -->
 			<div class="title">
@@ -51,16 +47,16 @@
 			</div>
 			<!-- end box / title -->
 			<div class="table">
-				
-				<table>
-					<thead>
-						<tr>
-							<th class="center">选择</th>
-							<th class="center">部门</th>
-							<th class="center">操作</th>
-						</tr>
-					</thead>
-					<tbody>
+			<!-- table -->
+			<table>
+				<thead>
+					<tr>
+						<th class="column1">选择</th>
+						<th class="column2">部门</th>
+						<th class="column3">操作</th>
+					</tr>
+				</thead>
+				<tbody>
 						<?php 
 							$i = 0;
 							if(is_array($list)){
@@ -83,10 +79,9 @@
 						?>
 					</tbody>
 			</table>
-				
+			<!-- end table -->	
 			</div>
 		</div>
-		<!-- end table -->
 		<div>
 			<input type="submit" value="批量删除" />
 		</div>
