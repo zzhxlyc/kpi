@@ -6,8 +6,8 @@
 	<ul id="menu-products" class="opened">
 	<!--<li><a><span><?php echo $User->name;?></span></a></li>-->
 	<?php if($User->type == UserType::ADMIN){?>
-	<li><a href="<?php echo DEPART_HOME.'/index'?>"><span>部门管理</span></a></li>
-	<li><a href="<?php echo MANAGER_HOME.'/index'?>"><span>公司主管</span></a></li>
+	<li ><a href="<?php echo DEPART_HOME.'/index'?>"><span>部门管理</span></a></li>
+	<li ><a href="<?php echo MANAGER_HOME.'/index'?>"><span>公司主管</span></a></li>
 	<li><a href="<?php echo DIRECTOR_HOME.'/index'?>"><span>部门主管</span></a></li>
 	<li><a href="<?php echo DATASOURCE_HOME.'/index'?>"><span>数据源表格</span></a></li>
 	<li><a href="<?php echo KPITABLE_HOME.'/index'?>"><span>KPI考核表管理</span></a></li>

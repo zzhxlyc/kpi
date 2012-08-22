@@ -2,7 +2,6 @@
 @import url( http://fonts.googleapis.com/css?family=PT+Sans:700italic );
 @import url( http://fonts.googleapis.com/css?family=PT+Sans:700 );
 @import url( http://fonts.googleapis.com/css?family=PT+Sans:400 );
-
 /* -----------------------------------------------------------
 	main stylesheet
 ----------------------------------------------------------- */
@@ -10,7 +9,6 @@ html
 {
 	height: 100%;  
 }
-
 body
 {
 	margin: 0;
@@ -20,16 +18,13 @@ body
 	font-family: "PT Sans",sans-serif;
 	font-size: 12px;
 }
-
 /* -----------------------------------------------------------
 	images
 ----------------------------------------------------------- */ 
-
 img
 {
 	border: none;	
 }
-
 /* -----------------------------------------------------------
 	anchors
 ----------------------------------------------------------- */ 
@@ -48,11 +43,9 @@ a:hover
 	color: #b9dcff;	
 	text-decoration: underline;
 }
-
 /* -----------------------------------------------------------
 	headings
 ----------------------------------------------------------- */ 
-
 h1, h2, h3, h4, h5, h6
 {
 	color: #292929;
@@ -65,8 +58,10 @@ h1
 /* -----------------------------------------------------------
 	label
 ----------------------------------------------------------- */
-
-
+label
+{
+	font-weight: normal;
+}
 /* -----------------------------------------------------------
 	input
 ----------------------------------------------------------- */ 
@@ -75,7 +70,6 @@ input[type='submit']{
 	border: 1px solid #A3A3A3;
 	margin: 10px 0
 }
-
 /* -----------------------------------------------------------
 	header_toolbar
 ----------------------------------------------------------- */
@@ -129,20 +123,16 @@ input[type='submit']{
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
 	background: url(../img/sprites/toolbar/bg-normal.png)
 }
-
 .toolbar_large img {
 	margin-top: 2px
 }
-
 .toolbar_large .toolcaption:hover {
 	background: url(../img/sprites/toolbar/bg-hover.png)
 }
-
 .toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu, .toolbar_large .toolicon_lock
 	{
 	float: left
 }
-
 .toolbar_large .toolicon {
 	display: inline-block;
 	width: 30px;
@@ -177,11 +167,9 @@ input[type='submit']{
 	height: 25px;
 	padding: 0 5px 0 5px
 }
-
 .toolbar_large .toolcaption span {
 	position: relative
 }
-
 .toolbar_large .toolcaption.active {
 	color: #000;
 	text-shadow: none;
@@ -190,8 +178,7 @@ input[type='submit']{
 /* -----------------------------------------------------------
 	header_main
 ----------------------------------------------------------- */
-#header_main {
-	height: 60px;
+.header_main {
 	border-top: 1px solid #7a9cc0;
 	border-bottom: 1px solid #04172b;
 	padding-top: 29px;
@@ -211,10 +198,13 @@ input[type='submit']{
 	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
 		'#366fac', endColorstr = '#184b82', GradientType = 0 )
 }
+nav.header_main
+{
+	height: 60px;
+}
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */ 
-
 #content 
 {
 	margin: 20px 0 10px 0;
@@ -223,11 +213,9 @@ input[type='submit']{
 	clear: both;
 	overflow: hidden;
 }
-
 /* -----------------------------------------------------------
 	content -> left
 ----------------------------------------------------------- */ 
-
 #content #left
 {
 	left: 0;
@@ -237,7 +225,6 @@ input[type='submit']{
 /* -----------------------------------------------------------
 	content -> left -> menu
 ----------------------------------------------------------- */ 
-
 #content #left #menu
 {
 	margin: 0 10px 0 60px;
@@ -248,19 +235,16 @@ input[type='submit']{
 /* -----------------------------------------------------------
 	content -> left -> menu / links
 ----------------------------------------------------------- */
-
 #content #left #menu ul
 {
 	margin: 0;
 	padding: 0;
 	background: #376ea6;
 }
-
 #content #left #menu ul.opened
 {
 	display: block;	
 }
-
 #content #left #menu li
 {
 	margin: 0;
@@ -274,7 +258,6 @@ input[type='submit']{
 	font-size: 1px;
 	line-height: 0;
 }
-
 #content #left #menu li a
 {
 	margin: 0 0 0 6px;
@@ -288,20 +271,16 @@ input[type='submit']{
 	line-height: normal;
 	text-decoration: none;
 }
-
 #content #left #menu li a:hover
 {
 	color: #b9dcff;
 }
-
 #content #left #menu li ul
 {
 	margin: 0;
 	padding: 0;
 	border-left: 18px solid #326395;
 }
-
-
 #content #left #menu li ul li
 {
 	margin: 0;
@@ -314,11 +293,9 @@ input[type='submit']{
 	border-bottom: 1px solid #326395;
 	color: #ffffff;
 }
-
 /* -----------------------------------------------------------
 	content -> right
 ----------------------------------------------------------- */ 
-
 #content #right
 {
 	margin: 0 60px 0 290px;
@@ -326,11 +303,9 @@ input[type='submit']{
 	clear: both;
 	overflow: hidden;
 }
-
 /* -----------------------------------------------------------
 	content -> right -> box
 ----------------------------------------------------------- */
-
 #content div.box
 {
 	margin: 0;
@@ -339,34 +314,29 @@ input[type='submit']{
 	overflow: hidden;
 	background: #ffffff;
 }
-
 #content div.box-left
 {
 	width: 49%;
 	clear: none;
 	float: left;	
 }
-
 #content div.box-right
 {
 	width: 49%;
 	clear: none;
 	float: right;	
 }
-
 /* -----------------------------------------------------------
 	content -> right -> box / title
 ----------------------------------------------------------- */
-
-#content div.box div.title
+#content div.box div.header_main.title
 {
 	margin: 0 0 20px 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
-	background: #336699;
+	height: 32px;
 }
-
 #content div.box div.title h1,
 #content div.box div.title h2,
 #content div.box div.title h3,
@@ -383,7 +353,6 @@ input[type='submit']{
 /* -----------------------------------------------------------
 	content -> right -> box / headings
 ----------------------------------------------------------- */
-
 #content div.box h1,
 #content div.box h2,
 #content div.box h3,
@@ -400,7 +369,6 @@ input[type='submit']{
 /* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
-
 div.form
 {
 	margin: 0;
@@ -411,7 +379,6 @@ div.form
 /* -----------------------------------------------------------
 	content -> right -> box / tables
 ----------------------------------------------------------- */
-
 #content div.box div.table
 {
 	margin: 0;
@@ -419,7 +386,6 @@ div.form
 	clear: both;
 	overflow: hidden;
 }
-
 #content div.box table
 {
 	margin: 0;
@@ -427,7 +393,6 @@ div.form
 	width: 100%;
 	border-collapse: collapse;
 }
-
 #content div.box table th
 {
 	padding: 8px;
@@ -436,22 +401,18 @@ div.form
 	border-bottom: 1px solid #cdcdcd;
 	text-align: center;
 }
-
 #content div.box table th.column1
 {
 	width: 241px
 }
-
 #content div.box table th.column2
 {
 	width: 383px
 }
-
 #content div.box table th.column3
 {
 	width: 248px
 }
-
 #content div.box table td
 {
 	padding: 8px;
@@ -472,7 +433,6 @@ div.form
 #content div.box table td.operate a{
 	padding: 0 10px 0 10px;
 }
-
 /* -----------------------------------------------------------
 	content -> edit_panel
 ----------------------------------------------------------- */
@@ -480,36 +440,58 @@ div.form
 {
 	margin: 0 300px 0 300px;
 	background: white;
-	height: 170px;
+	height: auto;
 }
-#content div.edit_panel div.title
+#content div.edit_panel div.header_main.title
 {
-	margin: 0 0 10px 0;
-	padding: 0;
-	clear: both;
-	overflow: hidden;
-	background: #336699;
+	margin: 0 0 20px 0;
 	height: 45px;
+	padding: 0 0 0 20px;
 }
-#content div.edit_panel div.data
+#content div.edit_panel div.header_main.title h2
+{
+	color: white;
+}
+#content div.edit_panel div.data,
+#content div.edit_panel div.has_subdata
 {
 	padding: 8px 20px;
 	height: 27px;
 }
-#content div.edit_panel div.data input[type='text']
+#content div.edit_panel div.slug_rule
+{
+	padding: 0px 20px;
+	margin: -4px 0 8px 0;
+}
+#content div.edit_panel div.has_subdata
+{
+	margin-bottom: -20px;
+}
+#content div.edit_panel div.data div,
+#content div.edit_panel div.has_subdata div,
+#content div.edit_panel div.slug_rule div
+{
+	width: 10%;
+	display: inline-block;
+	text-align: left;
+}
+#content div.edit_panel div.data input[type='text'], 
+#content div.edit_panel div.data input[type='password'], 
+#content div.edit_panel div.data div.readonly, 
+#content div.edit_panel div.has_subdata div.blank_div
 {
 	width: 40%;
 	display: inline-block;
 	margin:0 10px 0 0;
 	padding-left: 5px;
 }
-
-#content div.edit_panel div.data label
+#content div.edit_panel div.data label,
+#content div.edit_panel div.has_subdata label
 {
-	float: left;
-	padding: 7px 20px 0 0;
+	padding: 7px 0 0 0;
 	font-weight: normal;
 }
+
 #content div.edit_panel div.data input[type='submit'], #content div.edit_panel div.data input[type='button'] 
 {
 	display: inline-block;
@@ -519,13 +501,15 @@ div.form
 	text-align: center;
 	padding: 0px 10px;
 	margin: 0 25px 0 0;
-	float: left;
+	
 }
-#content div.edit_panel div.data p
+#content div.edit_panel p
 {
 	color: #547EAB;
 	font-weight: bold;
 	margin: 0;
+	height: 27px;
+	padding: 8px 20px;
 }
 #content div.edit_panel div.data span.error
 {
@@ -533,4 +517,29 @@ div.form
 	font-weight: bold;
 }
 
-
+#content div.edit_panel div.subdata
+{
+	padding: 4px 20px;
+	height: 20px;
+}
+#content div.edit_panel div.subdata label
+{
+	float: left;
+	padding: 4px 20px 0 0;
+	font-weight: normal;
+	line-height: 12px;
+	width: 16%;
+	text-align: right;	
+}
+#content div.edit_panel div.subdata label.void
+{
+	width: 8%;
+	visibility: hidden;
+}
+#content div.edit_panel div.subdata input[type='checkbox']
+{
+	margin: 0;
+	height: 20px;
+	width: 60%;
+	display: inline-block;
+}

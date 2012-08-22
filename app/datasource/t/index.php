@@ -27,7 +27,7 @@
 					</div>
 				</div>
 		</div>
-		<nav id="header_main">
+		<nav class="header_main">
 		<div class="container_12">
 		</div>
 		</nav>
@@ -42,7 +42,7 @@
 		<!-- table -->
 		<div class="box">
 			<!-- box / title -->
-			<div class="title">
+			<div class="header_main title">
 				<h5></h5>
 			</div>
 			<!-- end box / title -->
