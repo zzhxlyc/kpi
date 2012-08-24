@@ -36,7 +36,9 @@
 
 <div class="data">
 	<div><label for="desc">指标解释</label></div>
-	<textarea rows="5" cols="60" name="desc"><?php echo $tableitem->desc?></textarea>
+</div>
+<div class="data textarea_in">
+	<textarea rows="5" name="desc"><?php echo $tableitem->desc?></textarea>
 	<span class="error"><?php echo $errors['desc']?></span>
 </div>
 
@@ -60,6 +62,8 @@
 
 <div class="data">
 	<div><label for="standard">评分标准</label></div>
+</div>
+<div class="data textarea_in">
 	<textarea rows="5" cols="60" name="standard"><?php echo $tableitem->standard?></textarea>
 	<span class="error"><?php echo $errors['standard']?></span>
 </div>

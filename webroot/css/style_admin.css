@@ -492,6 +492,12 @@ div.form
 	display: inline-block;
 	text-align: left;
 }
+#content div.edit_panel div.data.textarea_in
+{
+	height: auto;
+	margin-top: -43px;
+	margin-left: 10.5%;
+}
 #content div.edit_panel div.data input[type='text'], 
 #content div.edit_panel div.data input[type='password'], 
 #content div.edit_panel div.data div.readonly, 
@@ -564,4 +570,8 @@ div.form
 #content div.edit_panel.datasource
 {
 	margin: 0 200px;
+}
+#content div.edit_panel div.data.textarea_in textarea
+{
+	width: 40%;
 }
