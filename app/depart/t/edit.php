@@ -13,7 +13,7 @@
 					<form action="" method="post" >
 					<div class="data_wrapper">
 						<div class="data">
-							<label for="name">部门名称</label>
+							<div><label for="name">部门名称</label></div>
 							<div>
 							<input size="20" type="text" name="name" value="<?php echo $depart->name?>" />
 							<span class="error"><?php echo $errors['name']?></span></div>
@@ -28,7 +28,7 @@
 							<div class="actions-left"><input type="submit" value="保存" /></div>
 							<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
 							<input type="hidden" name="id" value="<?php echo $depart->id?>" />
-						</div>
+					</div>
 
 					</form>
 				</div>
