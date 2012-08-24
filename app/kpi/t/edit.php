@@ -4,7 +4,7 @@
 	}
 	else{
 ?>
-<form action="" method="post" >
+<form action="<?php echo $home.'/edit?id='.$kpidata->id?>" method="post" >
 
 <div class="row">
 	<label for="name">考核表名称</label>
