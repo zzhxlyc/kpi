@@ -4,7 +4,7 @@
 	}
 	else{
 ?>
-<form action="" method="post" >
+<form action="<?php echo $home.'/edit?id='.$depart->id?>" method="post" >
 	
 <div class="row">
 	<label for="name">部门名称</label>

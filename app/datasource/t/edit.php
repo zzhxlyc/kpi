@@ -4,7 +4,7 @@
 	}
 	else{
 ?>
-<form action="" method="post" >
+<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post" >
 	
 <div class="row">
 	<label for="name">表格名称</label>

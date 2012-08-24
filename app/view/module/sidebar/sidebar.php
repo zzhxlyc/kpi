@@ -27,6 +27,8 @@
 	<li><a href="<?php echo SOURCEDATA_HOME.'/index'?>"><span>数据源数据管理</span></a></li>
 	<?php }?>
 	
+	<li><a><span></span></a></li>
+	<li><a href="<?php echo USER_HOME.'/pswd'?>"><span>修改密码</span></a></li>
 	<li><a href="<?php echo ROOT_URL.'/loginout'?>"><span>注销</span></a></li>
 </ul>
 <?php }?>

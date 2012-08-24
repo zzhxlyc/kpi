@@ -58,7 +58,9 @@ class Controller{
 			$this->view->set_template($module, $template);
 		}
 		if(empty($this->view->title)){
-			$this->view->set_title($this->request->get_method());
+			if(WEB_TITLE){
+				$this->view->set_title(WEB_TITLE);
+			}
 		}
 	}
 	
