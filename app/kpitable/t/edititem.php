@@ -4,15 +4,11 @@
 	}
 	else{
 ?>
-<<<<<<< HEAD
-<form action="<?php echo $home.'/edititem?id='.$tableitem->id?>" method="post" >
-=======
 <div id="content">
 	<form action="" method="post" >
 		<div class="edit_panel">
 			<div class="header_main title" >
 			</div>
->>>>>>> 1e3fe3ed71e9088fed0f8fea9649106e219d3e5a
 
 <div class="data">
 	<div><label for="name">名称</label></div>

@@ -4,12 +4,6 @@
 	}
 	else{
 ?>
-<<<<<<< HEAD
-<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post" >
-	
-<div class="row">
-	<label for="name">表格名称</label>
-=======
 <div id="content">
 	<form action="" method="post" >
 		<div class="edit_panel">
@@ -17,7 +11,6 @@
 			</div>	
 <div class="data">
 	<div><label for="name">表格名称</label></div>
->>>>>>> 1e3fe3ed71e9088fed0f8fea9649106e219d3e5a
 	<input size="50" type="text" name="name" value="<?php echo $datasource->name?>" />
 	<span class="error"><?php echo $errors['name']?></span>
 </div>

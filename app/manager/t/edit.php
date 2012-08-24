@@ -5,15 +5,6 @@
 	}
 	else{
 ?>
-<<<<<<< HEAD
-<form action="<?php echo $home.'/edit?id='.$user->id?>" method="post" >
-	
-<div class="row">
-	<label for="name">姓名</label>
-	<input size="20" type="text" name="name" value="<?php echo $user->name?>" />
-	<span class="error"><?php echo $errors['name']?></span>
-</div>
-=======
 		<div id="content">
 			<form action="" method="post" >
 				<div class="edit_panel">
@@ -24,7 +15,6 @@
 						<input size="20" type="text" name="name" value="<?php echo $user->name?>" />
 						<span class="error"><?php echo $errors['name']?></span>
 					</div>
->>>>>>> 1e3fe3ed71e9088fed0f8fea9649106e219d3e5a
 
 					<div class="data">
 						<div><label for="slug">登录名</label></div>
@@ -68,4 +58,3 @@
 				</div>
 			</form>
 		</div>	
-
