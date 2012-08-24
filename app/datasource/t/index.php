@@ -1,38 +1,4 @@
 
-<header>
-		<div id="header_toolbar">
-				<h1 class="grid_1">
-					杭州钱鸿集团KPI系统
-				</h1>
-				<div class="grid_2">
-					<div class="toolbar_large">
-							<div class="toolicon">
-								<img
-									src="<?php echo IMAGE_HOME?>/user.png"
-									width="16" height="16" alt="user">
-							</div>
-							<div class="toolmenu">
-								<div class="toolcaption" style="min-width: 46px;">
-									<span>管理员</span>
-								</div>
-							</div>
-							<div class="toolicon_lock">
-								<img
-									src="<?php echo IMAGE_HOME?>/lock.png"
-									width="16" height="16" alt="user">
-							</div>
-							<div class="loginout">
-								<a class="a_loginout" href="<?php echo ROOT_URL.'/loginout'?>"> 注销</a>
-							</div>
-					</div>
-				</div>
-		</div>
-		<nav class="header_main">
-		<div class="container_12">
-		</div>
-		</nav>
-</header>		
-
 <div id="content">
 	<div id="left">
 		<?php include(MODULE_DIR.'/sidebar/sidebar.php')?>

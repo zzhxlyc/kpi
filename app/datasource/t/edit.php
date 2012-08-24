@@ -4,41 +4,54 @@
 	}
 	else{
 ?>
-<form action="" method="post" >
-	
-<div class="row">
-	<label for="name">表格名称</label>
+<div id="content">
+	<form action="" method="post" >
+		<div class="edit_panel">
+			<div class="header_main title" >
+			</div>	
+<div class="data">
+	<div><label for="name">表格名称</label></div>
 	<input size="50" type="text" name="name" value="<?php echo $datasource->name?>" />
 	<span class="error"><?php echo $errors['name']?></span>
 </div>
 
-<div class="row">
-	<label for="slug">别名</label>
+<div class="data">
+	<div><label for="slug">别名</label></div>
 	<?php echo $datasource->slug?>
 </div>
 
-<div class="row">
-	<label for="slug">添加属性</label>
+<div class="data">
+	<div><label for="slug">添加属性</label></div>
 	<input size="20" type="text" id="new_attr" />
-	<a href="javascript:void(0)" onclick="add_row()">添加一行</a>
+	<a href="javascript:void(0)" onclick="add_data()">添加一行</a>
 </div>
 
-<div class="row">
-	<label for="slug">修改属性</label>
-	标示：<input size="20" type="text" id="old_column" />
-	新列名：<input size="20" type="text" id="new_comment" />
-	<a href="javascript:void(0)" onclick="modify_row()">修改这一行</a>
+<div class="has_subdata">
+	<div><label >修改属性</label></div>
+	<div class="blank_div"></div>
+</div>
+<div class="ds_subdata">
+	<div><label >标示：</label></div>
+	<input size="20" type="text" id="old_column" />
+</div>
+<div class="ds_subdata">
+	<div><label >新列名：</label></div>	
+	<input size="20" type="text" id="new_comment" />
+	<a href="javascript:void(0)" onclick="modify_data()">修改这一行</a>
 </div>
 
-<div class="row">
-	<label for="attr">属性表</label>
+<div class="data">
+	<div><label for="attr">属性表</label></div>
+</div>
+<div class="ds_table">
 	<table id="ds_table_attrs">
 		<tr><th align="left" width="50">标示</th>
 		<th align="left" width="200">列名</th><th>操作</th></tr>
 	</table>
 </div>
 
-<div class="row">
+
+<div class="data">
 	<input type="submit" value="保存" />
 	<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
 	<input type="hidden" name="id" value="<?php echo $datasource->id?>" />
@@ -46,7 +59,9 @@
 	<input type="hidden" id="comment" name="comment" />
 </div>
 
-</form>
+			</div>
+	</form>
+</div>
 
 <script type="text/javascript">
 <!--

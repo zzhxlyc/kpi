@@ -455,21 +455,39 @@ div.form
 #content div.edit_panel div.data,
 #content div.edit_panel div.has_subdata
 {
-	padding: 8px 20px;
+	padding: 8px 0 8px 20px;
 	height: 27px;
+	width: 100%
 }
 #content div.edit_panel div.slug_rule
 {
 	padding: 0px 20px;
 	margin: -4px 0 8px 0;
 }
+#content div.edit_panel div.ds_table
+{
+	padding: 0 0 8px 82px;
+	margin-top: -8px;
+	height: auto;
+}
 #content div.edit_panel div.has_subdata
 {
 	margin-bottom: -20px;
 }
+#content div.edit_panel div.subdata
+{
+	padding: 4px 20px;
+	height: 20px;
+}
+#content div.edit_panel div.ds_subdata
+{
+	padding: 0 0 10px 82px;
+	width: 100%
+}
 #content div.edit_panel div.data div,
 #content div.edit_panel div.has_subdata div,
-#content div.edit_panel div.slug_rule div
+#content div.edit_panel div.slug_rule div,
+#content div.edit_panel div.ds_subdata div
 {
 	width: 10%;
 	display: inline-block;
@@ -478,15 +496,21 @@ div.form
 #content div.edit_panel div.data input[type='text'], 
 #content div.edit_panel div.data input[type='password'], 
 #content div.edit_panel div.data div.readonly, 
-#content div.edit_panel div.has_subdata div.blank_div
+#content div.edit_panel div.has_subdata div.blank_div,
+#content div.edit_panel div.ds_subdata input[type='text']
 {
 	width: 40%;
 	display: inline-block;
 	margin:0 10px 0 0;
 	padding-left: 5px;
 }
+#content div.edit_panel div.ds_subdata input[type='text']
+{
+	width: 31%;
+}
 #content div.edit_panel div.data label,
 #content div.edit_panel div.has_subdata label
+#content div.edit_panel div.ds_subdata label
 {
 	padding: 7px 0 0 0;
 	font-weight: normal;
@@ -517,11 +541,6 @@ div.form
 	font-weight: bold;
 }
 
-#content div.edit_panel div.subdata
-{
-	padding: 4px 20px;
-	height: 20px;
-}
 #content div.edit_panel div.subdata label
 {
 	float: left;
