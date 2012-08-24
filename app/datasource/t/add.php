@@ -1,41 +1,50 @@
 
-<form action="" method="post" >
-
-<div class="row">
-	<label for="name">表格名称</label>
+<div id="content">
+	<form action="" method="post" >
+		<div class="edit_panel">
+			<div class="header_main title" >
+			</div>
+<div class="data">
+	<div><label for="name">表格名称</label></div>
 	<input size="50" type="text" name="name" value="<?php echo $datasource->name?>" />
 	<span class="error"><?php echo $errors['name']?></span>
 </div>
 
-<div class="row">
-	<label for="slug">别名</label>
+<div class="data">
+	<div><label for="slug">别名</label></div>
 	<input size="20" type="text" name="slug" value="<?php echo $datasource->slug?>" />
 	<span class="error"><?php echo $errors['slug']?></span>
 	推荐用英文单词、拼音首字母，此后不能修改
 </div>
 
-<div class="row">
-	<label for="slug">添加属性</label>
+<div class="data">
+	<div><label for="slug">添加属性</label></div>
 	<input size="20" type="text" id="new_attr" />
 	<a href="javascript:void(0)" onclick="add_row()">添加一行</a>
 </div>
 
-<div class="row">
-	<label for="attr">属性表</label>
+<div class="data">
+	<div><label for="attr">属性表</label></div>
+</div>
+<div class="ds_table_struct">
 	<table id="ds_table_attrs">
+	<thead>
 		<tr><th align="left" width="50">标示</th>
-			<th align="left" width="200">列名</th><th>操作</th></tr>
+		<th align="left" width="200">列名</th><th>操作</th></tr>
+	</thead>
 	</table>
 </div>
 
-<div class="row" style="margin: 20px 0">
+<div class="data">
 	<input type="submit" value="保存" />
 	<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
 	<input type="hidden" id="column" name="column" />
 	<input type="hidden" id="comment" name="comment" />
 </div>
 
-</form>
+			</div>
+	</form>
+</div>
 
 <script type="text/javascript">
 <!--
