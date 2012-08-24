@@ -13,14 +13,14 @@
 				<DIV class="section _100"> 
 					<LABEL for="user"> 账号</LABEL> 
 					<DIV> 
-						<INPUT class="required" type="text" name="user" value="<?php echo $user->user?>" /> 
+						<INPUT class="required" type="text" name="user" value="<?php echo $user?>" /> 
 						<span class="error"><?php echo $errors['user']?></span>	
 					</DIV>
 					
 				</DIV> 
 				<DIV class="section _100"> <LABEL for="password"> 密码 </LABEL> 
 					<DIV> 
-						<INPUT class="required" name="password" type="password" value="<?php echo $user->password?>" /> 
+						<INPUT class="required" name="password" type="password" /> 
 						<span class="error"><?php echo $errors['password']?></span>
 					</DIV> 
 					

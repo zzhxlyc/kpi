@@ -13,12 +13,13 @@ class LoginController extends AppController {
 	public function login(){
 		if($this->request->post){
 			$post = $this->request->post;
-			$user = trim($post['user']);
-			$password = trim($post['password']);
+			$user = esc_text(trim($post['user']));
+			$password = esc_text(trim($post['password']));
 			$errors = array();
 			if(strlen($user) == 0){
 				$errors['user'] = '用户名为空';
 			}
+			$this->set('user', $user);
 			if(strlen($password) == 0){
 				$errors['password'] = '密码为空';
 			}
