@@ -1,12 +1,11 @@
 
-<div id="content">
+<div id="right">
 	<form action="" method="post" >
-		<div class="edit_panel">
+		<div class="box _edit">
 			<div class="header_main title">
-				<h5></h5>
 			</div>
 			<div class="data_wrapper">
-			<div class="data">
+			<div class="data _edit">
 				<div><label for="name">部门名称</label></div>
 				<div><input size="20" type="text" name="name" value="<?php echo $depart->name?>" /></div>
 				<span class="error"><?php echo $errors['name']?></span>

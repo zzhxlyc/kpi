@@ -78,7 +78,7 @@ display: block;
 margin: 10px 0;
 border: 1px solid #C8C8C8;
 border-radius: 5px;
-padding: 5px 0;
+padding: 5px;
 outline: 0;
 -webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
 -moz-box-shadow: inset 0 2px 3px 0 rgba(18,16,11,0.13);
@@ -256,6 +256,7 @@ nav.header_main
 	left: 0;
 	width: 280px;
 	position: absolute;
+	padding-top: 14px;
 }
 /* -----------------------------------------------------------
 	content -> left -> menu
@@ -365,6 +366,7 @@ nav.header_main
 	content -> right -> box / title
 ----------------------------------------------------------- */
 #content div.box div.header_main.title
+#content div.boxs div.header_main.title
 {
 	margin: 0 0 20px 0;
 	padding: 0;
@@ -465,24 +467,25 @@ div.form
 	padding: 0 10px 0 10px;
 }
 /* -----------------------------------------------------------
-	content -> edit_panel
+	content -> box
 ----------------------------------------------------------- */
-#content div.edit_panel
+#content div._edit
 {
-	margin: 0 300px 0 300px;
-	background: white;
 	height: auto;
+	padding: 0;
+	margin-top:  14px;
+	
 }
-#content div.edit_panel div.header_main.title
+#content div.box._edit._hasBlank
 {
-	height: 45px;
-	padding: 0 0 0 20px;
+	margin:  0;
 }
-#content div.edit_panel div.header_main.title h2
+
+#content div.box div.header_main.title h2
 {
 	color: white;
 }
-#content div.edit_panel div.data_wrapper
+#content div.box div.data_wrapper
 {
 border: 1px solid #C8C8C8;
 border-top: 1px solid #2B5177;
@@ -491,20 +494,20 @@ border-radius: 0;
 border-bottom: 0;
 padding: 0;
 }
-#content div.edit_panel div.data_wrapper::after {
+#content div.box div.data_wrapper::after {
 content: ".";
 display: block;
 height: 0;
 clear: both;
 visibility: hidden;
 }
-#content div.edit_panel div.has_subdata
+#content div.box div.has_subdata
 {
 	padding: 8px 0 8px 20px;
 	height: 27px;
 	width: 100%
 }
-#content div.edit_panel div.data
+#content div.box div.data
 {
 display: inline;
 float: left;
@@ -514,43 +517,43 @@ margin: 0;
 width: 100%;
 background: #F6F6F6;
 }
-#content div.edit_panel div.slug_rule
+#content div.box div.slug_rule
 {
 	padding: 0px 20px;
 	margin: -4px 0 8px 0;
 }
-#content div.edit_panel div.ds_table_struct
+#content div.box div.ds_table_struct
 {
 	padding: 0 82px 8px 82px;
 	margin-top: -8px;
 	height: auto;
 }
-#content div.edit_panel div.has_subdata
+#content div.box div.has_subdata
 {
 	margin-bottom: -20px;
 }
-#content div.edit_panel div.subdata
+#content div.box div.subdata
 {
 	padding: 4px 20px;
 	height: 20px;
 }
-#content div.edit_panel div.ds_subdata
+#content div.box div.ds_subdata
 {
 	padding: 0 0 10px 82px;
 	width: 100%
 }
-#content div.edit_panel div.ds_table_data
+#content div.box div.ds_table_data
 {
 }
-#content div.edit_panel div.has_subdata div,
-#content div.edit_panel div.slug_rule div,
-#content div.edit_panel div.ds_subdata div
+#content div.box div.has_subdata div,
+#content div.box div.slug_rule div,
+#content div.box div.ds_subdata div
 {
 	width: 10%;
 	display: inline-block;
 	text-align: left;
 }
-#content div.edit_panel div.data.textarea_in
+#content div.box div.data.textarea_in
 {
 	height: auto;
 	margin-top: -43px;
@@ -559,26 +562,26 @@ background: #F6F6F6;
 
 
 
-#content div.edit_panel div.has_subdata div.blank_div,
-#content div.edit_panel div.ds_subdata input[type='text']
+#content div.box div.has_subdata div.blank_div,
+#content div.box div.ds_subdata input[type='text']
 {
 	width: 40%;
 	display: inline-block;
 	margin:0 10px 0 0;
 	padding-left: 5px;
 }
-#content div.edit_panel div.ds_subdata input[type='text']
+#content div.box div.ds_subdata input[type='text']
 {
 	width: 31%;
 }
-#content div.edit_panel div.has_subdata label
-#content div.edit_panel div.ds_subdata label
+#content div.box div.has_subdata label
+#content div.box div.ds_subdata label
 {
 	padding: 7px 0 0 0;
 	font-weight: normal;
 }
 
-#content div.edit_panel div.data input[type='submit'], #content div.edit_panel div.data input[type='button'] 
+#content div.box div.data input[type='submit'], #content div.box div.data input[type='button'] 
 {
 	display: inline-block;
 	width: auto;
@@ -589,93 +592,93 @@ background: #F6F6F6;
 	margin: 0 25px 0 0;
 	
 }
-#content div.edit_panel p
+#content div.box p
 {
 	color: #547EAB;
 	font-weight: bold;
 	margin: 0;
-	height: 27px;
-	padding: 8px 20px;
+	padding: 8px 10px;
 }
-#content div.edit_panel div.data span.error
+#content div.box div.data span.error
 {
 	color: #B0171F;
 	font-weight: bold;
 }
 
-#content div.edit_panel div.subdata label
+#content div.box div.subdata label
 {
 	float: left;
 	padding: 4px 20px 0 0;
 	font-weight: normal;
 	line-height: 12px;
-	width: 16%;
 	text-align: right;	
 }
-#content div.edit_panel div.subdata label.void
+#content div.box div.subdata label.void
 {
 	width: 8%;
 	visibility: hidden;
 }
-#content div.edit_panel div.subdata input[type='checkbox']
+#content div.box div.subdata input[type='checkbox']
 {
 	margin: 0;
 	height: 20px;
 	width: 60%;
 	display: inline-block;
 }
-#content div.edit_panel.datasource
+#content div.box.datasource
 {
 	margin: 0 200px;
 }
-#content div.edit_panel div.data.textarea_in textarea
+#content div.box div.data.textarea_in textarea
 {
 	width: 40%;
 }
 
 
-#content div.edit_panel div.data >div {
+#content div.box div.data >div {
 border-left: 1px solid #E7E7E7;
 float: right;
 width: 75%;
 padding: 0 1%;
 padding-right: 10px;
 }
-#content div.edit_panel div.data > div:first-child {
+#content div.box div.data > div:first-child {
 float: left;
 width: 16%;
 padding: 0;
 margin-top: 12px;
 margin-left: 10px;
 }
+#content div.box div.data > div.readonly{
+margin: 12px 0 0 10px;
 }
 
-#content div.edit_panel div.data >div label.input_rule {
+#content div.box div.data >div label.input_rule {
 font-weight:normal;
 cursor: auto;
 }
 
-#content div.edit_panel div.actions {
+#content div.box div.actions {
 border: 1px solid #C8C8C8;
 background: #F7F7F7;
 border-radius: 0 0 3px 3px;
 }
-#content div.edit_panel div.actions::after {
+#content div.box div.actions::after {
 content: ".";
 display: block;
 height: 0;
 clear: both;
 visibility: hidden;
 }
-#content div.edit_panel div.actions-left {
+#content div.box div.actions-left {
 float: left;
 margin: 5px;
 margin-left: 10px;
 }
-#content div.edit_panel div.actions input {
+#content div.box div.actions input {
 margin: 0;
 }
-#content div.edit_panel div.actions-right {
+#content div.box div.actions-right {
 float: right;
 margin: 5px;
 margin-right: 10px;

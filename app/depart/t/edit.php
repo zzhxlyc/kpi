@@ -5,9 +5,9 @@
 	}
 	else{
 ?>
-		<div id="content">
+		<div id="right">
 			
-				<div class="edit_panel">
+				<div class="box _edit">
 					<div class="header_main title">
 					</div>
 					<form action="" method="post" >
@@ -18,10 +18,11 @@
 							<input size="20" type="text" name="name" value="<?php echo $depart->name?>" />
 							<span class="error"><?php echo $errors['name']?></span></div>
 						</div>	
-					
+						<div class="data">
 						<?php 
 							output_edit_success();
 						?>
+						</div>	
 					</div>
 					<div class="actions">
 							

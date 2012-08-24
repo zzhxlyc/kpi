@@ -1,8 +1,4 @@
 ﻿
-<div id="content">
-	<div id="left">
-		<?php include(MODULE_DIR.'/sidebar/sidebar.php')?>
-	</div>
 	<div id="right">
 		<form action="<?php echo $home.'/remove'?>" method="post">
 		<!-- table -->
