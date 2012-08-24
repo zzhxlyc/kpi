@@ -26,10 +26,12 @@
 <div class="data">
 	<div><label for="attr">属性表</label></div>
 </div>
-<div class="ds_table">
+<div class="ds_table_struct">
 	<table id="ds_table_attrs">
+	<thead>
 		<tr><th align="left" width="50">标示</th>
 		<th align="left" width="200">列名</th><th>操作</th></tr>
+	</thead>
 	</table>
 </div>
 

@@ -4,15 +4,22 @@
 	}
 	else{
 ?>
-<h2><?php echo $kpitable->name?></h2>
-<table class="normal-table" cellspacing="0" cellpadding="0">
+<div id="content">
+		<div class="edit_panel">
+			<div class="header_main title" >
+			<h2><?php echo $kpitable->name?></h2>
+			</div>
+<div class="table">
+<table cellspacing="0" cellpadding="0">
+	<thead>
 	<tr class="top">
-		<td>考核表项</td>
-		<td width="70">类型</td>
-		<td width="70">比重</td>
-		<td width="70">时间节点</td>
-		<td width="100">操作</td>
+		<th>考核表项</th>
+		<th width="70">类型</th>
+		<th width="70">比重</th>
+		<th width="70">时间节点</th>
+		<th width="100">操作</th>
 	</tr>
+	</thead>
 	<?php 
 		$i = 0;
 		if(is_array($list)){
@@ -36,12 +43,25 @@
 		}
 	?>
 </table>
+</div>
+<div class="data">
+	<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
+</div>
+	<form action="<?php echo $home.'/additem?tableid='.$kpitable->id?>" method="post">
+		<div class="data">
+			<input type="submit" value="添加考核项" />
+		</div>
+	</form>
 
-<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
-<a href="<?php echo $home.'/additem?tableid='.$kpitable->id?>">添加考核项</a>
+
+
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
+</div>
+
+			</div>
+
 </div>
 
 <?php 

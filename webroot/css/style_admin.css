@@ -34,7 +34,7 @@ a
 	text-decoration: none;
 	cursor: pointer;
 }
-a.a_loginout
+a.header
 {
 	color: #FFFFFF;
 }
@@ -379,58 +379,54 @@ div.form
 /* -----------------------------------------------------------
 	content -> right -> box / tables
 ----------------------------------------------------------- */
-#content div.box div.table
+#content div.table
 {
 	margin: 0;
-	padding: 0 20px 10px 20px;
+	padding: 10px 20px;
 	clear: both;
 	overflow: hidden;
 }
-#content div.box table
+#content table
 {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	border-collapse: collapse;
 }
-#content div.box table th
+#content table th,
+#content table td
 {
-	padding: 8px;
 	background: #eeeeee;
-	border-right: 1px solid #cdcdcd;
-	border-bottom: 1px solid #cdcdcd;
-	text-align: center;
-}
-#content div.box table th.column1
-{
-	width: 241px
-}
-#content div.box table th.column2
-{
-	width: 383px
-}
-#content div.box table th.column3
-{
-	width: 248px
-}
-#content div.box table td
-{
-	padding: 8px;
-	background: #ffffff;
-	border-right: 1px solid #cdcdcd;
 	border-bottom: 1px solid #cdcdcd;
 	text-align: center;
 	vertical-align: middle;
+	height: 30px;
 }
-#content div.box table td.center
+#content table th.column1
+{
+	width: 241px
+}
+#content table th.column2
+{
+	width: 383px
+}
+#content table th.column3
+{
+	width: 248px
+}
+#content table td
+{
+	background: #ffffff;
+}
+#content table td.center
 {
 	text-align: center;
 }
-#content div.box table td.center input[type='checkbox']
+#content table td.center input[type='checkbox']
 {
 	margin: 0;
 }
-#content div.box table td.operate a{
+#content table td.operate a{
 	padding: 0 10px 0 10px;
 }
 /* -----------------------------------------------------------
@@ -464,9 +460,9 @@ div.form
 	padding: 0px 20px;
 	margin: -4px 0 8px 0;
 }
-#content div.edit_panel div.ds_table
+#content div.edit_panel div.ds_table_struct
 {
-	padding: 0 0 8px 82px;
+	padding: 0 82px 8px 82px;
 	margin-top: -8px;
 	height: auto;
 }
@@ -483,6 +479,9 @@ div.form
 {
 	padding: 0 0 10px 82px;
 	width: 100%
+}
+#content div.edit_panel div.ds_table_data
+{
 }
 #content div.edit_panel div.data div,
 #content div.edit_panel div.has_subdata div,
@@ -519,7 +518,7 @@ div.form
 #content div.edit_panel div.data input[type='submit'], #content div.edit_panel div.data input[type='button'] 
 {
 	display: inline-block;
-	width: 46px;
+	width: auto;
 	height: 25px;
 	line-height: 25px;
 	text-align: center;
@@ -561,4 +560,8 @@ div.form
 	height: 20px;
 	width: 60%;
 	display: inline-block;
+}
+#content div.edit_panel.datasource
+{
+	margin: 0 200px;
 }

@@ -38,7 +38,7 @@
 							</div>
 							<div class="toolmenu">
 								<div class="toolcaption" style="min-width: 46px;">
-									<span><?php echo $User->name?></span>
+									<a class="header" href="<?php echo $home?>/index"><?php echo $User->name?></a>
 								</div>
 							</div>
 							<div class="toolicon_lock">
@@ -47,7 +47,7 @@
 									width="16" height="16" alt="user">
 							</div>
 							<div class="loginout">
-								<a class="a_loginout" href="<?php echo ROOT_URL.'/loginout'?>">注销</a>
+								<a class="header" href="<?php echo ROOT_URL.'/loginout'?>">注销</a>
 							</div>
 					</div>
 				</div>
