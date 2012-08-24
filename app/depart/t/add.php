@@ -5,14 +5,16 @@
 			<div class="header_main title">
 				<h5></h5>
 			</div>
+			<div class="data_wrapper">
 			<div class="data">
-				<div><label for="name">部门名称</label></div>
-				<input size="20" type="text" name="name" value="<?php echo $depart->name?>" />
+				<label for="name">部门名称</label>
+				<div><input size="20" type="text" name="name" value="<?php echo $depart->name?>" /></div>
 				<span class="error"><?php echo $errors['name']?></span>
 			</div>	
-			<div class="data">
-				<input type="submit" value="保存" />
-				<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
+			</div>	
+			<div class="actions">
+				<div class="actions-left"><input type="submit" value="保存" /></div>
+				<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
 			</div>
 		</div>
 	</form>

@@ -56,14 +56,10 @@
 		<div class="container_12">
 		</div>
 		</nav>
-</header>		
+	</header>		
 	<?php }?>
-	<div id="wrapper">
-		<div id="main" class="clearfix">
 
-			<?php include($TEMPLATE_PAGE); ?>
-			
-		</div>
-	</div><!--end for wrapper-->
+	<?php include($TEMPLATE_PAGE); ?>
+
 </body>
 </html>
