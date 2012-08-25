@@ -121,7 +121,8 @@ class ManagerController extends AppController {
 			$get = $this->request->get;
 			$id = get_id($get);
 			if($id > 0){
-				$user = $this->User->get($id);
+				$cond = array('type'=>UserType::COMPANY, 'id'=>$id);
+				$user = $this->User->get_row($cond);
 			}
 			if($user){
 				$this->set_data();
@@ -171,7 +172,8 @@ class ManagerController extends AppController {
 			$get = $this->request->get;
 			$id = get_id($get);
 			if($id > 0){
-				$user = $this->User->get($id);
+				$cond = array('type'=>UserType::COMPANY, 'id'=>$id);
+				$user = $this->User->get_row($cond);
 			}
 			if($user){
 				$this->set('$user', $user);
