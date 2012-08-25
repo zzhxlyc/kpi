@@ -31,7 +31,7 @@ class DepartController extends AppController {
 		if($this->request->post){
 			$post = $this->request->post;
 			$errors = $this->Depart->check($post);
-			$count = $this->Depart->count(array('name'=>$post['name'], 'valid'=>1));
+			$count = $this->Depart->count(array('name'=>esc_text($post['name']), 'valid'=>1));
 			if($count != 0){
 				$errors['name'] = '已存在';
 			}

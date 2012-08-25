@@ -5,13 +5,13 @@
 	
 <div class="row">
 	<label for="user">账号</label>
-	<input size="20" type="text" name="user" value="<?php echo $user->user?>" />
+	<INPUT class="required" type="text" name="user" value="<?php echo $user?>" /> 
 	<span class="error"><?php echo $errors['user']?></span>
 </div>
 
 <div class="row">
 	<label for="password">密码</label>
-	<input size="20" type="password" name="password" value="<?php echo $user->password?>" />
+	<INPUT class="required" name="password" type="password" /> 
 	<span class="error"><?php echo $errors['password']?></span>
 </div>
 
