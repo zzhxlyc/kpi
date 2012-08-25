@@ -1,4 +1,4 @@
-<?php 
+﻿<?php 
 	if($error){
 		output_error($error, $index_page);
 	}
@@ -47,13 +47,11 @@
 				</table>
 				</div>
 
-			<div class="data">
-				<div class="page-nav">
+			<div class="data page-nav">
 					<?php Pager::output_pager_list($page_list);?>
-				</div>
 			</div>
 				
-			<div class="actions">
+			<div class="actions whiteBg">
 					<div class="actions-left">
 						<form action="<?php echo $home.'/additem?tableid='.$kpitable->id?>" method="post">
 							<input type="submit" value="添加考核项" />

@@ -1,4 +1,4 @@
-
+﻿
 	<div id="right">
 
 		<!-- table -->
@@ -41,16 +41,20 @@
 								}
 							?>
 						</tbody>
-					</table>
+					</table> 
+		<!-- end table -->					
 				</form>
 			</div>
-		</div>
-		<!-- end table -->
-		<form action="<?php echo $home.'/add'?>" method="post">
-		<div>
-			<input type="submit" value="添加KPI考核表" />
-		</div>
-	</form>
+			<div class="actions whiteBg">
+					<div class="actions-left">
+						<form action="<?php echo $home.'/add'?>" method="post">
+							<input type="submit" value="添加考核项" />
+						</form>					
+					</div>	
+			</div>
+		</div>	
+
+
 	</div>
 
 

@@ -9,8 +9,8 @@
 			<div class="data_wrapper">
 			<div class="data _edit">
 				<div><label for="name">部门名称</label></div>
-				<div><input size="20" type="text" name="name" value="<?php echo $depart->name?>" /></div>
-				<span class="error"><?php echo $errors['name']?></span>
+				<div><input size="20" type="text" name="name" value="<?php echo $depart->name?>" />
+				<span class="error"><?php echo $errors['name']?></span></div>
 			</div>	
 			</div>	
 			<div class="actions">

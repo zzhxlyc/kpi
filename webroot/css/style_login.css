@@ -90,25 +90,23 @@ label {
 .clearfix::after {
 	width: 0px; height: 0px; line-height: 0; clear: both; font-size: 0px; display: block; visibility: hidden; content: " ";
 }
-.special_page {
-	background-color: #E3E3E3
-}
-.special_page .top {
+
+.top {
 	background: rgb(54, 111, 172); width: 100%; height: 359px; border-bottom-color: rgb(13, 50, 89); border-bottom-width: 1px; border-bottom-style: solid; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#366fac',endColorstr='#184b82',GradientType=0); position: absolute; box-shadow: 0px 2px 5px rgba(17,16,13,0.5);
 }
-.special_page  .top .gradient {
+ .top .gradient {
 	background: rgb(227, 227, 227); top: 360px; width: 100%; height: 270px; filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e3e3e3',endColorstr='#fafafa',GradientType=0); position: absolute;
 }
-.special_page h1 {
+h1 {
 	margin: 0px; left: 0px; top: 60px; right: 0px; position: absolute; z-index: 101;
 }
-.special_page h1 {
+h1 {
 	text-align: center; color: rgb(255, 255, 255); font-size: 40px; font-weight: bold; text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
 }
-.special_page .wrapper {
+.wrapper {
 	margin: 0px auto; left: 0px; top: 250px; width: 400px; right: 0px; position: absolute; z-index: 101;
 }
-.special_page .box {
+.box {
 	margin: 0px auto; position: relative; z-index: 110;
 }
 form .section {
@@ -170,7 +168,6 @@ form .section > div {
 }
 .box .actions-left {
 	margin: 5px 5px 5px 10px; float: left;
-	width: 200px;
 }
 .box .actions-left label input {
 	 float: left;

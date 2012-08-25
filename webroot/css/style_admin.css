@@ -1,115 +1,108 @@
-@import url( http://fonts.googleapis.com/css?family=PT+Sans:400italic );
-@import url( http://fonts.googleapis.com/css?family=PT+Sans:700italic );
-@import url( http://fonts.googleapis.com/css?family=PT+Sans:700 );
-@import url( http://fonts.googleapis.com/css?family=PT+Sans:400 );
+﻿@CHARSET "UTF-8";
+
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre,a,table,tbody,tfoot,thead,tr,th,td,ul,ol,li,img,fieldset,iframe
+	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
 /* -----------------------------------------------------------
 	main stylesheet
 ----------------------------------------------------------- */
-html
-{
-	height: 100%;  
-}
-body
-{
-	margin: 0;
-	padding: 0;
+html {
 	height: 100%;
-	background: #d1d1d1 url("../images/background.png") repeat;
-	font-family: "PT Sans",sans-serif;
+}
+
+body {
+	height: 100%;
+	background: #d1d1d1;
+	font: 12px/ 1.5 tahoma, arial, \5b8b\4f53;
 	font-size: 12px;
 }
-/* -----------------------------------------------------------
-	images
------------------------------------------------------------ */ 
-img
-{
-	border: none;	
+
+img {
+	border: none;
 }
-/* -----------------------------------------------------------
-	anchors
------------------------------------------------------------ */ 
-a
-{
-	color: #0066CC;	
+
+ul {
+	list-style-type: none;
+}
+
+a {
+	color: #0066CC;
 	text-decoration: none;
 	cursor: pointer;
 }
-a.header
-{
+
+a.header {
 	color: #FFFFFF;
 }
-a:hover
-{
-	color: #b9dcff;	
+
+a:hover {
+	color: #b9dcff;
 	text-decoration: underline;
 }
-/* -----------------------------------------------------------
-	headings
------------------------------------------------------------ */ 
-h1, h2, h3, h4, h5, h6
-{
-	color: #292929;
+
+h1,h2,h3,h4,h5,h6 {
+	color: #ffffff;
 	font-weight: bold;
 }
-h1
-{
-	font-size: 22px;
+
+h1 {
+	font-size: 40px;
 }
-h2
-{
+
+h2 {
 	font-size: 15px;
 }
 
-/* -----------------------------------------------------------
-	label
------------------------------------------------------------ */
-label, .label {
-cursor: pointer;
-
-display: block;
-margin-bottom: 5px;
-
-color: #666;
-font-size: 12px;
-font-weight: 700;
-text-shadow: 0 1px 0 white;
+label,.label {
+	display: block;
+	margin-bottom: 5px;
+	color: #666;
+	font-size: 12px;
+	font-weight: 700;
+	text-shadow: 0 1px 0 white;
 }
-/* -----------------------------------------------------------
-	input
------------------------------------------------------------ */ 
-input, textarea,select {
-background: white;
-display: block;
-margin: 10px 0;
-border: 1px solid #C8C8C8;
-border-radius: 5px;
-padding: 5px 0 5px 5px;
-outline: 0;
--webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
--moz-box-shadow: inset 0 2px 3px 0 rgba(18,16,11,0.13);
-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
 
-width: 100%;
+input,textarea,select {
+	background: white;
+	display: inline-block;
+	margin: 10px 0;
+	border: 1px solid #C8C8C8;
+	border-radius: 5px;
+	padding: 5px 0 5px 5px;
+	outline: 0;
+	-webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
+	-moz-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
+	box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
+	line-height: normal;
+	vertical-align: baseline;
+}
 
-line-height: normal;
+input[type="submit"],input[type="reset"],input[type="button"] {
+	height: 25px;
+	line-height: 25px;
+	width: auto;
+	padding: 0 10px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0 1px 1px 0 rgba(18, 16, 11, 0.1);
+	-moz-box-shadow: 0 1px 1px 0 rgba(18, 16, 11, 0.1);
+	box-shadow: 0 1px 1px 0 rgba(18, 16, 11, 0.1);
+}
 
-vertical-align: baseline;
+input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:focus
+	{
+	border: 1px solid #A3A3A3;
 }
-input[type="submit"], input[type="reset"], input[type="button"] {
-height: 25px;
-line-height: 25px;
-width: auto;
-padding: 0 10px;
--moz-background-clip: padding;
--webkit-background-clip: padding-box;
-background-clip: padding-box;
--webkit-box-shadow: 0 1px 1px 0 rgba(18, 16, 11, 0.1);
--moz-box-shadow: 0 1px 1px 0 rgba(18,16,11,0.1);
-box-shadow: 0 1px 1px 0 rgba(18, 16, 11, 0.1);
-}
-input:hover, input:active, input:focus, textarea:hover, textarea:active, textarea:focus {
-border: 1px solid #A3A3A3;
-}
+
 /* -----------------------------------------------------------
 	header_toolbar
 ----------------------------------------------------------- */
@@ -118,29 +111,221 @@ border: 1px solid #A3A3A3;
 	padding: 0 60px 0 60px;
 	background: #313131;
 }
+
 #header_toolbar h1 {
 	margin: 0
 }
+
 #header_toolbar h1 {
 	color: #fff;
 	font-size: 17px;
 	line-height: 37px
 }
+
+.top {
+	background: rgb(54, 111, 172);
+	width: 100%;
+	height: 359px;
+	border-bottom-color: rgb(13, 50, 89);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	position: absolute;
+	box-shadow: 0px 2px 5px rgba(17, 16, 13, 0.5);
+}
+
+.top .gradient {
+	background: rgb(227, 227, 227);
+	top: 360px;
+	width: 100%;
+	height: 270px;
+	position: absolute;
+}
+
+div.content h1 {
+	margin: 0px;
+	left: 0px;
+	top: 60px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
+
+div.content h1 {
+	text-align: center;
+	color: rgb(255, 255, 255);
+	font-size: 40px;
+	font-weight: bold;
+	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
+}
+
+.wrapper {
+	margin: 0px auto;
+	left: 0px;
+	top: 250px;
+	width: 400px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
+
+.box {
+	margin: 0px auto;
+	position: relative;
+	z-index: 110;
+}
+
+.box .header {
+	border-width: 1px 1px 0px;
+	border-style: solid solid none;
+	border-radius: 3px 3px 0px 0px;
+	height: 34px;
+	line-height: 34px;
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#78b1ed', endColorstr = '#417bb5', GradientType = 0 );
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+.box .grey.header {
+	border-color: rgb(200, 200, 200);
+	filter: none;
+}
+
+.box .header img {
+	margin: 9px auto 9px 8px;
+	float: left;
+	display: inline-block;
+	-moz-user-select: none;
+}
+
+.box .header h3 {
+	margin: 0px 0px 0px 8px;
+	padding: 0px 0px 0px 10px;
+	float: left;
+	display: inline-block;
+}
+
+.box .header h3 {
+	color: rgb(255, 255, 255);
+	font-size: 13px;
+	font-weight: 700;
+	text-shadow: 0 1px 0 #000;
+}
+
+.box .content {
+	background: rgb(255, 255, 255);
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
+	padding: 0px 10px;
+	border-radius: 0px 0px 3px 3px;
+}
+
+.box .grey.content {
+	border-top-color: rgb(200, 200, 200);
+}
+
+.box .content::after {
+	height: 0px;
+	clear: both;
+	display: block;
+	visibility: hidden;
+	content: ".";
+}
+
+.box .with-actions.content {
+	border-radius: 0px;
+	border-bottom-color: currentColor;
+	border-bottom-width: 0px;
+	border-bottom-style: none;
+}
+
+.box .no-header.content {
+	border-radius: 3px;
+	border: 1px solid rgb(200, 200, 200);
+}
+
+.box .no-padding.content {
+	padding: 0px;
+}
+
+form .section {
+	background: rgb(246, 246, 246);
+	margin: 0px;
+	width: 100%;
+	border-top-color: rgb(255, 255, 255);
+	border-bottom-color: rgb(231, 231, 231);
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#f6f6f6', endColorstr = '#f1f1f1', GradientType = 0 );
+}
+
+form .section>label {
+	width: 16%;
+	margin-top: 12px;
+	margin-left: 10px;
+	float: left;
+}
+
+form .section>div {
+	padding: 0px 10px 0px 1%;
+	width: 75%;
+	border-left-color: rgb(231, 231, 231);
+	border-left-width: 1px;
+	border-left-style: solid;
+	float: right;
+}
+
+._100 {
+	width: 96%;
+	margin-right: 2%;
+	margin-left: 2%;
+	float: left;
+	display: inline;
+}
+
+.box .actions {
+	background: repeat-x rgb(247, 247, 247);
+	border-radius: 0px 0px 3px 3px;
+	border: 1px solid rgb(200, 200, 200);
+}
+
+.box .actions::after {
+	height: 0px;
+	clear: both;
+	display: block;
+	visibility: hidden;
+	content: ".";
+}
+
+.box .actions input {
+	margin: 0px;
+}
+
+.box .actions-right {
+	margin: 5px 10px 5px 5px;
+	float: right;
+}
+
 /* -----------------------------------------------------------
 	header_toolbar -> grid_1 & grid_2
 ----------------------------------------------------------- */
-.grid_1,.grid_2
-	{
+.grid_1,.grid_2 {
 	display: inline;
 	float: left;
 	position: relative;
 }
+
 .grid_1 {
 	width: 30%
 }
+
 .grid_2 {
 	width: 70%
 }
+
 /* -----------------------------------------------------------
 	header_toolbar -> grid_2 -> toolbar_large
 ----------------------------------------------------------- */
@@ -149,8 +334,8 @@ border: 1px solid #A3A3A3;
 	position: relative;
 	margin-left: 5px;
 	float: right;
-	
 }
+
 .toolbar_large {
 	position: relative;
 	height: 25px;
@@ -161,18 +346,17 @@ border: 1px solid #A3A3A3;
 	-webkit-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
 	-moz-box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
 	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
-	background: url(../img/sprites/toolbar/bg-normal.png)
 }
+
 .toolbar_large img {
 	margin-top: 2px
 }
-.toolbar_large .toolcaption:hover {
-	background: url(../img/sprites/toolbar/bg-hover.png)
-}
-.toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu, .toolbar_large .toolicon_lock
+
+.toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu,.toolbar_large .toolicon_lock
 	{
 	float: left
 }
+
 .toolbar_large .toolicon {
 	display: inline-block;
 	width: 30px;
@@ -181,6 +365,7 @@ border: 1px solid #A3A3A3;
 	text-align: center;
 	padding-top: 2px;
 }
+
 .toolbar_large .toolicon_lock {
 	display: inline-block;
 	width: 30px;
@@ -189,17 +374,20 @@ border: 1px solid #A3A3A3;
 	text-align: center;
 	padding: 2px 0 0 10px
 }
-.toolbar_large .loginout{
-	float:left;
-	margin:0;
+
+.toolbar_large .loginout {
+	float: left;
+	margin: 0;
 	padding: 0 5px;
 	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
 }
+
 .toolbar_large .toolcaption {
 	color: #fff;
 	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
-	filter: dropshadow(color = #CC000000, offx = 0, offy = 1)
+	filter: dropshadow(color =       #CC000000, offx =       0, offy =       1)
 }
+
 .toolbar_large .toolcaption {
 	text-align: left;
 	cursor: pointer;
@@ -207,14 +395,17 @@ border: 1px solid #A3A3A3;
 	height: 25px;
 	padding: 0 5px 0 5px
 }
+
 .toolbar_large .toolcaption span {
 	position: relative
 }
+
 .toolbar_large .toolcaption.active {
 	color: #000;
 	text-shadow: none;
 	border-radius: 0 3px 0 0
 }
+
 /* -----------------------------------------------------------
 	header_main
 ----------------------------------------------------------- */
@@ -234,59 +425,60 @@ border: 1px solid #A3A3A3;
 		rgba(24, 75, 130, 1) 100% );
 	background: linear-gradient(top, rgba(54, 111, 172, 1) 0,
 		rgba(24, 75, 130, 1) 100% );
-	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
-		'#366fac', endColorstr = '#184b82', GradientType = 0 )
+	filter: progid :       DXImageTransform.Microsoft.gradient (     
+		 startColorstr =   
+		   '#366fac', endColorstr =       '#184b82', GradientType =       0 )
 }
-nav.header_main
-{
+
+nav.header_main {
 	height: 90px;
 }
+
 /* -----------------------------------------------------------
 	content
------------------------------------------------------------ */ 
-#content 
-{
+----------------------------------------------------------- */
+#content {
 	margin: 10px 0;
 	padding: 0;
 	min-height: 100%;
 	clear: both;
 	overflow: hidden;
 }
+
 /* -----------------------------------------------------------
 	content -> left
------------------------------------------------------------ */ 
-#content #left
-{
+----------------------------------------------------------- */
+#content #left {
 	left: 0;
 	width: 280px;
 	position: absolute;
 	padding-top: 14px;
 }
+
 /* -----------------------------------------------------------
 	content -> left -> menu
------------------------------------------------------------ */ 
-#content #left #menu
-{
+----------------------------------------------------------- */
+#content #left #menu {
 	margin: 0 10px 0 60px;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
 }
+
 /* -----------------------------------------------------------
 	content -> left -> menu / links
 ----------------------------------------------------------- */
-#content #left #menu ul
-{
+#content #left #menu ul {
 	margin: 0;
 	padding: 0;
 	background: #376ea6;
 }
-#content #left #menu ul.opened
-{
-	display: block;	
+
+#content #left #menu ul.opened {
+	display: block;
 }
-#content #left #menu li
-{
+
+#content #left #menu li {
 	margin: 0;
 	padding: 0;
 	clear: both;
@@ -298,99 +490,93 @@ nav.header_main
 	font-size: 1px;
 	line-height: 0;
 }
-#content #left #menu li a
-{
+
+#content #left #menu li a {
 	margin: 0 0 0 6px;
 	padding: 7px 0 9px 18px;
 	height: 1%;
 	display: block;
 	float: left;
-	background: url("../../resources/images/menu_arrow.png") no-repeat 2px 11px;
 	color: #ffffff;
 	font-size: 11px;
 	line-height: normal;
 	text-decoration: none;
 }
-#content #left #menu li a:hover
-{
+
+#content #left #menu li a:hover {
 	color: #b9dcff;
 }
-#content #left #menu li ul
-{
+
+#content #left #menu li ul {
 	margin: 0;
 	padding: 0;
 	border-left: 18px solid #326395;
 }
-#content #left #menu li ul li
-{
+
+#content #left #menu li ul li {
 	margin: 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
 	list-style: none;
-	background: url("../../resources/images/menu_arrow.png") no-repeat 10px 12px;
 	border-top: 1px solid #4377ab;
 	border-bottom: 1px solid #326395;
 	color: #ffffff;
 }
+
 /* -----------------------------------------------------------
 	content -> right
------------------------------------------------------------ */ 
-#content #right
-{
+----------------------------------------------------------- */
+#content #right {
 	margin: 0 60px 0 290px;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box
 ----------------------------------------------------------- */
-#content div.box
-{
+#content div.box {
 	margin: 0;
-	padding: 0 0 10px 0;
+	padding: 0;
 	clear: both;
 	overflow: hidden;
 	background: #ffffff;
 }
-#content div.box.noBlank
-{
+
+#content div.box.noBlank {
 	margin-top: 14px;
 }
-#content div.box-left
-{
+
+#content div.box-left {
 	width: 49%;
 	clear: none;
-	float: left;	
+	float: left;
 }
-#content div.box-right
-{
+
+#content div.box-right {
 	width: 49%;
 	clear: none;
-	float: right;	
+	float: right;
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box / title
 ----------------------------------------------------------- */
-#content div.box div.header_main.title
-{
+#content div.box div.header_main.title {
 	margin: 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
 	height: 32px;
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box / headings
 ----------------------------------------------------------- */
-#content div.box h1,
-#content div.box h2,
-#content div.box h3,
-#content div.box h4,
-#content div.box h5,
-#content div.box h6
-{
+#content div.box h1,#content div.box h2,#content div.box h3,#content div.box h4,#content div.box h5,#content div.box h6
+	{
 	margin: 0;
 	padding: 10px 0 0 10px;
 	float: left;
@@ -398,197 +584,118 @@ nav.header_main
 	clear: both;
 	overflow: hidden;
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
-div.form
-{
+div.form {
 	margin: 0;
 	padding: 0 20px 10px 20px;
 	clear: both;
 	overflow: hidden;
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box / tables
 ----------------------------------------------------------- */
-#content div.table
-{
-	margin-top: 20px;
-	padding: 10px 20px;
+#content div.table {
+	margin-top: 10px;
+	padding: 20px;
 	clear: both;
 	overflow: hidden;
 }
-#content table
-{
+
+#content table {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	border-collapse: collapse;
 }
-#content table th,
-#content table td
-{
+
+#content table th,#content table td {
 	background: #eeeeee;
 	border-bottom: 1px solid #cdcdcd;
 	text-align: center;
 	vertical-align: middle;
 	height: 30px;
 }
-#content table th.column1
-{
+
+#content table th.column1 {
 	width: 241px
 }
-#content table th.column2
-{
+
+#content table th.column2 {
 	width: 383px
 }
-#content table th.column3
-{
+
+#content table th.column3 {
 	width: 248px
 }
-#content table td
-{
+
+#content table td {
 	background: #ffffff;
 }
-#content table td.center
-{
+
+#content table td.center {
 	text-align: center;
 }
-#content table td.center input[type='checkbox']
-{
+
+#content table td.center input[type='checkbox'] {
 	margin: 0;
 }
-#content table td.operate a{
+
+#content table td.operate a {
 	padding: 0 10px 0 10px;
 }
+
 /* -----------------------------------------------------------
 	content -> box
 ----------------------------------------------------------- */
-#content div._edit
-{
+#content div._edit {
 	height: auto;
 	padding: 0;
-	margin-top:  14px;
-	
+	margin-top: 14px;
 }
-#content div.box._edit._hasBlank
-{
-	margin:  0;
+
+#content div.box._edit._hasBlank {
+	margin: 0;
 }
-#content div.box div.data_wrapper
-{
-border: 1px solid #C8C8C8;
-border-top: 1px solid #2B5177;
-background: white;
-border-radius: 0;
-border-bottom: 0;
-padding: 0;
+
+#content div.box div.data_wrapper {
+	border: 1px solid #C8C8C8;
+	border-top: 1px solid #2B5177;
+	background: white;
+	border-radius: 0;
+	border-bottom: 0;
+	padding: 0;
 }
+
 #content div.box div.data_wrapper::after {
-content: ".";
-display: block;
-height: 0;
-clear: both;
-visibility: hidden;
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
-#content div.box div.has_subdata
-{
+
+#content div.box div.has_subdata {
 	padding: 8px 0 8px 20px;
 	height: 27px;
 	width: 100%
 }
-#content div.box div.data
-{
-display: inline;
-float: left;
-border-bottom: 1px solid #E7E7E7;
-border-top: 1px solid white;
-margin: 0;
-width: 100%;
-background: #F6F6F6;
-}
-#content div.box div.slug_rule
-{
-	padding: 0px 20px;
-	margin: -4px 0 8px 0;
-}
-#content div.box div.ds_table_struct
-{
-	padding: 0 82px 8px 82px;
-	margin-top: -8px;
-	height: auto;
-}
-#content div.box div.has_subdata
-{
-	margin-bottom: -20px;
-}
-#content div.box div.subdata
-{
-	padding: 4px 0;
-	height: 20px;
-}
-#content div.box div.subdata > div
-{
-	width: 5%;
-	display: inline-block;
-}
-#content div.box div.subdata > div:first-child
-{
+
+#content div.box div.data {
+	display: inline;
 	float: left;
-	width: 70%;
-	display: inline-block;
-}
-#content div.box div.subdata input[type='checkbox']
-{
+	border-bottom: 1px solid #E7E7E7;
+	border-top: 1px solid white;
 	margin: 0;
-	height: 20px;
-}
-#content div.box div.ds_subdata
-{
-	padding: 0 0 10px 82px;
-	width: 100%
-}
-#content div.box div.ds_table_data
-{
-}
-#content div.box div.has_subdata div,
-#content div.box div.slug_rule div,
-#content div.box div.ds_subdata div
-{
-	width: 10%;
-	display: inline-block;
-	text-align: left;
-}
-#content div.box div.data.textarea_in
-{
-	height: auto;
-	margin-top: -43px;
-	margin-left: 10.5%;
+	width: 100%;
+	background: #F6F6F6;
 }
 
-
-
-#content div.box div.has_subdata div.blank_div,
-#content div.box div.ds_subdata input[type='text']
-{
-	width: 40%;
-	display: inline-block;
-	margin:0 10px 0 0;
-	padding-left: 5px;
-}
-#content div.box div.ds_subdata input[type='text']
-{
-	width: 31%;
-}
-#content div.box div.has_subdata label
-#content div.box div.ds_subdata label
-{
-	padding: 7px 0 0 0;
-	font-weight: normal;
-}
-
-#content div.box div.data input[type='submit'], #content div.box div.data input[type='button'] 
-{
+#content div.box div.data input[type='submit'],#content div.box div.data input[type='button']
+	{
 	display: inline-block;
 	width: auto;
 	height: 25px;
@@ -596,90 +703,181 @@ background: #F6F6F6;
 	text-align: center;
 	padding: 0px 10px;
 	margin: 0 25px 0 0;
+}
+
+#content div.box div.data>div {
+	border-left: 1px solid #E7E7E7;
+	float: right;
+	width: 75%;
+	padding: 0 10px;
+	padding-right: 10px;
+}
+
+#content div.box div.data>div:first-child {
+	float: left;
+	width: 16%;
+	padding: 0;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+
+#content div.box div.data>div.readonly {
+	margin: 12px 0 0 10px;
+}
+
+#content div.box div.data>div label {
+	display: inline;
+}
+
+#content div.box div.data>div label.input_rule {
+	font-weight: normal;
+	cursor: auto;
+}
+
+#content div.box div.data>div input {
+	width: auto;
+	display: inline;
+}
+
+#content div.box div.data>div textarea {
+	width: 60%;
+}
+
+#content div.box div.data span.error {
+	color: #B0171F;
+	font-weight: bold;
+}
+
+#content div.box div.data.textarea_in {
 	
 }
-#content div.box p
-{
+
+#content div.box div.slug_rule {
+	padding: 0px 20px;
+	margin: -4px 0 8px 0;
+}
+
+#content div.box div.ds_table_struct {
+	padding: 0 82px 8px 82px;
+	margin-top: -8px;
+	height: auto;
+}
+
+#content div.box div.has_subdata {
+	margin-bottom: -20px;
+}
+
+#content div.box div.subdata {
+	padding: 4px 0;
+	height: 20px;
+}
+
+#content div.box div.subdata>div {
+	width: 5%;
+	display: inline-block;
+}
+
+#content div.box div.subdata>div:first-child {
+	float: left;
+	width: 70%;
+	display: inline-block;
+}
+
+#content div.box div.subdata input[type='checkbox'] {
+	margin: 0;
+	height: 20px;
+}
+
+#content div.box div.ds_subdata {
+	padding: 0 0 10px 82px;
+	width: 100%
+}
+
+#content div.box div.ds_table_data {
+	
+}
+
+#content div.box div.has_subdata div,#content div.box div.slug_rule div,#content div.box div.ds_subdata div
+	{
+	width: 10%;
+	display: inline-block;
+	text-align: left;
+}
+
+#content div.box div.has_subdata div.blank_div,#content div.box div.ds_subdata input[type='text']
+	{
+	width: 40%;
+	display: inline-block;
+	margin: 0 10px 0 0;
+	padding-left: 5px;
+}
+
+#content div.box div.ds_subdata input[type='text'] {
+	width: 31%;
+}
+
+#content div.box div.has_subdata label
+#content div.box div.ds_subdata label {
+	padding: 7px 0 0 0;
+	font-weight: normal;
+}
+
+#content div.box p {
 	color: #547EAB;
 	font-weight: bold;
 	margin: 0;
 	padding: 8px 10px;
 }
-#content div.box div.data span.error
-{
-	color: #B0171F;
-	font-weight: bold;
-}
 
-#content div.box div.subdata label
-{
+#content div.box div.subdata label {
 	float: left;
 	padding: 4px 20px 0 0;
 	font-weight: normal;
 	line-height: 12px;
-	text-align: right;	
+	text-align: right;
 }
-#content div.box div.subdata label.void
-{
+
+#content div.box div.subdata label.void {
 	width: 8%;
 	visibility: hidden;
 }
 
-#content div.box.datasource
-{
+#content div.box.datasource {
 	margin: 0 200px;
-}
-#content div.box div.data.textarea_in textarea
-{
-	width: 40%;
-}
-
-
-#content div.box div.data >div {
-border-left: 1px solid #E7E7E7;
-float: right;
-width: 75%;
-padding: 0 10px;
-padding-right: 10px;
-}
-#content div.box div.data > div:first-child {
-float: left;
-width: 16%;
-padding: 0;
-margin-top: 12px;
-margin-left: 10px;
-}
-#content div.box div.data > div.readonly{
-margin: 12px 0 0 10px;
-}
-
-#content div.box div.data >div label.input_rule {
-font-weight:normal;
-cursor: auto;
 }
 
 #content div.box div.actions {
-border: 1px solid #C8C8C8;
-background: #F7F7F7;
-border-radius: 0 0 3px 3px;
+	border: 1px solid #C8C8C8;
+	background: #F7F7F7;
+	border-radius: 0 0 3px 3px;
 }
+
+#content div.box div.actions.whiteBg {
+	border: 0px;
+	background: white;
+	padding: 0 10px;
+}
+
 #content div.box div.actions::after {
-content: ".";
-display: block;
-height: 0;
-clear: both;
-visibility: hidden;
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
 }
+
 #content div.box div.actions-left {
-float: left;
-margin: 5px;
-margin-left: 10px;
+	float: left;
+	margin: 5px;
+	margin-left: 40%;
 }
+
 #content div.box div.actions input {
-margin: 0;
+	margin: 0;
 }
+
 #content div.box div.actions-right {
-float: right;
-margin: 5px;
-margin-right: 10px;
+	float: right;
+	margin: 5px;
+	margin-right: 40%;
 }

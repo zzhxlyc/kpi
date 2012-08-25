@@ -1,4 +1,3 @@
-<BODY class="special_page"> 
 <DIV class="top"> 
 	<DIV class="gradient"></DIV> 
 	<DIV class="content"> 
@@ -33,5 +32,4 @@
 		</DIV> 
 		</DIV> 
 	</DIV> 
-</DIV
-</BODY>
+</DIV>

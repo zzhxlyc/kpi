@@ -24,25 +24,22 @@
 				<div class="data">
 					<div><label for="depart">管理部门</label></div>
 					<div>
-					<?php 
-						foreach($depart_list as $o){
-							if(is_array($user->depart)){
-								$cond = in_array($o->id, $user->depart);
+						<select name="depart">
+						<?php 
+							foreach($depart_list as $o){
+								if(is_array($user->depart)){
+									$cond = in_array($o->id, $user->depart);
+								}
+						?>
+						<?php echo $o->name?>
+						<option value="<?php echo $o->id?>" 
+							<?php $HTML->selected($o->id, $user->depart)?> ><?php echo $o->name?></option>
+						<?php 
 							}
-					?>
-					
-					<div class="subdata">
-					<div><label> <?php echo $o->name?> </label></div>
-					<div><input type="checkbox" name="depart[]" value="<?php echo $o->id?>"
-					
-					<?php $HTML->if_checked($cond)?> /></div>
+						?>
+						</select>
+						<span class="error"><?php echo $errors['depart']?></span>
 					</div>
-					<?php 
-						}
-					?>
-					<span class="error"><?php echo $errors['depart']?></span>
-					</div>
-				</div>
 				<div class="data">
 					<?php 
 						output_edit_success();
