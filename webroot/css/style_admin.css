@@ -55,6 +55,11 @@ h1
 {
 	font-size: 22px;
 }
+h2
+{
+	font-size: 15px;
+}
+
 /* -----------------------------------------------------------
 	label
 ----------------------------------------------------------- */
@@ -72,13 +77,13 @@ text-shadow: 0 1px 0 white;
 /* -----------------------------------------------------------
 	input
 ----------------------------------------------------------- */ 
-input, textarea {
+input, textarea,select {
 background: white;
 display: block;
 margin: 10px 0;
 border: 1px solid #C8C8C8;
 border-radius: 5px;
-padding: 5px;
+padding: 5px 0 5px 5px;
 outline: 0;
 -webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
 -moz-box-shadow: inset 0 2px 3px 0 rgba(18,16,11,0.13);
@@ -216,7 +221,6 @@ border: 1px solid #A3A3A3;
 .header_main {
 	border-top: 1px solid #7a9cc0;
 	border-bottom: 1px solid #04172b;
-	padding-top: 29px;
 	background: #366fac;
 	background: -moz-linear-gradient(top, rgba(54, 111, 172, 1) 0,
 		rgba(24, 75, 130, 1) 100% );
@@ -235,7 +239,7 @@ border: 1px solid #A3A3A3;
 }
 nav.header_main
 {
-	height: 60px;
+	height: 90px;
 }
 /* -----------------------------------------------------------
 	content
@@ -350,6 +354,10 @@ nav.header_main
 	overflow: hidden;
 	background: #ffffff;
 }
+#content div.box.noBlank
+{
+	margin-top: 14px;
+}
 #content div.box-left
 {
 	width: 49%;
@@ -366,26 +374,12 @@ nav.header_main
 	content -> right -> box / title
 ----------------------------------------------------------- */
 #content div.box div.header_main.title
-#content div.boxs div.header_main.title
 {
-	margin: 0 0 20px 0;
+	margin: 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
 	height: 32px;
-}
-#content div.box div.title h1,
-#content div.box div.title h2,
-#content div.box div.title h3,
-#content div.box div.title h4,
-#content div.box div.title h5,
-#content div.box div.title h6
-{
-	margin: 0;
-	padding: 11px 0 11px 10px;
-	float: left;
-	border: none;
-	color: #ffffff;
 }
 /* -----------------------------------------------------------
 	content -> right -> box / headings
@@ -397,11 +391,12 @@ nav.header_main
 #content div.box h5,
 #content div.box h6
 {
-	margin: 10px 20px 10px 20px;
-	padding: 0 0 15px 0;
+	margin: 0;
+	padding: 10px 0 0 10px;
+	float: left;
+	color: #ffffff;
 	clear: both;
 	overflow: hidden;
-	border-bottom: 1px solid #DDDDDD;
 }
 /* -----------------------------------------------------------
 	content -> right -> box / forms
@@ -418,7 +413,7 @@ div.form
 ----------------------------------------------------------- */
 #content div.table
 {
-	margin: 0;
+	margin-top: 20px;
 	padding: 10px 20px;
 	clear: both;
 	overflow: hidden;
@@ -480,11 +475,6 @@ div.form
 {
 	margin:  0;
 }
-
-#content div.box div.header_main.title h2
-{
-	color: white;
-}
 #content div.box div.data_wrapper
 {
 border: 1px solid #C8C8C8;
@@ -534,7 +524,23 @@ background: #F6F6F6;
 }
 #content div.box div.subdata
 {
-	padding: 4px 20px;
+	padding: 4px 0;
+	height: 20px;
+}
+#content div.box div.subdata > div
+{
+	width: 5%;
+	display: inline-block;
+}
+#content div.box div.subdata > div:first-child
+{
+	float: left;
+	width: 70%;
+	display: inline-block;
+}
+#content div.box div.subdata input[type='checkbox']
+{
+	margin: 0;
 	height: 20px;
 }
 #content div.box div.ds_subdata
@@ -618,13 +624,7 @@ background: #F6F6F6;
 	width: 8%;
 	visibility: hidden;
 }
-#content div.box div.subdata input[type='checkbox']
-{
-	margin: 0;
-	height: 20px;
-	width: 60%;
-	display: inline-block;
-}
+
 #content div.box.datasource
 {
 	margin: 0 200px;
@@ -639,7 +639,7 @@ background: #F6F6F6;
 border-left: 1px solid #E7E7E7;
 float: right;
 width: 75%;
-padding: 0 1%;
+padding: 0 10px;
 padding-right: 10px;
 }
 #content div.box div.data > div:first-child {

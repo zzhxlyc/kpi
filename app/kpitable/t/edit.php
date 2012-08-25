@@ -4,20 +4,23 @@
 	}
 	else{
 ?>
-<div id="content">
-	<form action="" method="post" >
-		<div class="edit_panel">
-			<div class="header_main title" >
-			</div>
+<div id="right">
+	<div class="box _edit noBlank">
+		<div class="header_main title" >
+		<h2>编辑考核表</h2>
+		</div>
+		<form action="" method="post" >
+			<div class="data_wrapper">
 	
 <div class="data">
 	<div><label for="name">考核表名称</label></div>
-	<input size="20" type="text" name="name" value="<?php echo $kpitable->name?>" />
+	<div><input size="20" type="text" name="name" value="<?php echo $kpitable->name?>" /></div>
 	<span class="error"><?php echo $errors['name']?></span>
 </div>
 
 <div class="data">
 	<div><label for="depart">所属部门</label></div>
+	<div>
 	<select name="depart">
 		<?php 
 			if(is_array($departs)){
@@ -28,20 +31,22 @@
 				} 
 			}
 		?>
-	</select>
+	</select></div>
 	<span class="error"><?php echo $errors['depart']?></span>
 </div>
 
-<div class="data">
-	<input type="submit" value="保存" />
-	<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
-	<input type="hidden" name="id" value="<?php echo $kpitable->id?>" />
-</div>
-
+				<div class="data">
+					<?php 
+						output_edit_success();
+					}
+					?>
+				</div>
+			</div>						
+			<div class="actions">
+					<div class="actions-left"><input type="submit" value="保存" /></div>
+					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
+					<input type="hidden" name="id" value="<?php echo $kpitable->id?>" />
 			</div>
-	</form>
-</div>
-<?php 
-		output_edit_success();
-	}
-?>
+		</form>
+	</div>
+</div>				

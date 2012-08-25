@@ -9,6 +9,7 @@
 			
 				<div class="box _edit">
 					<div class="header_main title">
+					<h2>编辑部门</h2>
 					</div>
 					<form action="" method="post" >
 					<div class="data_wrapper">

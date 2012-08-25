@@ -1,12 +1,8 @@
 
-<div id="content">
-	<div id="left">
-		<?php include(MODULE_DIR.'/sidebar/sidebar.php')?>
-	</div>
 	<div id="right">
 		<form action="<?php echo $home.'/remove'?>" method="post">
 		<!-- table -->
-		<div class="box">
+		<div class="box noBlank">
 			<!-- box / title -->
 			<div class="header_main title">
 				<h5></h5>
@@ -58,7 +54,7 @@
 			</div>
 		</form>
 	</div>
-</div>
+
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
