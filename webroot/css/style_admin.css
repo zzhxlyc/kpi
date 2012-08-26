@@ -1,36 +1,28 @@
 ﻿@CHARSET "UTF-8";
 
+/* -----------------------------------------------------------
+	main stylesheet
+----------------------------------------------------------- */
 html,body,div,span,h1,h2,h3,h4,h5,h6,p,pre,a,table,tbody,tfoot,thead,tr,th,td,ul,ol,li,img,fieldset,iframe
 	{
-	margin: 0;
 	padding: 0;
 	border: 0;
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
 	background: transparent;
+	margin: 0;
 }
 
-/* -----------------------------------------------------------
-	main stylesheet
------------------------------------------------------------ */
 html {
 	height: 100%;
 }
 
 body {
 	height: 100%;
-	background: #d1d1d1;
+	background: #E3E3E3;
 	font: 12px/ 1.5 tahoma, arial, \5b8b\4f53;
 	font-size: 12px;
-}
-
-img {
-	border: none;
-}
-
-ul {
-	list-style-type: none;
 }
 
 a {
@@ -51,6 +43,7 @@ a:hover {
 h1,h2,h3,h4,h5,h6 {
 	color: #ffffff;
 	font-weight: bold;
+	display:inline-block;
 }
 
 h1 {
@@ -61,8 +54,16 @@ h2 {
 	font-size: 15px;
 }
 
+img {
+	border: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
 label,.label {
-	display: block;
+	display: inline-block;
 	margin-bottom: 5px;
 	color: #666;
 	font-size: 12px;
@@ -103,6 +104,45 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 	border: 1px solid #A3A3A3;
 }
 
+.top {
+	background: rgb(54, 111, 172);
+	width: 100%;
+	height: 359px;
+	border: 1px solid rgb(13, 50, 89);
+	box-shadow: 0px 2px 5px rgba(17, 16, 13, 0.5);
+	position: absolute;
+}
+
+.top .gradient {
+	background: rgb(227, 227, 227);
+	top: 360px;
+	width: 100%;
+	height: 270px;
+	position: absolute;
+}
+
+#content h1 {
+	left: 0px;
+	top: 60px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
+
+#content h1 {
+	text-align: center;
+	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
+}
+
+.wrapper {
+	margin: 0px auto;
+	left: 0px;
+	top: 250px;
+	width: 400px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
 /* -----------------------------------------------------------
 	header_toolbar
 ----------------------------------------------------------- */
@@ -120,193 +160,6 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 	color: #fff;
 	font-size: 17px;
 	line-height: 37px
-}
-
-.top {
-	background: rgb(54, 111, 172);
-	width: 100%;
-	height: 359px;
-	border-bottom-color: rgb(13, 50, 89);
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-	position: absolute;
-	box-shadow: 0px 2px 5px rgba(17, 16, 13, 0.5);
-}
-
-.top .gradient {
-	background: rgb(227, 227, 227);
-	top: 360px;
-	width: 100%;
-	height: 270px;
-	position: absolute;
-}
-
-div.content h1 {
-	margin: 0px;
-	left: 0px;
-	top: 60px;
-	right: 0px;
-	position: absolute;
-	z-index: 101;
-}
-
-div.content h1 {
-	text-align: center;
-	color: rgb(255, 255, 255);
-	font-size: 40px;
-	font-weight: bold;
-	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
-}
-
-.wrapper {
-	margin: 0px auto;
-	left: 0px;
-	top: 250px;
-	width: 400px;
-	right: 0px;
-	position: absolute;
-	z-index: 101;
-}
-
-.box {
-	margin: 0px auto;
-	position: relative;
-	z-index: 110;
-}
-
-.box .header {
-	border-width: 1px 1px 0px;
-	border-style: solid solid none;
-	border-radius: 3px 3px 0px 0px;
-	height: 34px;
-	line-height: 34px;
-	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
-		'#78b1ed', endColorstr = '#417bb5', GradientType = 0 );
-	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
-}
-
-.box .grey.header {
-	border-color: rgb(200, 200, 200);
-	filter: none;
-}
-
-.box .header img {
-	margin: 9px auto 9px 8px;
-	float: left;
-	display: inline-block;
-	-moz-user-select: none;
-}
-
-.box .header h3 {
-	margin: 0px 0px 0px 8px;
-	padding: 0px 0px 0px 10px;
-	float: left;
-	display: inline-block;
-}
-
-.box .header h3 {
-	color: rgb(255, 255, 255);
-	font-size: 13px;
-	font-weight: 700;
-	text-shadow: 0 1px 0 #000;
-}
-
-.box .content {
-	background: rgb(255, 255, 255);
-	border-width: 1px;
-	border-style: solid;
-	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
-	padding: 0px 10px;
-	border-radius: 0px 0px 3px 3px;
-}
-
-.box .grey.content {
-	border-top-color: rgb(200, 200, 200);
-}
-
-.box .content::after {
-	height: 0px;
-	clear: both;
-	display: block;
-	visibility: hidden;
-	content: ".";
-}
-
-.box .with-actions.content {
-	border-radius: 0px;
-	border-bottom-color: currentColor;
-	border-bottom-width: 0px;
-	border-bottom-style: none;
-}
-
-.box .no-header.content {
-	border-radius: 3px;
-	border: 1px solid rgb(200, 200, 200);
-}
-
-.box .no-padding.content {
-	padding: 0px;
-}
-
-form .section {
-	background: rgb(246, 246, 246);
-	margin: 0px;
-	width: 100%;
-	border-top-color: rgb(255, 255, 255);
-	border-bottom-color: rgb(231, 231, 231);
-	border-top-width: 1px;
-	border-bottom-width: 1px;
-	border-top-style: solid;
-	border-bottom-style: solid;
-	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
-		'#f6f6f6', endColorstr = '#f1f1f1', GradientType = 0 );
-}
-
-form .section>label {
-	width: 16%;
-	margin-top: 12px;
-	margin-left: 10px;
-	float: left;
-}
-
-form .section>div {
-	padding: 0px 10px 0px 1%;
-	width: 75%;
-	border-left-color: rgb(231, 231, 231);
-	border-left-width: 1px;
-	border-left-style: solid;
-	float: right;
-}
-
-._100 {
-	width: 96%;
-	margin-right: 2%;
-	margin-left: 2%;
-	float: left;
-	display: inline;
-}
-
-.box .actions {
-	background: repeat-x rgb(247, 247, 247);
-	border-radius: 0px 0px 3px 3px;
-	border: 1px solid rgb(200, 200, 200);
-}
-
-.box .actions::after {
-	height: 0px;
-	clear: both;
-	display: block;
-	visibility: hidden;
-	content: ".";
-}
-
-.box .actions input {
-	margin: 0px;
-}
-
-.box .actions-right {
-	margin: 5px 10px 5px 5px;
-	float: right;
 }
 
 /* -----------------------------------------------------------
@@ -437,7 +290,8 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content {
+#content
+{
 	margin: 10px 0;
 	padding: 0;
 	min-height: 100%;
@@ -448,7 +302,7 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content -> left
 ----------------------------------------------------------- */
-#content #left {
+#left {
 	left: 0;
 	width: 280px;
 	position: absolute;
@@ -458,7 +312,7 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content -> left -> menu
 ----------------------------------------------------------- */
-#content #left #menu {
+#left #menu {
 	margin: 0 10px 0 60px;
 	padding: 0;
 	clear: both;
@@ -468,17 +322,17 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content -> left -> menu / links
 ----------------------------------------------------------- */
-#content #left #menu ul {
+#left #menu ul {
 	margin: 0;
 	padding: 0;
 	background: #376ea6;
 }
 
-#content #left #menu ul.opened {
+#left #menu ul.opened {
 	display: block;
 }
 
-#content #left #menu li {
+#left #menu li {
 	margin: 0;
 	padding: 0;
 	clear: both;
@@ -491,7 +345,7 @@ nav.header_main {
 	line-height: 0;
 }
 
-#content #left #menu li a {
+#left #menu li a {
 	margin: 0 0 0 6px;
 	padding: 7px 0 9px 18px;
 	height: 1%;
@@ -503,17 +357,17 @@ nav.header_main {
 	text-decoration: none;
 }
 
-#content #left #menu li a:hover {
+#left #menu li a:hover {
 	color: #b9dcff;
 }
 
-#content #left #menu li ul {
+#left #menu li ul {
 	margin: 0;
 	padding: 0;
 	border-left: 18px solid #326395;
 }
 
-#content #left #menu li ul li {
+#left #menu li ul li {
 	margin: 0;
 	padding: 0;
 	clear: both;
@@ -527,7 +381,7 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content -> right
 ----------------------------------------------------------- */
-#content #right {
+#right {
 	margin: 0 60px 0 290px;
 	padding: 0;
 	clear: both;
@@ -537,58 +391,75 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content -> right -> box
 ----------------------------------------------------------- */
-#content div.box {
+.box {
 	margin: 0;
 	padding: 0;
 	clear: both;
 	overflow: hidden;
-	background: #ffffff;
 }
 
-#content div.box.noBlank {
+.box.noBlank {
 	margin-top: 14px;
 }
 
-#content div.box-left {
+.box-left {
 	width: 49%;
 	clear: none;
 	float: left;
 }
 
-#content div.box-right {
+.box-right {
 	width: 49%;
 	clear: none;
 	float: right;
 }
 
 /* -----------------------------------------------------------
-	content -> right -> box / title
+	content -> right -> box -> header
 ----------------------------------------------------------- */
-#content div.box div.header_main.title {
-	margin: 0;
-	padding: 0;
+.box .header {
+	border-width: 1px 1px 0px;
+	border-style: solid solid none;
+	border-radius: 3px 3px 0px 0px;
+	height: 34px;
+	line-height: 34px;
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#78b1ed', endColorstr = '#417bb5', GradientType = 0 );
+	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+.box .grey.header {
+	border-color: rgb(200, 200, 200);
+	filter: none;
+}
+
+.box .header img {
+	margin: 9px auto 9px 8px;
+	float: left;
+	display: inline-block;
+	-moz-user-select: none;
+}
+
+.box .header h3 {
+	margin: 0px 0px 0px 8px;
+	padding: 0px 0px 0px 10px;
+	float: left;
+}
+
+.box .header h3 {
+	font-size: 13px;
+	text-shadow: 0 1px 0 #000;
+}
+.box .header_main.title {
 	clear: both;
 	overflow: hidden;
 	height: 32px;
 }
 
 /* -----------------------------------------------------------
-	content -> right -> box / headings
------------------------------------------------------------ */
-#content div.box h1,#content div.box h2,#content div.box h3,#content div.box h4,#content div.box h5,#content div.box h6
-	{
-	margin: 0;
-	padding: 10px 0 0 10px;
-	float: left;
-	color: #ffffff;
-	clear: both;
-	overflow: hidden;
-}
-
-/* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
-div.form {
+.form {
 	margin: 0;
 	padding: 0 20px 10px 20px;
 	clear: both;
@@ -598,21 +469,21 @@ div.form {
 /* -----------------------------------------------------------
 	content -> right -> box / tables
 ----------------------------------------------------------- */
-#content div.table {
-	margin-top: 10px;
+.table {
 	padding: 20px;
 	clear: both;
 	overflow: hidden;
+	background: white;
 }
 
-#content table {
+table {
 	margin: 0;
 	padding: 0;
 	width: 100%;
 	border-collapse: collapse;
 }
 
-#content table th,#content table td {
+table th,table td {
 	background: #eeeeee;
 	border-bottom: 1px solid #cdcdcd;
 	text-align: center;
@@ -620,57 +491,67 @@ div.form {
 	height: 30px;
 }
 
-#content table th.column1 {
+table th.column1 {
 	width: 241px
 }
 
-#content table th.column2 {
+table th.column2 {
 	width: 383px
 }
 
-#content table th.column3 {
+table th.column3 {
 	width: 248px
 }
 
-#content table td {
+table td {
 	background: #ffffff;
 }
 
-#content table td.center {
+table td.center {
 	text-align: center;
 }
 
-#content table td.center input[type='checkbox'] {
+table td.center input[type='checkbox'] {
 	margin: 0;
 }
 
-#content table td.operate a {
+table td.operate a {
 	padding: 0 10px 0 10px;
 }
 
 /* -----------------------------------------------------------
 	content -> box
 ----------------------------------------------------------- */
-#content div._edit {
+._edit {
 	height: auto;
 	padding: 0;
 	margin-top: 14px;
 }
 
-#content div.box._edit._hasBlank {
+.box._edit._hasBlank {
 	margin: 0;
 }
 
-#content div.box div.data_wrapper {
+.box .data_wrapper {
 	border: 1px solid #C8C8C8;
 	border-top: 1px solid #2B5177;
 	background: white;
 	border-radius: 0;
 	border-bottom: 0;
 	padding: 0;
+	
+	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
+	border-radius: 0px 0px 3px 3px;
+	border-top-color: rgb(200, 200, 200);
+	
+	border-radius: 0px;
+	border-bottom-color: currentColor;
+	border-bottom-width: 0px;
+	border-bottom-style: none;
+	
 }
 
-#content div.box div.data_wrapper::after {
+.box .data_wrapper::after {
 	content: ".";
 	display: block;
 	height: 0;
@@ -678,13 +559,13 @@ div.form {
 	visibility: hidden;
 }
 
-#content div.box div.has_subdata {
+.box .has_subdata {
 	padding: 8px 0 8px 20px;
 	height: 27px;
 	width: 100%
 }
 
-#content div.box div.data {
+.box .data {
 	display: inline;
 	float: left;
 	border-bottom: 1px solid #E7E7E7;
@@ -694,7 +575,7 @@ div.form {
 	background: #F6F6F6;
 }
 
-#content div.box div.data input[type='submit'],#content div.box div.data input[type='button']
+.box .data input[type='submit'],.box .data input[type='button']
 	{
 	display: inline-block;
 	width: auto;
@@ -705,7 +586,7 @@ div.form {
 	margin: 0 25px 0 0;
 }
 
-#content div.box div.data>div {
+.box .data>div {
 	border-left: 1px solid #E7E7E7;
 	float: right;
 	width: 75%;
@@ -713,7 +594,7 @@ div.form {
 	padding-right: 10px;
 }
 
-#content div.box div.data>div:first-child {
+.box .data>div:first-child {
 	float: left;
 	width: 16%;
 	padding: 0;
@@ -721,90 +602,93 @@ div.form {
 	margin-left: 10px;
 }
 
-#content div.box div.data>div.readonly {
+.box .data>div.readonly {
 	margin: 12px 0 0 10px;
 }
 
-#content div.box div.data>div label {
+.box .data>div label {
 	display: inline;
 }
 
-#content div.box div.data>div label.input_rule {
+.box .data>div label.input_rule {
 	font-weight: normal;
 	cursor: auto;
 }
 
-#content div.box div.data>div input {
+.box .data>div input {
 	width: auto;
 	display: inline;
 }
+.box .data_wrapper.login .data>div input{
+	width:98%
+}
 
-#content div.box div.data>div textarea {
+.box .data>div textarea {
 	width: 60%;
 }
 
-#content div.box div.data span.error {
+.box .data span.error {
 	color: #B0171F;
 	font-weight: bold;
 }
 
-#content div.box div.data.textarea_in {
+.box .data.textarea_in {
 	
 }
 
-#content div.box div.slug_rule {
+.box .slug_rule {
 	padding: 0px 20px;
 	margin: -4px 0 8px 0;
 }
 
-#content div.box div.ds_table_struct {
+.box .ds_table_struct {
 	padding: 0 82px 8px 82px;
 	margin-top: -8px;
 	height: auto;
 }
 
-#content div.box div.has_subdata {
+.box .has_subdata {
 	margin-bottom: -20px;
 }
 
-#content div.box div.subdata {
+.box .subdata {
 	padding: 4px 0;
 	height: 20px;
 }
 
-#content div.box div.subdata>div {
+.box .subdata>div {
 	width: 5%;
 	display: inline-block;
 }
 
-#content div.box div.subdata>div:first-child {
+.box .subdata>div:first-child {
 	float: left;
 	width: 70%;
 	display: inline-block;
 }
 
-#content div.box div.subdata input[type='checkbox'] {
+.box .subdata input[type='checkbox'] {
 	margin: 0;
 	height: 20px;
 }
 
-#content div.box div.ds_subdata {
+.box .ds_subdata {
 	padding: 0 0 10px 82px;
 	width: 100%
 }
 
-#content div.box div.ds_table_data {
+.box .ds_table_data {
 	
 }
 
-#content div.box div.has_subdata div,#content div.box div.slug_rule div,#content div.box div.ds_subdata div
+.box .has_subdata ,.box .slug_rule ,.box .ds_subdata 
 	{
 	width: 10%;
 	display: inline-block;
 	text-align: left;
 }
 
-#content div.box div.has_subdata div.blank_div,#content div.box div.ds_subdata input[type='text']
+.box .has_subdata .blank_div,.box .ds_subdata input[type='text']
 	{
 	width: 40%;
 	display: inline-block;
@@ -812,24 +696,24 @@ div.form {
 	padding-left: 5px;
 }
 
-#content div.box div.ds_subdata input[type='text'] {
+.box .ds_subdata input[type='text'] {
 	width: 31%;
 }
 
-#content div.box div.has_subdata label
-#content div.box div.ds_subdata label {
+.box .has_subdata label
+.box .ds_subdata label {
 	padding: 7px 0 0 0;
 	font-weight: normal;
 }
 
-#content div.box p {
+.box p {
 	color: #547EAB;
 	font-weight: bold;
 	margin: 0;
 	padding: 8px 10px;
 }
 
-#content div.box div.subdata label {
+.box .subdata label {
 	float: left;
 	padding: 4px 20px 0 0;
 	font-weight: normal;
@@ -837,28 +721,28 @@ div.form {
 	text-align: right;
 }
 
-#content div.box div.subdata label.void {
+.box .subdata label.void {
 	width: 8%;
 	visibility: hidden;
 }
 
-#content div.box.datasource {
+.box.datasource {
 	margin: 0 200px;
 }
 
-#content div.box div.actions {
+.box .actions {
 	border: 1px solid #C8C8C8;
 	background: #F7F7F7;
 	border-radius: 0 0 3px 3px;
 }
 
-#content div.box div.actions.whiteBg {
+.box .actions.whiteBg {
 	border: 0px;
 	background: white;
 	padding: 0 10px;
 }
 
-#content div.box div.actions::after {
+.box .actions::after {
 	content: ".";
 	display: block;
 	height: 0;
@@ -866,18 +750,21 @@ div.form {
 	visibility: hidden;
 }
 
-#content div.box div.actions-left {
+.box .actions-left {
 	float: left;
 	margin: 5px;
 	margin-left: 40%;
 }
 
-#content div.box div.actions input {
+.box .actions input {
 	margin: 0;
 }
 
-#content div.box div.actions-right {
+.box .actions-right {
 	float: right;
 	margin: 5px;
 	margin-right: 40%;
+}
+.box .actions-right.login{
+	margin-right: 10px;
 }

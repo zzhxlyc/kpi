@@ -1,6 +1,6 @@
 <DIV class="top"> 
 	<DIV class="gradient"></DIV> 
-	<DIV class="content"> 
+	<DIV id="content"> 
 		<H1>杭州钱鸿集团绩效考核系统</H1> 
 		<DIV class="wrapper"> 
 		<DIV class="box"> 
@@ -8,16 +8,16 @@
 		<IMG src="<?php echo IMAGE_HOME?>/lock.png" width="16" height="16"> 
 		<H3>登录</H3> </DIV> 
 		<FORM action="" method="post"> 
-			<DIV class="content no-padding with-actions grey"> 
-				<DIV class="section _100"> 
-					<LABEL for="user"> 账号</LABEL> 
+			<DIV class="data_wrapper login"> 
+				<DIV class="data"> 
+					<DIV><LABEL for="user"> 账号</LABEL></DIV> 
 					<DIV> 
 						<INPUT class="required" type="text" name="user" value="<?php echo $user?>" /> 
 						<span class="error"><?php echo $errors['user']?></span>	
 					</DIV>
 					
 				</DIV> 
-				<DIV class="section _100"> <LABEL for="password"> 密码 </LABEL> 
+				<DIV class="data"> <DIV><LABEL for="password"> 密码 </LABEL></DIV> 
 					<DIV> 
 						<INPUT class="required" name="password" type="password" /> 
 						<span class="error"><?php echo $errors['password']?></span>
@@ -26,7 +26,7 @@
 				</DIV> 
 			</DIV> 
 			<DIV class="actions"> 
-				<DIV class="actions-right"> <INPUT value="登录" type="submit" /> </DIV> 
+				<DIV class="actions-right login"> <INPUT value="登录" type="submit" /> </DIV> 
 			</DIV> 
 		</FORM> 
 		</DIV> 
