@@ -1,6 +1,5 @@
 
 	<div id="right">
-		<form action="<?php echo $home.'/remove'?>" method="post">
 		<!-- table -->
 		<div class="box noBlank">
 			<!-- box / title -->
@@ -8,6 +7,7 @@
 				<h5></h5>
 			</div>
 			<!-- end box / title -->
+		<form action="<?php echo $home.'/remove'?>" method="post">
 			<div class="table">
 					<table>
 						<thead>
@@ -42,17 +42,17 @@
 						</tbody>
 					</table>
 			</div>
-		</div>
 		<!-- end table -->
-		<div>
-			<input type="submit" value="批量删除" />
-		</div>
-		</form>
-		<form action="<?php echo $home.'/add'?>" method="post">
-			<div>
-				<input type="submit" value="添加部门主管" />
+			<div class="actions whiteBg">
+				<div class="actions-left"><input type="submit" value="批量删除" /></div>
+		</form>		
+				<div class="actions-right">
+					<form action="<?php echo $home.'/add'?>" method="post">
+						<input type="submit" value="添加部门主管" />
+					</form>
+				</div>
 			</div>
-		</form>
+		</div>
 	</div>
 
 

@@ -18,7 +18,7 @@
 </form>
 
 <table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
+	<tr>
 		<td>数据源表</td>
 		<td width="150">添加时间</td>
 		<td width="100">操作</td>

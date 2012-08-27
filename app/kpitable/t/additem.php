@@ -97,7 +97,7 @@
 
 			<div class="actions">
 					<div class="actions-left"><input type="submit" value="保存" /></div>
-					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home.'/show?id='.$tableitem->kpi_table?>'" /></div>
+					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home."/show?id=$kpitable->id"?>'" /></div>
 					<input type="hidden" name="id" value="<?php echo $tableitem->id?>" />
 			</div>
 		</form>

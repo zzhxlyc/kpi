@@ -14,7 +14,7 @@
 			<div class="table">
 				<table cellspacing="0" cellpadding="0">
 					<thead>
-					<tr class="top">
+					<tr>
 						<th>考核表项</th>
 						<th width="70">类型</th>
 						<th width="70">比重</th>

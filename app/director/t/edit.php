@@ -6,7 +6,7 @@
 	else{
 ?>
 <div id="right">
-	<div class="box _edit _hasBlank">
+	<div class="box _edit">
 		<div class="header_main title" >
 		<h2>编辑部门主管</h2>
 		</div>
@@ -46,12 +46,12 @@
 					}
 					?>
 				</div>
-			</div>						
+				</div>						
+			</div>
 			<div class="actions">
 					<div class="actions-left"><input type="submit" value="保存" /></div>
 					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
 					<input type="hidden" name="id" value="<?php echo $user->id?>" />
 			</div>
 		</form>
-	</div>
 </div>	

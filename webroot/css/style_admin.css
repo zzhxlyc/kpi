@@ -306,7 +306,7 @@ nav.header_main {
 	left: 0;
 	width: 280px;
 	position: absolute;
-	padding-top: 14px;
+	padding-top: 18px;
 }
 
 /* -----------------------------------------------------------
@@ -398,10 +398,15 @@ nav.header_main {
 	overflow: hidden;
 }
 
-.box.noBlank {
-	margin-top: 14px;
+.box.noBlank, .box._edit {
+	margin-top: 18px;
 }
-
+.box._edit._hasBlank{
+	margin: 0;
+}
+.box._datasource{
+	margin: 20px 50px;
+}
 .box-left {
 	width: 49%;
 	clear: none;
@@ -455,7 +460,9 @@ nav.header_main {
 	overflow: hidden;
 	height: 32px;
 }
-
+.box .header_main h2{
+	margin: 5px 0 0 10px;6
+}
 /* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
@@ -518,19 +525,14 @@ table td.center input[type='checkbox'] {
 table td.operate a {
 	padding: 0 10px 0 10px;
 }
+#ds_table_attrs th{
+	background: transparent;
+}
+
 
 /* -----------------------------------------------------------
 	content -> box
 ----------------------------------------------------------- */
-._edit {
-	height: auto;
-	padding: 0;
-	margin-top: 14px;
-}
-
-.box._edit._hasBlank {
-	margin: 0;
-}
 
 .box .data_wrapper {
 	border: 1px solid #C8C8C8;
@@ -593,7 +595,6 @@ table td.operate a {
 	padding: 0 10px;
 	padding-right: 10px;
 }
-
 .box .data>div:first-child {
 	float: left;
 	width: 16%;
@@ -601,7 +602,11 @@ table td.operate a {
 	margin-top: 12px;
 	margin-left: 10px;
 }
-
+.box .data>div._oneline{
+	width: 100%;
+	border:0;
+	margin-top: 0;
+}
 .box .data>div.readonly {
 	margin: 12px 0 0 10px;
 }
@@ -663,7 +668,7 @@ table td.operate a {
 
 .box .subdata>div:first-child {
 	float: left;
-	width: 70%;
+	width: 50%;
 	display: inline-block;
 }
 
@@ -753,7 +758,7 @@ table td.operate a {
 .box .actions-left {
 	float: left;
 	margin: 5px;
-	margin-left: 40%;
+	margin-left: 10px;
 }
 
 .box .actions input {
@@ -763,8 +768,74 @@ table td.operate a {
 .box .actions-right {
 	float: right;
 	margin: 5px;
-	margin-right: 40%;
+	margin-right: 10px;
 }
 .box .actions-right.login{
 	margin-right: 10px;
+}
+/****************************pagenavi*****************************/
+.page-nav {
+clear: both;
+font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+height: 30px;
+font-size: 1.0em; /* This may need changed to suit your theme */
+-webkit-font-smoothing:antialiased; /* smooths the font in webkit, optional */
+float:right;
+margin-right: 15px;
+}
+
+.page-nav p {
+float: left;
+padding-top: 5px;
+}
+.page-nav  input {
+float: left;
+}
+
+.page-nav a, .page-nav span {
+	/* Change this image URL to the relative location of the sprite sheet: */
+background:url(../images/numbers_spritesheet.png) no-repeat;
+display: block;
+float: left;
+width: 28px;
+height: 27px;
+text-decoration: none;
+text-align: center;
+line-height: 26px;
+margin-right: 3px;
+font-weight: bold;
+}
+.page-nav a:active {
+margin-top: 1px;
+}
+.page-nav .pages, .page-nav .extend {
+background: none;
+width: auto;
+font-weight: normal;
+margin-right: 7px;
+line-height: 27px;
+}
+.page-nav .extend {
+padding: 0 5px;
+margin: 0 5px 0 1px;
+}
+.page-nav .nextpostslink, .page-nav .previouspostslink, 
+	.page-nav .first, .page-nav .last {
+text-indent: -9999px;
+}
+
+/* Individual color themes */
+
+.page-nav a, .page-nav span {
+background-position: 0 0;
+color: #717171;
+text-shadow: 1px 1px 0 #fff;
+}
+.page-nav a:hover {
+background-position: 0 -27px;
+}
+.page-nav span.current {
+text-shadow: 0 1px 0 #585858;
+color: #fff;
+background-position: -140px 0;
 }

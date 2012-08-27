@@ -5,27 +5,25 @@
 	}
 	else{
 ?>
-<div id="content">
-	<div class="edit_panel datasource">
+	<div class="box _datasource">
 		<div class="header_main title" >
-					<h2><?php echo $datasource->name?>历史数据</h2>
-				</div>
+		<h2><?php echo $datasource->name?>历史数据</h2>
+		</div>
 		<form action="" method="get" >
+		<div class="data_wrapper">		
 			<div class="data">
-				从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
+				<div class="_oneline">从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
 				到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
 				<input type="hidden" name="datasource" value="<?php echo $_GET['datasource']?>" />
-				<input type="hidden" name="page" value="<?php echo $_GET['page']?>" />
-				<input type="submit" value="提交" />
+				<input type="hidden" name="page" value="<?php echo $_GET['page']?>" />&nbsp &nbsp &nbsp &nbsp
+				<input type="submit" value="提交" /></div>
 			</div>
 
 		</form>
 		<div class="table">
 			<table cellspacing="0" cellpadding="0">
 				<thead>
-									
-								
-				<tr id="column_row" class="top">
+				<tr id="column_row">
 			<?php 
 				if(is_array($list)){
 					foreach($list as $o){
@@ -86,8 +84,9 @@
 		<div class="page-nav">
 			<?php Pager::output_pager_list($page_list);?>
 		</div>
+		</div>	
 	</div>
-</div>
+
 
 <script type="text/javascript">
 <!--
