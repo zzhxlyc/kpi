@@ -1,12 +1,17 @@
-
-<form action="<?php echo $home.'/delete'?>" method="post">
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>KPI考核名称</td>
-		<td width="150">考核表名</td>
-		<td width="70">类型</td>
-		<td width="50">总分</td>
-		<td width="170">操作</td>
+<div id="right">
+	<div class="box noBlank">
+		<form action="<?php echo $home.'/remove'?>" method="post">
+			<div class="header_main title">
+			<h5></h5>
+			</div>
+<div class="table">		
+<table >
+	<tr>
+		<th>KPI考核名称</th>
+		<th width="150">考核表名</th>
+		<th width="70">类型</th>
+		<th width="50">总分</th>
+		<th width="170">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -36,10 +41,18 @@
 		}
 	?>
 </table>
-
-<a href="<?php echo $home.'/add'?>">添加一场KPI考核</a>
+</div>
 </form>
-
+			<div class="actions whiteBg">
+				
+				<div class="actions-left">
+					<form action="<?php echo $home.'/add'?>" method="post">
+						<input type="submit" value="添加一场KPI考核" />
+					</form>
+				</div>
+			</div>
+	</div>		
+</div>
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>
