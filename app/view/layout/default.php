@@ -33,7 +33,7 @@
 							<div class="toolicon">
 								<img
 									src="<?php echo IMAGE_HOME?>/user.png"
-									width="16" height="16" alt="user">
+									width="16" height="16" alt="user"/>
 							</div>
 							<div class="toolmenu">
 								<div class="toolcaption" style="min-width: 46px;">
@@ -43,7 +43,7 @@
 							<div class="toolicon_lock">
 								<img
 									src="<?php echo IMAGE_HOME?>/lock.png"
-									width="16" height="16" alt="user">
+									width="16" height="16" alt="user"/>
 							</div>
 							<div class="loginout">
 								<a class="header" href="<?php echo ROOT_URL.'/loginout'?>">注销</a>

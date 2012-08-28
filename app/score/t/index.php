@@ -1,12 +1,16 @@
-
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td width="100">部门</td>
-		<td>KPI考核名称</td>
-		<td width="150">考核项名</td>
-		<td width="100">时间</td>
-		<td width="70">分数</td>
-		<td width="100">操作</td>
+<div id="right">
+<div class="box noBlank">
+<div class="header_main title">
+</div>
+<div class="table">
+<table >
+	<tr >
+		<th width="100">部门</th>
+		<th>KPI考核名称</th>
+		<th width="150">考核项名</th>
+		<th width="100">时间</th>
+		<th width="70">分数</th>
+		<th width="100">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -31,7 +35,9 @@
 		}
 	?>
 </table>
-
+</div>
+</div>
+</div>
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>

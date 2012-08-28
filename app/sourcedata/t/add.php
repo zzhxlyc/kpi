@@ -4,25 +4,30 @@
 	}
 	else{
 ?>
-
-<div class="row">
-	<label for="datasource">数据源表</label>
-	<?php echo $datasource->name?>
-</div>
-<div class="row">
-	<label for="datasource">部门</label>
-	<?php echo $department?>
+<div id="right">
+<div class="box _edit">
+<div class="header_main title">
 </div>
 
-<table id="data_table" class="normal-table" cellspacing="0" cellpadding="0">
-	<tr id="column_row" class="top">
+<div class="data">
+	<div><label for="datasource">数据源表</label></div>
+	<div class="readonly"><?php echo $datasource->name?></div>
+</div>
+<div class="data">
+	<div><label for="datasource">部门</label></div>
+	<div class="readonly"><?php echo $department?></div>
+</div>
+
+<div class="table">
+<table>
+	<tr>
 <?php 
 	if(is_array($list)){
 		foreach($list as $o){
 			$name = $o->COLUMN_NAME;
 			$comment = $o->COLUMN_COMMENT;
 ?>
-	<td width="100"><label for="<?php echo $name?>"><?php echo $comment?></label></td>
+	<th width="100"><label for="<?php echo $name?>"><?php echo $comment?></label></th>
 <?php 
 		}
 	}
@@ -40,12 +45,17 @@
 ?>
 	</tr>
 </table>
+</div>
 
-<div class="row" style="margin: 20px 0">
-	<input type="hidden" value="<?php echo count($list)?>" id="columns" />
-	<input type="button" value="保存" onclick="sourcedata_save_row()" />
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/index"?>'" />
-	<input type="hidden" id="dsid" name="dsid" value="<?php echo $datasource->id?>" />
+
+<div class="actions">
+<input type="hidden" value="<?php echo count($list)?>" id="columns" />
+<div class="actions-left"><input type="submit" value="保存" /></div>
+<div class="actions-right"><input type="button" value="返回"
+	onclick="location.href='<?php echo $home?>/index'" /></div>
+<input type="hidden" id="dsid" name="dsid" value="<?php echo $datasource->id?>" /></div>
+
+</div>
 </div>
 
 <script type="text/javascript">

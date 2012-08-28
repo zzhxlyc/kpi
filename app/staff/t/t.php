@@ -1,9 +1,11 @@
-	<?php include(MODULE_DIR.'/sidebar/sidebar.php')?>
+<div id="content">
+	<div id="left">
+		<?php include(MODULE_DIR.'/sidebar/sidebar.php')?>
+	</div>
 
-<div class="main-content">
-	<?php 
-	if(file_exists($view->get_template())){
-		include($view->get_template());
-	}
-	?>
+<?php 
+if(file_exists($view->get_template())){
+	include($view->get_template());
+}
+?>
 </div>

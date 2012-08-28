@@ -1,9 +1,16 @@
+<div id="right">
+<div class="box">
+<div class="header_main title">
+</div>
 
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>数据源表</td>
-		<td width="180">操作</td>
+<div class="table">
+<table>
+	<thead>
+	<tr>
+		<th>数据源表</th>
+		<th width="180">操作</th>
 	</tr>
+	</thead>
 	<?php 
 		$i = 0;
 		if(is_array($list)){
@@ -25,7 +32,9 @@
 		}
 	?>
 </table>
-
+</div>
+</div>
+</div>
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>

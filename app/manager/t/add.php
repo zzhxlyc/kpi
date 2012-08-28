@@ -49,6 +49,7 @@
 				<span class="error"><?php echo $errors['depart']?></span>
 			
 			</div>
+			</div>
 			<div class="actions">
 				<div class="actions-left"><input type="submit" value="保存" /></div>
 				<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
@@ -56,6 +57,6 @@
 
 	</form>
 </div>
-	
+</div>	
 
 

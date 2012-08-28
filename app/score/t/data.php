@@ -5,24 +5,31 @@
 	else{
 ?>
 
-<form action="" method="get">
+<div id="right">
+<div class="box">
+<div class="header_main title">
+</div>
+<form action="" method="post">
 
-<div class="row">
-	<label for="quality">时间段选择</label>
-	从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
+<div class="data">
+	<div><label for="quality">时间段选择</label></div>
+	<div>从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
 	到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
 	<input type="hidden" name="itemid" value="<?php echo $tableitem->id?>" />
-	<input type="submit" value="提交" />
+	<input type="submit" value="提交" /></div>
 </div>
 
 </form>
 
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>数据源表</td>
-		<td width="150">添加时间</td>
-		<td width="100">操作</td>
+<div class="table">
+<table>
+	<thead>
+	<tr>
+		<th>数据源表</th>
+		<th width="150">添加时间</th>
+		<th width="100">操作</th>
 	</tr>
+	</thead>
 	<?php 
 		$i = 0;
 		if(is_array($list)){
@@ -43,6 +50,9 @@
 		}
 	?>
 </table>
+</div>
+</div>
+</div>
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>

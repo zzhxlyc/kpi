@@ -1,82 +1,85 @@
-<?php 
-	if($error){
-		output_error($error, $index_page);
-	}
-	else{
-?>
-
-<div class="row">
-	<label for="name">考核表名称</label>
-	<?php echo $kpitable->name?>
+<?php
+if($error){
+	output_error($error, $index_page);
+}
+else{
+	?>
+<div id="right">
+<div class="box _edit">
+<div class="header_main title"></div>
+<div class="data_wrapper">
+<div class="data">
+<div><label for="name">考核表名称</label></div>
+<div class="readonly"><?php echo $kpitable->name?></div>
 </div>
 
-<hr/>
-
-<div class="row">
-	<label for="name">考核项名称</label>
-	<?php echo $tableitem->name?>
+<div class="data">
+<div><label for="name">考核项名称</label></div>
+<div class="readonly"><?php echo $tableitem->name?></div>
 </div>
 
-<div class="row">
-	<label for="type">类型</label>
-	<?php echo KpiItemType::to_string($tableitem->type)?>
+<div class="data">
+<div><label for="type">类型</label></div>
+<div class="readonly"><?php echo KpiItemType::to_string($tableitem->type)?></div>
 </div>
 
-<?php if(!is_foujue($tableitem)){?>
-<div class="row">
-	<label for="weight">权重</label>
-	<?php echo $tableitem->weight?>%
+<div><?php if(!is_foujue($tableitem)){?></div>
+<div class="data">
+<div><label for="weight">权重</label></div>
+<div class="readonly"><?php echo $tableitem->weight?>%</div>
 </div>
-<?php }?>
+<div><?php }?></div>
 
-<div class="row">
-	<label for="desc">指标解释</label>
-	<?php echo $tableitem->desc?>
-</div>
-
-<div class="row">
-	<label for="timeline">时间节点</label>
-	<?php echo $tableitem->timeline?>
+<div class="data">
+<div><label for="desc">指标解释</label></div>
+<div class="readonly"><?php echo $tableitem->desc?></div>
 </div>
 
-<div class="row">
-	<label for="quality">质量要求</label>
-	<?php echo $tableitem->quality?>
+<div class="data">
+<div><label for="timeline">时间节点</label></div>
+<div class="readonly"><?php echo $tableitem->timeline?></div>
 </div>
 
-<div class="row">
-	<label for="output">结果型输出</label>
-	<?php echo $tableitem->output?>
+<div class="data">
+<div><label for="quality">质量要求</label></div>
+<div class="readonly"><?php echo $tableitem->quality?></div>
 </div>
 
-<div class="row">
-	<label for="standard">评分标准</label>
-	<?php echo $tableitem->standard?>
+<div class="data">
+<div><label for="output">结果型输出</label></div>
+<div class="readonly"><?php echo $tableitem->output?></div>
 </div>
 
-<?php if(!is_foujue($tableitem)){?>
-<div class="row">
-	<label for="datasource">数据来源</label>
-	<a target="_blank" href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a>
+<div class="data">
+<div><label for="standard">评分标准</label></div>
+<div class="readonly"><?php echo $tableitem->standard?></div>
 </div>
 
-<div class="row">
-	<label for="datasource">评分部门</label>
-	<?php echo $Manager->department?>（主管：<?php echo $Manager->name?>）
-</div>
-<?php }?>
-
-<hr/>
-
-<div class="row">
-	<label for="score">评分</label>
-	<?php echo get_score($dataitem);?>
+<div><?php if(!is_foujue($tableitem)){?></div>
+<div class="data">
+<div><label for="datasource">数据来源</label></div>
+<div><a target="_blank"
+	href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a></div>
 </div>
 
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/show?id=$kpidata->id"?>'" />
+<div class="data">
+<div><label for="datasource">评分部门</label></div>
+<div class="readonly"><?php echo $Manager->department?>（主管：<?php echo $Manager->name?>）</div>
+</div>
+	<?php }?>
+
+<div class="data">
+<div><label for="score">评分</label></div>
+<div><?php echo get_score($dataitem);?></div>
+</div>
+</div>
+<div class="actions">
+<div class="actions-left"><input type="button" value="返回"
+	onclick="location.href='<?php echo $home."/show?id=$kpidata->id"?>'" /></div>
+</div>
+</div>
 </div>
 
-<?php 
-	}
+	<?php
+}
 ?>

@@ -43,7 +43,7 @@ a:hover {
 h1,h2,h3,h4,h5,h6 {
 	color: #ffffff;
 	font-weight: bold;
-	display:inline-block;
+	display: inline-block;
 }
 
 h1 {
@@ -104,6 +104,32 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 	border: 1px solid #A3A3A3;
 }
 
+hr{
+	margin:0;
+}
+.top {
+	background: rgb(54, 111, 172);
+	width: 100%;
+	height: 359px;
+	border-bottom-color: rgb(13, 50, 89);
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#366fac', endColorstr = '#184b82', GradientType = 0 );
+	position: absolute;
+	box-shadow: 0px 2px 5px rgba(17, 16, 13, 0.5);
+}
+
+.top .gradient {
+	background: rgb(227, 227, 227);
+	top: 360px;
+	width: 100%;
+	height: 270px;
+	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
+		'#e3e3e3', endColorstr = '#fafafa', GradientType = 0 );
+	position: absolute;
+}
+
 #content h1 {
 	left: 0px;
 	top: 60px;
@@ -126,6 +152,7 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 	position: absolute;
 	z-index: 101;
 }
+
 /* -----------------------------------------------------------
 	header_toolbar
 ----------------------------------------------------------- */
@@ -221,7 +248,8 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 .toolbar_large .toolcaption {
 	color: #fff;
 	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
-	filter: dropshadow(color =       #CC000000, offx =       0, offy =       1)
+	filter: dropshadow(color =         #CC000000, offx =         0, offy =         1
+		)
 }
 
 .toolbar_large .toolcaption {
@@ -261,9 +289,10 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 		rgba(24, 75, 130, 1) 100% );
 	background: linear-gradient(top, rgba(54, 111, 172, 1) 0,
 		rgba(24, 75, 130, 1) 100% );
-	filter: progid :       DXImageTransform.Microsoft.gradient (     
-		 startColorstr =   
-		   '#366fac', endColorstr =       '#184b82', GradientType =       0 )
+	filter: progid :         DXImageTransform.Microsoft.gradient (      
+		  startColorstr =    
+		    '#366fac', endColorstr =         '#184b82', GradientType =        
+		0 )
 }
 
 nav.header_main {
@@ -273,8 +302,7 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content
-{
+#content {
 	margin: 10px 0;
 	padding: 0;
 	min-height: 100%;
@@ -381,15 +409,18 @@ nav.header_main {
 	overflow: hidden;
 }
 
-.box.noBlank, .box._edit {
+.box.noBlank,.box._edit {
 	margin-top: 18px;
 }
-.box._edit._hasBlank{
+
+.box._edit._hasBlank {
 	margin: 0;
 }
-.box._datasource{
+
+.box._datasource {
 	margin: 20px 50px;
 }
+
 .box-left {
 	width: 49%;
 	clear: none;
@@ -411,8 +442,9 @@ nav.header_main {
 	border-radius: 3px 3px 0px 0px;
 	height: 34px;
 	line-height: 34px;
-	filter: progid : DXImageTransform.Microsoft.gradient ( startColorstr =
-		'#78b1ed', endColorstr = '#417bb5', GradientType = 0 );
+	filter: progid :   DXImageTransform.Microsoft.gradient (   startColorstr
+		= 
+		 '#78b1ed', endColorstr =   '#417bb5', GradientType =   0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
 }
 
@@ -438,14 +470,18 @@ nav.header_main {
 	font-size: 13px;
 	text-shadow: 0 1px 0 #000;
 }
+
 .box .header_main.title {
 	clear: both;
 	overflow: hidden;
 	height: 32px;
 }
-.box .header_main h2{
-	margin: 5px 0 0 10px;6
+
+.box .header_main h2 {
+	margin: 5px 0 0 10px;
+	6
 }
+
 /* -----------------------------------------------------------
 	content -> right -> box / forms
 ----------------------------------------------------------- */
@@ -509,15 +545,14 @@ table td.center input[type='checkbox'] {
 table td.operate a {
 	padding: 0 10px 0 10px;
 }
-#ds_table_attrs th{
+
+#ds_table_attrs th {
 	background: transparent;
 }
-
 
 /* -----------------------------------------------------------
 	content -> box
 ----------------------------------------------------------- */
-
 .box .data_wrapper {
 	border: 1px solid #C8C8C8;
 	border-top: 1px solid #2B5177;
@@ -525,16 +560,13 @@ table td.operate a {
 	border-radius: 0;
 	border-bottom: 0;
 	padding: 0;
-	
 	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
 	border-radius: 0px 0px 3px 3px;
 	border-top-color: rgb(200, 200, 200);
-	
 	border-radius: 0px;
 	border-bottom-color: currentColor;
 	border-bottom-width: 0px;
 	border-bottom-style: none;
-	
 }
 
 .box .data_wrapper::after {
@@ -561,8 +593,7 @@ table td.operate a {
 	background: #F6F6F6;
 }
 
-.box .data input[type='submit'],.box .data input[type='button']
-	{
+.box .data input[type='submit'],.box .data input[type='button'] {
 	display: inline-block;
 	width: auto;
 	height: 25px;
@@ -579,6 +610,7 @@ table td.operate a {
 	padding: 0 10px;
 	padding-right: 10px;
 }
+
 .box .data>div:first-child {
 	float: left;
 	width: 16%;
@@ -586,11 +618,13 @@ table td.operate a {
 	margin-top: 12px;
 	margin-left: 10px;
 }
-.box .data>div._oneline{
+
+.box .data>div._oneline {
 	width: 100%;
-	border:0;
+	border: 0;
 	margin-top: 0;
 }
+
 .box .data>div.readonly {
 	margin: 12px 0 0 10px;
 }
@@ -608,8 +642,9 @@ table td.operate a {
 	width: auto;
 	display: inline;
 }
-.box .data_wrapper.login .data>div input{
-	width:98%
+
+.box .data_wrapper.login .data>div input {
+	width: 98%
 }
 
 .box .data>div textarea {
@@ -670,15 +705,13 @@ table td.operate a {
 	
 }
 
-.box .has_subdata ,.box .slug_rule ,.box .ds_subdata 
-	{
+.box .has_subdata,.box .slug_rule,.box .ds_subdata {
 	width: 10%;
 	display: inline-block;
 	text-align: left;
 }
 
-.box .has_subdata .blank_div,.box .ds_subdata input[type='text']
-	{
+.box .has_subdata .blank_div,.box .ds_subdata input[type='text'] {
 	width: 40%;
 	display: inline-block;
 	margin: 0 10px 0 0;
@@ -754,72 +787,81 @@ table td.operate a {
 	margin: 5px;
 	margin-right: 10px;
 }
-.box .actions-right.login{
+
+.box .actions-right.login {
 	margin-right: 10px;
 }
+
 /****************************pagenavi*****************************/
 .page-nav {
-clear: both;
-font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
-height: 30px;
-font-size: 1.0em; /* This may need changed to suit your theme */
--webkit-font-smoothing:antialiased; /* smooths the font in webkit, optional */
-float:right;
-margin-right: 15px;
+	clear: both;
+	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	height: 30px;
+	font-size: 1.0em; /* This may need changed to suit your theme */
+	-webkit-font-smoothing: antialiased;
+	/* smooths the font in webkit, optional */
+	float: right;
+	margin-right: 15px;
 }
 
 .page-nav p {
-float: left;
-padding-top: 5px;
-}
-.page-nav  input {
-float: left;
+	float: left;
+	padding-top: 5px;
 }
 
-.page-nav a, .page-nav span {
+.page-nav  input {
+	float: left;
+}
+
+.page-nav a,.page-nav span {
 	/* Change this image URL to the relative location of the sprite sheet: */
-background:url(../images/numbers_spritesheet.png) no-repeat;
-display: block;
-float: left;
-width: 28px;
-height: 27px;
-text-decoration: none;
-text-align: center;
-line-height: 26px;
-margin-right: 3px;
-font-weight: bold;
+	background: url(../images/numbers_spritesheet.png) no-repeat;
+	display: block;
+	float: left;
+	width: 28px;
+	height: 27px;
+	text-decoration: none;
+	text-align: center;
+	line-height: 26px;
+	margin-right: 3px;
+	font-weight: bold;
 }
+
 .page-nav a:active {
-margin-top: 1px;
+	margin-top: 1px;
 }
-.page-nav .pages, .page-nav .extend {
-background: none;
-width: auto;
-font-weight: normal;
-margin-right: 7px;
-line-height: 27px;
+
+.page-nav .pages,.page-nav .extend {
+	background: none;
+	width: auto;
+	font-weight: normal;
+	margin-right: 7px;
+	line-height: 27px;
 }
+
 .page-nav .extend {
-padding: 0 5px;
-margin: 0 5px 0 1px;
+	padding: 0 5px;
+	margin: 0 5px 0 1px;
 }
-.page-nav .nextpostslink, .page-nav .previouspostslink, 
-	.page-nav .first, .page-nav .last {
-text-indent: -9999px;
+
+.page-nav .nextpostslink,.page-nav .previouspostslink,.page-nav .first,.page-nav .last
+	{
+	text-indent: -9999px;
 }
 
 /* Individual color themes */
+.page-nav a,.page-nav span {
+	background-position: 0 0;
+	color: #717171;
+	text-shadow: 1px 1px 0 #fff;
+}
 
-.page-nav a, .page-nav span {
-background-position: 0 0;
-color: #717171;
-text-shadow: 1px 1px 0 #fff;
-}
 .page-nav a:hover {
-background-position: 0 -27px;
+	background-position: 0 -27px;
 }
+
 .page-nav span.current {
-text-shadow: 0 1px 0 #585858;
-color: #fff;
-background-position: -140px 0;
+	text-shadow: 0 1px 0 #585858;
+	color: #fff;
+	background-position: -140px 0;
 }

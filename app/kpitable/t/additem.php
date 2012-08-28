@@ -4,15 +4,18 @@
 	}
 	else{
 ?>
-
 <div id="right">
-	<div class="box _edit noBlank">
-		<div class="header_main title" >
-		<h2><?php echo $kpitable->name?> | 添加考核项</h2>
-		</div>
-		<form action="" method="post" >
-			<div class="data_wrapper">
+<div class="box _edit noBlank">
+<div class="header_main title">
+<h2><?php echo $kpitable->name?> | 添加考核项</h2>
+</div>
+<form action="" method="post">
+<div class="data_wrapper">
 
+<div class="data">
+	<div><label for="name">考核表名称</label></div>
+	<div class="readonly"><?php echo $kpitable->name?></div>
+</div>
 
 <div class="data">
 	<div><label for="name">名称</label></div>
@@ -21,7 +24,7 @@
 </div>
 
 <div class="data">
-	<div><label for="type">类型</label></div>
+	<div><label for="type">考核项类型</label></div>
 	<div><select class="table_item_type_select" name="type">
 		<option value="">选择类型</option>
 		<option value="1" <?php $HTML->selected('1', $tableitem->type)?>>经济</option>
@@ -32,16 +35,15 @@
 	<span class="error"><?php echo $errors['type']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 	<div><label for="weight">权重</label></div>
-	<div><input size="5" type="text" name="weight" value="<?php echo $tableitem->weight?>" />
-	<label>%</label>
-	<span class="error"><?php echo $errors['weight']?></span></div> 
+	<div><input size="5" type="text" name="weight" value="<?php echo $tableitem->weight?>" /> %
+	<span class="error"><?php echo $errors['weight']?></span></div>
 </div>
 
 <div class="data">
 	<div><label for="desc">指标解释</label></div>
-	<div><textarea rows="5" name="desc"><?php echo $tableitem->desc?></textarea>
+	<div><textarea rows="5" cols="60" name="desc"><?php echo $tableitem->desc?></textarea>
 	<span class="error"><?php echo $errors['desc']?></span></div>
 </div>
 
@@ -53,13 +55,13 @@
 
 <div class="data">
 	<div><label for="quality">质量要求</label></div>
-	<div><input size="100" type="text" name="quality" value="<?php echo $tableitem->quality?>" />
+	<div><input size="80" type="text" name="quality" value="<?php echo $tableitem->quality?>" />
 	<span class="error"><?php echo $errors['quality']?></span></div>
 </div>
 
 <div class="data">
 	<div><label for="output">结果型输出</label></div>
-	<div><input size="100" type="text" name="output" value="<?php echo $tableitem->output?>" />
+	<div><input size="80" type="text" name="output" value="<?php echo $tableitem->output?>" />
 	<span class="error"><?php echo $errors['output']?></span></div>
 </div>
 
@@ -69,7 +71,7 @@
 	<span class="error"><?php echo $errors['standard']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 	<div><label for="datasource">数据来源</label></div>
 	<div><select name="datasource">
 		<option value="">选择数据来源表</option>
@@ -82,7 +84,7 @@
 	<span class="error"><?php echo $errors['datasource']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 	<div><label for="staff">办事员</label></div>
 	<div><select name="staff">
 		<option value="">选择办事员</option>
@@ -95,15 +97,17 @@
 	<span class="error"><?php echo $errors['staff']?></span></div>
 </div>
 
-			<div class="actions">
-					<div class="actions-left"><input type="submit" value="保存" /></div>
-					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home."/show?id=$kpitable->id"?>'" /></div>
-					<input type="hidden" name="id" value="<?php echo $tableitem->id?>" />
-			</div>
-		</form>
-	</div>
-	
 </div>
+
+<div class="actions">
+<div class="actions-left"><input type="submit" value="保存" /></div>
+<div class="actions-right"><input type="button" value="返回"
+	onclick="location.href='<?php echo $home."/show?id=$kpitable->id"?>'" /></div>
+<input type="hidden" name="tableid" value="<?php echo $kpitable->id?>" /></div>
+</form>
+</div>
+</div>
+
 
 <script type="text/javascript">
 <!--

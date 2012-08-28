@@ -48,7 +48,7 @@
 			<div class="actions whiteBg">
 					<div class="actions-left">
 						<form action="<?php echo $home.'/add'?>" method="post">
-							<input type="submit" value="添加考核项" />
+							<input type="submit" value="添加考核表" />
 						</form>					
 					</div>	
 			</div>
