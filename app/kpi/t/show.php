@@ -30,7 +30,7 @@
 				}
 	?>
 	<tr <?php echo $tr_class?>>
-		<td><a href="<?php echo KPITABLE_HOME.'/showitem?id='.$o->id?>"><?php echo $o->name?></a></td>
+		<td><?php echo $o->name?></td>
 		<td><?php echo KpiItemType::to_string($o->type)?></td>
 		<td><?php echo $o->timeline?></td>
 		<td><?php echo get_weight($o)?></td>
