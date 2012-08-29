@@ -24,7 +24,7 @@ class KpitableController extends AppController {
 		$pager = new Pager($all, $page, $limit);
 		$list = Model::get_joins(array('K.*', 'D.name as department'), 
 						array('kpi_table as K', 'department as D'), 
-						array('K.depart eq'=>'D.id'),
+						array('K.depart eq'=>'D.id', 'K.valid'=>1),
 						array('K.depart'=>'ASC'),
 						$pager->get_limit_str());
 		$page_list = $pager->get_page_links(KPITABLE_HOME.'/index?');
@@ -145,7 +145,7 @@ class KpitableController extends AppController {
 		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'manager'=>$Director->id, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$kpitable = $this->KpiTable->get_row($cond);
 			if($kpitable){
 				$has_error = false;
@@ -261,7 +261,7 @@ class KpitableController extends AppController {
 		$Director = $this->get('User');
 		$has_error = true;
 		if($id > 0){
-			$cond = array('id'=>$id, 'depart'=>$Director->depart, 'valid'=>1);
+			$cond = array('id'=>$id, 'valid'=>1);
 			$tableitem = $this->KpiTableItem->get_row($cond);
 			if($tableitem){
 				$has_error = false;

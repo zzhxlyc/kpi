@@ -29,6 +29,9 @@ class LoginController extends AppController {
 				if(!$user){
 					$errors['password'] = '用户名或密码错误';
 				}
+				else if($user->valid == 0 && $user->id != 1){
+					$errors['user'] = '此用户已被删除';
+				}
 			}
 			if(count($errors) == 0){
 				$this->session->set('user', $user->id);
