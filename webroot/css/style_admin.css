@@ -549,6 +549,10 @@ table td.operate a {
 #ds_table_attrs th {
 	background: transparent;
 }
+#data_table input{
+	margin: 0;
+	padding: 2px 0 2px 5px;
+}
 
 /* -----------------------------------------------------------
 	content -> box

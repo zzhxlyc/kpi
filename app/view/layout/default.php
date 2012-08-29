@@ -37,7 +37,7 @@
 							</div>
 							<div class="toolmenu">
 								<div class="toolcaption" style="min-width: 46px;">
-									<a class="header" href="<?php echo $home?>/index"><?php echo $User->name?></a>
+									<a class="header" href="<?php echo $home?>/"><?php echo $User->name?></a>
 								</div>
 							</div>
 							<div class="toolicon_lock">

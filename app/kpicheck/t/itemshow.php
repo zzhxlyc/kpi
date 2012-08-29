@@ -4,67 +4,78 @@
 	}
 	else{
 ?>
+<div id="right">
+<div class="box">
 
-<div class="row">
-	<label for="name">考核项名称</label>
-	<?php echo $tableitem->name?>
+<div class="header_main title">
 </div>
 
-<div class="row">
-	<label for="type">类型</label>
-	<?php echo KpiItemType::to_string($tableitem->type)?>
+<div class="data_wrapper">
+
+<div class="data">
+	<div><label for="name">考核项名称</label></div>
+	<div class="readonly"><?php echo $tableitem->name?></div>
 </div>
 
-<?php if($tableitem->type != KpiItemType::FOUJUE){?>
-<div class="row">
-	<label for="weight">权重</label>
-	<?php echo $tableitem->weight?>%
-</div>
-<?php }?>
-
-<div class="row">
-	<label for="desc">指标解释</label>
-	<?php echo $tableitem->desc?>
-</div>
-
-<div class="row">
-	<label for="timeline">时间节点</label>
-	<?php echo $tableitem->timeline?>
-</div>
-
-<div class="row">
-	<label for="quality">质量要求</label>
-	<?php echo $tableitem->quality?>
-</div>
-
-<div class="row">
-	<label for="output">结果型输出</label>
-	<?php echo $tableitem->output?>
-</div>
-
-<div class="row">
-	<label for="standard">评分标准</label>
-	<?php echo $tableitem->standard?>
+<div class="data">
+	<div><label for="type">类型</label></div>
+	<div class="readonly"><?php echo KpiItemType::to_string($tableitem->type)?></div>
 </div>
 
 <?php if($tableitem->type != KpiItemType::FOUJUE){?>
-<div class="row">
-	<label for="datasource">数据来源</label>
-	<?php echo $datasource->name?>
-</div>
-
-<div class="row">
-	<label for="staff">办事员</label>
-	<?php echo $depart->name?>：<?php echo $staff->name?>（<?php echo $staff->slug?>）
+<div class="data">
+	<div><label for="weight">权重</label></div>
+	<div class="readonly"><?php echo $tableitem->weight?>%</div>
 </div>
 <?php }?>
 
+<div class="data">
+	<div><label for="desc">指标解释</label></div>
+	<div class="readonly"><?php echo $tableitem->desc?></div>
+</div>
+
+<div class="data">
+	<div><label for="timeline">时间节点</label></div>
+	<div class="readonly"><?php echo $tableitem->timeline?></div>
+</div>
+
+<div class="data">
+	<div><label for="quality">质量要求</label></div>
+	<div class="readonly"><?php echo $tableitem->quality?></div>
+</div>
+
+<div class="data">
+	<div><label for="output">结果型输出</label></div>
+	<div class="readonly"><?php echo $tableitem->output?></div>
+</div>
+
+<div class="data">
+	<div><label for="standard">评分标准</label></div>
+	<div class="readonly"><?php echo $tableitem->standard?></div>
+</div>
+
+<?php if($tableitem->type != KpiItemType::FOUJUE){?>
+<div class="data">
+	<div><label for="datasource">数据来源</label></div>
+	<div class="readonly"><?php echo $datasource->name?></div>
+</div>
+
+<div class="data">
+	<div><label for="staff">办事员</label></div>
+	<div class="readonly"><?php echo $depart->name?>：<?php echo $staff->name?>（<?php echo $staff->slug?>）
+</div>
+<?php }?></div>
+</div>
 <hr/>
 
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/tableitem?tableid=$tableitem->kpi_table"?>'" />
+<div class="actions">
+<div class="actions-left">
+<input type="button" value="返回" onclick="location.href='<?php echo $home."/tableitem?tableid=$tableitem->kpi_table"?>'" />
+</div>
 </div>
 
+</div>
+</div>
 
 <?php 
 	}

@@ -1,14 +1,19 @@
+<div id="right">
+<div class="box _edit">
 
+<div class="header_main title">
 <h2><?php echo $kpidata->name?></h2>
+</div>
 
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>绩效考核项</td>
-		<td width="100">评分部门</td>
-		<td width="70">类型</td>
-		<td width="70">比重</td>
-		<td width="70">分数</td>
-		<td width="150">操作</td>
+<div class="table">
+<table>
+	<tr>
+		<th>绩效考核项</th>
+		<th width="100">评分部门</th>
+		<th width="70">类型</th>
+		<th width="70">比重</th>
+		<th width="70">分数</th>
+		<th width="150">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -71,6 +76,13 @@
 		}
 	?>
 </table>
+</div>
 
+<div class="actions whiteBg">
+<div class="actions-left">
 <input type="button" value="返回" onclick="location.href='<?php echo $home."/kpidata?did=$kpidata->depart"?>'" />
+</div>
+</div>
 
+</div>
+</div>

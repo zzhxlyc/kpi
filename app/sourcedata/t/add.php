@@ -8,7 +8,6 @@
 <div class="box _edit">
 <div class="header_main title">
 </div>
-
 <div class="data">
 	<div><label for="datasource">数据源表</label></div>
 	<div class="readonly"><?php echo $datasource->name?></div>
@@ -19,8 +18,8 @@
 </div>
 
 <div class="table">
-<table>
-	<tr>
+<table id="data_table" style="width: 100%">
+	<tr id="column_row">
 <?php 
 	if(is_array($list)){
 		foreach($list as $o){
@@ -46,13 +45,14 @@
 	</tr>
 </table>
 </div>
-
-
 <div class="actions">
 <input type="hidden" value="<?php echo count($list)?>" id="columns" />
-<div class="actions-left"><input type="submit" value="保存" /></div>
-<div class="actions-right"><input type="button" value="返回"
-	onclick="location.href='<?php echo $home?>/index'" /></div>
+<div class="actions-left">
+<input type="button" value="保存" onclick="sourcedata_save_row()" />
+</div>
+<div class="actions-right">
+<input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" />
+</div>
 <input type="hidden" id="dsid" name="dsid" value="<?php echo $datasource->id?>" /></div>
 
 </div>

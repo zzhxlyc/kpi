@@ -1,12 +1,17 @@
+<div id="right">
+<div class="box _edit">
 
+<div class="header_main title">
 <h2><?php echo $kpitable->name?></h2>
+</div>
 
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>考核表项</td>
-		<td width="70">类型</td>
-		<td width="70">时间节点</td>
-		<td width="100">操作</td>
+<div class="table">
+<table>
+	<tr>
+		<th>考核表项</th>
+		<th width="70">类型</th>
+		<th width="70">时间节点</th>
+		<th width="100">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -29,6 +34,13 @@
 		}
 	?>
 </table>
+</div>
 
-<input type="button" value="返回" onclick="location.href='<?php echo $home."/kpitable?did=$kpitable->depart"?>'" />
+<div class="actions whiteBg">
+<div class="actions-left">
+<input type="button" value="返回" onclick="location.href='<?php echo $home."/kpidata?did=$kpidata->depart"?>'" />
+</div>
+</div>
 
+</div>
+</div>
