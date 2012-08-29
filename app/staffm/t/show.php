@@ -4,11 +4,16 @@
 	}
 	else{
 ?>
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>姓名</td>
-		<td width="100">部门</td>
-		<td width="250">操作</td>
+<div id="right">
+<div class="box noBlank">
+<div class="header_main title"></div>
+
+<div class="table">
+<table>
+	<tr>
+		<th>姓名</th>
+		<th width="100">部门</th>
+		<th width="250">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -32,15 +37,20 @@
 		}
 	?>
 </table>
-
-<a href="<?php echo $home.'/add?depart='.$depart->id?>">添加办事员</a>
-
-<div class="page-nav">
-	<?php Pager::output_pager_list($page_list);?>
 </div>
 
-<div class="row">
-	<input type="button" value="返回" onclick="location.href='<?php echo $home."/depart"?>'" />
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
+<div class="actions whiteBg">
+<div class="actions-left">
+<form action="<?php echo $home.'/add?depart='.$depart->id?>" method="post"><input
+	type="submit" value="添加办事员" /></form>
+</div>
+<div class="actions-right"><input type="button" value="返回"
+	onclick="location.href='<?php echo $home."/depart"?>'" /></div>
+</div>
+
+</div>
 </div>
 
 <?php 

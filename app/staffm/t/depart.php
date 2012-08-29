@@ -1,9 +1,15 @@
+<div id="right">
+<div class="box _edit">
 
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>部门</td>
-		<td width="150">部门主管</td>
-		<td width="200">操作</td>
+<div class="header_main title">
+</div>
+
+<div class="table">
+<table>
+	<tr>
+		<th>部门</th>
+		<th width="150">部门主管</th>
+		<th width="200">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -32,4 +38,8 @@
 		}
 	?>
 </table>
+</div>
+
+</div>
+</div>
 

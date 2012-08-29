@@ -1,8 +1,12 @@
-
-<table class="normal-table" cellspacing="0" cellpadding="0">
-	<tr class="top">
-		<td>姓名</td>
-		<td width="250">操作</td>
+<div id="right">
+<div class="box noBlank">
+<div class="header_main title">
+</div>
+<div class="table">
+<table>
+	<tr>
+		<th>姓名</th>
+		<th width="250">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -26,7 +30,17 @@
 	?>
 </table>
 
-<a href="<?php echo $home.'/add'?>">添加办事员</a>
+</div>
+
+<div class="actions whiteBg">
+<div class="actions-left">
+<form action="<?php echo $home.'/add'?>" method="post"><input
+	type="submit" value="添加办事员" /></form>
+</div>
+</div>
+
+</div>
+</div>
 
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
