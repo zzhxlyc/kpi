@@ -57,6 +57,9 @@
 	<?php }?>
 	
 <?php include($TEMPLATE_PAGE); ?>
-			
+		
+<footer>
+Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
+</footer>	
 </body>
 </html>
