@@ -37,7 +37,7 @@
 						<td><?php echo $o->timeline?></td>
 						<td class="operate">
 							<a href="<?php echo $home.'/edititem?id='.$o->id?>">编辑</a>
-							<a href="<?php echo $home."/delitem?id=".$o->id?>">删除</a>
+							<a class="remove_operation" href="<?php echo $home."/delitem?id=".$o->id?>">删除</a>
 						</td>
 					</tr>
 					<?php 

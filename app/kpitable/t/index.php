@@ -33,7 +33,7 @@
 								<td class="operate">
 									<a href="<?php echo $home.'/show?id='.$o->id?>">查看考核项</a>
 									<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
-									<a href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
+									<a class="remove_operation" href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
 								</td>
 							</tr>
 							<?php 

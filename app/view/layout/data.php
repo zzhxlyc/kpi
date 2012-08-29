@@ -23,9 +23,9 @@
 	<?php if($request->get_method() != 'login'){?>
 	<header>
 		<div id="header_toolbar">
-				<h1 class="grid_1">
+				<div class="grid_1"><h1>
 					杭州钱鸿集团KPI系统
-				</h1>
+				</h1></div>
 				<div class="grid_2">
 					<div class="toolbar_large">
 							<div class="toolicon">

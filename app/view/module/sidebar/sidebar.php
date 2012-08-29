@@ -3,7 +3,7 @@
 ?>
 
 <div id="menu">
-	<ul id="menu-products" class="opened">
+	<ul>
 	<!--<li><a><span><?php echo $User->name;?></span></a></li>-->
 	<?php if($User->type == UserType::ADMIN){?>
 	<li ><a href="<?php echo DEPART_HOME.'/index'?>"><span>部门管理</span></a></li>

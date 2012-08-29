@@ -58,11 +58,11 @@
 </div>
 </div>
 
-<script type="text/javascript">
 <!--
+<script type="text/javascript">
 big_table_init();
-//-->
 </script>
+//-->
 
 
 <?php 

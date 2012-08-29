@@ -81,7 +81,7 @@ function _add(column, comment){
 	var row = '<tr><td height="30">' +
 		'<font>' + column + '</font></td>' + 
 		'<td><span>' + comment + '</span></td><td>' + 
-		'<a href="javascript:void(0)" onclick="remove_row(this)">删除</a></td></tr>';
+		'<a class="remove_operation" href="javascript:void(0)" onclick="remove_row(this)">删除</a></td></tr>';
 	$('#ds_table_attrs').append(row);
 	$("#new_attr").val('');
 	set_value();

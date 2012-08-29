@@ -27,7 +27,7 @@
 				value="<?php echo $o->id?>" /></td>
 			<td class="center"><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
 			<td class="operate"><a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
-			<a href="<?php echo $home.'/remove?id='.$o->id?>">删除</a></td>
+			<a class="remove_operation" href="<?php echo $home.'/remove?id='.$o->id?>">删除</a></td>
 		</tr>
 		<?php
 		}
@@ -38,7 +38,7 @@
 <!-- end table --></div>
 
 <div class="actions whiteBg">
-<div class="actions-left"><input type="submit" value="批量删除" /></div>
+<div class="actions-left"><input class="remove_operation" type="submit" value="批量删除" /></div>
 
 </form>
 <div class="actions-right">
@@ -46,10 +46,13 @@
 	type="submit" value="添加部门" /></form>
 </div>
 </div>
+
 </div>
 </div>
 
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
+
 
 
 

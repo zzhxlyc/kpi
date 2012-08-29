@@ -23,16 +23,17 @@
 </div>
 
 <div class="data">
-	<div><label for="slug">添加属性</label></div>
+	<div><label for="new_attr">添加属性</label></div>
 	<div><input size="20" type="text" id="new_attr" />
-	<a href="javascript:void(0)" onclick="add_row()">  添加一行</a></div>
+	<a href="javascript:void(0)" onclick="add_row()">  添加一行</a>
+	</div>
 </div>
 
 <div class="data">
-	<div><label for="slug">修改属性</label></div>
+	<div><label for="old_column">修改属性</label></div>
 	<div>标示：<input size="20" type="text" id="old_column" />
 	    新列名：<input size="20" type="text" id="new_comment" />
-	<a href="javascript:void(0)" onclick="modify_row()">  修改这一行</a></div>
+	 <a href="javascript:void(0)" onclick="modify_row()">  修改这一行</a></div>
 </div>
 
 <div class="data">
@@ -123,8 +124,10 @@ function modify_row(){
 	}
 }
 function remove_row(obj){
+	if(confirm("确定删除吗？")){
 	$(obj).parents("tr").remove();
 	set_value();
+	}
 }
 function set_value(){
 	var comment = '';

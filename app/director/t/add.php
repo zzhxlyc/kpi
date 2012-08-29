@@ -16,9 +16,8 @@
 				<div><label for="slug">登录名</label></div>
 				<div>
 				<input size="20" type="text" name="slug" value="<?php echo $user->slug?>" />
-				<label class="input_rule">只能使用用英文数字下划线，推荐姓名拼音或员工编号，此后不能修改</label>
-				</div>
-				<span class="error"><?php echo $errors['slug']?></span>
+				<label class="input_rule">只能使用英文、数字、下划线，推荐姓名拼音或员工编号，此后不能修改</label>
+				<br><span class="error"><?php echo $errors['slug']?></span></div>
 				
 			</div>
 			
@@ -49,12 +48,16 @@
 					<span class="error"><?php echo $errors['depart']?></span>		
 				</div>	
 			</div>
+			
+			</div>
+			
 			<div class="actions">
 				<div class="actions-left"><input type="submit" value="保存" /></div>
 				<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
 			</div>
 
 	</form>
+</div>
 </div>
 	
 

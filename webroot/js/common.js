@@ -1,3 +1,13 @@
+$(document).ready(function(){
+	$(".remove_operation").click(function (){
+		if(confirm('确定要删除吗？')){
+			return true;
+		}
+		else{
+			return false;
+		}
+	});
+});
 
 function table_item_init(){
 	$(".table_item_type_select").change(function (){
@@ -69,4 +79,6 @@ function sourcedata_save_row(){
 		alert('数据都为空');
 	}
 }
+
+
 

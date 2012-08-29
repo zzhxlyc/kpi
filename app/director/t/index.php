@@ -32,7 +32,7 @@
 								<td class="operate">
 									<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
 									<a href="<?php echo $home.'/pswd?id='.$o->id?>">修改密码</a>
-									<a href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
+									<a class="remove_operation" href="<?php echo $home.'/remove?id='.$o->id?>">删除</a>
 								</td>
 							</tr>
 							<?php 
@@ -44,7 +44,7 @@
 			</div>
 		<!-- end table -->
 			<div class="actions whiteBg">
-				<div class="actions-left"><input type="submit" value="批量删除" /></div>
+				<div class="actions-left"><input class="remove_operation" type="submit" value="批量删除" /></div>
 		</form>		
 				<div class="actions-right">
 					<form action="<?php echo $home.'/add'?>" method="post">

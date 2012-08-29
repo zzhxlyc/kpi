@@ -1,5 +1,5 @@
 <DIV class="top"> 
-	<DIV class="gradient"></DIV> 
+	
 	<DIV id="content"> 
 		<H1>杭州钱鸿集团绩效考核系统</H1> 
 		<DIV class="wrapper"> 
@@ -32,4 +32,9 @@
 		</DIV> 
 		</DIV> 
 	</DIV> 
+	
 </DIV>
+
+<DIV class="gradient"></DIV> 
+
+

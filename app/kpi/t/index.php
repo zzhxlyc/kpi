@@ -29,7 +29,7 @@
 		<td class="operate"><a href="<?php echo $home.'/show?id='.$o->id?>">查看考核项</a>
 		<a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a> <?php 
 		if($o->status == KpiDataStatus::OPEN){
-			?> <a href="<?php echo $home.'/delete?id='.$o->id?>">删除</a> <?php }?>
+			?> <a class="remove_operation" href="<?php echo $home.'/delete?id='.$o->id?>">删除</a> <?php }?>
 		</td>
 	</tr>
 	<?php
