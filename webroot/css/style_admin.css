@@ -113,22 +113,22 @@ hr {
 	border-bottom-color: rgb(13, 50, 89);
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
-	filter: progid :     DXImageTransform.Microsoft.gradient (    
-		startColorstr =  
-		  '#366fac', endColorstr =     '#184b82', GradientType =     0 );
-	position: relative;
+	filter: progid :   DXImageTransform.Microsoft.gradient (   startColorstr
+		= 
+		 '#366fac', endColorstr =   '#184b82', GradientType =   0 );
+	position: absolute;
 	box-shadow: 0px 2px 5px rgba(17, 16, 13, 0.5);
 }
 
-.gradient {
+.top .gradient {
 	background: rgb(227, 227, 227);
-	/*top: 360px;*/
+	top: 360px;
 	width: 100%;
 	height: 270px;
-	filter: progid :     DXImageTransform.Microsoft.gradient (    
-		startColorstr =  
-		  '#e3e3e3', endColorstr =     '#fafafa', GradientType =     0 );
-	position: relative;
+	filter: progid :   DXImageTransform.Microsoft.gradient (   startColorstr
+		= 
+		 '#e3e3e3', endColorstr =   '#fafafa', GradientType =   0 );
+	position: absolute;
 }
 
 .wrapper {
@@ -139,6 +139,19 @@ hr {
 	right: 0px;
 	position: absolute;
 	z-index: 101;
+}
+
+#content h1 {
+	left: 0px;
+	top: 60px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
+
+#content h1 {
+	text-align: center;
+	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
 }
 
 /* -----------------------------------------------------------
@@ -230,8 +243,9 @@ hr {
 .toolbar_large .toolcaption {
 	color: #fff;
 	text-shadow: 0 1px 1px rgba(0, 0, 00, 0.75);
-	filter: dropshadow(color =             #CC000000, offx =             0, offy = 
-		           1)
+	filter: dropshadow(color =                   #CC000000, offx =                  
+		0, offy =    
+		              1)
 }
 
 .toolbar_large .toolcaption {
@@ -264,12 +278,14 @@ hr {
 		rgba(24, 75, 130, 1) 100% );
 	background: linear-gradient(top, rgba(54, 111, 172, 1) 0,
 		rgba(24, 75, 130, 1) 100% );
-	filter: progid :             DXImageTransform.Microsoft.gradient (
+	filter: progid :                   DXImageTransform.Microsoft.gradient (
+		  
 		       
-		    startColorstr =      
-		      '#366fac', endColorstr =             '#184b82', GradientType = 
+		       startColorstr =         
+		         '#366fac', endColorstr =                   '#184b82',
+		GradientType =    
 		        
-		  0 )
+		     0 )
 }
 
 nav.header_main {
@@ -279,25 +295,12 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content {
-	//margin: 10px 0;
+#content { //
+	margin: 10px 0;
 	padding: 0;
-	min-height: 100%;
+	min-height: 81%;
 	clear: both;
 	overflow: hidden;
-}
-
-#content h1 {
-	left: 0px;
-	top: 60px;
-	right: 0px;
-	position: absolute;
-	z-index: 101;
-}
-
-#content h1 {
-	text-align: center;
-	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
 }
 
 /* -----------------------------------------------------------
@@ -344,6 +347,9 @@ nav.header_main {
 	margin-top: 0;
 }
 
+#left #menu li.current{
+	background:rgba(0, 0, 0, 0.38);
+	}
 #left #menu li a {
 	margin: 0 0 0 6px;
 	padding: 7px 0 9px 18px;
@@ -355,7 +361,8 @@ nav.header_main {
 	line-height: normal;
 	text-decoration: none;
 }
-
+#left #menu li.current a{
+	}
 #left #menu li a:hover {
 	color: #b9dcff
 }  /* 当有鼠标悬停在链接上 */
@@ -412,9 +419,12 @@ nav.header_main {
 	border-radius: 3px 3px 0px 0px;
 	height: 34px;
 	line-height: 34px;
-	filter: progid :       DXImageTransform.Microsoft.gradient (     
-		 startColorstr =   
-		   '#78b1ed', endColorstr =       '#417bb5', GradientType =       0 );
+	filter: progid :             DXImageTransform.Microsoft.gradient (
+		       
+		    startColorstr =      
+		      '#78b1ed', endColorstr =             '#417bb5', GradientType = 
+		        
+		  0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
 }
 
@@ -591,8 +601,10 @@ table td.operate a {
 	float: left;
 	width: 16%;
 	padding: 0;
-	margin-top: 12px;
+	//margin-top: 12px;
 	margin-left: 10px;
+	line-height:36px;
+	border:0;
 }
 
 .box .data>div._oneline {
@@ -602,7 +614,8 @@ table td.operate a {
 }
 
 .box .data>div.readonly {
-	margin: 12px 0 0 10px;
+	//margin: 12px 0 0 10px;
+	line-height:36px;
 }
 
 .box .data>div label {
@@ -732,12 +745,14 @@ table td.operate a {
 	border: 1px solid #C8C8C8;
 	background: #F7F7F7;
 	border-radius: 0 0 5px 5px;
+	margin-bottom: 20px;
 }
 
 .box .actions.whiteBg {
 	border: 0px;
 	background: white;
 	padding: 0 10px;
+	margin-bottom: 0px;
 }
 
 .box .actions::after {
@@ -851,9 +866,10 @@ footer {
 	border-bottom-width: 1px;
 	border-bottom-style: solid;
 	float: left;
-	filter: progid :   DXImageTransform.Microsoft.gradient (   startColorstr
-		= 
-		 '#353535', endColorstr =   '#101010', GradientType =   0 );
+	filter: progid :         DXImageTransform.Microsoft.gradient (      
+		  startColorstr =    
+		    '#353535', endColorstr =         '#101010', GradientType =        
+		0 );
 	position: relative;
 	z-index: 101;
 }
@@ -861,9 +877,10 @@ footer {
 footer {
 	color: rgb(244, 244, 244);
 	font-size: 12px;
-	filter: shadow(color = #353535, direction : 180, strength : 1) progid :
-		DXImageTransform.Microsoft.gradient ( startColorstr = '#313131',
-		endColorstr = '#101010', GradientType = 0 );
+	filter: shadow(color =       #353535, direction :       180, strength :       1)
+		progid :   
+		   DXImageTransform.Microsoft.gradient (       startColorstr =     
+		 '#313131', endColorstr =       '#101010', GradientType =       0 );
 	text-shadow: 0 1px 0 #353535;
 	text-align: center;
 }

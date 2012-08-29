@@ -2,7 +2,7 @@
 	<div id="right">
 
 		<!-- table -->
-		<div class="box noBlank">
+		<div class="box">
 			<!-- box / title -->
 			<div class="header_main title">
 				<h5></h5>
@@ -46,7 +46,7 @@
 				</form>
 			</div>
 			<div class="actions whiteBg">
-					<div class="actions-left">
+					<div class="actions-right">
 						<form action="<?php echo $home.'/add'?>" method="post">
 							<input type="submit" value="添加考核表" />
 						</form>					

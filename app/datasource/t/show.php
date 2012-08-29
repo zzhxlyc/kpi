@@ -34,7 +34,6 @@
 			$i++;
 			if($i % 2 == 0) $tr_class = 'class="even"';
 ?>
-	<tr <?php echo $tr_class?>>
 <?php 
 	if(is_array($list)){
 		foreach($list as $column){
@@ -54,7 +53,6 @@
 <?php 
 	}
 ?>
-	</tr>
 </table>
 
 <div class="page-nav">

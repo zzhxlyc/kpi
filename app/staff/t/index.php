@@ -6,7 +6,7 @@
 <table>
 	<tr>
 		<th>姓名</th>
-		<th width="250">操作</th>
+		<th width="240px">操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -32,7 +32,7 @@
 </div>
 
 <div class="actions whiteBg">
-<div class="actions-left">
+<div class="actions-right">
 <form action="<?php echo $home.'/add'?>" method="post"><input
 	type="submit" value="添加办事员" /></form>
 </div>

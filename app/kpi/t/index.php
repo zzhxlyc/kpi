@@ -41,7 +41,7 @@
 </form>
 <div class="actions whiteBg">
 
-<div class="actions-left">
+<div class="actions-right">
 <form action="<?php echo $home.'/add'?>" method="post"><input
 	type="submit" value="添加一场KPI考核" /></form>
 </div>

@@ -1,7 +1,7 @@
 <DIV class="top"> 
-	
+<DIV class="gradient" ></DIV>
 	<DIV id="content"> 
-		<H1>杭州钱鸿集团绩效考核系统</H1> 
+	<div><H1>杭州钱鸿集团绩效考核系统</H1></div>
 		<DIV class="wrapper"> 
 		<DIV class="box"> 
 		<DIV class="header grey"> 
@@ -31,10 +31,10 @@
 		</FORM> 
 		</DIV> 
 		</DIV> 
-	</DIV> 
-	
+	</DIV>  
 </DIV>
 
-<DIV class="gradient"></DIV> 
+
+
 
 

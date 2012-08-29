@@ -8,6 +8,7 @@ else{
 <div class="box noBlank">
 <div class="header_main title"></div>
 
+<form action="" method="post">
 <div class="data_wrapper">
 
 <div class="data">
@@ -19,8 +20,6 @@ else{
 <div><label for="name">考核表名称</label></div>
 <div class="readonly"><?php echo $kpitable->name?></div>
 </div>
-
-<hr />
 
 <div class="data">
 <div><label for="name">考核项名称</label></div>
@@ -64,13 +63,11 @@ else{
 
 <div class="data">
 <div><label for="datasource">数据来源</label></div>
-<div><a target="_blank"
+<div class="readonly"><a target="_blank"
 	href="<?php echo DATA_HOME.'/index?datasource='.$tableitem->datasource?>">查看数据来源</a></div>
 </div>
 
 <hr />
-
-<form action="" method="post">
 
 <div class="data">
 <div><label for="score">评分</label></div>

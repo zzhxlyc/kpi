@@ -14,7 +14,7 @@
 
 <div class="data">
 <div><label for="slug">账号</label></div>
-<div class="readonly"><?php echo $user->slug?></label></div>
+<div class="readonly"><?php echo $user->slug?></div>
 </div>
 
 <div class="data">

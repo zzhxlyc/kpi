@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <?php $view->charset(); ?>
@@ -46,12 +46,18 @@
 <nav class="header_main">
 <div class="container_12"></div>
 </nav> </header>
-<?php }?>
 
 <?php include($TEMPLATE_PAGE); ?>
+
 <footer>
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 </footer>
+<?php }else{?>
+<?php include($TEMPLATE_PAGE); ?>
 
+<footer style="position: absolute; bottom:0px;">
+Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
+</footer>
+<?php }?>
 </body>
 </html>
