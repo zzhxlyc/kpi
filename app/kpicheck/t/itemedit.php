@@ -5,7 +5,7 @@
 	else{
 ?>
 <div id="right">
-<div class="box">
+<div class="box noBlank">
 
 <div class="header_main title">
 </div>

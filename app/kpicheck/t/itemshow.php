@@ -5,7 +5,7 @@
 	else{
 ?>
 <div id="right">
-<div class="box">
+<div class="box noBlank">
 
 <div class="header_main title">
 </div>
@@ -66,7 +66,6 @@
 </div>
 <?php }?></div>
 </div>
-<hr/>
 
 <div class="actions">
 <div class="actions-left">

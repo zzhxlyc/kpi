@@ -9,8 +9,8 @@
 
 <div class="data">
 	<div><label for="name">考核表名称</label></div>
-	<div><input size="50" type="text" name="name" value="<?php echo $kpitable->name?>" /></div>
-	<span class="error"><?php echo $errors['name']?></span>
+	<div><input size="50" type="text" name="name" value="<?php echo $kpitable->name?>" />
+	<span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
@@ -26,8 +26,8 @@
 				} 
 			}
 		?>
-	</select></div>
-	<span class="error"><?php echo $errors['depart']?></span>
+	</select>
+	<span class="error"><?php echo $errors['depart']?></span></div>
 </div>
 
 			</div>						

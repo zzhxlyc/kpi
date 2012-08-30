@@ -38,8 +38,7 @@
 
 <div class="actions whiteBg">
 <div class="actions-left">
-<input type="button" value="返回" onclick="location.href='<?php echo $home."/kpidata?did=$kpidata->depart"?>'" />
-</div>
+<input type="button" value="返回" onclick="location.href='<?php echo $home."/kpitable?did=$kpitable->depart"?>'" /></div>
 </div>
 
 </div>

@@ -8,8 +8,8 @@
 			<div class="data_wrapper">
 			<div class="data">
 				<div><label for="name">姓名</label></div>
-				<div><input size="20" type="text" name="name" value="<?php echo $user->name?>" /></div>
-				<span class="error"><?php echo $errors['name']?></span>
+				<div><input size="20" type="text" name="name" value="<?php echo $user->name?>" />
+				<span class="error"><?php echo $errors['name']?></span></div>
 			</div>
 
 			<div class="data">
@@ -24,8 +24,8 @@
 			
 			<div class="data">
 				<div><label for="password">密码</label></div>
-				<div><input size="20" type="password" name="password" /></div>
-				<span class="error"><?php echo $errors['password']?></span>
+				<div><input size="20" type="password" name="password" />
+				<span class="error"><?php echo $errors['password']?></span></div>
 			</div>
 
 			<div class="data">

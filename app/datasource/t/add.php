@@ -15,8 +15,9 @@
 <div class="data">
 <div><label for="slug">别名</label></div>
 <div><input size="20" type="text" name="slug"
-	value="<?php echo $datasource->slug?>" /> <span class="error"><?php echo $errors['slug']?></span>
-<span>推荐用英文单词、拼音首字母，此后不能修改 </span></div>
+	value="<?php echo $datasource->slug?>" /> 
+<span>推荐用英文单词、拼音首字母，此后不能修改 </span><br>
+<span class="error"><?php echo $errors['slug']?></span></div>
 </div>
 
 <div class="data">

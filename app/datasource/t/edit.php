@@ -32,7 +32,7 @@
 <div class="data">
 	<div><label for="old_column">修改属性</label></div>
 	<div>标示：<input size="20" type="text" id="old_column" />
-	    新列名：<input size="20" type="text" id="new_comment" />
+	             &nbsp &nbsp新列名：<input size="20" type="text" id="new_comment" />
 	 <a href="javascript:void(0)" onclick="modify_row()">  修改这一行</a></div>
 </div>
 

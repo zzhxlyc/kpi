@@ -5,7 +5,7 @@
 	else{
 ?>
 <div id="right">
-<div class="box">
+<div class="box noBlank">
 
 <div class="header_main title">
 </div>
@@ -26,7 +26,7 @@
 
 <div class="data">
 	<div><label for="weight">权重</label></div>
-	<div class="readonly"><?php echo $tableitem->weight?></div>%
+	<div class="readonly"><?php echo $tableitem->weight?>%</div>
 </div>
 
 <div class="data">
@@ -68,7 +68,7 @@
 
 <div class="data">
 	<div><label for="standard">办事员</label></div>
-	<div class="readonly"><?php echo $staff->name?></div>（<div class="readonly"><?php echo $staff->slug?></div>）
+	<div class="readonly"><?php echo $staff->name?></div><div class="readonly">（<?php echo $staff->slug?>）</div>
 </div>
 
 <hr/>
