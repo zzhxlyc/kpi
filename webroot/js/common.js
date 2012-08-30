@@ -7,7 +7,11 @@ $(document).ready(function(){
 			return false;
 		}
 	});
+	
+	
 });
+
+
 
 function table_item_init(){
 	$(".table_item_type_select").change(function (){

@@ -12,8 +12,8 @@
 		<form action="" method="get" >
 		<div class="data_wrapper">		
 			<div class="data">
-				<div class="_oneline">从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
-				到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
+				<div class="_oneline">从 <input type="text" name="from" id="fromDataPicker"  /> 
+				到 <input type="text" name="to" id="toDataPicker" value="<?php echo $_GET['to']?>" />
 				<input type="hidden" name="datasource" value="<?php echo $_GET['datasource']?>" />
 				<input type="hidden" name="page" value="<?php echo $_GET['page']?>" />&nbsp &nbsp &nbsp &nbsp
 				<input type="submit" value="提交" /></div>
@@ -92,7 +92,15 @@
 <!--
 big_table_init();
 //-->
+
+<!--
+	$(function() {
+		$( "#fromDataPicker" ).datepicker();
+	});
+//-->
 </script>
+
+
 
 <?php 
 	}

@@ -16,7 +16,7 @@
 	window.IMAGE_HOME = '<?php echo IMAGE_HOME?>';
 </script>
 <?php $view->js('jquery.min'); ?>
-<?php //$view->js('jquery-ui.min'); ?>
+<?php $view->js('jquery-ui.min'); ?>
 <?php //$view->js('23acda8'); ?>
 <?php $view->js('common'); ?>
 <?php $view->fetch_js(); ?>
