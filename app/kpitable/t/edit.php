@@ -9,7 +9,7 @@
 		<div class="header_main title" >
 		<h2>编辑考核表</h2>
 		</div>
-		<form action="" method="post" >
+		<form action="<?php echo $home.'/edit?id='.$kpitable->id?>" method="post" >
 			<div class="data_wrapper">
 	
 <div class="data">

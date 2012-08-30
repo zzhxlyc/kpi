@@ -12,7 +12,7 @@ else{
 <h2>编辑部门</h2>
 </div>
 
-<form action="" method="post">
+<form action="<?php echo $home.'/edit?id='.$depart->id?>" method="post">
 <div class="data_wrapper">
 
 <div class="data">

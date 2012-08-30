@@ -34,8 +34,8 @@ class KpiController extends AppController {
 	}
 	
 	private function add_data(&$kpidata = Null){
-		$director = get_user($this->session);
-		$list = $this->KpiTable->get_list(array('valid'=>1));
+		$User = $this->get('User');
+		$list = $this->KpiTable->get_list(array('valid'=>1, 'depart'=>$User->depart));
 		$this->set('kpi_table_list', $list);
 	}
 	
