@@ -99,9 +99,16 @@ class DatasourceController extends AppController {
 				$this->Datasource->escape($post);
 				$this->Datasource->save($post);
 				
-				$column_array = explode(',', $column);
-				$comment_array = explode(',', $comment);
+				$column_array = array();
+				if(!empty($column)){
+					$column_array = explode(',', $column);
+				}
+				$comment_array = array();
+				if(!empty($comment)){
+					$comment_array = explode(',', $comment);
+				}
 				$count = count($column_array);
+				
 				if($count == count($comment_array)){
 					$attr_array = array();
 					$attr_array[] = array('name'=>id, 'type'=>'int', 

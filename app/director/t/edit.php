@@ -10,7 +10,7 @@ else{
 <div class="header_main title">
 <h2>编辑部门主管</h2>
 </div>
-<form action="" method="post">
+<form action="<?php echo $home.'/edit?id='.$user->id?>" method="post">
 <div class="data_wrapper">
 
 <div class="data">
