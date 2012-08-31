@@ -37,7 +37,7 @@
 	if(is_array($list)){
 		foreach($list as $o){
 ?>
-	<td><input style="width:80px" type="text"/></td>
+	<td><input class="unSaved" style="width:80px" type="text"/></td>
 <?php 
 		}
 	}

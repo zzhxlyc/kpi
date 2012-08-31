@@ -55,7 +55,7 @@ Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 <?php }else{?>
 <?php include($TEMPLATE_PAGE); ?>
 
-<footer style="position: absolute; bottom:0px;">
+<footer style="position: absolute; top: 629px; bottom:0px;">
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 </footer>
 <?php }?>

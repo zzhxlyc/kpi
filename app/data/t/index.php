@@ -7,7 +7,7 @@
 ?>
 	<div class="box _datasource">
 		<div class="header_main title" >
-		<h2><?php echo $datasource->name?>历史数据</h2>
+		<h2>历史数据: <?php echo $datasource->name?></h2>
 		</div>
 		<form action="" method="get" >
 		<div class="data_wrapper">		
@@ -91,12 +91,6 @@
 <script type="text/javascript">
 <!--
 big_table_init();
-//-->
-
-<!--
-	$(function() {
-		$( "#fromDataPicker" ).datepicker();
-	});
 //-->
 </script>
 

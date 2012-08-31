@@ -1,5 +1,10 @@
 $(document).ready(function(){
 	$(".remove_operation").click(function (){
+		if($(this).hasClass("batch_remove")&& $("input[type='checkbox']:checked").length == 0){
+			alert("请先选取删除项。");
+			return false;
+		}
+		
 		if(confirm('确定要删除吗？')){
 			return true;
 		}
@@ -8,10 +13,12 @@ $(document).ready(function(){
 		}
 	});
 	
-	
 });
 
-
+$(function() {
+	$( "#fromDataPicker" ).datepicker();
+	$( "#toDataPicker" ).datepicker();
+});
 
 function table_item_init(){
 	$(".table_item_type_select").change(function (){
@@ -35,13 +42,17 @@ function big_table_init(){
 }
 
 function sourcedata_add_row(){
+	$("input.unSaved").attr('readonly','readonly');
+	$("input.unSaved").removeClass();
+	
 	var num = $("#columns").val();
 	var html = '<tr>';
 	for(var i = 0;i < num;i++){
-		html += '<td><input style="width:80px" type="text"/></td>';
+		html += '<td><input class="unSaved" style="width:80px" type="text"/></td>';
 	}
 	html += '</tr>';
 	$("#data_table").append(html);
+	
 }
 
 function sourcedata_save_row(){

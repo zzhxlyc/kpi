@@ -44,7 +44,7 @@
 		</div>
 		<!-- end table -->
 		<div class="actions whiteBg">
-			<div class="actions-left"><input class="remove_operation" type="submit" value="批量删除" /></div>
+			<div class="actions-left"><input class="remove_operation batch_remove" type="submit" value="批量删除" /></div>
 	</form>		
 			<div class="actions-right">
 				<form action="<?php echo $home.'/add'?>" method="post">

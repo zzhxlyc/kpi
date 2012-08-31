@@ -20,7 +20,7 @@
 <?php $view->fetch_js(); ?>
 </head>
 <body>
-	<?php if($request->get_method() != 'login'){?>
+	
 	<header>
 		<div id="header_toolbar">
 				<div class="grid_1"><h1>
@@ -54,7 +54,6 @@
 		</div>
 		</nav>
 	</header>		
-	<?php }?>
 	
 <?php include($TEMPLATE_PAGE); ?>
 		
