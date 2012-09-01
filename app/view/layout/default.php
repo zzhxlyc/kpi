@@ -5,11 +5,7 @@
 <?php $view->title(); ?>
 <?php $view->fetch_meta(); ?>
 <?php $view->icon(); ?>
-<?php //$view->css('style_login'); ?>
-
 <?php $view->css('style_admin'); ?>
-<?php //$view->css('blue'); ?>
-<?php //$view->css('style-old'); ?>
 <?php $view->fetch_css(); ?>
 <script>
 	window.ROOT_URL = '<?php echo ROOT_URL?>';
@@ -17,7 +13,6 @@
 </script>
 <?php $view->js('jquery.min'); ?>
 <?php $view->js('jquery-ui.min'); ?>
-<?php //$view->js('23acda8'); ?>
 <?php $view->js('common'); ?>
 <?php $view->fetch_js(); ?>
 </head>
@@ -55,7 +50,7 @@ Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 <?php }else{?>
 <?php include($TEMPLATE_PAGE); ?>
 
-<footer style="position: absolute; top: 629px; bottom:0px;">
+<footer style="position: absolute; top: 680px; bottom:0px;">
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 </footer>
 <?php }?>

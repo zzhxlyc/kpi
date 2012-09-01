@@ -25,9 +25,15 @@
 					
 				</DIV> 
 			</DIV> 
+			<!--
 			<DIV class="actions"> 
 				<DIV class="actions-right login"> <INPUT value="登录" type="submit" /> </DIV> 
 			</DIV> 
+			-->
+			<DIV class="data"> 
+				<DIV > <INPUT value="登录" type="submit" /> </DIV> 
+			</DIV> 
+			
 		</FORM> 
 		</DIV> 
 		</DIV> 
