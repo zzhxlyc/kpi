@@ -29,8 +29,7 @@ function output_error($error, $home){
 	echo '
 	<div class="actions">
 		<div class="actions-left"><input type="button" value="返回"
-		onclick="location.href="'.$home.'""/></div>';
-	//echo '<a href="'.$home.'">返回</a>';
+		onclick="location.href=\''.$home.'\'"/></div>';
 	echo '</div></div>';
 }
 
