@@ -145,18 +145,7 @@ hr {
 	z-index: 101;
 }
 
-#content h1 {
-	left: 0px;
-	top: 60px;
-	right: 0px;
-	position: absolute;
-	z-index: 101;
-}
 
-#content h1 {
-	text-align: center;
-	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
-}
 
 /* -----------------------------------------------------------
 	header_toolbar
@@ -301,13 +290,29 @@ nav.header_main {
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content { //
+#content { 
 	margin: 10px 0;
 	padding: 0;
 	min-height: 81%;
 	clear: both;
 	overflow: hidden;
+	width: 100%;
 }
+
+#content #login_h1{
+	
+}
+
+#content h1 {
+	left: 0;
+	right: 0;
+	top: 60px;
+	position: absolute;
+	z-index: 101;
+	text-align: center;
+	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
+}
+
 
 /* -----------------------------------------------------------
 	content -> left
@@ -424,11 +429,11 @@ nav.header_main {
 	content -> right -> box -> header
 ----------------------------------------------------------- */
 .box .header {
-	border-width: 1px 1px 0px;
-	border-style: solid solid none;
+border: 1px solid #C8C8C8;
+border-bottom: 0;
 	border-radius: 3px 3px 0px 0px;
-	height: 34px;
-	line-height: 34px;
+	height: 34px;/*for subdata is float*/
+	line-height: 34px;/*for .box .header h3*/
 	filter: progid :               DXImageTransform.Microsoft.gradient ( 
 		       
 		     startColorstr =       
@@ -438,11 +443,12 @@ nav.header_main {
 		   0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
 }
-
+/* to_remove
 .box .grey.header {
 	border-color: rgb(200, 200, 200);
 	filter: none;
 }
+*/
 
 .box .header img {
 	margin: 9px auto 9px 8px;
@@ -552,19 +558,9 @@ table td.operate a {
 	content -> box
 ----------------------------------------------------------- */
 .box .data_wrapper {
-	border: 1px solid #C8C8C8;
-	border-top: 1px solid #2B5177;
+	/*border: 1px solid red;
+	border-bottom-width: 0px;*/
 	background: white;
-	border-radius: 0;
-	border-bottom: 0;
-	padding: 0;
-	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
-	border-radius: 0px 0px 3px 3px;
-	border-top-color: rgb(200, 200, 200);
-	border-radius: 0px;
-	border-bottom-color: currentColor;
-	border-bottom-width: 0px;
-	border-bottom-style: none;
 }
 
 .box .data_wrapper::after {
@@ -584,10 +580,10 @@ table td.operate a {
 .box .data {
 	display: inline;
 	float: left;
-	border-bottom: 1px solid #E7E7E7;
-	border-top: 1px solid white;
+	/*border-bottom: 1px solid #E7E7E7;*/
+	border: 1px solid #c8c8c8;
 	margin: 0;
-	width: 100%;
+	width: 99.85%;
 	background: #F6F6F6;
 }
 
@@ -755,9 +751,11 @@ table td.operate a {
 
 .box .actions {
 	border: 1px solid #C8C8C8;
-	background: red;
+	background: #f6f6f6;
 	border-radius: 0 0 5px 5px;
 	margin-bottom: 20px;
+	/*float: right; @*/
+	width: 100%;
 }
 
 .box .actions.whiteBg {
@@ -792,8 +790,8 @@ table td.operate a {
 	background: #F7F7F7;
 }
 
-.box .actions-right.login {
-	margin-right: 10px;
+.box .actions.login {
+	width: 398px;
 }
 
 /****************************pagenavi*****************************/

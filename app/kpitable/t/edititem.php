@@ -20,17 +20,18 @@ else{
 </div>
 
 <div class="data">
-<div><label for="type">类型</label></div>
-<div><select class="table_item_type_select" name="type">
-	<option value="">选择类型</option>
-	<option value="1" <?php $HTML->selected('1', $tableitem->type)?>>经济</option>
-	<option value="2" <?php $HTML->selected('2', $tableitem->type)?>>管理</option>
-	<option value="3" <?php $HTML->selected('3', $tableitem->type)?>>管理支持</option>
-	<option value="4" <?php $HTML->selected('4', $tableitem->type)?>>否决</option>
-</select> <span class="error"><?php echo $errors['type']?></span></div>
+	<div><label for="type">考核项类型</label></div>
+	<div><select class="table_item_type_select" name="type">
+		<option value="">选择类型</option>
+		<option value="1" <?php $HTML->selected('1', $tableitem->type)?>>经济</option>
+		<option value="2" <?php $HTML->selected('2', $tableitem->type)?>>管理</option>
+		<option value="3" <?php $HTML->selected('3', $tableitem->type)?>>管理支持</option>
+		<option value="4" <?php $HTML->selected('4', $tableitem->type)?>>否决</option>
+	</select>
+	<span class="error"><?php echo $errors['type']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 <div><label for="weight">权重</label></div>
 <div><input size="5" type="text" name="weight"
 	value="<?php echo $tableitem->weight?>" /> <label>%</label> <span
@@ -67,7 +68,7 @@ else{
 <span class="error"><?php echo $errors['standard']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 <div><label for="datasource">数据来源</label></div>
 <div><select name="datasource">
 	<option value="">选择数据来源表</option>
@@ -80,7 +81,7 @@ else{
 </select> <span class="error"><?php echo $errors['datasource']?></span></div>
 </div>
 
-<div class="data">
+<div class="data item_type_normal">
 <div><label for="staff">办事员</label></div>
 <div><select name="staff">
 	<option value="">选择办事员</option>

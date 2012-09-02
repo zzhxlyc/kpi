@@ -16,8 +16,22 @@ function get_user($session = Null){
 }
 
 function output_error($error, $home){
-	echo '<p>'.$error.'</p>';
-	echo '<a href="'.$home.'">返回</a>';
+	echo '
+		<div id="right">
+		<div class="box">
+		<div class="header_main title">
+		</div>
+		
+		<div class="data_wrapper">
+		<div class="data">';
+	echo '<p><span>'.$error.'</span></p>';
+	echo '</div></div>';
+	echo '
+	<div class="actions">
+		<div class="actions-left"><input type="button" value="返回"
+		onclick="location.href="'.$home.'""/></div>';
+	//echo '<a href="'.$home.'">返回</a>';
+	echo '</div></div>';
 }
 
 function output_edit_success(){
