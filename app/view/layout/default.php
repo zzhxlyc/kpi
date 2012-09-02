@@ -38,21 +38,21 @@
 </div>
 </div>
 </div>
-<nav class="header_main">
+<div class="header_main nav">
 <div class="container_12"></div>
-</nav> </header>
+</div> </header>
 
 <?php include($TEMPLATE_PAGE); ?>
 
-<footer>
+<div id="footer">
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
-</footer>
+</div>
 <?php }else{?>
 <?php include($TEMPLATE_PAGE); ?>
 
-<footer style="position: absolute; top: 680px; bottom:0px;">
+<div id="footer" style="position: absolute; top: 680px; bottom:0px;">
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
-</footer>
+</div>
 <?php }?>
 </body>
 </html>

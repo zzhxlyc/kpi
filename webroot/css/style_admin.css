@@ -64,6 +64,7 @@ ul {
 label,.label {
 	display: inline-block;
 	margin-bottom: 5px;
+	*margin-bottom: 2.5px;
 	color: #666;
 	text-shadow: 0 1px 0 white;
 }
@@ -73,9 +74,11 @@ input,textarea,select {
 	font-size: 15px;
 	display: inline-block;
 	margin: 10px 0;
+	*margin: 5px 0;
 	border: 1px solid #C8C8C8;
 	border-radius: 5px;
 	padding: 5px 0 5px 5px;
+	*padding: 2.5px 0 2.5px 2.5px;
 	outline: 0;
 	-webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
 	-moz-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
@@ -89,6 +92,7 @@ input[type="submit"],input[type="reset"],input[type="button"] {
 	line-height: 25px;
 	width: auto;
 	padding: 0 10px;
+	*padding: 0 5px;
 	-moz-background-clip: padding;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -138,6 +142,7 @@ hr {
 .wrapper {
 	margin: 0px auto;
 	left: 0px;
+	*left: 470px;
 	top: 250px;
 	width: 400px;
 	right: 0px;
@@ -145,7 +150,19 @@ hr {
 	z-index: 101;
 }
 
+#content h1 {
+	left: 0px;
+	*left: 425px;
+	top: 60px;
+	right: 0px;
+	position: absolute;
+	z-index: 101;
+}
 
+#content h1 {
+	text-align: center;
+	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
+}
 
 /* -----------------------------------------------------------
 	header_toolbar
@@ -257,6 +274,7 @@ hr {
 	header_main
 ----------------------------------------------------------- */
 .header_main {
+	width: 100%;
 	border-top: 1px solid #7a9cc0;
 	border-bottom: 1px solid #04172b;
 	background: #366fac;
@@ -283,36 +301,20 @@ hr {
 		      0 )
 }
 
-nav.header_main {
+.nav.header_main {
 	height: 90px;
 }
 
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content { 
+#content { //
 	margin: 10px 0;
 	padding: 0;
 	min-height: 81%;
 	clear: both;
 	overflow: hidden;
-	width: 100%;
 }
-
-#content #login_h1{
-	
-}
-
-#content h1 {
-	left: 0;
-	right: 0;
-	top: 60px;
-	position: absolute;
-	z-index: 101;
-	text-align: center;
-	text-shadow: 0 0 5px rgba(10, 50, 92, 0.75);
-}
-
 
 /* -----------------------------------------------------------
 	content -> left
@@ -341,6 +343,7 @@ nav.header_main {
 #left #menu ul {
 	background: #376ea6;
 	display: block;
+	
 }
 
 #left #menu li {
@@ -351,6 +354,7 @@ nav.header_main {
 	border-bottom: 1px solid #326395;
 	color: #ffffff;
 	margin-top: 10px;
+	_padding:10px 0;
 }
 
 #left #menu ul li:first-child {
@@ -399,10 +403,15 @@ nav.header_main {
 	padding: 0;
 	clear: both;
 	overflow: hidden;
+	border: 1px solid green;
 }
 
-.box.noBlank,.box._edit {
+.box.noBlank, .box._edit {
 	margin-top: 20px;
+	_padding-top: 20px;
+	border: 1px solid orange;
+	_position: absolute;
+	_top: 180px;
 }
 
 .box._edit._hasBlank {
@@ -429,11 +438,11 @@ nav.header_main {
 	content -> right -> box -> header
 ----------------------------------------------------------- */
 .box .header {
-border: 1px solid #C8C8C8;
-border-bottom: 0;
+	border-width: 1px 1px 0px;
+	border-style: solid solid none;
 	border-radius: 3px 3px 0px 0px;
-	height: 34px;/*for subdata is float*/
-	line-height: 34px;/*for .box .header h3*/
+	height: 34px;
+	line-height: 34px;
 	filter: progid :               DXImageTransform.Microsoft.gradient ( 
 		       
 		     startColorstr =       
@@ -443,12 +452,11 @@ border-bottom: 0;
 		   0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
 }
-/* to_remove
+
 .box .grey.header {
 	border-color: rgb(200, 200, 200);
 	filter: none;
 }
-*/
 
 .box .header img {
 	margin: 9px auto 9px 8px;
@@ -473,11 +481,11 @@ border-bottom: 0;
 	overflow: hidden;
 	height: 32px;
 	border-radius: 5px 5px 0 0;
+	_margin-top: -17px;
 }
 
 .box .header_main h2 {
 	margin: 5px 0 0 10px;
-	6
 }
 
 /* -----------------------------------------------------------
@@ -538,7 +546,7 @@ table td.center {
 
 table td.center input[type='checkbox'] {
 	margin: 0;
-	border:0;
+	_border: 0;
 }
 
 table td.operate a {
@@ -558,9 +566,19 @@ table td.operate a {
 	content -> box
 ----------------------------------------------------------- */
 .box .data_wrapper {
-	/*border: 1px solid red;
-	border-bottom-width: 0px;*/
+	border: 1px solid #C8C8C8;
+	border-top: 1px solid #2B5177;
 	background: white;
+	border-radius: 0;
+	border-bottom: 0;
+	padding: 0;
+	border-color: rgb(43, 81, 119) rgb(200, 200, 200) rgb(200, 200, 200);
+	border-radius: 0px 0px 3px 3px;
+	border-top-color: rgb(200, 200, 200);
+	border-radius: 0px;
+	border-bottom-color: currentColor;
+	border-bottom-width: 0px;
+	border-bottom-style: none;
 }
 
 .box .data_wrapper::after {
@@ -580,10 +598,10 @@ table td.operate a {
 .box .data {
 	display: inline;
 	float: left;
-	/*border-bottom: 1px solid #E7E7E7;*/
-	border: 1px solid #c8c8c8;
+	border-bottom: 1px solid #E7E7E7;
+	border-top: 1px solid white;
 	margin: 0;
-	width: 99.85%;
+	width: 100%;
 	background: #F6F6F6;
 }
 
@@ -614,6 +632,7 @@ table td.operate a {
 	line-height: 36px;
 	border: 0;
 }
+
 
 .box .data>div._oneline {
 	width: 100%;
@@ -691,6 +710,7 @@ table td.operate a {
 .box .subdata input[type='checkbox'] {
 	margin: 0;
 	height: 20px;
+	_border: 0;
 }
 
 .box .ds_subdata {
@@ -751,18 +771,24 @@ table td.operate a {
 
 .box .actions {
 	border: 1px solid #C8C8C8;
-	background: #f6f6f6;
+	background: #F7F7F7;
 	border-radius: 0 0 5px 5px;
 	margin-bottom: 20px;
-	/*float: right; @*/
-	width: 100%;
+	
+	
+}
+.box .login{
+	width: 99.5%;
 }
 
 .box .actions.whiteBg {
 	border: 0px;
 	background: white;
-	padding: 0 10px;
 	margin-bottom: 0px;
+	
+	float: left;
+	width: 100%;
+	border: 1px solid red;
 }
 
 .box .actions::after {
@@ -776,7 +802,10 @@ table td.operate a {
 .box .actions-left {
 	float: left;
 	margin: 5px;
-	margin-left: 10px;
+	margin-left: 20px;
+	*margin:2px 0 10px 10px;
+	_margin:2px 0 10px 5px;
+	
 }
 
 .box .actions input {
@@ -785,13 +814,14 @@ table td.operate a {
 
 .box .actions-right {
 	float: right;
-	margin: 5px;
-	margin-right: 10px;
-	background: #F7F7F7;
+	margin: 10px;
+	margin-right: 20px;
+	*margin:2px 10px 10px 0;
+	_margin:2px 5px 10px 0;
 }
 
-.box .actions.login {
-	width: 398px;
+.box .actions-right.login {
+	margin-right: 10px;
 }
 
 /****************************pagenavi*****************************/
@@ -868,7 +898,7 @@ table td.operate a {
 	background-position: -140px 0;
 }
 
-footer {
+#footer {
 	background: rgb(53, 53, 53);
 	width: 100%;
 	height: 37px;
@@ -883,10 +913,12 @@ footer {
 		        
 		 0 );
 	position: relative;
-	z-index: 101;
+	_position: absolute;
+	_top: 680px;
+	_z-index: 101;
 }
 
-footer {
+#footer {
 	color: rgb(244, 244, 244);
 	font-size: 12px;
 	filter: shadow(color =         #353535, direction :         180, strength :
@@ -899,11 +931,7 @@ footer {
 	text-align: center;
 }
 
-.footer {
-	width: 92%;
-	margin-left: 4%;
-	margin-right: 4%;
-}
+
 
 .ui-datepicker {
 	padding: 0.2em 0.2em 0px;

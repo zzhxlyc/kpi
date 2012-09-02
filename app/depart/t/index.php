@@ -1,9 +1,9 @@
 ﻿
 <div id="right">
 <div class="box">
+<form action="<?php echo $home.'/remove'?>" method="post">
 <div class="header_main title"></div>
 
-<form action="<?php echo $home.'/remove'?>" method="post">
 <div class="table">
 <table>
 	<thead>
@@ -39,14 +39,13 @@
 
 <div class="actions whiteBg">
 <div class="actions-left"><input class="remove_operation batch_remove" type="submit" value="批量删除" /></div>
-
-</form>
 <div class="actions-right">
-<form action="<?php echo $home.'/add'?>" method="post"><input
-	type="submit" value="添加部门" /></form>
+<input type="button" value="添加部门"
+	onclick="location.href='<?php echo $home.'/add'?>'" />	
+	
 </div>
 </div>
-
+</form>
 </div>
 </div>
 
