@@ -1,6 +1,6 @@
 
 <div id="right">
-<div class="box _edit">
+<div class="box">
 <div class="header_main title">
 <h2>添加公司主管</h2>
 </div>

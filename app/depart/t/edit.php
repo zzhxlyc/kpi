@@ -6,7 +6,7 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box _edit" >
+<div class="box" >
 <form action="<?php echo $home.'/edit?id='.$depart->id?>" method="post">
 <div class="header_main title">
 <h2>编辑部门</h2>

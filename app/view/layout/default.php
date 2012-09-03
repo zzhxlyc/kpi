@@ -18,7 +18,7 @@
 </head>
 <body>
 <?php if($request->get_method() != 'login'){?>
-<header>
+<div id="header">
 <div id="header_toolbar">
 <div class="grid_1">
 <h1>杭州钱鸿集团KPI系统</h1>
@@ -40,7 +40,7 @@
 </div>
 <div class="header_main nav">
 <div class="container_12"></div>
-</div> </header>
+</div> </div>
 
 <?php include($TEMPLATE_PAGE); ?>
 

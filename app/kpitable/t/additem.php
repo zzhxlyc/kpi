@@ -5,11 +5,12 @@
 	else{
 ?>
 <div id="right">
-<div class="box _edit noBlank">
+<div class="box">
+<form action="" method="post">
 <div class="header_main title">
 <h2><?php echo $kpitable->name?> | 添加考核项</h2>
 </div>
-<form action="" method="post">
+
 <div class="data_wrapper">
 
 <div class="data">

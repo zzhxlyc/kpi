@@ -1,7 +1,7 @@
 <div id="right">
 <div class="box _edit">
 <div class="header_main title">
-<h2>编辑数据源表格</h2>
+<h2>添加数据源表格</h2>
 </div>
 <form action="" method="post">
 <div class="data_wrapper">

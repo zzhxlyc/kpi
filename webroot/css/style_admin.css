@@ -399,24 +399,29 @@ hr {
 	content -> right -> box
 ----------------------------------------------------------- */
 .box {
-	margin: 0;
-	padding: 0;
+	margin-top: 20px;
+	*margin-top: 25px;
 	clear: both;
 	overflow: hidden;
-	border: 1px solid green;
+	border: 1px solid yellow;
 }
 
+.box.hasBlank{
+	margin-top: 0px;
+	*padding-top: 0px;
+}
+
+
+/*
 .box.noBlank, .box._edit {
 	margin-top: 20px;
-	_padding-top: 20px;
 	border: 1px solid orange;
-	_position: absolute;
-	_top: 180px;
 }
 
 .box._edit._hasBlank {
 	margin: 0;
 }
+*/
 
 .box._datasource {
 	margin: 20px 50px;
@@ -566,6 +571,7 @@ table td.operate a {
 	content -> box
 ----------------------------------------------------------- */
 .box .data_wrapper {
+	/*
 	border: 1px solid #C8C8C8;
 	border-top: 1px solid #2B5177;
 	background: white;
@@ -578,9 +584,16 @@ table td.operate a {
 	border-radius: 0px;
 	border-bottom-color: currentColor;
 	border-bottom-width: 0px;
-	border-bottom-style: none;
+	border-bottom-style: none;*/
+	
+	border: 1px solid green;
+	border-top: 1px solid #2B5177;
+	background: white;	
+	float:left;
+	width: 100%
+	
 }
-
+/*
 .box .data_wrapper::after {
 	content: ".";
 	display: block;
@@ -588,7 +601,7 @@ table td.operate a {
 	clear: both;
 	visibility: hidden;
 }
-
+*/
 .box .has_subdata {
 	padding: 8px 0 8px 20px;
 	height: 27px;
@@ -603,6 +616,8 @@ table td.operate a {
 	margin: 0;
 	width: 100%;
 	background: #F6F6F6;
+	
+	border: 1px solid pink;
 }
 
 .box .data input[type='submit'],.box .data input[type='button'] {
@@ -620,7 +635,7 @@ table td.operate a {
 	float: right;
 	width: 75%;
 	padding: 0 10px;
-	padding-right: 10px;
+	
 }
 
 .box .data>div:first-child {
@@ -629,6 +644,7 @@ table td.operate a {
 	padding: 0; //
 	margin-top: 12px;
 	margin-left: 10px;
+	*margin-top: -3px;
 	line-height: 36px;
 	border: 0;
 }
@@ -770,10 +786,13 @@ table td.operate a {
 }
 
 .box .actions {
+	width:100%;
 	border: 1px solid #C8C8C8;
 	background: #F7F7F7;
 	border-radius: 0 0 5px 5px;
 	margin-bottom: 20px;
+	clear: both;
+overflow: hidden;
 	
 	
 }
@@ -788,7 +807,7 @@ table td.operate a {
 	
 	float: left;
 	width: 100%;
-	border: 1px solid red;
+	/*border: 1px solid red;*/
 }
 
 .box .actions::after {
@@ -847,7 +866,7 @@ table td.operate a {
 
 .page-nav a,.page-nav span {
 	/* Change this image URL to the relative location of the sprite sheet: */
-	background: url(../images/numbers_spritesheet.png) no-repeat;
+	
 	display: block;
 	float: left;
 	width: 28px;

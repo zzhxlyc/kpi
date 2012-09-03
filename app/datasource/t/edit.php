@@ -6,10 +6,11 @@
 ?>
 <div id="right">
 	<div class="box _edit">
+	<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post" >
 		<div class="header_main title" >
 		<h2>编辑数据源表格</h2>
 		</div>
-		<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post" >
+		
 		<div class="data_wrapper">
 <div class="data">
 	<div><label for="name">表格名称</label></div>
@@ -32,7 +33,7 @@
 <div class="data">
 	<div><label for="old_column">修改属性</label></div>
 	<div>标示：<input size="20" type="text" id="old_column" />
-	             &nbsp &nbsp新列名：<input size="20" type="text" id="new_comment" />
+	             新列名：<input size="20" type="text" id="new_comment" />
 	 <a href="javascript:void(0)" onclick="modify_row()">  修改这一行</a></div>
 </div>
 

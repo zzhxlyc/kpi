@@ -1,6 +1,6 @@
 
 <div id="right"><!-- table -->
-<div class="box noBlank">
+<div class="box">
 <form action="<?php echo $home.'/remove'?>" method="post">
 <!-- box / title -->
 <div class="header_main title">
@@ -56,6 +56,7 @@
 
 </form>
 </div>
+
 </div>
 
 

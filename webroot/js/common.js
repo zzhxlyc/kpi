@@ -20,29 +20,27 @@ $("#left #menu ul li:first-child").css("padding-top", "10px");
 $("#left #menu ul li:first-child").css("margin-top", "0");
 
 
-$(".box._edit").css("_padding-top", "20px");
-$(".box._edit").css("_border", "1px solid orange");
-$(".box._edit").css("_margin-top", "20px");
 
 
-$(".box .data>div").css("_border-left","1px solid green");
-$(".box .data>div").css("_margin-left", "5px");
-$(".box .data>div").css("_left", "15px");
+
+$(".box .data>div:first-child").css("_border", "2px solid orange");
 
 /*
+ 
+ $(".box .data>div").css("_border-left","1px solid blue");
 $(".box .data>div").css("_float", "right");
-$(".box .data>div").css("_width", "100px");
+$(".box .data>div").css("_width", "75%");
+$(".box .data>div").css("_margin-left", "5px");
+
 $(".box .data>div label").css("_display", "inline");
 $(".box .data>div input").css("_display", "inline");
-
+ 
 $(".box .data>div:first-child").css("_float", "left");
-$(".box .data>div:first-child").css("_width", "30px");
+$(".box .data>div:first-child").css("_width", "16%");
 $(".box .data>div:first-child").css("_margin-top", "6px");
 $(".box .data>div:first-child").css("_margin-left", "5px");
 $(".box .data>div:first-child").css("_line-height", "36px");
-$(".box .data>div:first-child").css("_border", "0");
-
-
+ 
 $(".box .data>div").css("_padding", "0 5px");
 $(".box .data>div").css("_padding-right", "5px");*/
 	

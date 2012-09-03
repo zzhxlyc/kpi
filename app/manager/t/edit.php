@@ -6,7 +6,7 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box">
+<div class="box hasBlank">
 <form action="<?php echo $home.'/edit?id='.$user->id?>" method="post">
 <div class="header_main title">
 <h2>编辑公司主管</h2>

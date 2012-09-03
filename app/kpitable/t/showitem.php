@@ -5,11 +5,10 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box _edit">
-
+<div class="box">
+<form action="" method="post">
 <div class="header_main title"></div>
 
-<form action="" method="post">
 <div class="data_wrapper">
 
 <div class="data"><div><label for="name">考核表名称</label></div> <div class="readonly"><?php echo $kpitable->name?></div>
@@ -59,7 +58,8 @@ else{
 </div>
 <div class="actions-right"><input type="button" value="返回"
 	onclick="history.back()" /></div>
-<input type="hidden" name="id" value="<?php echo $depart->id?>" /></div>
+<input type="hidden" name="id" value="<?php echo $depart->id?>" />
+</div>
 
 </form>
 </div>

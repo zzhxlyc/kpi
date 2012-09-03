@@ -5,11 +5,12 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box _edit noBlank">
+<div class="box">
+<form action="<?php echo $home.'/edititem?id='.$tableitem->id?>" method="post">
 <div class="header_main title">
 <h2>编辑考核项</h2>
 </div>
-<form action="<?php echo $home.'/edititem?id='.$tableitem->id?>" method="post">
+
 <div class="data_wrapper">
 
 

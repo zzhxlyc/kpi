@@ -6,11 +6,12 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box _edit">
+<form action="<?php echo $home.'/edit?id='.$user->id?>" method="post">
+<div class="box">
 <div class="header_main title">
 <h2>编辑部门主管</h2>
 </div>
-<form action="<?php echo $home.'/edit?id='.$user->id?>" method="post">
+
 <div class="data_wrapper">
 
 <div class="data">
@@ -53,6 +54,7 @@ output_edit_success();
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 <input type="hidden" name="id" value="<?php echo $user->id?>" /></div>
-</form>
+
 </div>
+</form>
 </div>
