@@ -1,7 +1,8 @@
 ﻿
 <div id="right">
-<div class="box hasBlank">
 <form action="<?php echo $home.'/remove'?>" method="post">
+<div class="box hasBlank">
+
 <div class="header_main title">
 <h5></h5>
 </div>
@@ -25,7 +26,7 @@
 			if($i % 2 == 0) $tr_class = 'class="even"';
 			?>
 		<tr <?php echo $tr_class?>>
-			<td class="center"><input name="id[]" type="checkbox"
+			<td class="center"><input name="id[]" type="checkbox" class="checkbox"
 				value="<?php echo $o->id?>" /></td>
 			<td class="center"><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
 			<td class="operate"><a href="<?php echo $home.'/edit?id='.$o->id?>">编辑</a>
@@ -47,8 +48,9 @@
 <div class="actions-right"><input type="button" value="添加公司主管"
 	onclick="location.href='<?php echo $home.'/add'?>'" /></div>
 </div>
-</form>
+
 </div>
+</form>
 </div>
 
 

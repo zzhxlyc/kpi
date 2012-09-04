@@ -15,14 +15,14 @@ else{
 
 <div class="data_wrapper">
 <div class="data">
-<div><label for="password">新密码</label></div>
-<div><input size="20" type="password" name="password" /> <span
+<div class="first-child"><label for="password">新密码</label></div>
+<div class="child"><input size="20" type="password" name="password" /> <span
 	class="error"><?php echo $errors['password']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="password2">确认密码</label></div>
-<div><input size="20" type="password" name="password2" /> <span
+<div class="first-child"><label for="password2">确认密码</label></div>
+<div class="child"><input size="20" type="password" name="password2" /> <span
 	class="error"><?php echo $errors['password2']?></span></div>
 </div>
 </div>

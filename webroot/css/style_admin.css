@@ -74,11 +74,10 @@ input,textarea,select {
 	font-size: 15px;
 	display: inline-block;
 	margin: 10px 0;
-	*margin: 5px 0;
 	border: 1px solid #C8C8C8;
 	border-radius: 5px;
 	padding: 5px 0 5px 5px;
-	*padding: 2.5px 0 2.5px 2.5px;
+	
 	outline: 0;
 	-webkit-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
 	-moz-box-shadow: inset 0 2px 3px 0 rgba(18, 16, 11, 0.13);
@@ -87,7 +86,9 @@ input,textarea,select {
 	vertical-align: baseline;
 }
 
-input[type="submit"],input[type="reset"],input[type="button"] {
+input[type="submit"],input[type="reset"],input[type="button"],
+input.submit,input.reset,input.button{
+
 	height: 25px;
 	line-height: 25px;
 	width: auto;
@@ -104,6 +105,11 @@ input[type="submit"],input[type="reset"],input[type="button"] {
 input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:focus
 	{
 	border: 1px solid #A3A3A3;
+}
+
+input.checkbox{
+	margin: 0;
+	_border: 0;	
 }
 
 hr {
@@ -400,14 +406,16 @@ hr {
 ----------------------------------------------------------- */
 .box {
 	margin-top: 20px;
-	*margin-top: 25px;
+	*margin-top: 28px;
 	clear: both;
 	overflow: hidden;
 	border: 1px solid yellow;
 }
 
 .box.hasBlank{
-	margin-top: 0px;
+	margin-top: -4px;
+	*margin-top: 11px;
+	_margin-top: -18px;
 	*padding-top: 0px;
 }
 
@@ -456,11 +464,11 @@ hr {
 		        
 		   0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
+	width:100%;
 }
 
 .box .grey.header {
 	border-color: rgb(200, 200, 200);
-	filter: none;
 }
 
 .box .header img {
@@ -526,7 +534,7 @@ table th,table td {
 	text-align: center;
 	vertical-align: middle;
 	height: 30px;
-	width: auto;
+	/*width: auto;*/
 }
 
 table th.column1 {
@@ -547,11 +555,6 @@ table td {
 
 table td.center {
 	text-align: center;
-}
-
-table td.center input[type='checkbox'] {
-	margin: 0;
-	_border: 0;
 }
 
 table td.operate a {
@@ -586,11 +589,10 @@ table td.operate a {
 	border-bottom-width: 0px;
 	border-bottom-style: none;*/
 	
-	border: 1px solid green;
-	border-top: 1px solid #2B5177;
+	border-top: 1px solid #C8C8C8s;
 	background: white;	
 	float:left;
-	width: 100%
+	width:100%;
 	
 }
 /*
@@ -616,11 +618,13 @@ table td.operate a {
 	margin: 0;
 	width: 100%;
 	background: #F6F6F6;
+	height: auto;
 	
-	border: 1px solid pink;
 }
 
-.box .data input[type='submit'],.box .data input[type='button'] {
+.box .data input[type='submit'],.box .data input[type='button'],
+.box .data input.submit,.box .data input.button
+{
 	display: inline-block;
 	width: auto;
 	height: 25px;
@@ -629,7 +633,7 @@ table td.operate a {
 	padding: 0px 10px;
 	margin: 0 25px 0 0;
 }
-
+/* child selctor is not support by ie6*/
 .box .data>div {
 	border-left: 1px solid #E7E7E7;
 	float: right;
@@ -656,7 +660,7 @@ table td.operate a {
 	margin-top: 0;
 }
 
-.box .data>div.readonly { //
+.box .data>div.readonly {
 	margin: 12px 0 0 10px;
 	line-height: 36px;
 }
@@ -670,9 +674,8 @@ table td.operate a {
 	cursor: auto;
 }
 
-.box .data>div input {
+.data div input {
 	width: auto;
-	display: inline;
 }
 
 .box .data_wrapper.login .data>div input {
@@ -680,6 +683,67 @@ table td.operate a {
 }
 
 .box .data>div textarea {
+	width: 60%;
+}
+
+/*--------------all for IE6--------------*/
+.box .data .child  {
+	/*border-left: 1px solid #E7E7E7;*/
+	border-left: 1px solid #E7E7E7;
+	float: right;
+	width: 75%;
+	padding:0 10px;
+}
+.box .data div input.login{
+	width:280px;
+}
+
+.data .first-child {
+	float: left;
+	width: 16%;
+	padding: 0; //
+	margin-top: 12px;
+	margin-left: 10px;
+	*margin-top: -3px;
+	_margin-left: 0px;
+	_padding-left: 10px;
+	line-height: 36px;
+	border: 0;
+	
+}
+.box .data .child a{
+	vertical-align: middle;
+}
+.box .data div._oneline {
+	width: 100%;
+	border: 0;
+	margin-top: 0;
+}
+
+.box .data div.readonly {
+	margin: 12px 0 0 10px;
+	_margin: 0;
+	line-height: 30px;
+}
+
+.box .data div label {
+	display: inline;
+}
+
+.box .data div label.input_rule {
+	font-weight: normal;
+	cursor: auto;
+}
+
+.data div input {
+	width: auto;
+}
+
+.box .data_wrapper.login .data .child input {
+	width: 98%
+}
+
+.box .data .child textarea {
 	width: 60%;
 }
 
@@ -703,15 +767,15 @@ table td.operate a {
 	height: auto;
 }
 
-.box .has_subdata {
-	margin-bottom: -20px;
-}
-
 .box .subdata {
+	width: 75%;
+	padding-left:10px;
 	padding: 4px 0;
+	_padding: 0;
 	height: 20px;
+	
 }
-
+/**/
 .box .subdata>div {
 	width: 5%;
 	display: inline-block;
@@ -721,41 +785,33 @@ table td.operate a {
 	float: left;
 	width: 50%;
 	display: inline-block;
-}
-
-.box .subdata input[type='checkbox'] {
-	margin: 0;
-	height: 20px;
-	_border: 0;
-}
-
-.box .ds_subdata {
-	padding: 0 0 10px 82px;
-	width: 100%
-}
-
-.box .ds_table_data {
 	
 }
 
-.box .has_subdata,.box .slug_rule,.box .ds_subdata {
-	width: 10%;
+.box .subdata .sub_child{
+	width: 5%;
 	display: inline-block;
-	text-align: left;
 }
 
-.box .has_subdata .blank_div,.box .ds_subdata input[type='text'] {
-	width: 40%;
+.box .subdata .sub_first-child {
+	float: left;
+	width: 50%;
 	display: inline-block;
-	margin: 0 10px 0 0;
-	padding-left: 5px;
+}
+.box .subdata input[type='checkbox'] {
+	height: 20px;
+}
+
+.box .subdata input.checkbox
+ {
+	height: 20px;
 }
 
 .box .ds_subdata input[type='text'] {
 	width: 31%;
 }
 
-.box .has_subdata label
+
 .box .ds_subdata label {
 	padding: 7px 0 0 0;
 	font-weight: normal;
@@ -766,13 +822,14 @@ table td.operate a {
 	font-weight: bold;
 	margin: 0;
 	padding: 8px 10px;
+	background: #f7f7f7;
 }
 
 .box .subdata label {
 	float: left;
-	padding: 4px 20px 0 0;
+	margin: 0;
 	font-weight: normal;
-	line-height: 12px;
+	line-height: 20px;
 	text-align: right;
 }
 
@@ -790,14 +847,15 @@ table td.operate a {
 	border: 1px solid #C8C8C8;
 	background: #F7F7F7;
 	border-radius: 0 0 5px 5px;
-	margin-bottom: 20px;
-	clear: both;
-overflow: hidden;
 	
+	clear: both;
+	overflow: hidden;
+	/*margin-bottom: 20px;*/
 	
 }
+
 .box .login{
-	width: 99.5%;
+	/*width:100%;*/
 }
 
 .box .actions.whiteBg {
@@ -805,7 +863,7 @@ overflow: hidden;
 	background: white;
 	margin-bottom: 0px;
 	
-	float: left;
+	
 	width: 100%;
 	/*border: 1px solid red;*/
 }
@@ -820,10 +878,11 @@ overflow: hidden;
 
 .box .actions-left {
 	float: left;
-	margin: 5px;
+	margin: 10px;
 	margin-left: 20px;
-	*margin:2px 0 10px 10px;
-	_margin:2px 0 10px 5px;
+	*margin: 0;
+	*padding:10px;
+	*padding-left:20px;
 	
 }
 
@@ -835,8 +894,9 @@ overflow: hidden;
 	float: right;
 	margin: 10px;
 	margin-right: 20px;
-	*margin:2px 10px 10px 0;
-	_margin:2px 5px 10px 0;
+	*margin: 0;
+	*padding:10px;
+	*padding-right:20px;
 }
 
 .box .actions-right.login {

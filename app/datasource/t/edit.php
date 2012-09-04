@@ -1,67 +1,74 @@
-<?php 
-	if($error){
-		output_error($error, $index_page);
-	}
-	else{
-?>
+<?php
+if($error){
+	output_error($error, $index_page);
+}
+else{
+	?>
 <div id="right">
-	<div class="box _edit">
-	<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post" >
-		<div class="header_main title" >
-		<h2>编辑数据源表格</h2>
-		</div>
-		
-		<div class="data_wrapper">
+<form action="<?php echo $home.'/edit?id='.$datasource->id?>" method="post">
+<div class="box">
+
+<div class="header_main title">
+<h2>编辑数据源表格</h2>
+</div>
+
+<div class="data_wrapper">
 <div class="data">
-	<div><label for="name">表格名称</label></div>
-	<div><input size="50" type="text" name="name" value="<?php echo $datasource->name?>" />
-	<span class="error"><?php echo $errors['name']?></span></div>
+<div class="first-child"><label for="name">表格名称</label></div>
+<div class="child"><input size="50" type="text" name="name"
+	value="<?php echo $datasource->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-	<div><label for="slug">别名</label></div>
-	<div class="readonly"><label><?php echo $datasource->slug?></label></div>
+<div class="first-child"><label for="slug">别名</label></div>
+<div class="child"><div class="readonly"><label><?php echo $datasource->slug?></label></div></div>
 </div>
 
 <div class="data">
-	<div><label for="new_attr">添加属性</label></div>
-	<div><input size="20" type="text" id="new_attr" />
-	<a href="javascript:void(0)" onclick="add_row()">  添加一行</a>
-	</div>
+<div class="first-child"><label for="new_attr">添加属性</label></div>
+<div class="child"><input size="20" type="text" id="new_attr" /> <a
+	href="javascript:void(0)" onclick="add_row()"> 添加一行</a></div>
 </div>
 
 <div class="data">
-	<div><label for="old_column">修改属性</label></div>
-	<div>标示：<input size="20" type="text" id="old_column" />
-	             新列名：<input size="20" type="text" id="new_comment" />
-	 <a href="javascript:void(0)" onclick="modify_row()">  修改这一行</a></div>
+<div class="first-child"><label for="old_column">修改属性</label></div>
+<div class="child">标示：<input size="20" type="text" id="old_column" />&nbsp&nbsp新列名：<input
+	size="20" type="text" id="new_comment" /> <a href="javascript:void(0)"
+	onclick="modify_row()"> 修改这一行</a></div>
 </div>
 
 <div class="data">
-	<div><label for="attr">属性表</label></div>
-	<div><table id="ds_table_attrs">
-		<thead><tr><th align="left" width="50">标示</th>
-		<th align="left" width="200">列名</th><th>操作</th></tr></thead>
-	</table></div>
+<div class="first-child"><label for="attr">属性表</label></div>
+<div class="child">
+<table id="ds_table_attrs">
+	<thead>
+		<tr>
+			<th align="left" width="50px">标示</th>
+			<th>列名</th>
+			<th align="left" width="50px">操作</th>
+		</tr>
+	</thead>
+</table>
 </div>
-<div class="data">
+</div>
+
+</div>
+
+<div class="actions">
+<div class="actions-left"><input type="submit" value="保存" /></div>
+<div class="actions-right"><input type="button" value="返回"
+	onclick="location.href='<?php echo $home?>/index'" /></div>
+<input type="hidden" name="id" value="<?php echo $datasource->id?>" /> <input
+	type="hidden" id="column" name="column" /> <input type="hidden"
+	id="comment" name="comment" /></div>
+	
 <?php 
-		output_edit_success();
-	}
+output_edit_success();
+}
 ?>
-</div>	
-</div>	
-			<div class="actions">
-					
-					<div class="actions-left"><input type="submit" value="保存" /></div>
-					<div class="actions-right"><input type="button" value="返回" onclick="location.href='<?php echo $home?>/index'" /></div>
-					<input type="hidden" name="id" value="<?php echo $datasource->id?>" />
-					<input type="hidden" id="column" name="column" />
-					<input type="hidden" id="comment" name="comment" />					
-			</div>
-		
-		</form>
-	</div>
+
+</div>
+</form>
 </div>
 
 <script type="text/javascript">

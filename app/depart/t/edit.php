@@ -6,8 +6,9 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box" >
 <form action="<?php echo $home.'/edit?id='.$depart->id?>" method="post">
+<div class="box" >
+
 <div class="header_main title">
 <h2>编辑部门</h2>
 </div>
@@ -15,14 +16,12 @@ else{
 <div class="data_wrapper">
 
 <div class="data">
-<div><label for="name">部门名称</label></div>
-<div><input size="20" type="text" name="name"
+<div class="first-child"><label for="name">部门名称</label></div>
+<div class="child"><input size="20" type="text" name="name"
 	value="<?php echo $depart->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
-<div class="data"><?php 
-output_edit_success();
-?></div>
+
 
 </div>
 <div class="actions">
@@ -31,8 +30,11 @@ output_edit_success();
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 <input type="hidden" name="id" value="<?php echo $depart->id?>" /></div>
 
-</form>
+<?php 
+output_edit_success();
+?>
 </div>
+</form>
 </div>
 <?php
 }

@@ -1,15 +1,16 @@
 
 <div id="right">
-<div class="box">
 <form action="" method="post">
+<div class="box">
+
 <div class="header_main title">
 <h2>添加部门</h2>
 </div>
 
 <div class="data_wrapper">
 <div class="data">
-<div><label for="name">部门名称</label></div>
-<div><input size="20" type="text" name="name"
+<div class="first-child"><label for="name">部门名称</label></div>
+<div class="child"><input size="20" type="text" name="name"
 	value="<?php echo $depart->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 </div>
@@ -20,8 +21,8 @@
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 </div>
 
-</form>
 </div>
+</form>
 </div>
 
 

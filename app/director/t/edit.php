@@ -15,19 +15,19 @@ else{
 <div class="data_wrapper">
 
 <div class="data">
-<div><label for="name">姓名</label></div>
-<div><input size="20" type="text" name="name"
+<div class="first-child"><label for="name">姓名</label></div>
+<div class="child"><input size="20" type="text" name="name"
 	value="<?php echo $user->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="slug">别名</label></div>
-<div class="readonly"><label> <?php echo $user->slug?></label></div>
+<div class="first-child"><label for="slug">别名</label></div>
+<div class="child"><div class="readonly"><label> <?php echo $user->slug?></label></div></div>
 </div>
 
 <div class="data">
-<div><label for="depart">管理部门</label></div>
-<div><select name="depart">
+<div class="first-child"><label for="depart">管理部门</label></div>
+<div class="child"><select name="depart">
 <?php
 foreach($depart_list as $o){
 	if(is_array($user->depart)){
@@ -43,10 +43,6 @@ foreach($depart_list as $o){
 </select> <span class="error"><?php echo $errors['depart']?></span></div>
 </div>
 
-<div class="data"><?php 
-output_edit_success();
-}
-?></div>
 </div>
 
 <div class="actions">
@@ -54,6 +50,11 @@ output_edit_success();
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 <input type="hidden" name="id" value="<?php echo $user->id?>" /></div>
+
+<?php 
+output_edit_success();
+}
+?>
 
 </div>
 </form>

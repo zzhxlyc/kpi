@@ -4,12 +4,13 @@ if($error){
 }
 else{
 	?>
-	<div id="right">
-<div class="box _edit">
+<div id="right">
+<form action="" method="post">
+<div class="box">
 <div class="header_main title">
 <h2>修改数据源表: <?php echo $datasource->name?></h2>
 </div>
-<form action="" method="post">
+
 <div class="data_wrapper">
 
 <div class="table">
@@ -43,12 +44,7 @@ else{
 </table>
 </div>
 
-<div class="data">
-	<?php
-	output_edit_success();
-}
-?>
-</div>
+
 </div>
 
 <div class="actions">
@@ -59,10 +55,14 @@ else{
 <input type="hidden" name="datasource"
 	value="<?php echo $datasource->id?>" /> <input type="hidden" name="id"
 	value="<?php echo $data->id?>" /></div>
+	
+<?php
+output_edit_success();
+}
+?>
 
-
-</form>
 </div>
+</form>
 </div>
 
 

@@ -1,11 +1,11 @@
 
-<div id="right"><!-- table -->
-<div class="box"><!-- box / title -->
+<div id="right">
 <form action="<?php echo $home.'/remove'?>" method="post">
+<div class="box">
+
 <div class="header_main title">
 <h5></h5>
 </div>
-<!-- end box / title -->
 
 <div class="table">
 <table>
@@ -26,7 +26,7 @@
 			if($i % 2 == 0) $tr_class = 'class="even"';
 			?>
 		<tr <?php echo $tr_class?>>
-			<td class="center"><input name="id[]" type="checkbox"
+			<td class="center"><input name="id[]" type="checkbox" class="checkbox"
 				value="<?php echo $o->id?>" /></td>
 			<td class="center"><a href="<?php echo $home.'/edit?id='.$o->id?>"><?php echo $o->name?></a></td>
 			<td class="operate"><a target="_blank"
@@ -41,7 +41,7 @@
 	</tbody>
 </table>
 </div>
-<!-- end table -->
+
 <div class="actions whiteBg">
 <div class="actions-left"><input class="remove_operation batch_remove"
 	type="submit" value="批量删除" /></div>
@@ -51,8 +51,8 @@
 </div>
 </div>
 
-</form>
 </div>
+</form>
 </div>
 
 
