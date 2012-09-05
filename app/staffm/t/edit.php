@@ -5,7 +5,7 @@
 	else{
 ?>
 <div id="right">
-<div class="box _edit">
+<div class="box">
 <div class="header_main title">
 </div>
 <form action="<?php echo $home.'/edit?id='.$user->id?>" method="post">

@@ -108,8 +108,11 @@ input:hover,input:active,input:focus,textarea:hover,textarea:active,textarea:foc
 }
 
 input.checkbox{
-	margin: 0;
-	_border: 0;	
+	margin:0;
+	padding:0;
+	*border:0;
+	*background: #f7f7f7;	
+	
 }
 
 hr {
@@ -314,12 +317,16 @@ hr {
 /* -----------------------------------------------------------
 	content
 ----------------------------------------------------------- */
-#content { //
-	margin: 10px 0;
+#content {
+	margin: 10px 0 20px 0;
 	padding: 0;
 	min-height: 81%;
 	clear: both;
 	overflow: hidden;
+	height: auto;
+	
+	border: 1px solid red;
+
 }
 
 /* -----------------------------------------------------------
@@ -330,6 +337,8 @@ hr {
 	width: 280px;
 	position: absolute;
 	padding-top: 20px;
+	
+	border: 1px solid pink;
 }
 
 /* -----------------------------------------------------------
@@ -399,6 +408,8 @@ hr {
 	padding: 0;
 	clear: both;
 	overflow: hidden;
+	
+	border: 1px solid pink;
 }
 
 /* -----------------------------------------------------------
@@ -407,6 +418,7 @@ hr {
 .box {
 	margin-top: 20px;
 	*margin-top: 28px;
+	_margin-top: 0px;
 	clear: both;
 	overflow: hidden;
 	border: 1px solid yellow;
@@ -419,6 +431,12 @@ hr {
 	*padding-top: 0px;
 }
 
+.box.hasBlank.special{
+	_margin-top: 2px;
+}
+.box.special2{
+	_margin-top: 20px;
+}
 
 /*
 .box.noBlank, .box._edit {
@@ -561,6 +579,10 @@ table td.operate a {
 	padding: 0 10px 0 10px;
 }
 
+table td input.checkbox{
+	*background: white;
+}
+
 #ds_table_attrs th {
 	background: transparent;
 }
@@ -693,9 +715,14 @@ table td.operate a {
 	float: right;
 	width: 75%;
 	padding:0 10px;
+	
 }
 .box .data div input.login{
 	width:280px;
+}
+
+.box .data .child input#old_column{
+	margin-right: 10px;
 }
 
 .data .first-child {
@@ -721,9 +748,9 @@ table td.operate a {
 }
 
 .box .data div.readonly {
-	margin: 12px 0 0 10px;
+	margin-left:10px;
 	_margin: 0;
-	line-height: 30px;
+	line-height: 36px;
 }
 
 .box .data div label {
@@ -747,9 +774,14 @@ table td.operate a {
 	width: 60%;
 }
 
+.box .data span{
+	*vertical-align: middle;
+	line-height: 36px;
+}
 .box .data span.error {
 	color: #B0171F;
 	font-weight: bold;
+	margin-left:10px;
 }
 
 .box .data.textarea_in {
@@ -992,8 +1024,9 @@ table td.operate a {
 		        
 		 0 );
 	position: relative;
+
 	_position: absolute;
-	_top: 680px;
+	_top: 950px;
 	_z-index: 101;
 }
 

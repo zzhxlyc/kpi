@@ -1,21 +1,22 @@
 
 <div id="right">
-<div class="box _edit">
+<form action="" method="post">
+<div class="box">
 <div class="header_main title">
 <h2>添加KPI考核记录</h2>
 </div>
-<form action="" method="post">
+
 <div class="data_wrapper">
 
 <div class="data">
-<div><label for="name">考核表名称</label></div>
-<div><input size="80" type="text" name="name"
+<div class="first-child"><label for="name">考核表名称</label></div>
+<div class="child"><input size="80" type="text" name="name"
 	value="<?php echo $kpidata->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="depart">KPI考核表</label></div>
-<div><select name="kpi_table">
+<div class="first-child"><label for="depart">KPI考核表</label></div>
+<div class="child"><select name="kpi_table">
 	<option value="">选择考核表</option>
 	<?php
 	foreach($kpi_table_list as $table){
@@ -29,8 +30,8 @@
 </div>
 
 <div class="data">
-<div><label for="type">时间类型</label></div>
-<div><select name="type" id="time_type" onchange="change_type()">
+<div class="first-child"><label for="type">时间类型</label></div>
+<div class="child"><select name="type" id="time_type" onchange="change_type()">
 	<option value="">选择时间类型</option>
 	<option value="1" <?php $HTML->selected(1, $kpidata->type)?>>月度</option>
 	<option value="2" <?php $HTML->selected(2, $kpidata->type)?>>季度</option>
@@ -40,7 +41,7 @@
 </div>
 
 <div class="data">
-<div><label for="year">年份</label></div>
+<div class="first-child"><label for="year">年份</label></div>
 	<?php
 	if(isset($kpidata->year)){
 		$year = $kpidata->year;
@@ -49,13 +50,13 @@
 		$year = idate('Y');
 	}
 	?>
-<div><input size="4" type="text" name="year" value="<?php echo $year?>" />
+<div class="child"><input size="4" type="text" name="year" value="<?php echo $year?>" />
 <span class="error"><?php echo $errors['year']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="month">月份</label></div>
-<div><input size="2" type="text" name="month"
+<div class="first-child"><label for="month">月份</label></div>
+<div class="child"><input size="2" type="text" name="month"
 	value="<?php echo $kpidata->month?>" /> 月 <span id="text_month2"> <span
 	class="error"><?php echo $errors['month']?></span> 至 <input size="2"
 	type="text" name="month2" value="<?php echo $kpidata->month2?>" /> 月 <span
@@ -69,8 +70,8 @@
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 </div>
 
-</form>
 </div>
+</form>
 </div>
 
 <script type="text/javascript">

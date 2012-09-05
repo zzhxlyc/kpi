@@ -1,16 +1,16 @@
 <div id="right">
-<div class="box noBlank">
+<div class="box">
 <div class="header_main title">
 </div>
 <div class="table">
 <table >
 	<tr >
-		<th width="100">部门</th>
+		<th >部门</th>
 		<th>KPI考核名称</th>
-		<th width="150">考核项名</th>
-		<th width="100">时间</th>
-		<th width="70">分数</th>
-		<th width="100">操作</th>
+		<th >考核项名</th>
+		<th >时间</th>
+		<th >分数</th>
+		<th >操作</th>
 	</tr>
 	<?php 
 		$i = 0;

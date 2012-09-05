@@ -29,7 +29,7 @@
 
 <div class="data">
 <div class="first-child"><label for="attr">属性表</label></div>
-<div>
+<div class="child">
 <table id="ds_table_attrs">
 	<thead>
 		<tr>

@@ -5,12 +5,11 @@
 	else{
 ?>
 <div id="right">
-<div class="box _edit">
-
+<form action="" method="post">
+<div class="box special2">
 <div class="header_main title">
 </div>
 
-<form action="" method="post">
 <div class="data_wrapper">
 <?php 
 	if(is_array($list)){
@@ -20,8 +19,8 @@
 			if($name != 'id'){
 ?>
 <div class="data">
-	<div><label for="<?php echo $name?>"><?php echo $comment?></label></div>
-	<?php echo $data[$name]?>
+	<div class="first-child"><label for="<?php echo $name?>"><?php echo $comment?></label></div>
+	<div class="child"><?php echo $data[$name]?></div>
 </div>
 <?php 
 			}
@@ -34,8 +33,9 @@
 <div class="actions-left"><input type="button" value="返回" onclick="history.back()" /></div>
 </div>
 
-</form>
+
 </div>
+</form>
 </div>
 <?php 
 	}

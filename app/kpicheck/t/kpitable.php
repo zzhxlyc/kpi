@@ -1,13 +1,13 @@
 <div id="right">
-<div class="box noBlank">
+<div class="box special2">
 <div class="header_main title"></div>
 
 <div class="table">
 <table>
 	<tr>
 		<th>绩效考核表</th>
-		<th width="100">部门</th>
-		<th width="150">操作</th>
+		<th >部门</th>
+		<th >操作</th>
 	</tr>
 	<?php
 	$i = 0;
@@ -30,8 +30,6 @@
 </table>
 </div>
 
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
-
 <div class="actions whiteBg">
 <div class="actions-left"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home."/depart"?>'" /></div>
@@ -39,3 +37,7 @@
 
 </div>
 </div>
+
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
+

@@ -18,7 +18,7 @@ else{
 <div class="data">
 <div class="first-child"><label for="name">部门名称</label></div>
 <div class="child"><input size="20" type="text" name="name"
-	value="<?php echo $depart->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
+	value="<?php echo $depart->name?>" /><span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 

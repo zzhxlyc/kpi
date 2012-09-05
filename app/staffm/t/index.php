@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box noBlank">
+<div class="box">
 <div class="header_main title">
 </div>
 <div class="table">

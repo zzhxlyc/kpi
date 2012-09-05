@@ -5,7 +5,7 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box hasBlank">
+<div class="box hasBlank special">
 <div class="header_main title">
 <h2><?php echo $kpitable->name?></h2>
 </div>
@@ -16,10 +16,10 @@ else{
 	<thead>
 		<tr>
 			<th>考核表项</th>
-			<th width="70">类型</th>
-			<th width="70">比重</th>
-			<th width="70">时间节点</th>
-			<th width="100">操作</th>
+			<th >类型</th>
+			<th >比重</th>
+			<th >时间节点</th>
+			<th >操作</th>
 		</tr>
 	</thead>
 	<?php

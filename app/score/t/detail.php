@@ -1,35 +1,41 @@
-<?php 
-	if($error){
-		output_error($error, $index_page);
-	}
-	else{
-?>
-<form action="" method="post" >
+<?php
+if($error){
+	output_error($error, $index_page);
+}
+else{
+	?>
+<div id="right">
+<form action="" method="post">
+<div class="box">
+<div class="header_main title"></div>
 
-<?php 
-	if(is_array($list)){
-		foreach($list as $o){
-			$name = $o->COLUMN_NAME;
-			$comment = $o->COLUMN_COMMENT;
-			if($name != 'id'){
-?>
-<div class="row">
-	<label for="<?php echo $name?>"><?php echo $comment?></label>
-	<?php echo $data[$name]?>
+<div class="data_wrapper"><?php 
+if(is_array($list)){
+	foreach($list as $o){
+		$name = $o->COLUMN_NAME;
+		$comment = $o->COLUMN_COMMENT;
+		if($name != 'id'){
+			?>
+<div class="data">
+<div class="first-child"><label for="<?php echo $name?>"><?php echo $comment?></label></div>
+<div class="child"><?php echo $data[$name]?></div>
 </div>
-<?php 
-			}
+			<?php
 		}
 	}
-?>
+}
+?></div>
 
-<div class="row" style="margin: 20px 0">
-	<input type="button" value="返回" onclick="history.back()" />
+<div class="actions">
+<div class="actions-right"><input type="button" value="返回"
+	onclick="history.back()" /></div>
 </div>
 
+</div>
 </form>
-<?php 
-	}
+</div>
+<?php
+}
 ?>
 
 

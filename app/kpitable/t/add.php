@@ -1,7 +1,8 @@
 
 <div id="right">
-<div class="box _edit">
 <form action="" method="post">
+<div class="box">
+
 <div class="header_main title">
 <h2>添加考核表</h2>
 </div>
@@ -9,14 +10,14 @@
 <div class="data_wrapper">
 
 <div class="data">
-<div><label for="name">考核表名称</label></div>
-<div><input size="50" type="text" name="name"
+<div class="first-child"><label for="name">考核表名称</label></div>
+<div class="child"><input size="50" type="text" name="name"
 	value="<?php echo $kpitable->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="depart">所属部门</label></div>
-<div><select name="depart">
+<div class="first-child"><label for="depart">所属部门</label></div>
+<div class="child"><select name="depart">
 	<option value="">选择部门</option>
 	<?php
 	if(is_array($departs)){
@@ -37,8 +38,9 @@
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 </div>
-</form>
+
 </div>
+</form>
 </div>
 
 

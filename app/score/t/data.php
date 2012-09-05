@@ -6,20 +6,21 @@
 ?>
 
 <div id="right">
+<form action="" method="post">
 <div class="box">
 <div class="header_main title">
 </div>
-<form action="" method="post">
+
 
 <div class="data">
-	<div><label for="quality">时间段选择</label></div>
-	<div>从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
+	<div class="first-child"><label for="quality">时间段选择</label></div>
+	<div class="child">从 <input type="text" name="from" value="<?php echo $_GET['from']?>" /> 
 	到 <input type="text" name="to" value="<?php echo $_GET['to']?>" />
 	<input type="hidden" name="itemid" value="<?php echo $tableitem->id?>" />
 	<input type="submit" value="提交" /></div>
 </div>
 
-</form>
+
 
 <div class="table">
 <table>
@@ -51,7 +52,9 @@
 	?>
 </table>
 </div>
+
 </div>
+</form>
 </div>
 
 <div class="page-nav">

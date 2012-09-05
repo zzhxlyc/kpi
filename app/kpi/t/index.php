@@ -1,6 +1,7 @@
 <div id="right">
-<div class="box noBlank">
 <form action="<?php echo $home.'/remove'?>" method="post">
+<div class="box special2">
+
 <div class="header_main title">
 <h5></h5>
 </div>
@@ -8,10 +9,10 @@
 <table>
 	<tr>
 		<th>KPI考核名称</th>
-		<th width="150">考核表名</th>
-		<th width="70">类型</th>
-		<th width="50">总分</th>
-		<th width="170">操作</th>
+		<th >考核表名</th>
+		<th >类型</th>
+		<th >总分</th>
+		<th >操作</th>
 	</tr>
 	<?php
 	$i = 0;
@@ -38,15 +39,17 @@
 	?>
 </table>
 </div>
-</form>
+
 <div class="actions whiteBg">
 
 <div class="actions-right">
-<form action="<?php echo $home.'/add'?>" method="post"><input
-	type="submit" value="添加一场KPI考核" /></form>
+<input type="button" value="添加一场KPI考核"
+	onclick="location.href='<?php echo $home.'/add'?>'" />	
 </div>
 </div>
+
 </div>
+</form>
 </div>
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 

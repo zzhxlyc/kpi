@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box noBlank">
+<div class="box special2">
 <div class="header_main title">
 </div>
 <div class="table">
@@ -33,8 +33,8 @@
 
 <div class="actions whiteBg">
 <div class="actions-right">
-<form action="<?php echo $home.'/add'?>" method="post"><input
-	type="submit" value="添加办事员" /></form>
+<input type="button" value="添加办事员"
+	onclick="location.href='<?php echo $home.'/add'?>'" />	
 </div>
 </div>
 

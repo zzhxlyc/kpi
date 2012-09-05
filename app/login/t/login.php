@@ -5,8 +5,9 @@
 <H1>杭州钱鸿集团绩效考核系统</H1>
 </DIV>
 <DIV class="wrapper">
-<DIV class="box">
 <FORM action="" method="post">
+<DIV class="box">
+
 <DIV class="header grey"><IMG src="<?php echo IMAGE_HOME?>/lock.png"
 	width="16" height="16">
 <H3>登录</H3>
@@ -31,8 +32,9 @@
 <DIV class="actions-right "><INPUT value="登录" type="submit" /></DIV>
 </DIV>
 
-</FORM>
+
 </DIV>
+</FORM>
 </DIV>
 </DIV>
 </DIV>

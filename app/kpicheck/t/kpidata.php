@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box noBlank">
+<div class="box special2">
 <div class="header_main title"></div>
 
 <div class="table">
@@ -32,7 +32,7 @@
 </table>
 </div>
 
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
 
 <div class="actions whiteBg">
 <div class="actions-left"><input type="button" value="返回"
@@ -41,5 +41,7 @@
 
 </div>
 </div>
+
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 
 

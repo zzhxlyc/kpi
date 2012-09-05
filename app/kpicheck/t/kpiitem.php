@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box _edit">
+<div class="box special2">
 
 <div class="header_main title">
 <h2><?php echo $kpidata->name?></h2>
@@ -9,11 +9,11 @@
 <table>
 	<tr>
 		<th>绩效考核项</th>
-		<th width="100">评分部门</th>
-		<th width="70">类型</th>
-		<th width="70">比重</th>
-		<th width="70">分数</th>
-		<th width="150">操作</th>
+		<th >评分部门</th>
+		<th >类型</th>
+		<th >比重</th>
+		<th >分数</th>
+		<th >操作</th>
 	</tr>
 	<?php 
 		$i = 0;

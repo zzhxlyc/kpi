@@ -5,9 +5,9 @@ if($error){
 else{
 	?>
 <div id="right">
+<form action="<?php echo $home.'/edit?id='.$kpitable->id?>" method="post">
 <div class="box">
-<form action="<?php echo $home.'/edit?id='.$kpitable->id?>"
-	method="post">
+
 <div class="header_main title">
 <h2>编辑考核表</h2>
 </div>
@@ -15,14 +15,14 @@ else{
 <div class="data_wrapper">
 
 <div class="data">
-<div><label for="name">考核表名称</label></div>
-<div><input size="20" type="text" name="name"
+<div class="first-child"><label for="name">考核表名称</label></div>
+<div class="child"><input size="20" type="text" name="name"
 	value="<?php echo $kpitable->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="depart">所属部门</label></div>
-<div><select name="depart">
+<div class="first-child"><label for="depart">所属部门</label></div>
+<div class="child"><select name="depart">
 <?php
 if(is_array($departs)){
 	foreach($departs as $depart){
@@ -46,6 +46,7 @@ output_edit_success();
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 <input type="hidden" name="id" value="<?php echo $kpitable->id?>" /></div>
-</form>
+
 </div>
+</form>
 </div>

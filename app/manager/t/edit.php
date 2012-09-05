@@ -17,8 +17,10 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="name">姓名</label></div>
-<div class="child"><input size="20" type="text" name="name"
-	value="<?php echo $user->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
+<div class="child">
+	<input size="20" type="text" name="name"
+	value="<?php echo $user->name?>" /> 
+	<span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">

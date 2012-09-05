@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box _edit">
+<div class="box special2">
 
 <div class="header_main title">
 <h2><?php echo $kpitable->name?></h2>

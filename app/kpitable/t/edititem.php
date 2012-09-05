@@ -5,8 +5,9 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box">
 <form action="<?php echo $home.'/edititem?id='.$tableitem->id?>" method="post">
+<div class="box">
+
 <div class="header_main title">
 <h2>编辑考核项</h2>
 </div>
@@ -15,14 +16,14 @@ else{
 
 
 <div class="data">
-<div><label for="name">名称</label></div>
-<div><input size="50" type="text" name="name"
+<div class="first-child"><label for="name">名称</label></div>
+<div class="child"><input size="50" type="text" name="name"
 	value="<?php echo $tableitem->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
-	<div><label for="type">考核项类型</label></div>
-	<div><select class="table_item_type_select" name="type">
+	<div class="first-child"><label for="type">考核项类型</label></div>
+	<div class="child"><select class="table_item_type_select" name="type">
 		<option value="">选择类型</option>
 		<option value="1" <?php $HTML->selected('1', $tableitem->type)?>>经济</option>
 		<option value="2" <?php $HTML->selected('2', $tableitem->type)?>>管理</option>
@@ -33,45 +34,45 @@ else{
 </div>
 
 <div class="data item_type_normal">
-<div><label for="weight">权重</label></div>
-<div><input size="5" type="text" name="weight"
+<div class="first-child"><label for="weight">权重</label></div>
+<div class="child"><input size="5" type="text" name="weight"
 	value="<?php echo $tableitem->weight?>" /> <label>%</label> <span
 	class="error"><?php echo $errors['weight']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="desc">指标解释</label></div>
-<div><textarea rows="5" name="desc"><?php echo $tableitem->desc?></textarea>
+<div class="first-child"><label for="desc">指标解释</label></div>
+<div class="child"><textarea rows="5" name="desc"><?php echo $tableitem->desc?></textarea>
 <span class="error"><?php echo $errors['desc']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="timeline">时间节点</label></div>
-<div><input size="50" type="text" name="timeline"
+<div class="first-child"><label for="timeline">时间节点</label></div>
+<div class="child"><input size="50" type="text" name="timeline"
 	value="<?php echo $tableitem->timeline?>" /> <span class="error"><?php echo $errors['timeline']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="quality">质量要求</label></div>
-<div><input size="80" type="text" name="quality"
+<div class="first-child"><label for="quality">质量要求</label></div>
+<div class="child"><input size="80" type="text" name="quality"
 	value="<?php echo $tableitem->quality?>" /> <span class="error"><?php echo $errors['quality']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="output">结果型输出</label></div>
-<div><input size="80" type="text" name="output"
+<div class="first-child"><label for="output">结果型输出</label></div>
+<div class="child"><input size="80" type="text" name="output"
 	value="<?php echo $tableitem->output?>" /> <span class="error"><?php echo $errors['output']?></span></div>
 </div>
 
 <div class="data">
-<div><label for="standard">评分标准</label></div>
-<div><textarea rows="5" cols="60" name="standard"><?php echo $tableitem->standard?></textarea>
+<div class="first-child"><label for="standard">评分标准</label></div>
+<div class="child"><textarea rows="5" cols="60" name="standard"><?php echo $tableitem->standard?></textarea>
 <span class="error"><?php echo $errors['standard']?></span></div>
 </div>
 
 <div class="data item_type_normal">
-<div><label for="datasource">数据来源</label></div>
-<div><select name="datasource">
+<div class="first-child"><label for="datasource">数据来源</label></div>
+<div class="child"><select name="datasource">
 	<option value="">选择数据来源表</option>
 	<?php
 	foreach($ds_list as $ds){
@@ -83,8 +84,8 @@ else{
 </div>
 
 <div class="data item_type_normal">
-<div><label for="staff">办事员</label></div>
-<div><select name="staff">
+<div class="first-child"><label for="staff">办事员</label></div>
+<div class="child"><select name="staff">
 	<option value="">选择办事员</option>
 	<?php
 	foreach($staff_list as $staff){
@@ -107,8 +108,9 @@ output_edit_success();
 	onclick="location.href='<?php echo $home.'/show?id='.$tableitem->kpi_table?>'" /></div>
 <input type="hidden" name="id" value="<?php echo $tableitem->id?>" /></div>
 
-</form>
+
 </div>
+</form>
 </div>
 
 <script type="text/javascript">
