@@ -40,9 +40,15 @@ class HTMLHelper{
 		}
 	}
 	
-	public function if_checked($cond){
+	public function current($now, $value){
+		if($now == $value){
+			echo 'current';
+		}
+	}
+	
+	public function if_current($cond){
 		if($cond){
-			echo 'checked="checked"';
+			echo 'class="current"';
 		}
 	}
 	

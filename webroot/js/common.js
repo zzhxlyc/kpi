@@ -82,9 +82,13 @@ function sourcedata_add_row(){
 }
 
 function sourcedata_save_row(){
-	var columns = [];
+	var columns = new Array();
 	$("#column_row label").each(function (){
-		columns += $(this).attr('for');
+		var v = this.htmlFor;
+		if(v == ''){
+			v = $(this).attr('for');
+		}
+		columns.push(v);
 	});
 	var value = '';
 	var empty = true;

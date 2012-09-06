@@ -79,3 +79,15 @@ function is_foujue($o){
 	}
 	return false;
 }
+
+function sidebar_current($module, $class = true){
+	global $request;
+	if($module == $request->get_module()){
+		if($class){
+			echo 'class="current"';
+		}
+		else{
+			echo 'current';
+		}
+	}
+}
