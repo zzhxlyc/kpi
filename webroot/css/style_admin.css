@@ -579,6 +579,8 @@ hr {
 
 .table.datasource input {
 	min-width: 200px;
+	width: auto;
+	*width:250px;
 }
 
 table {
@@ -586,6 +588,7 @@ table {
 	padding: 0;
 	width: 100%;
 	border-collapse: collapse;
+	
 }
 
 table th,table td {
@@ -597,9 +600,12 @@ table th,table td {
 	
 	padding:0 5px;
 }
-.table.datasource table th, .table.datasource table td {
+.datasource table th, .datasource table td {
 min-width: 200px;/*没有这个设置，滚动条不生效*/
+width:auto;
+*width: 250px;
 padding: 5px;
+*border:1px solid red;
 }
 
 table th.column1 {

@@ -13,7 +13,7 @@ else{
 
 <div class="data_wrapper">
 
-<div class="table">
+<div class="table datasource">
 <table id="data_table">
 	<tr id="column_row">
 	<?php

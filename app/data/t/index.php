@@ -14,8 +14,8 @@ else{
 <div class="data_wrapper">
 
 <div class="data">
-<div class="_oneline">从 <input type="text" name="from"
-	id="fromDataPicker" /> 到 <input type="text" name="to" id="toDataPicker"
+<div class="_oneline"><label>从</label> <input type="text" name="from"
+	id="fromDataPicker" /><label style="padding:0 10px;">到</label><input type="text" name="to" id="toDataPicker"
 	value="<?php echo $_GET['to']?>" /> <input type="hidden"
 	name="datasource" value="<?php echo $_GET['datasource']?>" /> <input
 	type="hidden" name="page" value="<?php echo $_GET['page']?>" /><input type="submit" value="提交" /></div>
