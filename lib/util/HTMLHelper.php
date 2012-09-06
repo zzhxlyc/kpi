@@ -46,9 +46,14 @@ class HTMLHelper{
 		}
 	}
 	
-	public function if_current($cond){
+	public function if_current($cond, $class = true){
 		if($cond){
-			echo 'class="current"';
+			if($class){
+				echo 'class="current"';
+			}
+			else{
+				echo 'current';
+			}
 		}
 	}
 	

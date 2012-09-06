@@ -69,7 +69,11 @@ class DatasourceController extends AppController {
 			if(is_array($struct)){
 				foreach($struct as $std){
 					if($std->column_name != 'id'){
-						$datasource->column[$std->column_comment] = $std->column_name;
+						$key = $std->column_comment;
+						while(array_key_exists($key, $datasource->column)){
+							$key .= '(1)';
+						}
+						$datasource->column[$key] = $std->column_name;
 					}
 				}
 			}
