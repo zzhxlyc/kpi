@@ -52,9 +52,21 @@ class HTMLHelper{
 		}
 	}
 	
+	public function if_checked($cond){
+		if($cond){
+			echo 'checked="checked"';
+		}
+	}
+	
 	public function checked($now, $value){
 		if($now == $value){
 			echo 'checked="checked"';
+		}
+	}
+	
+	public function if_selected($cond){
+		if($cond){
+			echo 'selected="selected"';
 		}
 	}
 	
