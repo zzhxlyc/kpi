@@ -25,7 +25,7 @@
 <?php if($tableitem->type != KpiItemType::FOUJUE){?>
 <div class="data">
 	<div class="first-child"><label for="weight">权重</label></div>
-	<div class="child"><div class="readonly"><?php echo $tableitem->weight?>%</div></div>
+	<div class="child"><div class="readonly"><?php echo $tableitem->weight?><label>%</label></div></div>
 </div>
 <?php }?>
 

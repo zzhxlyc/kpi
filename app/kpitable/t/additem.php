@@ -39,7 +39,7 @@
 
 <div class="data item_type_normal">
 	<div class="first-child"><label for="weight">权重</label></div>
-	<div class="child"><input size="5" type="text" name="weight" value="<?php echo $tableitem->weight?>" /> %
+	<div class="child"><input size="5" type="text" name="weight" value="<?php echo $tableitem->weight?>" /> <label>%</label>
 	<span class="error"><?php echo $errors['weight']?></span></div>
 </div>
 

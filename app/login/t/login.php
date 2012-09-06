@@ -8,9 +8,8 @@
 <FORM action="" method="post">
 <DIV class="box">
 
-<DIV class="header grey"><IMG src="<?php echo IMAGE_HOME?>/lock.png"
-	width="16" height="16">
-<H3>登录</H3>
+<DIV class="header grey"><div class="lock_icon"></div>
+<div><H3>登录</H3></div>
 </DIV>
 
 <DIV class="data_wrapper ">

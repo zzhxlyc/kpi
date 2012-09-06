@@ -25,14 +25,12 @@
 </div>
 <div class="grid_2">
 <div class="toolbar_large">
-<div class="toolicon"><img src="<?php echo IMAGE_HOME?>/user.png"
-	width="16" height="16" alt="user" /></div>
+<div class="toolicon"><div class="user_icon"></div></div>
 <div class="toolmenu">
 <div class="toolcaption" style="min-width: 46px;"><span><?php echo $User->name?></span>
 </div>
 </div>
-<div class="toolicon_lock"><img src="<?php echo IMAGE_HOME?>/lock.png"
-	width="16" height="16" alt="user" /></div>
+<div class="toolicon_lock"><div class="lock_icon"></div></div>
 <div class="loginout"><a class="header"
 	href="<?php echo ROOT_URL.'/loginout'?>">注销</a></div>
 </div>
@@ -50,7 +48,7 @@ Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 <?php }else{?>
 <?php include($TEMPLATE_PAGE); ?>
 
-<div id="footer" style="position: absolute; top: 680px; bottom:0px;">
+<div id="footer" style="position: absolute; top: 880px; bottom:0px;">
 Copyright &copy; 2011 杭州钱鸿集团，保留一切权利。
 </div>
 <?php }?>

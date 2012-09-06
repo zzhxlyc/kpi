@@ -53,7 +53,7 @@
 
 <div class="data">
 	<div class="first-child"><label for="score">评分</label></div>
-	<div class="child"><input size="4" type="text" name="score" value="<?php echo get_score($dataitem, 0)?>"/>%</div>
+	<div class="child"><input size="4" type="text" name="score" value="<?php echo get_score($dataitem, 0)?>"/><label>%</label></div>
 </div>
 </div>
 
