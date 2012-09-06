@@ -57,9 +57,9 @@
 <div class="data">
 <div class="first-child"><label for="month">月份</label></div>
 <div class="child"><input size="2" type="text" name="month"
-	value="<?php echo $kpidata->month?>" /> 月 <span id="text_month2"> <span
-	class="error"><?php echo $errors['month']?></span> 至 <input size="2"
-	type="text" name="month2" value="<?php echo $kpidata->month2?>" /> 月 <span
+	value="<?php echo $kpidata->month?>" /> <label>月</label>  <span id="text_month2"> <span
+	class="error"><?php echo $errors['month']?></span> <label style="padding:0 5px;">至</label>  <input size="2"
+	type="text" name="month2" value="<?php echo $kpidata->month2?>" /> <label>月</label>  <span
 	class="error"><?php echo $errors['month2']?></span> </span></div>
 </div>
 </div>

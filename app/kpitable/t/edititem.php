@@ -96,10 +96,7 @@ else{
 </select> <span class="error"><?php echo $errors['staff']?></span></div>
 </div>
 
-<div class="data"><?php 
-output_edit_success();
-}
-?></div>
+
 </div>
 
 <div class="actions">
@@ -108,6 +105,10 @@ output_edit_success();
 	onclick="location.href='<?php echo $home.'/show?id='.$tableitem->kpi_table?>'" /></div>
 <input type="hidden" name="id" value="<?php echo $tableitem->id?>" /></div>
 
+<?php 
+output_edit_success();
+}
+?>
 
 </div>
 </form>

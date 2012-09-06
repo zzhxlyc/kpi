@@ -5,7 +5,7 @@ if($error){
 else{
 	?>
 <div id="right">
-<div class="box">
+<div class="box special">
 <div class="header_main title"></div>
 
 <div class="data_wrapper">
@@ -72,7 +72,7 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="score">评分</label></div>
-<div><?php echo get_score($dataitem);?></div>
+<div class="child"><?php echo get_score($dataitem);?></div>
 </div>
 </div>
 <div class="actions">

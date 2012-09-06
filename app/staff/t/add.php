@@ -17,7 +17,7 @@
 <div class="data">
 	<div class="first-child"><label for="slug">登陆名</label></div>
 	<div class="child"><input size="20" type="text" name="slug" value="<?php echo $user->slug?>" />
-	<br/><span>只能使用用英文、数字、下划线，推荐姓名拼音或员工编号，此后不能修改</span><br>
+	<br/><span>只能使用用英文、数字、下划线，推荐姓名拼音或员工编号，此后不能修改</span>
 	<span class="error"><?php echo $errors['slug']?></span></div>
 </div>
 

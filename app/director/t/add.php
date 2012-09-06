@@ -10,15 +10,15 @@
 <div class="data_wrapper">
 <div class="data">
 <div class="first-child"><label for="name">姓名</label></div>
-<div class="child"><input size="20" type="text" name="name"
+<div class="child"><input type="text" name="name" class="fixed2"
 	value="<?php echo $user->name?>" /> <span class="error"><?php echo $errors['name']?></span></div>
 </div>
 
 <div class="data">
 <div class="first-child"><label for="slug">登录名</label></div>
-<div class="child"><input size="20" type="text" name="slug"
-	value="<?php echo $user->slug?>" /> <label class="input_rule">只能使用英文、数字、下划线，推荐姓名拼音或员工编号，此后不能修改</label>
-<br>
+<div class="child"><input type="text" name="slug" class="fixed2"
+	value="<?php echo $user->slug?>" /> 
+	<br><label class="input_rule">只能使用英文、数字、下划线，推荐姓名拼音或员工编号，此后不能修改</label>
 <span class="error"><?php echo $errors['slug']?></span></div>
 
 </div>
@@ -26,7 +26,7 @@
 
 <div class="data">
 <div class="first-child"><label for="password">密码</label></div>
-<div class="child"><input size="20" type="password" name="password" /> <span
+<div class="child"><input type="password" name="password" class="fixed2"/> <span
 	class="error"><?php echo $errors['password']?></span></div>
 </div>
 

@@ -5,16 +5,16 @@
 	else{
 ?>
 <div id="right">
-<div class="box">
+<div class="box special">
 <div class="header_main title">
 </div>
 <div class="data">
-	<div><label for="datasource">数据源表</label></div>
-	<div class="readonly"><?php echo $datasource->name?></div>
+	<div class="first-child"><label for="datasource">数据源表</label></div>
+	<div class="child"><div class="readonly"><?php echo $datasource->name?></div></div>
 </div>
 <div class="data">
-	<div><label for="datasource">部门</label></div>
-	<div class="readonly"><?php echo $department?></div>
+	<div class="first-child"><label for="datasource">部门</label></div>
+	<div class="child"><div class="readonly"><?php echo $department?></div></div>
 </div>
 
 <div class="table">
@@ -26,7 +26,7 @@
 			$name = $o->COLUMN_NAME;
 			$comment = $o->COLUMN_COMMENT;
 ?>
-	<th width="100"><label for="<?php echo $name?>"><?php echo $comment?></label></th>
+	<th><label for="<?php echo $name?>"><?php echo $comment?></label></th>
 <?php 
 		}
 	}

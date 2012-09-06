@@ -6,7 +6,7 @@
 ?>
 <div id="right">
 <form action="" method="post">
-<div class="box special2">
+<div class="box special">
 
 <div class="header_main title">
 </div>
@@ -64,12 +64,13 @@
 </div>
 </div>
 
+<?php 
+		output_edit_success();
+	}
+?>
 
 </div>
 </form>
 </div>
 
-<?php 
-		output_edit_success();
-	}
-?>
+

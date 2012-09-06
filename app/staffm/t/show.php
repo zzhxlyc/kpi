@@ -5,15 +5,15 @@
 	else{
 ?>
 <div id="right">
-<div class="box">
+<div class="box special">
 <div class="header_main title"></div>
 
 <div class="table">
 <table>
 	<tr>
 		<th>姓名</th>
-		<th width="100">部门</th>
-		<th width="250">操作</th>
+		<th >部门</th>
+		<th >操作</th>
 	</tr>
 	<?php 
 		$i = 0;
@@ -39,16 +39,18 @@
 </table>
 </div>
 
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
 
 <div class="actions whiteBg">
 <div class="actions-left">
-<form action="<?php echo $home.'/add?depart='.$depart->id?>" method="post"><input
-	type="submit" value="添加办事员" /></form>
+<input type="button" value="添加办事员"
+	onclick="location.href='<?php echo $home.'/add?depart='.$depart->id?>'" />	
 </div>
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home."/depart"?>'" /></div>
 </div>
+
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 
 </div>
 </div>

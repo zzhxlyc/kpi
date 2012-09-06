@@ -226,7 +226,7 @@ hr {
 }
 
 .toolbar_large img {
-	margin-top: 2px
+	margin-top: 2px;
 }
 
 .toolbar_large .toolicon,.toolbar_large .toolcaption,.toolbar_large .toolmenu,.toolbar_large .toolicon_lock
@@ -324,9 +324,6 @@ hr {
 	clear: both;
 	overflow: hidden;
 	height: auto;
-	
-	border: 1px solid red;
-
 }
 
 /* -----------------------------------------------------------
@@ -337,8 +334,6 @@ hr {
 	width: 280px;
 	position: absolute;
 	padding-top: 20px;
-	
-	border: 1px solid pink;
 }
 
 /* -----------------------------------------------------------
@@ -405,23 +400,26 @@ hr {
 ----------------------------------------------------------- */
 #right {
 	margin: 0 60px 0 290px;
-	padding: 0;
+	padding-top: 20px;
 	clear: both;
 	overflow: hidden;
-	
-	border: 1px solid pink;
+}
+#right.hasBlank{
+	margin-top: -3px;
+	padding-top: 0px;
 }
 
 /* -----------------------------------------------------------
 	content -> right -> box
 ----------------------------------------------------------- */
+/*
 .box {
 	margin-top: 20px;
 	*margin-top: 28px;
-	_margin-top: 0px;
+	_margin-top: 30px;
 	clear: both;
 	overflow: hidden;
-	border: 1px solid yellow;
+	_padding-top: 2.5px;
 }
 
 .box.hasBlank{
@@ -430,12 +428,19 @@ hr {
 	_margin-top: -18px;
 	*padding-top: 0px;
 }
+*/
 
-.box.hasBlank.special{
-	_margin-top: 2px;
+.box {
+	clear: both;
+	overflow: hidden;
 }
-.box.special2{
+
+.box.special{
 	_margin-top: 20px;
+}/*for kpitable/show, staff/index, kpi/score*/
+
+.box.special2{
+	_margin-top: 30px;
 }
 
 /*
@@ -482,7 +487,7 @@ hr {
 		        
 		   0 );
 	box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.5);
-	width:100%;
+	width:99.5%;
 }
 
 .box .grey.header {
@@ -717,8 +722,12 @@ table td input.checkbox{
 	padding:0 10px;
 	
 }
-.box .data div input.login{
+.box .data div input.fixed{
 	width:280px;
+}
+
+.box .data div input.fixed2{
+	width:180px;
 }
 
 .box .data .child input#old_column{
@@ -740,6 +749,7 @@ table td input.checkbox{
 }
 .box .data .child a{
 	vertical-align: middle;
+	line-height: 36px;
 }
 .box .data div._oneline {
 	width: 100%;
@@ -755,6 +765,8 @@ table td input.checkbox{
 
 .box .data div label {
 	display: inline;
+	*vertical-align: middle;
+
 }
 
 .box .data div label.input_rule {
@@ -776,12 +788,14 @@ table td input.checkbox{
 
 .box .data span{
 	*vertical-align: middle;
-	line-height: 36px;
 }
+.box .data span#text_month2{
+	*vertical-align: baseline;
+}
+
 .box .data span.error {
 	color: #B0171F;
 	font-weight: bold;
-	margin-left:10px;
 }
 
 .box .data.textarea_in {
@@ -876,7 +890,7 @@ table td input.checkbox{
 
 .box .actions {
 	width:100%;
-	border: 1px solid #C8C8C8;
+	border-top: 1px solid #C8C8C8;
 	background: #F7F7F7;
 	border-radius: 0 0 5px 5px;
 	

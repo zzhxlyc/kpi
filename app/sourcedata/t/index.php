@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box">
+<div class="box special">
 <div class="header_main title">
 </div>
 
@@ -8,7 +8,7 @@
 	<thead>
 	<tr>
 		<th>数据源表</th>
-		<th width="180">操作</th>
+		<th>操作</th>
 	</tr>
 	</thead>
 	<?php 

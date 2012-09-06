@@ -1,5 +1,5 @@
 <div id="right">
-<div class="box">
+<div class="box special">
 
 <div class="header_main title">
 </div>
@@ -8,8 +8,8 @@
 <table>
 	<tr>
 		<th>部门</th>
-		<th width="150">部门主管</th>
-		<th width="200">操作</th>
+		<th >部门主管</th>
+		<th >操作</th>
 	</tr>
 	<?php 
 		$i = 0;

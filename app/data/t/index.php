@@ -32,14 +32,14 @@ else{
 				$name = $o->COLUMN_NAME;
 				$comment = $o->COLUMN_COMMENT;
 				?>
-			<th width="100"><?php echo $comment?></th>
+			<th ><?php echo $comment?></th>
 			<?php
 			}
 		}
 		?>
-			<th width="150">时间</th>
+			<th>时间</th>
 			<?php if($User->type == UserType::ADMIN){?>
-			<th width="100">操作</th>
+			<th >操作</th>
 			<?php }?>
 		</tr>
 	</thead>

@@ -1,7 +1,7 @@
 ﻿
-<div id="right">
+<div id="right" class="hasBlank">
 <form action="<?php echo $home.'/remove'?>" method="post">
-<div class="box hasBlank">
+<div class="box ">
 
 <div class="header_main title">
 <h5></h5>
@@ -40,8 +40,8 @@
 	?>
 	</tbody>
 </table>
-
 </div>
+
 <div class="actions whiteBg">
 <div class="actions-right">
 <input type="button" value="添加考核表"

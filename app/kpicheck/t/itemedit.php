@@ -6,7 +6,7 @@
 ?>
 <div id="right">
 <form action="" method="post">
-<div class="box special2">
+<div class="box special">
 
 <div class="header_main title">
 </div>
@@ -103,12 +103,13 @@
 <input type="hidden" name="itemid" value="<?php echo $tableitem->id?>" />
 </div>
 
+<?php 
+		output_edit_success();
+	}
+?>
 
 </div>
 </form>
 </div>
 
-<?php 
-		output_edit_success();
-	}
-?>
+

@@ -6,7 +6,7 @@ else{
 	?>
 <div id="right">
 <form action="" method="post">
-<div class="box">
+<div class="box special">
 <div class="header_main title"></div>
 
 <div class="data_wrapper">

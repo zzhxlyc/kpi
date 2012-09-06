@@ -34,10 +34,7 @@ else{
 <div class="child"><div class="readonly"><?php echo $manager->name?>（<?php echo $manager->slug?>）</div></div>
 </div>
 
-<div class="data"><?php 
-output_edit_success();
-}
-?></div>
+
 </div>
 
 <div class="actions">
@@ -45,6 +42,11 @@ output_edit_success();
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 <input type="hidden" name="id" value="<?php echo $user->id?>" /></div>
+
+<?php 
+output_edit_success();
+}
+?>
 
 </div>
 </form>

@@ -4,8 +4,8 @@ if($error){
 }
 else{
 	?>
-<div id="right">
-<div class="box hasBlank special">
+<div id="right" class="hasBlank">
+<div class="box special">
 <div class="header_main title">
 <h2><?php echo $kpitable->name?></h2>
 </div>

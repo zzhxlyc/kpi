@@ -1,6 +1,6 @@
 <div id="right">
 <form action="<?php echo $home.'/remove'?>" method="post">
-<div class="box special2">
+<div class="box ">
 
 <div class="header_main title">
 <h5></h5>

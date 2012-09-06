@@ -16,14 +16,14 @@
 <DIV class="data_wrapper ">
 <DIV class="data">
 <DIV class="first-child"><LABEL for="user"> 账号</LABEL></DIV>
-<DIV class="child"><INPUT class="login" type="text" name="user"
+<DIV class="child"><INPUT class="fixed" type="text" name="user"
 	value="<?php echo $user?>" /> 
 <span class="error"><?php echo $errors['user']?></span></DIV>
 </DIV>
 
 <DIV class="data">
 <DIV class="first-child"><LABEL for="password"> 密码 </LABEL></DIV>
-<DIV class="child"><INPUT class="login" name="password" type="password" />
+<DIV class="child"><INPUT class="fixed" name="password" type="password" />
 <span class="error"><?php echo $errors['password']?></span></DIV>
 </DIV>
 </DIV>

@@ -36,7 +36,8 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="type">时间类型</label></div>
-<div class="child"><select name="type" id="time_type" onchange="change_type()">
+<div class="child"><select name="type" id="time_type"
+	onchange="change_type()">
 	<option value="">选择时间类型</option>
 	<option value="1" <?php $HTML->selected(1, $kpidata->type)?>>月度</option>
 	<option value="2" <?php $HTML->selected(2, $kpidata->type)?>>季度</option>
@@ -55,25 +56,23 @@ else{
 		$year = idate('Y');
 	}
 	?>
-<div class="child"><input size="4" type="text" name="year" value="<?php echo $year?>" />
-<span class="error"><?php echo $errors['year']?></span></div>
+<div class="child"><input size="4" type="text" name="year"
+	value="<?php echo $year?>" /> <span class="error"><?php echo $errors['year']?></span></div>
 </div>
 
 <div class="data">
 <div class="first-child"><label for="month">月份</label></div>
-<div class="child"><input size="2" type="text" name="month"
-	value="<?php echo $kpidata->month?>" />月 <span id="text_month2"> <span
-	class="error"><?php echo $errors['month']?></span> 至 <input size="2"
-	type="text" name="month2" value="<?php echo $kpidata->month2?>" />月 <span
-	class="error"><?php echo $errors['month2']?></span> </span></div>
+<div class="child">
+<input size="2" type="text" name="month"value="<?php echo $kpidata->month?>" /><label>月</label> 
+<span id="text_month2"> 
+<span class="error"><?php echo $errors['month']?></span> 
+<label style="padding:0 5px;">至</label> 
+<input size="2" type="text" name="month2" value="<?php echo $kpidata->month2?>" /><label>月</label> 
+<span class="error"><?php echo $errors['month2']?></span> 
+</span>
+</div>
 </div>
 
-<div class="data">
-	<?php
-	output_edit_success();
-}
-?>
-</div>
 </div>
 
 <div class="actions">
@@ -83,7 +82,10 @@ else{
 <input type="hidden" name="id" value="<?php echo $kpidata->id?>" /></div>
 
 
-</div>
+	<?php
+	output_edit_success();
+}
+?></div>
 </form>
 </div>
 

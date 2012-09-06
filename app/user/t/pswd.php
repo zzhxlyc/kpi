@@ -36,15 +36,17 @@
 	class="error"><?php echo $errors['password2']?></span></div>
 </div>
 
-<div class="data"><?php 
-output_edit_success();
-?></div>
+
 
 </div>
 
 <div class="actions">
 <div class="actions-left"><input type="submit" value="保存" /></div>
 </div>
+
+<?php 
+output_edit_success();
+?>
 
 </div>
 </form>
