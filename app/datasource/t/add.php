@@ -23,7 +23,7 @@
 
 <div class="data">
 <div class="first-child"><label for="slug">添加属性</label></div>
-<div class="child"><input size="20" type="text" id="new_attr" /> <a
+<div class="child"><input type="text" id="new_attr" /> <a
 	href="javascript:void(0)" onclick="add_row()">添加一行</a></div>
 </div>
 

@@ -119,6 +119,11 @@ input.checkbox{
 	*background: #f7f7f7;	
 	
 }
+input#new_attr{
+	min-width: 390px;
+	width:auto;
+	_width:390px;
+}
 
 hr {
 	margin: 0;
@@ -393,7 +398,8 @@ hr {
 }
 
 #left #menu li.current {
-	background: rgba(0, 0, 0, 0.38);
+	/*background: rgba(0, 0, 0, 0.18); not recognized by ie6/7/8*/
+	background: #2F5C96;
 }
 
 #left #menu li a {
@@ -563,8 +569,16 @@ hr {
 .table {
 	padding: 20px;
 	clear: both;
-	overflow: hidden;
 	background: white;
+}
+.table.datasource{
+	overflow-x: scroll; /*无法全部显示内容时出现滚动条*/
+	padding: 20px 0;
+	margin: 0 20px 20px 20px;
+}
+
+.table.datasource input {
+	min-width: 200px;
 }
 
 table {
@@ -580,7 +594,12 @@ table th,table td {
 	text-align: center;
 	vertical-align: middle;
 	height: 30px;
-	/*width: auto;*/
+	
+	padding:0 5px;
+}
+.table.datasource table th, .table.datasource table td {
+min-width: 200px;/*没有这个设置，滚动条不生效*/
+padding: 5px;
 }
 
 table th.column1 {
@@ -617,7 +636,7 @@ table td input.checkbox{
 
 #data_table input {
 	margin: 0;
-	padding: 2px 0 2px 5px;
+	/*padding: 2px 0 2px 5px;*/
 }
 
 /* -----------------------------------------------------------
@@ -976,11 +995,12 @@ table td input.checkbox{
 .page-nav {
 	clear: both;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	height: 30px;
+	/*height: 30px;*/
 	font-size: 1.0em; /* This may need changed to suit your theme */
 	-webkit-font-smoothing: antialiased;
 	/* smooths the font in webkit, optional */
 	float: right;
+	margin: 10px 0;
 	margin-right: 15px;
 }
 
@@ -995,7 +1015,7 @@ table td input.checkbox{
 
 .page-nav a,.page-nav span {
 	/* Change this image URL to the relative location of the sprite sheet: */
-	
+	background:url(../images/numbers_spritesheet.png) no-repeat;
 	display: block;
 	float: left;
 	width: 28px;

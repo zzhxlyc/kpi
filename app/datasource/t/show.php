@@ -7,7 +7,7 @@
 
 <h2><?php echo $datasource->name?>历史数据</h2>
 
-<table id="data_table" class="normal-table" cellspacing="0" cellpadding="0">
+<table id="data_table"  cellspacing="0" cellpadding="0">
 	<tr id="column_row" class="top">
 <?php 
 	if(is_array($list)){

@@ -8,6 +8,8 @@
 <div class="box special">
 <div class="header_main title">
 </div>
+
+<div class="data_wrapper">
 <div class="data">
 	<div class="first-child"><label for="datasource">数据源表</label></div>
 	<div class="child"><div class="readonly"><?php echo $datasource->name?></div></div>
@@ -17,8 +19,8 @@
 	<div class="child"><div class="readonly"><?php echo $department?></div></div>
 </div>
 
-<div class="table">
-<table id="data_table" style="width: 100%">
+<div class="table datasource">
+<table id="data_table">
 	<tr id="column_row">
 <?php 
 	if(is_array($list)){
@@ -44,6 +46,8 @@
 ?>
 	</tr>
 </table>
+</div>
+
 </div>
 <div class="actions">
 <input type="hidden" value="<?php echo count($list)?>" id="columns" />

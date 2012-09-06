@@ -26,7 +26,7 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="new_attr">添加属性</label></div>
-<div class="child"><input size="20" type="text" id="new_attr" /> <a
+<div class="child"><input type="text" id="new_attr" /> <a
 	href="javascript:void(0)" onclick="add_row()"> 添加一行</a></div>
 </div>
 
@@ -39,7 +39,9 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="attr">属性表</label></div>
+
 <div class="child">
+<div class="table">
 <table id="ds_table_attrs">
 	<thead>
 		<tr>
@@ -50,6 +52,8 @@ else{
 	</thead>
 </table>
 </div>
+</div>
+
 </div>
 
 </div>

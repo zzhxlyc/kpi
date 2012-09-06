@@ -22,7 +22,7 @@ else{
 </div>
 
 
-<div class="table">
+<div class="table datasource">
 <table cellspacing="0" cellpadding="0">
 	<thead>
 		<tr id="column_row">
@@ -83,9 +83,11 @@ else{
 	?>
 </table>
 </div>
-</div>
 
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+</div>
+
+
 
 </form>
 </div>
