@@ -525,59 +525,6 @@ hr {
 	overflow: hidden;
 }
 
-<<<<<<< HEAD
-=======
-/* -----------------------------------------------------------
-	content -> right -> box / tables
------------------------------------------------------------ */
-.table {
-	padding: 20px;
-	clear: both;
-	background: white;
-}
-.table.datasource{
-	overflow-x: scroll; /*无法全部显示内容时出现滚动条*/
-	padding: 20px 0;
-	margin: 0 20px 20px 20px;
-}
-
-.table.datasource input {
-	min-width: 200px;
-	width: auto;
-	*width:250px;
-}
-
-table {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-	border-collapse: collapse;
-	
-}
-
-table th,table td {
-	background: #eeeeee;
-	border-bottom: 1px solid #cdcdcd;
-	text-align: center;
-	vertical-align: middle;
-	height: 30px;
-	
-	padding:0 5px;
-}
-.datasource table th, .datasource table td {
-min-width: 200px;/*没有这个设置，滚动条不生效*/
-width:auto;
-*width: 250px;
-padding: 5px;
-*border:1px solid red;
-}
-
-table th.column1 {
-	width: 241px
-}
->>>>>>> 5ed2dab035549c37ba2ba2c8b551ef96dfab4cda
-
-
 /* -----------------------------------------------------------
 	box
 ----------------------------------------------------------- */
