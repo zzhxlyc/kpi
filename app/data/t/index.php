@@ -15,7 +15,11 @@ else{
 
 <div class="data">
 <div class="_oneline"><label>从</label> <input type="text" name="from"
+<<<<<<< HEAD
 	id="fromDataPicker" /><label>到</label>  <input type="text" name="to" id="toDataPicker"
+=======
+	id="fromDataPicker" /><label style="padding:0 10px;">到</label><input type="text" name="to" id="toDataPicker"
+>>>>>>> 5ed2dab035549c37ba2ba2c8b551ef96dfab4cda
 	value="<?php echo $_GET['to']?>" /> <input type="hidden"
 	name="datasource" value="<?php echo $_GET['datasource']?>" /> <input
 	type="hidden" name="page" value="<?php echo $_GET['page']?>" /><input type="submit" value="提交" /></div>
