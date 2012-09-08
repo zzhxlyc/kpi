@@ -72,7 +72,7 @@ else{
 
 <div class="data">
 <div class="first-child"><label for="score">评分</label></div>
-<div class="child"><?php echo get_score($dataitem);?></div>
+<div class="child"><div class="readonly"><?php echo get_score($dataitem);?></div></div>
 </div>
 </div>
 <div class="actions">

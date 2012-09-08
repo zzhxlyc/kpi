@@ -13,7 +13,7 @@ else{
 
 <div class="data_wrapper">
 
-<div class="table">
+<div class="table datasource">
 <table id="data_table">
 	<tr id="column_row">
 	<?php
@@ -22,7 +22,7 @@ else{
 			$name = $o->COLUMN_NAME;
 			$comment = $o->COLUMN_COMMENT;
 			?>
-		<th width="100"><label for="<?php echo $name?>"><?php echo $comment?></label></th>
+		<th ><label for="<?php echo $name?>"><?php echo $comment?></label></th>
 		<?php
 		}
 	}
@@ -34,7 +34,7 @@ else{
 		foreach($list as $column){
 			$name = $column->COLUMN_NAME;
 			?>
-		<td width="100"><input type="text" name="<?php echo $name?>"
+		<td ><input type="text" name="<?php echo $name?>"
 			value="<?php echo $data->$name?>" /></td>
 			<?php
 		}

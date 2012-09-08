@@ -14,8 +14,8 @@ else{
 <div class="data_wrapper">
 
 <div class="data">
-<div class="_oneline">从 <input type="text" name="from"
-	id="fromDataPicker" /> 到 <input type="text" name="to" id="toDataPicker"
+<div class="_oneline"><label>从</label> <input type="text" name="from"
+	id="fromDataPicker" /><label>到</label>  <input type="text" name="to" id="toDataPicker"
 	value="<?php echo $_GET['to']?>" /> <input type="hidden"
 	name="datasource" value="<?php echo $_GET['datasource']?>" /> <input
 	type="hidden" name="page" value="<?php echo $_GET['page']?>" /><input type="submit" value="提交" /></div>
@@ -23,7 +23,7 @@ else{
 
 
 <div class="table datasource">
-<table cellspacing="0" cellpadding="0">
+<table>
 	<thead>
 		<tr id="column_row">
 		<?php
@@ -32,14 +32,14 @@ else{
 				$name = $o->COLUMN_NAME;
 				$comment = $o->COLUMN_COMMENT;
 				?>
-			<th ><?php echo $comment?></th>
+			<th ><label><?php echo $comment?></label></th>
 			<?php
 			}
 		}
 		?>
-			<th>时间</th>
+			<th><label>时间</label></th>
 			<?php if($User->type == UserType::ADMIN){?>
-			<th >操作</th>
+			<th ><label>操作</label></th>
 			<?php }?>
 		</tr>
 	</thead>
@@ -60,12 +60,12 @@ else{
 				foreach($list as $column){
 					$name = $column->COLUMN_NAME;
 					?>
-				<td width="100"><?php echo $o->$name?></td>
+				<td><label><?php echo $o->$name?></label></td>
 				<?php
 				}
 			}
 			?>
-				<td><?php echo $o->time?></td>
+				<td><label><?php echo $o->time?></label></td>
 				<?php if($User->type == UserType::ADMIN){?>
 				<td><a
 					href="<?php echo DATASOURCE_HOME."/editdata?datasource=$datasource->id&id=$o->id"?>">编辑</a>

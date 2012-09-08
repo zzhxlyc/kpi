@@ -74,7 +74,7 @@ function sourcedata_add_row(){
 	var num = $("#columns").val();
 	var html = '<tr>';
 	for(var i = 0;i < num;i++){
-		html += '<td><input class="unSaved" style="width:80px" type="text"/></td>';
+		html += '<td><input class="unSaved" type="text"/></td>';
 	}
 	html += '</tr>';
 	$("#data_table").append(html);

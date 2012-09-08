@@ -41,7 +41,6 @@ else{
 <div class="first-child"><label for="attr">属性表</label></div>
 
 <div class="child">
-<div class="table">
 <table id="ds_table_attrs">
 	<thead>
 		<tr>
@@ -51,7 +50,6 @@ else{
 		</tr>
 	</thead>
 </table>
-</div>
 </div>
 
 </div>
