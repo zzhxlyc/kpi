@@ -6,8 +6,11 @@
 ?>
 <div id="right">
 <div class="box special">
-<div class="header_main title"></div>
+<div class="header_main title">
+<h2>查看办事员 | <?php echo $depart->name?></h2>
+</div>
 
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<tr>
@@ -38,7 +41,11 @@
 	?>
 </table>
 </div>
+<div class="page-nav">
+	<?php Pager::output_pager_list($page_list);?>
+</div>
 
+</div>
 
 
 <div class="actions whiteBg">
@@ -49,8 +56,6 @@
 <div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home."/depart"?>'" /></div>
 </div>
-
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 
 </div>
 </div>

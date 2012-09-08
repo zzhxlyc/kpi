@@ -1,6 +1,7 @@
 <div id="right">
 <div class="box special">
 <div class="header_main title">
+<h2>绩效考核汇总</h2>
 </div>
 
 <div class="table">

@@ -48,8 +48,9 @@ else{
 	?>
 </table>
 </div>
-</div>
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+</div>
+
 
 </div>
 </form>

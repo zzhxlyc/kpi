@@ -1,7 +1,9 @@
 <div id="right">
 <div class="box">
 <div class="header_main title">
+
 </div>
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<tr>
@@ -29,7 +31,10 @@
 		}
 	?>
 </table>
-
+</div>
+<div class="page-nav">
+	<?php Pager::output_pager_list($page_list);?>
+</div>
 </div>
 
 <div class="actions whiteBg">
@@ -42,7 +47,5 @@
 </div>
 </div>
 
-<div class="page-nav">
-	<?php Pager::output_pager_list($page_list);?>
-</div>
+
 

@@ -4,9 +4,9 @@
 <div class="box ">
 
 <div class="header_main title">
-<h5></h5>
+<h2>KPI考核表管理</h2>
 </div>
-
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<thead>
@@ -41,7 +41,8 @@
 	</tbody>
 </table>
 </div>
-
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+</div>
 <div class="actions whiteBg">
 <div class="actions-right">
 <input type="button" value="添加考核表"
@@ -54,5 +55,5 @@
 </div>
 
 
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
 

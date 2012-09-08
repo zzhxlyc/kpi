@@ -7,7 +7,9 @@ else{
 <div id="right">
 <form action="" method="post">
 <div class="box special">
-<div class="header_main title"></div>
+<div class="header_main title">
+<h2>评分</h2>
+</div>
 
 
 <div class="data_wrapper">

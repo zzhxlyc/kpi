@@ -18,7 +18,7 @@ else{
 	value="<?php echo $_GET['to']?>" /> <input type="hidden" name="dsid"
 	value="<?php echo $datasource->id?>" /> <input type="submit" value="提交" /></div>
 </div>
-</div>
+
 
 <div class="table">
 <table>
@@ -49,7 +49,7 @@ else{
 </div>
 
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
-
+</div>
 </div>
 </form>
 </div>

@@ -60,11 +60,13 @@ else{
 </div>
 
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+</div>
+
 <div class="actions whiteBg">
-<div class="actions-left"><input type="button" value="返回"
+<div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home?>/index'" /></div>
 </div>
-</div>
+
 
 </div>
 </form>

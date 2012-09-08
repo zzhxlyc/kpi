@@ -1,7 +1,10 @@
 <div id="right">
 <div class="box special">
 <div class="header_main title">
+<h2>办事员管理</h2>
 </div>
+
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<tr>
@@ -31,6 +34,13 @@
 </table>
 </div>
 
+<div class="page-nav">
+	<?php Pager::output_pager_list($page_list);?>
+</div>
+
+</div>
+
+
 <div class="actions whiteBg">
 <div class="actions-right">
 <input type="button" value="添加办事员"
@@ -41,7 +51,5 @@
 </div>
 </div>
 
-<div class="page-nav">
-	<?php Pager::output_pager_list($page_list);?>
-</div>
+
 

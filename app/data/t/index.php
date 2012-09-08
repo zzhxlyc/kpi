@@ -85,21 +85,16 @@ else{
 </div>
 
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+
 </div>
-
-
-
 </form>
 </div>
-
 
 <script type="text/javascript">
 <!--
 big_table_init();
 //-->
 </script>
-
-
 
 	<?php
 }

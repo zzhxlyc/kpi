@@ -825,10 +825,10 @@ hr {
 .box .actions-left {
 	float: left;
 	margin: 10px;
-	margin-left: 20px; *
-	margin: 0; *
-	padding: 10px; *
-	padding-left: 20px;
+	margin-left: 20px; 
+	*margin: 0; 
+	*padding: 10px; 
+	*padding-left: 20px;
 }
 
 .box .actions input {
@@ -838,10 +838,10 @@ hr {
 .box .actions-right {
 	float: right;
 	margin: 10px;
-	margin-right: 20px; *
-	margin: 0; *
-	padding: 10px; *
-	padding-right: 20px;
+	margin-right: 20px;
+	*margin: 0;
+	*padding: 10px;
+	*padding-right: 20px;
 }
 
 .box .actions-right.login {
@@ -947,8 +947,9 @@ table td input.checkbox {
 	-webkit-font-smoothing: antialiased;
 	/* smooths the font in webkit, optional */
 	float: right;
-	margin: 10px 0;
 	margin-right: 15px;
+	_margin-right: 7.5px;
+	
 }
 
 .page-nav p {

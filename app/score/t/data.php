@@ -21,7 +21,7 @@
 </div>
 
 
-
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<thead>
@@ -52,14 +52,16 @@
 	?>
 </table>
 </div>
+<div class="page-nav">
+	<?php Pager::output_pager_list($page_list);?>
+</div>
+</div>
 
 </div>
 </form>
 </div>
 
-<div class="page-nav">
-	<?php Pager::output_pager_list($page_list);?>
-</div>
+
 
 <?php 
 	}

@@ -2,9 +2,9 @@
 <div id="right" class="hasBlank">
 <form action="<?php echo $home.'/remove'?>" method="post">
 <div class="box" >
+<div class="header_main title"><h2>部门管理</h2></div>
 
-<div class="header_main title"></div>
-
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<thead>
@@ -38,6 +38,9 @@
 </table>
 </div>
 
+<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
+</div>
+
 <div class="actions whiteBg">
 <div class="actions-left"><input class="remove_operation batch_remove" type="submit" value="批量删除" /></div>
 <div class="actions-right">
@@ -50,7 +53,6 @@
 </form>
 </div>
 
-<div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 
 
 

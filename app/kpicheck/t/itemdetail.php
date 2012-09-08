@@ -8,6 +8,7 @@
 <div class="box special">
 
 <div class="header_main title">
+<h2>考核项明细</h2>
 </div>
 
 <div class="data_wrapper">
@@ -77,7 +78,7 @@
 </div>
 
 <div class="actions">
-<div class="actions-left"><input type="button" value="返回" onclick="history.back()" /></div>
+<div class="actions-right"><input type="button" value="返回" onclick="history.back()" /></div>
 </div>
 
 </div>

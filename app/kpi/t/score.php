@@ -76,7 +76,7 @@ else{
 </div>
 </div>
 <div class="actions">
-<div class="actions-left"><input type="button" value="返回"
+<div class="actions-right"><input type="button" value="返回"
 	onclick="location.href='<?php echo $home."/show?id=$kpidata->id"?>'" /></div>
 </div>
 </div>

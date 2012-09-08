@@ -1,8 +1,9 @@
 <div id="right">
 <div class="box special">
 <div class="header_main title">
+<h2>数据源数据管理</h2>
 </div>
-
+<div class="data_wrapper">
 <div class="table">
 <table>
 	<thead>
@@ -33,9 +34,11 @@
 	?>
 </table>
 </div>
-</div>
-</div>
 <div class="page-nav">
 	<?php Pager::output_pager_list($page_list);?>
 </div>
+</div>
+</div>
+</div>
+
 

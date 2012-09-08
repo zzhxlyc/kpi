@@ -8,6 +8,7 @@
 <div class="box special">
 
 <div class="header_main title">
+<h2>考核项明细</h2>
 </div>
 
 <div class="data_wrapper">

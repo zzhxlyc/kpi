@@ -2,6 +2,7 @@
 <div class="box special">
 
 <div class="header_main title">
+<h2>办事员管理</h2>
 </div>
 
 <div class="table">

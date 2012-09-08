@@ -30,7 +30,7 @@
 </div>
 
 <div class="actions">
-<div class="actions-left"><input type="button" value="返回" onclick="history.back()" /></div>
+<div class="actions-right"><input type="button" value="返回" onclick="history.back()" /></div>
 </div>
 
 
