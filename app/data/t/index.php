@@ -6,24 +6,23 @@ if($error){
 else{
 	?>
 <div class="box _datasource">
-<form action="" method="get">
+
 <div class="header_main title">
 <h2>历史数据: <?php echo $datasource->name?></h2>
 </div>
 
 <div class="data_wrapper">
-
+<form action="" method="get">
 <div class="data">
-<div class="_oneline"><label>从</label> <input type="text" name="from"
-<<<<<<< HEAD
-	id="fromDataPicker" /><label>到</label>  <input type="text" name="to" id="toDataPicker"
-=======
-	id="fromDataPicker" /><label style="padding:0 10px;">到</label><input type="text" name="to" id="toDataPicker"
->>>>>>> 5ed2dab035549c37ba2ba2c8b551ef96dfab4cda
-	value="<?php echo $_GET['to']?>" /> <input type="hidden"
-	name="datasource" value="<?php echo $_GET['datasource']?>" /> <input
-	type="hidden" name="page" value="<?php echo $_GET['page']?>" /><input type="submit" value="提交" /></div>
+<div class="_oneline"><label>从</label> 
+<input type="text" name="from" id="fromDataPicker" value="<?php echo $_GET['from']?>" />
+	<label>到</label>  
+	<input type="text" name="to" id="toDataPicker" value="<?php echo $_GET['to']?>" /> 
+	<input type="hidden" name="datasource" value="<?php echo $_GET['datasource']?>" /> 
+	<input type="hidden" name="page" value="<?php echo $_GET['page']?>" /><input type="submit" value="提交" /></div>
 </div>
+</form>
+
 
 
 <div class="table datasource">
@@ -91,7 +90,7 @@ else{
 <div class="page-nav"><?php Pager::output_pager_list($page_list);?></div>
 
 </div>
-</form>
+
 </div>
 
 <script type="text/javascript">

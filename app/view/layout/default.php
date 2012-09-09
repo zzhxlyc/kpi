@@ -5,14 +5,14 @@
 <?php $view->title(); ?>
 <?php $view->fetch_meta(); ?>
 <?php $view->icon(); ?>
-<?php $view->css('style_admin'); ?>
+<?php $view->css('style'); ?>
 <?php $view->fetch_css(); ?>
 <script>
 	window.ROOT_URL = '<?php echo ROOT_URL?>';
 	window.IMAGE_HOME = '<?php echo IMAGE_HOME?>';
 </script>
 <?php $view->js('jquery.min'); ?>
-<?php $view->js('jquery-ui.min'); ?>
+<?php //$view->js('jquery-ui-datapicker.min'); ?>
 <?php $view->js('common'); ?>
 <?php $view->fetch_js(); ?>
 </head>

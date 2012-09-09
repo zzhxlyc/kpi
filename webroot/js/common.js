@@ -15,36 +15,7 @@ $(document).ready(function(){
 	
 });
 
-$(function(){
-//$(".data>div:first-child").css("border", "1px solid orange");
-//$(".box .data>div:first-child").css("_width", "16%");
-//$(".box .data>div label").css("_display", "inline");
-//$(".box .data>div label").css("border", "1px solid orange");
-/*
- 
- $(".box .data>div").css("_border-left","1px solid blue");
-$(".box .data>div").css("_float", "right");
-$(".box .data>div").css("_width", "75%");
-$(".box .data>div").css("_margin-left", "5px");
 
-
-$(".box .data>div input").css("_display", "inline");
- 
-$(".box .data>div:first-child").css("_float", "left");
-
-$(".box .data>div:first-child").css("_margin-top", "6px");
-$(".box .data>div:first-child").css("_margin-left", "5px");
-$(".box .data>div:first-child").css("_line-height", "36px");
- 
-$(".box .data>div").css("_padding", "0 5px");
-$(".box .data>div").css("_padding-right", "5px");*/
-	
-});
-
-$(function() {
-	$( "#fromDataPicker" ).datepicker();
-	$( "#toDataPicker" ).datepicker();
-});
 
 function table_item_init(){
 	$(".table_item_type_select").change(function (){
