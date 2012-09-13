@@ -46,7 +46,7 @@ class Request{
 	protected function _url(){
 		$uri = $_SERVER['REQUEST_URI'];
 		$base = $this->base;
-		if (strlen($base) > 0 && strpos($uri, $base) === 0) {
+		if ($base !== '/' && strpos($uri, $base) === 0) {
 			$uri = substr($uri, strlen($base));
 		}
 		if (strpos($uri, '?') !== false) {
@@ -87,8 +87,9 @@ class Request{
 	public function _file(){
 		if (isset($_FILES) && is_array($_FILES)) {
 			foreach ($_FILES as $name => $data) {
-				if ($name != 'data') {
-					$this->file[$name] = $data;
+				$this->file[$name] = $data;
+				if(array_key_exists($name, $this->post)){
+					unset($this->post[$name]);
 				}
 			}
 		}

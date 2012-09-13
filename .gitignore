@@ -3,4 +3,4 @@
 .buildpath
 README.md
 webroot/upload/*
-conf/*
+#conf/*
